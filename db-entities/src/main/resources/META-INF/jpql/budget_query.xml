@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm
+        http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd" version="2.1">
+
+    <!--<entity-mappings version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"-->
+    <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+    <!--xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm-->
+    <!--http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd">-->
+
+	<named-native-query name="findByCodTipint_ordered">
+		<query><![CDATA[
+            SELECT * FROM BudgetTipIntervento WHERE codTipint = :codTipint
+            order by annoErogazione desc
+        ]]></query>
+	</named-native-query>
+
+    <!--
+    in prod la dt_avvio 1/3/2019 diventa 28/2/2018 a runtime.
+    -->
+    <named-native-query name="test_lettura_date">
+        <query><![CDATA[
+            SELECT DT_AVVIO,
+            TO_CHAR(DT_AVVIO, 'YYYY-MM-DD HH24:MI:SS'),
+            DUR_MESI, COSTO_PREV, QUANTITA
+            FROM PAI_INTERVENTO
+            WHERE COD_PAI = 22809376	AND COD_TIPINT='AZ008A' AND CNT_TIPINT=6
+        ]]></query>
+    </named-native-query>
+
+    <named-native-query name="azzera_bdg_previsti_da_idEvento">
+        <query><![CDATA[
+            update PAI_INTERVENTO_mese interventi_mese_da_aggiornare set BDG_PREV_EUR = 0, BDG_PREV_QTA = 0
+            -- SELECT count(*)  from PAI_INTERVENTO_mese interventi_mese_da_aggiornare
+            WHERE EXISTS
+            (
+                SELECT 1 FROM
+                (
+                    SELECT
+                        interventi.*
+                    FROM
+                        PAI_EVENTO evento
+                        JOIN PAI_INTERVENTO_MESE interventi
+                        ON
+                        evento.COD_PAI = interventi.COD_PAI
+                        AND EVENTO.COD_TIPINT = interventi.COD_TIPINT
+                        AND evento.CNT_TIPINT = interventi.CNT_TIPINT
+                    WHERE
+                        evento.ID_EVENTO = ?
+                ) interventi_per_evento
+                WHERE
+                interventi_mese_da_aggiornare.cod_pai = interventi_per_evento.cod_pai
+                AND interventi_mese_da_aggiornare.COD_TIPINT = interventi_per_evento.COD_TIPINT
+                AND interventi_mese_da_aggiornare.CNT_TIPINT = interventi_per_evento.CNT_TIPINT
+            )
+        ]]></query>
+    </named-native-query>
+    
+
+
+</entity-mappings>
+

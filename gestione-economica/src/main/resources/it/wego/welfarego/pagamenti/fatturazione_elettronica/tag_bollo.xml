@@ -1,0 +1,4 @@
+                <DatiBollo>
+                    <BolloVirtuale>SI</BolloVirtuale>
+                    <ImportoBollo>${importoBollo}</ImportoBollo>
+                </DatiBollo>

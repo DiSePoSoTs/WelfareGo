@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<portlet-app xmlns='http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd' version='2.0'>
+	<portlet>
+		<description>Azione</description>
+		<portlet-name>Azione</portlet-name>
+		<display-name>Azione</display-name>
+		<portlet-class>it.wego.welfarego.abstracts.GenericFormPortlet</portlet-class>
+		<init-param>
+			<name>handler</name>
+			<value>it.wego.welfarego.azione.forms.AzionePortletForm</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Azione</title>
+			<short-title>Azione</short-title>
+		</portlet-info>
+	</portlet>
+	<portlet>
+		<description>Determine</description>
+		<portlet-name>Determine</portlet-name>
+		<display-name>Determine</display-name>
+		<portlet-class>it.wego.welfarego.abstracts.GenericFormPortlet</portlet-class>
+		<init-param>
+			<name>handler</name>
+			<value>it.wego.welfarego.determine.servlet.DeterminePortletForm</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Determine</title>
+			<short-title>Determine</short-title>
+		</portlet-info>
+	</portlet>
+	<portlet>
+		<description>ListeAttesa</description>
+		<portlet-name>ListeAttesa</portlet-name>
+		<display-name>ListeAttesa</display-name>
+		<portlet-class>it.wego.welfarego.abstracts.GenericFormPortlet</portlet-class>
+		<init-param>
+			<name>handler</name>
+			<value>it.wego.welfarego.listeattesa.ListeAttesaPortletForm</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Liste Attesa</title>
+			<short-title>Liste Attesa</short-title>
+		</portlet-info>
+	</portlet>
+	<portlet>
+		<description>TaskList</description>
+		<portlet-name>TaskList</portlet-name>
+		<display-name>TaskList</display-name>
+		<portlet-class>it.wego.welfarego.abstracts.GenericFormPortlet</portlet-class>
+		<init-param>
+			<name>handler</name>
+			<value>it.wego.welfarego.tasklist.forms.TasklistPortletForm</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>TaskList</title>
+			<short-title>TaskList</short-title>
+		</portlet-info>
+	</portlet>
+	<portlet>
+		<description>Reports</description>
+		<portlet-name>Reports</portlet-name>
+		<display-name>Reports</display-name>
+		<portlet-class>it.wego.welfarego.abstracts.GenericFormPortlet</portlet-class>
+		<init-param>
+			<name>handler</name>
+			<value>it.wego.welfarego.commons.servlet.ReportPortletForm</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Reports</title>
+			<short-title>Reports</short-title>
+		</portlet-info>
+	</portlet> 
+	<portlet>
+		<description>Cassa a mani </description>
+		<portlet-name>Cassa</portlet-name>
+		<display-name>Cassa a mani</display-name>
+		<portlet-class>it.wego.welfarego.abstracts.GenericFormPortlet</portlet-class>
+		<init-param>
+			<name>handler</name>
+			<value>it.wego.welfarego.cassa.servlet.CassaPortletForm</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Cassa a mani </title>
+			<short-title>Cassa a mani</short-title>
+		</portlet-info>
+	</portlet> 
+	<portlet>
+		<description>Importazione</description>
+		<portlet-name>Importazione</portlet-name>
+		<display-name>Importazione interventi</display-name>
+		<portlet-class>it.wego.welfarego.abstracts.GenericFormPortlet</portlet-class>
+		<init-param>
+			<name>handler</name>
+			<value>it.wego.welfarego.importazione.servlet.ImportazionePortletForm</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Importazione interventi </title>
+			<short-title>Importazione interventi.</short-title>
+		</portlet-info>
+	</portlet> 
+	<portlet>
+		<description>Generazione lettere</description>
+		<portlet-name>Lettere</portlet-name>
+		<display-name>Generazione lettere</display-name>
+		<portlet-class>it.wego.welfarego.abstracts.GenericFormPortlet</portlet-class>
+		<init-param>
+			<name>handler</name>
+			<value>it.wego.welfarego.lettere.servlet.LetterePortletForm</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Generazione massiva lettere</title>
+			<short-title>Generazione lettere</short-title>
+		</portlet-info>
+	</portlet>
+	<portlet>
+		<description>Test vari </description>
+		<portlet-name>Test</portlet-name>
+		<display-name>Test vari </display-name>
+		<portlet-class>it.wego.welfarego.abstracts.GenericFormPortlet</portlet-class>
+		<init-param>
+			<name>handler</name>
+			<value>it.wego.welfarego.commons.servlet.TestPortletForm</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Test vari solo per amministratore</title>
+			<short-title>Test vari solo per amministratore </short-title>
+		</portlet-info>
+	</portlet>
+</portlet-app>

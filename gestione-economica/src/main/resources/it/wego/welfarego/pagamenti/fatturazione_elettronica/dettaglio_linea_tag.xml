@@ -1,0 +1,9 @@
+            <DettaglioLinee>
+                <NumeroLinea>${variabile.FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee.NumeroLinea}</NumeroLinea> 
+                <Descrizione>${variabile.FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee.Descrizione}</Descrizione> 
+                <Quantita>${variabile.FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee.Quantita}</Quantita>	
+                <PrezzoUnitario>${variabile.FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee.PrezzoUnitario}</PrezzoUnitario> 
+                <PrezzoTotale>${variabile.FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee.PrezzoTotale}</PrezzoTotale> 
+                <AliquotaIVA>${aliqiva}</AliquotaIVA> 
+                <Natura>${natura}</Natura> 
+            </DettaglioLinee>

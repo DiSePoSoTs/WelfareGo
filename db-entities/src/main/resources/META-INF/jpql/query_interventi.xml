@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm
+        http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd" version="2.1">
+
+    <named-native-query name="interventi_per_proroga_automatica">
+        <query><![CDATA[
+        -- TO_DATE('2019-03-18', 'yyyy-mm-dd')
+        SELECT
+            DISTINCT
+            intervento.COD_PAI,
+            intervento.COD_TIPINT,
+            intervento.CNT_TIPINT
+            /*
+            , tip_int.FLG_RINNOVO
+            , tip_int.FLG_FINE_DURATA
+            , intervento.DT_AVVIO
+            , intervento.Dur_mesi
+            , intervento.DT_FINE
+            , ADD_MONTHS(intervento.DT_AVVIO, intervento.DUR_MESI) dt_fine_2
+            */
+        FROM
+            PAI_INTERVENTO intervento
+            --
+            JOIN TIPOLOGIA_INTERVENTO tip_int
+            ON intervento.COD_TIPINT = tip_int.COD_TIPINT
+            --
+            JOIN pai pai
+            ON intervento.cod_pai = pai.COD_PAI
+            --
+            JOIN CARTELLA_SOCIALE cartella_soc
+            ON cartella_soc.COD_ANA = pai.COD_ANA
+            --
+            JOIN ANAGRAFE_SOC anagrafe_soc
+            ON anagrafe_soc.COD_ANA = cartella_soc.cod_ana
+        WHERE
+            1=1
+            AND tip_int.FLG_RINNOVO <> 'N'
+            AND intervento.STATO_INT = 'E'
+            AND intervento.RINNOVATO = 1
+            AND anagrafe_soc.DT_MORTE IS NULL
+            -- non so come fare questo and con le jpa, per cui uso sql diretto
+            AND (
+                CASE
+                    WHEN tip_int.FLG_FINE_DURATA='F' AND intervento.DT_FINE BETWEEN ? AND ? THEN 1
+                    WHEN tip_int.FLG_FINE_DURATA='D' AND ADD_MONTHS(intervento.DT_AVVIO, intervento.DUR_MESI) BETWEEN ? AND ?	THEN 1
+                    ELSE 0
+                end
+            ) = 1
+        ORDER BY
+            --intervento.DT_FINE,
+            intervento.COD_PAI ASC,
+            intervento.COD_TIPINT ASC,
+            intervento.CNT_TIPINT ASC
+]]>
+        </query>
+    </named-native-query>
+
+    <named-native-query name="interventi_aperti_da_chiudere">
+        <query>
+            <![CDATA[
+             SELECT DISTINCT
+                pi.COD_PAI codPai
+                , pi.COD_TIPINT codTipint
+                , pi.CNT_TIPINT cntTipint
+                /*
+                , tip_int.FLG_FINE_DURATA
+                , pi.STATO_INT
+                , pi.DT_FINE
+                , pi.dt_avvio
+                , pi.DUR_MESI
+                , ADD_MONTHS(pi.DT_AVVIO, pi.DUR_MESI) dt_fine_2
+                */
+             FROM
+             PAI_INTERVENTO pi
+             JOIN TIPOLOGIA_INTERVENTO tip_int
+             ON tip_int.COD_TIPINT = pi.COD_TIPINT
+             where
+                1=1
+                and STATO_INT = 'A'
+                AND tip_int.FLG_RINNOVO_AUTO <> 'S'
+                AND (
+                    CASE
+                    WHEN tip_int.FLG_FINE_DURATA='F' AND pi.DT_FINE < ? THEN 1
+                    WHEN tip_int.FLG_FINE_DURATA='D' AND (ADD_MONTHS(DT_AVVIO, DUR_MESI) < ? ) THEN 1
+                    ELSE 0
+                    end
+                ) = 1
+             ORDER BY
+             COD_PAI ASC,
+             pi.COD_TIPINT ASC,
+             CNT_TIPINT ASC
+        ]]>
+        </query>
+    </named-native-query>
+</entity-mappings>

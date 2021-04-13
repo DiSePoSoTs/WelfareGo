@@ -1,0 +1,20 @@
+package it.wego.welfarego.persistence.constants;
+
+/**
+ *
+ * @author aleph
+ */
+public class Forms {
+	public static final String 
+			  PROTOCOLLA_DOMANDA="P20A020",
+			  VALIDA_INTERVENTI="P20A040",
+			  VERIFICA_DATI_ESECUTIVITA="P050A020",
+			  VALIDA_ESECUTIVITA="P50A040",
+			  PREDISPOSIZIONE_DOCUMENTO="P080A020",
+			  VALIDAZIONE_DOCUMENTO="P080A030",
+			  PROTOCOLLAZIONE_DOCUMENTO="P080A040",
+			  NOTIFICA_REVISIONE="P020A060",
+	         NOTIFICA_REVISIONE_INTERVENTO="P050A060",
+	         NOTIFICA_RIFIUTO_INTERVENTO="P050A050";
+	         
+}

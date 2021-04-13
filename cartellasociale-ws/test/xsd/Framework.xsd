@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2005 sp1 U (http://www.xmlspy.com) by Insiel Spa (Insiel Spa) -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://framework.cartellasociale.sanita.insiel.it" xmlns:tipigenerali="http://tipigenerali.cartellasociale.sanita.insiel.it" targetNamespace="http://framework.cartellasociale.sanita.insiel.it" elementFormDefault="qualified">
+	<import namespace="http://tipigenerali.cartellasociale.sanita.insiel.it" schemaLocation="TipiGenerali.xsd"/>
+	<complexType name="Esito">
+		<annotation>
+			<documentation>Esito operazione</documentation>
+		</annotation>
+		<sequence>
+			<element name="codEsito" type="tns:EsitoOperazioneEnum"/>
+			<element name="descrEsito" type="tipigenerali:Descr256Type"/>
+		</sequence>
+	</complexType>
+	<complexType name="RichiestaBase">
+		<sequence/>
+	</complexType>
+	<element name="AutenticazioneE">
+		<complexType>
+			<annotation>
+				<documentation>Dati per l'autenticazione del chiamante.</documentation>
+			</annotation>
+			<sequence>
+				<element name="utente" type="string">
+					<annotation>
+						<documentation>Id dell'utente.</documentation>
+					</annotation>
+				</element>
+				<element name="password" type="string">
+					<annotation>
+						<documentation>Password.</documentation>
+					</annotation>
+				</element>
+				<element name="uorgStrt0" type="long">
+					<annotation>
+						<documentation>Id dell'unità organizzativa per la quale si opera.</documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="Autenticazione">
+		<annotation>
+			<documentation>Dati per l'autenticazione del chiamante.</documentation>
+		</annotation>
+		<sequence>
+			<element name="utente" type="string">
+				<annotation>
+					<documentation>Id dell'utente.</documentation>
+				</annotation>
+			</element>
+			<element name="password" type="string">
+				<annotation>
+					<documentation>Password.</documentation>
+				</annotation>
+			</element>
+			<element name="uorgStrt0" type="long">
+				<annotation>
+					<documentation>Id dell'unità organizzativa per la quale si opera.</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="RispostaBase">
+		<sequence>
+			<element name="esito" type="tns:Esito"/>
+			<element name="errori" type="tns:Messaggio" minOccurs="0" maxOccurs="unbounded">
+				<annotation>
+					<documentation>Elenco degli errori restituiti.</documentation>
+				</annotation>
+			</element>
+			<element name="avvisi" type="tns:Messaggio" minOccurs="0" maxOccurs="unbounded">
+				<annotation>
+					<documentation>Elenco degli avvisi (warning) restituiti. </documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="Messaggio">
+		<annotation>
+			<documentation>Messaggio.</documentation>
+		</annotation>
+		<sequence>
+			<element name="codice" type="string">
+				<annotation>
+					<documentation>Codice identificativo del messaggio.</documentation>
+				</annotation>
+			</element>
+			<element name="descrizione" type="string">
+				<annotation>
+					<documentation>Messaggio vero e proprio.</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<simpleType name="EsitoOperazioneEnum">
+		<restriction base="string">
+			<enumeration value="OK"/>
+			<enumeration value="ERRORI"/>
+			<enumeration value="WARNING"/>
+		</restriction>
+	</simpleType>
+</schema>

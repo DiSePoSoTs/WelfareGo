@@ -1,0 +1,13 @@
+.wfg_azione_icon{
+	background-image:url('images/cog_go.png');
+}
+
+.wcs_print_icon{
+    background-image:url('images/print.png');
+}
+
+.wfg_azione_icon,.wcs_print_icon {
+	width:16px;
+	height:16px;
+	cursor:pointer;
+}

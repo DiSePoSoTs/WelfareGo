@@ -1,0 +1,145 @@
+.agenda_legenda_indisponibile{
+    font-weight: bold;
+    background-color: rgba(255, 0, 0, 0.5);
+    padding: 10px;
+    text-align: center;
+}
+.agenda_legenda_appuntamento{
+    font-weight: bold;
+    background-color: rgba(173,255,47,0.5);
+    padding: 10px;
+    text-align: center;
+}
+.standardBgColor{
+    background-color: #e0e0e0;
+}
+table.wtl_agenda_template{
+    width:100%;
+}
+table.wtl_agenda_template th.wtl_template_giorno{
+    width:13%;
+}
+table.wtl_agenda_template th.wtl_template_ore{
+    width:9%;
+}
+
+table.wtl_agenda_template th{
+    color:#15428B;
+    font-family:tahoma,arial,verdana,sans-serif;
+    font-size:11px;
+    font-weight:bold;
+    line-height:15px;
+    padding:5px 3px 4px 5px;
+    border:1px solid #99BBE8;
+}
+table.wtl_agenda_template tr{
+    font-family:arial,tahoma,helvetica,sans-serif;
+    font-size:11px;
+    font-size-adjust:none;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    line-height:normal;
+}
+table.wtl_agenda_template td{
+    color:#15428B;
+    font-family:tahoma,arial,verdana,sans-serif;
+    font-size:11px;
+    /*        font-weight:bold;*/
+    line-height:15px;
+    padding:5px 3px 4px 5px;
+    border:1px solid #99BBE8;
+    text-align: center;
+}
+.agenda_indisponibile_cell{
+    background-color: rgba(255, 0, 0, 0.5);
+}
+.agenda_appuntamento_cell{
+    background-color: rgba(173,255,47,0.5);
+}
+.wtl_agenda_cell_over{
+    border:1px solid red;
+    background-color:#f32;
+}
+
+.wtl_div_template_ore{
+    width:9%;
+    clear: none;
+}
+.wtl_div_template_giorni{
+    width:9%;
+    clear: none;
+}
+
+.wtl_agenda_nome,.wtl_agenda_note,.wtl_agenda_tipo{
+    opacity: 1;
+}
+
+.wfg_azione_icon{
+	background-image:url('images/cog_go.png');
+}
+
+.wfg_cs_icon{
+	background-image:url('images/folder.png');
+}
+
+.wfg_azione_icon, .wfg_cs_icon{
+	width:16px;
+	height:16px;
+	cursor:pointer;
+}
+
+.urgente .x-grid-cell{
+    background-color: red !important;
+
+}
+.approvato .x-grid-cell{
+    background-color: green !important;
+
+}
+
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(96) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(95) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(94) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(93) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(92) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(91) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(90) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(89) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(88) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(87) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(86) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(85) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(84) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(83) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(82) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(81) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(80) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(79) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(78) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(77) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(76) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(75) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(74) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(73) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(72) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(71) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(70) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-last-child(69) { display:none; }
+
+.x-timepicker .list-ct li.x-boundlist-item:nth-child(82) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-child(83) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-child(84) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-child(85) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-child(86) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-child(87) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-child(88) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-child(89) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-child(90) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-child(91) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-child(92) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-child(93) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-child(94) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-child(95) { display:none; }
+.x-timepicker .list-ct li.x-boundlist-item:nth-child(96) { display:none; }
+

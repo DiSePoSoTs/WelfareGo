@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ns3:FatturaElettronica xmlns:ns3="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2"
+                        xmlns:ns2="http://www.w3.org/2000/09/xmldsig#"  versione="${header_dt_formtr}">
+    <FatturaElettronicaHeader>
+        <DatiTrasmissione>
+            <IdTrasmittente>
+                <IdPaese>${dt_idpaese}</IdPaese>
+                <IdCodice>${dt_idcod}</IdCodice>
+            </IdTrasmittente>
+
+            <ProgressivoInvio>${variabile.FatturaElettronicaHeader.DatiTrasmissione.ProgressivoInvio}</ProgressivoInvio>
+            <FormatoTrasmissione>${dt_formtr}</FormatoTrasmissione>
+            <CodiceDestinatario>${dt_coddest}</CodiceDestinatario>
+
+        </DatiTrasmissione>
+
+        <CedentePrestatore>
+            <DatiAnagrafici>
+                <IdFiscaleIVA>
+                    <IdPaese>${cp_idpaese}</IdPaese>
+                    <IdCodice>${cp_idcod}</IdCodice>
+                </IdFiscaleIVA>
+                <CodiceFiscale>${cp_codfisc}</CodiceFiscale>
+                <Anagrafica>
+                    <Denominazione>${cp_denomin}</Denominazione>
+                </Anagrafica>
+                <RegimeFiscale>${cp_regfisc}</RegimeFiscale>
+            </DatiAnagrafici>
+            <Sede>
+                <Indirizzo>${cp_indiriz}</Indirizzo>
+                <NumeroCivico>${cp_numciv}</NumeroCivico>
+                <CAP>${cp_cap}</CAP>
+                <Comune>${cp_comune}</Comune>
+                <Provincia>${cp_prov}</Provincia>
+                <Nazione>${cp_nazione}</Nazione>
+            </Sede>
+        </CedentePrestatore>
+
+        <CessionarioCommittente>
+            <DatiAnagrafici>
+                <CodiceFiscale>${variabile.FatturaElettronicaHeader.CessionarioCommittente.DatiAnagrafici.CodiceFiscale}</CodiceFiscale>
+                <Anagrafica>
+                    <Nome>${variabile.FatturaElettronicaHeader.CessionarioCommittente.DatiAnagrafici.Anagrafica.Nome}</Nome>
+                    <Cognome>${variabile.FatturaElettronicaHeader.CessionarioCommittente.DatiAnagrafici.Anagrafica.Cognome}</Cognome>
+                </Anagrafica>
+            </DatiAnagrafici>
+            <Sede>
+                <Indirizzo>${variabile.FatturaElettronicaHeader.CessionarioCommittente.Sede.Indirizzo}</Indirizzo>
+                <CAP>${variabile.FatturaElettronicaHeader.CessionarioCommittente.Sede.CAP}</CAP>
+                <Comune>${variabile.FatturaElettronicaHeader.CessionarioCommittente.Sede.Comune}</Comune>
+                <Nazione>${variabile.FatturaElettronicaHeader.CessionarioCommittente.Sede.Nazione}</Nazione>
+            </Sede>
+        </CessionarioCommittente>
+    </FatturaElettronicaHeader>
+
+    <FatturaElettronicaBody>
+        <DatiGenerali>
+            <DatiGeneraliDocumento>
+                <TipoDocumento>${tipodoc}</TipoDocumento>
+                <Divisa>${divisa}</Divisa>
+                <Data>${variabile.FatturaElettronicaBody.DatiGeneraliDocumento.Data}</Data>
+                <Numero>${variabile.FatturaElettronicaBody.DatiGeneraliDocumento.Numero}/SAD</Numero>
+${bollo}
+                <ImportoTotaleDocumento>${variabile.FatturaElettronicaBody.DatiGeneraliDocumento.ImportoTotaleDocumento}</ImportoTotaleDocumento>
+                <Causale>${variabile.FatturaElettronicaBody.DatiGeneraliDocumento.Causale}</Causale>
+            </DatiGeneraliDocumento>
+        </DatiGenerali>
+
+        <DatiBeniServizi>
+${dettagli_linee}
+${riepilogo_bollo}
+            <DatiRiepilogo>
+                <AliquotaIVA>${aliqiva}</AliquotaIVA>
+                <Natura>${natura}</Natura>
+                <ImponibileImporto>${variabile.FatturaElettronicaBody.DatiRiepilogo.ImponibileImporto}</ImponibileImporto>
+                <Imposta>${variabile.FatturaElettronicaBody.DatiRiepilogo.Imposta}</Imposta>
+            </DatiRiepilogo>
+        </DatiBeniServizi>
+
+    </FatturaElettronicaBody>
+</ns3:FatturaElettronica>

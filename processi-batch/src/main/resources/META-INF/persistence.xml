@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+    <persistence-unit name="welfaregoPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <non-jta-data-source>java:/comp/env/jdbc/welfarego</non-jta-data-source>
+
+        <mapping-file>META-INF/jpql/query_interventi.xml</mapping-file>
+        <mapping-file>META-INF/jpql/budget_query.xml</mapping-file>
+        <mapping-file>META-INF/jpql/fatturazione_elettronica.xml</mapping-file>
+
+        <class>it.wego.welfarego.persistence.entities.AnagrafeFam</class>
+        <class>it.wego.welfarego.persistence.entities.AnagrafeSoc</class>
+        <class>it.wego.welfarego.persistence.entities.Appuntamento</class>
+        <class>it.wego.welfarego.persistence.entities.BudgetTipIntervento</class>
+        <class>it.wego.welfarego.persistence.entities.BudgetTipInterventoUot</class>
+        <class>it.wego.welfarego.persistence.entities.CartellaSociale</class>
+        <class>it.wego.welfarego.persistence.entities.Comune</class>
+        <class>it.wego.welfarego.persistence.entities.Configuration</class>
+        <class>it.wego.welfarego.persistence.entities.Contatto</class>
+        <class>it.wego.welfarego.persistence.entities.DatiSpecifici</class>
+        <class>it.wego.welfarego.persistence.entities.Determine</class>
+        <class>it.wego.welfarego.persistence.entities.Fattura</class>
+        <class>it.wego.welfarego.persistence.entities.FatturaDettaglio</class>
+        <class>it.wego.welfarego.persistence.entities.Indisponibilita</class>
+        <class>it.wego.welfarego.persistence.entities.Liquidazione</class>
+        <class>it.wego.welfarego.persistence.entities.ListaAttesa</class>
+        <class>it.wego.welfarego.persistence.entities.LogAnagrafe</class>
+        <class>it.wego.welfarego.persistence.entities.LogMessaggi</class>
+        <class>it.wego.welfarego.persistence.entities.Mandato</class>
+        <class>it.wego.welfarego.persistence.entities.MandatoDettaglio</class>
+        <class>it.wego.welfarego.persistence.entities.MapDatiSpecTipint</class>
+        <class>it.wego.welfarego.persistence.entities.MapDatiSpecificiIntervento</class>
+        <class>it.wego.welfarego.persistence.entities.Pai</class>
+        <class>it.wego.welfarego.persistence.entities.PaiCdg</class>
+        <class>it.wego.welfarego.persistence.entities.PaiDocumento</class>
+        <class>it.wego.welfarego.persistence.entities.PaiEvento</class>
+        <class>it.wego.welfarego.persistence.entities.PaiIntervento</class>
+        <class>it.wego.welfarego.persistence.entities.PaiInterventoAnagrafica</class>
+        <class>it.wego.welfarego.persistence.entities.PaiInterventoCivObb</class>
+        <class>it.wego.welfarego.persistence.entities.PaiInterventoMese</class>
+        <class>it.wego.welfarego.persistence.entities.Parametri</class>
+        <class>it.wego.welfarego.persistence.entities.ParametriIndata</class>
+        <class>it.wego.welfarego.persistence.entities.Provincia</class>
+        <class>it.wego.welfarego.persistence.entities.Stato</class>
+        <class>it.wego.welfarego.persistence.entities.Template</class>
+        <class>it.wego.welfarego.persistence.entities.TipologiaIntervento</class>
+        <class>it.wego.welfarego.persistence.entities.TipologiaParametri</class>
+        <class>it.wego.welfarego.persistence.entities.Toponomastica</class>
+        <class>it.wego.welfarego.persistence.entities.ToponomasticaCivici</class>
+        <class>it.wego.welfarego.persistence.entities.UniqueForm</class>
+        <class>it.wego.welfarego.persistence.entities.UniqueTasklist</class>
+        <class>it.wego.welfarego.persistence.entities.Utenti</class>
+        <class>it.wego.welfarego.persistence.entities.VistaAnagrafe</class>
+        <class>it.wego.welfarego.persistence.entities.PaiMacroProblematica</class>
+        <class>it.wego.welfarego.persistence.entities.PaiMicroProblematica</class>
+        <class>it.wego.welfarego.persistence.entities.Luogo</class>
+        <class>it.wego.welfarego.persistence.entities.CodaCsr</class>
+        <class>it.wego.welfarego.persistence.entities.LogCassa</class>
+        <class>it.wego.welfarego.persistence.entities.RicevutaCassa</class>
+        <class>it.wego.welfarego.persistence.entities.Struttura</class>
+        <class>it.wego.welfarego.persistence.entities.InterventiAssociati</class>
+        <class>it.wego.welfarego.persistence.entities.UotIndirizzo</class>
+        <class>it.wego.welfarego.persistence.entities.WSToken</class>
+        <class>it.wego.welfarego.persistence.entities.Associazione</class> 
+        <class>it.wego.welfarego.persistence.entities.Liberatoria</class> 
+        <class>it.wego.welfarego.persistence.entities.NoteCondivise</class>
+		<class>it.wego.welfarego.persistence.entities.Ente</class>
+		<class>it.wego.welfarego.persistence.entities.Tariffa</class>
+        <shared-cache-mode>NONE</shared-cache-mode>
+        <properties>
+            <property name="eclipselink.ddl-generation.output-mode" value="database"/>
+            <property name="eclipselink.logging.logger" value="it.wego.utils.eclipselink.logger.Log4jLogger"/>
+            <property name="eclipselink.logging.level" value="INFO"/>
+            <property name="eclipselink.logging.parameters" value="false"/>
+        </properties>
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,58 @@
+[#ftl]
+<script type="text/javascript">
+    Ext.ns("${ns}.config");
+    if(!${ns}.config.variablesReady){
+        ${ns}.config.variablesReady=true;		
+        Ext.ns(
+        "${ns}.utils",
+        "${gns}.utils",
+        "${gns}.info",
+        "${ns}.info",
+        "${ns}.data",
+        '${ns}.data.stores',
+        '${ns}.data.forms',
+        "${ns}.config",
+        "${ns}.config.path");
+	
+        ${ns}.config.path.base='${contextPath}';
+        ${ns}.config.path.form='${contextPath}/FormServlet';
+        ${ns}.config.path.determine='${contextPath}/DetermineServlet';
+        ${ns}.config.path.seleziona_budget_multipli='${contextPath}/ModificaBudget/budgets';
+        ${ns}.config.path.report='${contextPath}/ReportServlet';
+        ${ns}.config.path.combo='${contextPath}/ComboBoxServlet';
+        ${ns}.config.path.cassa='${contextPath}/CassaServlet';
+        
+        Ext.Ajax.timeout = 800000;
+        Ext.Loader.setConfig({ enabled:true, disableCaching:${cacheDisabled} });
+        Ext.Loader.setPath('${ns}', '${nsFilterPath}/${ns}/app');
+        Ext.Loader.setPath('${ns}.ux', '${nsFilterPath}/${ns}/ext/virtualkeyboard');
+        Ext.require('Ext.toolbar.Paging');
+        function log(){if(window.console&&console.debug){console.debug.apply(console,arguments)}}
+        ${ns}.info.user=${userInfo!'undefined'};
+		
+        if(window.themeDisplay){
+            var plid = themeDisplay.getPlid();
+            var loginUrl='/c/portal/login?p_l_id='+plid;		
+            ${ns}.utils.doLiferayLogin=function(){
+                window.location=loginUrl;
+            }
+        }
+		
+        ${ns}.utils.getCmp=function(id){
+            return Ext.getCmp('${ns}_'+id);
+        }
+        if(!${gns}.info.ns){
+            ${gns}.info.ns=[];
+            ${gns}.utils.getCmp=function(id){
+                var cmp;
+                Ext.each(${gns}.info.ns,function(ns){
+                    cmp=ns.utils.getCmp(id);
+                    if(cmp)
+                        return false;
+                });
+                return cmp;
+            }
+        }
+        ${gns}.info.ns.push(${ns});
+    }
+</script>

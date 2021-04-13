@@ -1,0 +1,22 @@
+.icon-export-pdf {
+    background-image: url(images/icon-export-pdf.png) !important;
+}
+.icon-export-doc {
+    background-image: url(images/icon-export-doc.png) !important;
+}
+.icon-export-rtf {
+    background-image: url(images/icon-export-rtf.png) !important;
+}
+.icon-export-xls {
+    background-image: url(images/icon-export-xls.png) !important;
+}
+.icon-export-refresh {
+    background-image: url(images/icon-export-refresh.png) !important;
+}
+
+.hand_cursor{
+	cursor: pointer;
+}
+/*#gridid .x-grid-header-ct {
+    display:none;
+}*/

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2005 sp1 U (http://www.xmlspy.com) by Insiel Spa (Insiel Spa) -->
+<wsdl:definitions xmlns="http://insiel.it/sanita/cartellasociale/cartellaws/" xmlns:cartellasociale="http://cartellasociale.sanita.insiel.it" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns="http://tipigenerali.cartellasociale.sanita.insiel.it" xmlns:framework="http://framework.cartellasociale.sanita.insiel.it" targetNamespace="http://insiel.it/sanita/cartellasociale/cartellaws/" name="CartellaSocialeWS">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://insiel.it/sanita/cartellasociale">
+			<xs:import namespace="http://cartellasociale.sanita.insiel.it" schemaLocation="xsd/CartellaSociale.xsd"/>
+		</xsd:schema>
+		<xsd:schema targetNamespace="http://insiel.it/sanita/cartellasociale/framework">
+			<xs:import namespace="http://framework.cartellasociale.sanita.insiel.it" schemaLocation="xsd/Framework.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="InserimentoCartellaRequest">
+		<wsdl:part name="request" element="cartellasociale:InserimentoCartellaSociale"/>
+	</wsdl:message>
+	<wsdl:message name="InserimentoCartellaResponse">
+		<wsdl:part name="response" element="cartellasociale:RicevutaCartella"/>
+	</wsdl:message>
+	<wsdl:message name="InserimentoInterventoRequest">
+		<wsdl:part name="request" element="cartellasociale:InserimentoIntervento"/>
+	</wsdl:message>
+	<wsdl:message name="InserimentoInterventoResponse">
+		<wsdl:part name="response" element="cartellasociale:RicevutaIntervento"/>
+	</wsdl:message>
+	<wsdl:message name="InserimentoDiarioRequest">
+		<wsdl:part name="request" element="cartellasociale:InserimentoDiario"/>
+	</wsdl:message>
+	<wsdl:message name="InserimentoDiarioResponse">
+		<wsdl:part name="response" element="cartellasociale:RicevutaDiario"/>
+	</wsdl:message>
+	<wsdl:message name="InserimentoPersonaRiferimentoRequest">
+		<wsdl:part name="request" element="cartellasociale:InserimentoPersonaRiferimento"/>
+	</wsdl:message>
+	<wsdl:message name="InserimentoPersonaRiferimentoResponse">
+		<wsdl:part name="response" element="cartellasociale:RicevutaPersonaRiferimento"/>
+	</wsdl:message>
+	<wsdl:message name="ModificaAnagraficaRequest">
+		<wsdl:part name="response" element="cartellasociale:ModificaAnagrafica"/>
+	</wsdl:message>
+	<wsdl:message name="ModificaAnagraficaResponse">
+		<wsdl:part name="response" element="cartellasociale:RicevutaModificaAnagrafica"/>
+	</wsdl:message>
+	<wsdl:message name="ModificaProfiloRequest">
+		<wsdl:part name="response" element="cartellasociale:ModificaProfilo"/>
+	</wsdl:message>
+	<wsdl:message name="ModificaProfiloResponse">
+		<wsdl:part name="response" element="cartellasociale:RicevutaModificaProfilo"/>
+	</wsdl:message>
+	<wsdl:message name="ModificaProgettoRequest">
+		<wsdl:part name="response" element="cartellasociale:ModificaProgetto"/>
+	</wsdl:message>
+	<wsdl:message name="ModificaProgettoResponse">
+		<wsdl:part name="response" element="cartellasociale:RicevutaModificaProgetto"/>
+	</wsdl:message>
+	<wsdl:message name="ModificaInterventoRequest">
+		<wsdl:part name="response" element="cartellasociale:ModificaIntervento"/>
+	</wsdl:message>
+	<wsdl:message name="ModificaInterventoResponse">
+		<wsdl:part name="response" element="cartellasociale:RicevutaModificaIntervento"/>
+	</wsdl:message>
+	<wsdl:message name="ModificaDiarioRequest">
+		<wsdl:part name="response" element="cartellasociale:ModificaDiario"/>
+	</wsdl:message>
+	<wsdl:message name="ModificaDiarioResponse">
+		<wsdl:part name="response" element="cartellasociale:RicevutaModificaDiario"/>
+	</wsdl:message>
+	<wsdl:message name="ModificaPersonaRiferimentoRequest">
+		<wsdl:part name="response" element="cartellasociale:ModificaPersonaRiferimento"/>
+	</wsdl:message>
+	<wsdl:message name="ModificaPersonaRiferimentoResponse">
+		<wsdl:part name="response" element="cartellasociale:RicevutaPersonaRiferimento"/>
+	</wsdl:message>
+	<wsdl:message name="ChiudiCartellaRequest">
+		<wsdl:part name="response" element="cartellasociale:ChiudiCartella"/>
+	</wsdl:message>
+	<wsdl:message name="ChiudiCartellaResponse">
+		<wsdl:part name="response" element="cartellasociale:RicevutaChiudiCartella"/>
+	</wsdl:message>
+	<wsdl:message name="RiattivaCartellaRequest">
+		<wsdl:part name="response" element="cartellasociale:RiattivaCartella"/>
+	</wsdl:message>
+	<wsdl:message name="RiattivaCartellaResponse">
+		<wsdl:part name="response" element="cartellasociale:RicevutaRiattivaCartella"/>
+	</wsdl:message>
+	<wsdl:message name="Autenticazione">
+		<wsdl:part name="autenticazione" type="framework:Autenticazione"/>
+	</wsdl:message>
+	<wsdl:portType name="Cartella">
+		<wsdl:operation name="inserimentoCartella" parameterOrder="request">
+			<wsdl:input message="InserimentoCartellaRequest"/>
+			<wsdl:output message="InserimentoCartellaResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="inserimentoIntervento" parameterOrder="request">
+			<wsdl:input message="InserimentoInterventoRequest"/>
+			<wsdl:output message="InserimentoInterventoResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="inserimentoDiario" parameterOrder="request">
+			<wsdl:input message="InserimentoDiarioRequest"/>
+			<wsdl:output message="InserimentoDiarioResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="inserimentoPersonaRiferimento" parameterOrder="request">
+			<wsdl:input message="InserimentoPersonaRiferimentoRequest"/>
+			<wsdl:output message="InserimentoPersonaRiferimentoResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="modificaAnagrafica" parameterOrder="request">
+			<wsdl:input message="ModificaAnagraficaRequest"/>
+			<wsdl:output message="ModificaAnagraficaResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="modificaProfilo" parameterOrder="request">
+			<wsdl:input message="ModificaProfiloRequest"/>
+			<wsdl:output message="ModificaProfiloResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="modificaProgetto" parameterOrder="request">
+			<wsdl:input message="ModificaProgettoRequest"/>
+			<wsdl:output message="ModificaProgettoResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="modificaIntervento" parameterOrder="request">
+			<wsdl:input message="ModificaInterventoRequest"/>
+			<wsdl:output message="ModificaInterventoResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="modificaDiario" parameterOrder="request">
+			<wsdl:input message="ModificaDiarioRequest"/>
+			<wsdl:output message="ModificaDiarioResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="modificaPersonaRiferimento" parameterOrder="request">
+			<wsdl:input message="ModificaPersonaRiferimentoRequest"/>
+			<wsdl:output message="ModificaPersonaRiferimentoResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="chiudiCartella" parameterOrder="request">
+			<wsdl:input message="ChiudiCartellaRequest"/>
+			<wsdl:output message="ChiudiCartellaResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="riattivaCartella" parameterOrder="request">
+			<wsdl:input message="RiattivaCartellaRequest"/>
+			<wsdl:output message="RiattivaCartellaResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="CartellaSOAP" type="Cartella">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="inserimentoCartella">
+			<soap:operation/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="inserimentoIntervento">
+			<soap:operation/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="inserimentoDiario">
+			<soap:operation/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="inserimentoPersonaRiferimento">
+			<soap:operation/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="modificaAnagrafica">
+			<soap:operation/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="modificaProfilo">
+			<soap:operation/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="modificaProgetto">
+			<soap:operation/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="modificaIntervento">
+			<soap:operation/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="modificaDiario">
+			<soap:operation/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="modificaPersonaRiferimento">
+			<soap:operation/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="chiudiCartella">
+			<soap:operation/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="riattivaCartella">
+			<soap:operation/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="Cartella">
+		<wsdl:port name="CartellaSOAP" binding="CartellaSOAP">
+			<soap:address location="http://localhost:8080/CartellaSocialeWS/services/CartellaSOAP"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

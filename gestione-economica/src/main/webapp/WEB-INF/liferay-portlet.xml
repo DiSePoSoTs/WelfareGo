@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 5.2.0//EN" "http://www.liferay.com/dtd/liferay-portlet-app_5_2_0.dtd">
+<liferay-portlet-app>
+    <portlet>
+        <portlet-name>GestioneEconomica</portlet-name>
+        <instanceable>false</instanceable>
+        <header-portlet-css>/ext/resources/css/ext-all.css</header-portlet-css>
+        <header-portlet-css>/ext/resources/css/ext-all-gray.css</header-portlet-css>
+        <header-portlet-css>/ext/resources/css/ext-liferay.css</header-portlet-css>
+        <header-portlet-javascript>/ext/ext-all.js</header-portlet-javascript>
+        <header-portlet-javascript>/ext/locale/ext-lang-it.js</header-portlet-javascript>
+        <header-portlet-javascript>/js/wego-utils.js</header-portlet-javascript>
+    </portlet>
+    <role-mapper>
+        <role-name>administrator</role-name>
+        <role-link>Administrator</role-link>
+    </role-mapper>
+    <role-mapper>
+        <role-name>guest</role-name>
+        <role-link>Guest</role-link>
+    </role-mapper>
+    <role-mapper>
+        <role-name>power-user</role-name>
+        <role-link>Power User</role-link>
+    </role-mapper>
+    <role-mapper>
+        <role-name>user</role-name>
+        <role-link>User</role-link>
+    </role-mapper>
+</liferay-portlet-app>

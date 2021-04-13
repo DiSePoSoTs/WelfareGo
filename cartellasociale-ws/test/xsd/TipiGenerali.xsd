@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2005 sp1 U (http://www.xmlspy.com) by Insiel Spa (Insiel Spa) -->
+<xs:schema targetNamespace="http://tipigenerali.cartellasociale.sanita.insiel.it" xmlns="http://tipigenerali.cartellasociale.sanita.insiel.it" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="AlphaNum3Type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="3"/>
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DataType">
+		<xs:restriction base="xs:date"/>
+	</xs:simpleType>
+	<xs:simpleType name="DataOraType">
+		<xs:restriction base="xs:dateTime"/>
+	</xs:simpleType>
+	<xs:complexType name="ToponimoType">
+		<xs:sequence>
+			<xs:element name="stato" type="StatoType" nillable="false"/>
+			<xs:element name="comune" type="ComuneType" nillable="true"/>
+			<xs:element name="indirizzo" type="xs:string" nillable="true"/>
+			<xs:element name="numeroCivico" type="xs:string" nillable="false"/>
+			<xs:element name="cap" type="xs:string" nillable="false"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RilevanzaObiettiviType">
+		<xs:sequence>
+			<xs:element name="rilevanza" type="xs:string" nillable="false"/>
+			<xs:element name="fronteggiamento" type="xs:string" nillable="true"/>
+			<xs:element name="obiettivoPrevalente" type="xs:string" nillable="true"/>
+			<xs:element name="dettaglio" type="NoteType" nillable="false"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DettaglioDomiciliareType">
+		<xs:sequence>
+			<xs:element name="qtaMensili" type="xs:int" nillable="false" minOccurs="0"/>
+			<xs:element name="obiettivi" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="erogatore" type="xs:string" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="IndirizzoType">
+		<xs:sequence>
+			<xs:element name="toponimo" type="ToponimoType" nillable="false"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NascitaType">
+		<xs:sequence>
+			<xs:element name="data" type="DataType" nillable="false"/>
+			<xs:element name="stato" type="StatoType" nillable="false"/>
+			<xs:element name="comune" type="ComuneType" nillable="false"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AnagraficaBaseType">
+		<xs:sequence>
+			<xs:element name="codiceNucleoFamiliare" type="xs:long" minOccurs="0"/>
+			<xs:element name="nome" nillable="false">
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="cognome" nillable="false">
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="codiceFiscale" type="CodiceFiscaleType" nillable="false" minOccurs="0"/>
+			<xs:element name="sesso" type="SessoType" nillable="false"/>
+			<xs:element name="cittadinanza1" type="xs:long" nillable="false"/>
+			<xs:element name="cittadinanza2" type="xs:long" nillable="false" minOccurs="0"/>
+			<xs:element name="nascita" type="NascitaType" nillable="false"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="IseeType">
+		<xs:sequence>
+			<xs:element name="valore" type="xs:decimal" nillable="false"/>
+			<xs:element name="dataScadenza" type="DataType" nillable="false"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="StatoType">
+		<xs:sequence>
+			<xs:element name="codiceCatastale" type="xs:string" nillable="false"/>
+			<xs:element name="codiceIstat" type="xs:string" nillable="false"/>
+			<xs:element name="descrizione" type="xs:string" nillable="false"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComuneType">
+		<xs:sequence>
+			<xs:element name="codiceCatastale" type="xs:string" nillable="false"/>
+			<xs:element name="codiceIstat" type="xs:string" nillable="false"/>
+			<xs:element name="descrizione" type="xs:string" nillable="false"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="SessoType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="F"/>
+			<xs:enumeration value="M"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CodiceFiscaleType">
+		<xs:restriction base="xs:string">
+			<xs:length value="16"/>
+			<xs:pattern value="[A-Z]{6}[0-9LMNPQRSTUV]{2}[A-Z][0-9LMNPQRSTUV]{2}[A-Z][0-9LMNPQRSTUV]{3}[A-Z]"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CodiceOperatoreType">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="SiNoType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="S"/>
+			<xs:enumeration value="N"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NoteType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="2000"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Descr256Type">
+		<xs:annotation>
+			<xs:documentation>descrizione di 256 caratteri max</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="256"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

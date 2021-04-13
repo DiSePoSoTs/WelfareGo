@@ -1,0 +1,6 @@
+            <DatiRiepilogo>
+                <AliquotaIVA>0.00</AliquotaIVA>
+                <Natura>${nat_bollo}</Natura>
+                <ImponibileImporto>2.00</ImponibileImporto>
+                <Imposta>0.00</Imposta>
+            </DatiRiepilogo>

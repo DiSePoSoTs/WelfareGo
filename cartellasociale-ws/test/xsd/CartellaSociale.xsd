@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by costa (Matrix SPA) -->
+<!-- edited with XMLSpy v2005 sp1 U (http://www.xmlspy.com) by Insiel Spa (Insiel Spa) -->
+<xs:schema targetNamespace="http://cartellasociale.sanita.insiel.it" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://cartellasociale.sanita.insiel.it" xmlns:tipigenerali="http://tipigenerali.cartellasociale.sanita.insiel.it" xmlns:framework="http://framework.cartellasociale.sanita.insiel.it" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://tipigenerali.cartellasociale.sanita.insiel.it" schemaLocation="TipiGenerali.xsd"/>
+	<xs:import namespace="http://framework.cartellasociale.sanita.insiel.it" schemaLocation="Framework.xsd"/>
+	<xs:element name="InserimentoCartellaSociale" nillable="false">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="anagrafica" type="anagraficaType" nillable="false"/>
+				<xs:element name="profilo" type="profiloType" nillable="false"/>
+				<xs:element name="progetto" type="progettoType" nillable="false"/>
+				<xs:element name="codice" type="tipigenerali:CodiceOperatoreType" nillable="false"/>
+			</xs:sequence>
+			<xs:attribute name="versione" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RicevutaCartella">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="framework:RispostaBase">
+					<xs:sequence>
+						<xs:element name="idCartella" type="xs:long" nillable="false" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InserimentoIntervento" nillable="false">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="idCartella" type="xs:long"/>
+				<xs:element name="intervento" type="interventoType" nillable="false"/>
+				<xs:element name="dataModifica" type="tipigenerali:DataType" nillable="false"/>
+				<xs:element name="codice" type="tipigenerali:CodiceOperatoreType" nillable="false"/>
+			</xs:sequence>
+			<xs:attribute name="versione" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RicevutaIntervento">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="framework:RispostaBase">
+					<xs:sequence>
+						<xs:element name="idIntervento" type="xs:long" nillable="false" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InserimentoDiario" nillable="false">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="idCartella" type="xs:long"/>
+				<xs:element name="diario" type="diarioType" nillable="false"/>
+				<xs:element name="dataModifica" type="tipigenerali:DataType" nillable="false"/>
+				<xs:element name="codice" type="tipigenerali:CodiceOperatoreType" nillable="false"/>
+			</xs:sequence>
+			<xs:attribute name="versione" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RicevutaDiario">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="framework:RispostaBase">
+					<xs:sequence>
+						<xs:element name="idDiario" type="xs:long" nillable="false" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InserimentoPersonaRiferimento" nillable="false">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="idCartella" type="xs:long"/>
+				<xs:element name="personaRiferimento" type="personaRiferimentoType"/>
+				<xs:element name="dataModifica" type="tipigenerali:DataType" nillable="false"/>
+				<xs:element name="codice" type="tipigenerali:CodiceOperatoreType" nillable="false"/>
+			</xs:sequence>
+			<xs:attribute name="versione" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ModificaAnagrafica" nillable="false">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="idCartella" type="xs:long" nillable="false"/>
+				<xs:element name="anagrafica" type="anagraficaType" nillable="false"/>
+				<xs:element name="codice" type="tipigenerali:CodiceOperatoreType" nillable="false"/>
+			</xs:sequence>
+			<xs:attribute name="versione" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RicevutaModificaAnagrafica">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="framework:RispostaBase"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ModificaProfilo" nillable="false">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="idCartella" type="xs:long" nillable="false"/>
+				<xs:element name="profilo" type="profiloType" nillable="false"/>
+				<xs:element name="codice" type="tipigenerali:CodiceOperatoreType" nillable="false"/>
+			</xs:sequence>
+			<xs:attribute name="versione" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RicevutaModificaProfilo">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="framework:RispostaBase"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ModificaProgetto" nillable="false">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="idCartella" type="xs:long" nillable="false"/>
+				<xs:element name="progetto" type="progettoType" nillable="false"/>
+				<xs:element name="codice" type="tipigenerali:CodiceOperatoreType" nillable="false"/>
+			</xs:sequence>
+			<xs:attribute name="versione" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RicevutaModificaProgetto">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="framework:RispostaBase"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ModificaIntervento" nillable="false">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="idCartella" type="xs:long"/>
+				<xs:element name="idIntervento" type="xs:long"/>
+				<xs:element name="intervento" type="interventoType" nillable="false"/>
+				<xs:element name="dataModifica" type="tipigenerali:DataType" nillable="false"/>
+				<xs:element name="codice" type="tipigenerali:CodiceOperatoreType" nillable="false"/>
+			</xs:sequence>
+			<xs:attribute name="versione" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RicevutaModificaIntervento">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="framework:RispostaBase"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ModificaDiario" nillable="false">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="idCartella" type="xs:long"/>
+				<xs:element name="idDiario" type="xs:long"/>
+				<xs:element name="diario" type="diarioType" nillable="false"/>
+				<xs:element name="dataModifica" type="tipigenerali:DataType" nillable="false"/>
+				<xs:element name="codice" type="tipigenerali:CodiceOperatoreType" nillable="false"/>
+			</xs:sequence>
+			<xs:attribute name="versione" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RicevutaModificaDiario">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="framework:RispostaBase"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ModificaPersonaRiferimento" nillable="false">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="idCartella" type="xs:long"/>
+				<xs:element name="idPersonaRiferimento" type="xs:long"/>
+				<xs:element name="personaRiferimento" type="personaRiferimentoType"/>
+				<xs:element name="dataModifica" type="tipigenerali:DataType" nillable="false"/>
+				<xs:element name="codice" type="tipigenerali:CodiceOperatoreType" nillable="false"/>
+			</xs:sequence>
+			<xs:attribute name="versione" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RicevutaPersonaRiferimento">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="framework:RispostaBase"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ChiudiCartella" nillable="false">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="idCartella" type="xs:long"/>
+				<xs:element name="motivo" type="xs:string"/>
+				<xs:element name="data" type="tipigenerali:DataType" nillable="false"/>
+				<xs:element name="note" type="tipigenerali:NoteType" nillable="false"/>
+				<xs:element name="codiceOperatore" type="tipigenerali:CodiceOperatoreType" nillable="false"/>
+			</xs:sequence>
+			<xs:attribute name="versione" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RicevutaChiudiCartella">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="framework:RispostaBase"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RiattivaCartella" nillable="false">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="idCartella" type="xs:long"/>
+				<xs:element name="codiceOperatore" type="tipigenerali:CodiceOperatoreType" nillable="false"/>
+			</xs:sequence>
+			<xs:attribute name="versione" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RicevutaRiattivaCartella">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="framework:RispostaBase"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="anagraficaType">
+		<xs:sequence>
+			<xs:element name="datiComuni" nillable="false">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="anagraficaBase" type="tipigenerali:AnagraficaBaseType" nillable="false"/>
+						<xs:element name="residenza">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="indirizzoResidenza" type="tipigenerali:IndirizzoType" nillable="false"/>
+									<xs:element name="tipologiaResidenza" type="xs:string" nillable="false"/>
+									<xs:element name="decorrenzaResidenza" type="xs:date" nillable="false" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="comuneCartella" type="xs:string" nillable="false"/>
+			<xs:element name="identificativo_sottostruttura_ssc"  type="xs:string" minOccurs="0"/>
+			<xs:element name="operatoreRiferimento" type="xs:string" nillable="false"/>
+			<xs:element name="dataModifica" type="tipigenerali:DataType" nillable="false"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="profiloType">
+		<xs:sequence>
+			<xs:element name="abilitazione" nillable="false">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="dataPresaInCarico" type="tipigenerali:DataType" nillable="false"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="datiPersonali" nillable="false">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="isee" type="tipigenerali:IseeType" nillable="false" minOccurs="0"/>
+						<xs:element name="certificatoL104" type="xs:string" nillable="true"/>
+						<xs:element name="demenzaCertificata" type="tipigenerali:SiNoType" nillable="false" minOccurs="0"/>
+						<xs:element name="disabilitaSensoriali" type="tipigenerali:SiNoType" nillable="false" minOccurs="0"/>
+						<xs:element name="statoInvalidita" type="xs:string" nillable="false" minOccurs="0"/>
+						<xs:element name="attesaInvalidita" type="tipigenerali:SiNoType" nillable="false" minOccurs="0"/>
+						<xs:element name="assegnoAccompagnamento" type="tipigenerali:SiNoType" nillable="true" minOccurs="0"/>
+						<xs:element name="attesaAccompagnamento" type="tipigenerali:SiNoType" nillable="true" minOccurs="0"/>
+						<xs:element name="provvedimentoGiudiziario" type="xs:string" nillable="true"/>
+						<xs:element name="tipoAssegno" type="xs:string" nillable="true" minOccurs="0"/>
+						<xs:element name="note" type="tipigenerali:NoteType" nillable="true" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="datiFamiliari" nillable="false">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="statoCivile" type="xs:string" nillable="false"/>
+						<xs:element name="nucleoFamiliare" type="xs:string" nillable="false"/>
+						<xs:element name="numerositaNucleoFam" type="xs:int" nillable="false"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="datiProfessionali" nillable="false">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="titoloStudio" type="xs:string" nillable="false"/>
+						<xs:element name="condizioneProfessionale" type="xs:string" nillable="false"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="domicilio" nillable="false" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="toponimo" type="tipigenerali:ToponimoType" nillable="false" minOccurs="0"/>
+						<xs:element name="telefono" type="xs:string" nillable="true" minOccurs="0"/>
+						<xs:element name="condizioneAbitativa" type="xs:string" nillable="true" minOccurs="0"/>
+						<xs:element name="idoneitaAbitazione" type="xs:string" nillable="true" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="dataModifica" type="tipigenerali:DataType" nillable="false"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="progettoType">
+		<xs:sequence>
+			<xs:element name="problematiche" type="problematicheType" nillable="false"/>
+			<xs:element name="risorse" type="tipigenerali:NoteType" nillable="false" minOccurs="0"/>
+			<xs:element name="note" type="tipigenerali:NoteType" nillable="false" minOccurs="0"/>
+			<xs:element name="dataModifica" type="tipigenerali:DataType" nillable="false"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="problematicheType">
+		<xs:sequence>
+			<xs:element name="macroproblematica" nillable="false" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="tipologiaMacroproblematica" type="xs:string" nillable="true"/>
+						<xs:element name="microproblematica" type="xs:string" nillable="false" maxOccurs="unbounded"/>
+						<xs:element name="noteAltro" type="tipigenerali:NoteType" nillable="true" minOccurs="0"/>
+						<xs:element name="rilevanzaObiettivi" type="tipigenerali:RilevanzaObiettiviType" nillable="true"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="interventoType">
+		<xs:sequence>
+			<xs:element name="dataApertura" type="tipigenerali:DataType" nillable="false"/>
+			<xs:element name="dataChiusura" type="tipigenerali:DataType" nillable="false" minOccurs="0"/>
+			<xs:element name="tipologiaIntervento" type="xs:string" nillable="true"/>
+			<xs:element name="dettaglio" type="xs:string" nillable="true"/>
+			<xs:element name="durataPrevista" type="xs:int" nillable="true"/>
+			<xs:element name="note" type="tipigenerali:NoteType" nillable="true" minOccurs="0"/>
+			<xs:element name="specificazione" nillable="false" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="economico" nillable="false">
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="fap" nillable="false">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="tipologiaInterventoFap" type="xs:string" nillable="false"/>
+												<xs:element name="dettaglioTipoIntervento" type="xs:string" nillable="false" minOccurs="0"/>
+												<xs:element name="punteggioKatz" type="xs:string" nillable="false" minOccurs="0"/>
+												<xs:element name="demenzaCertificata" type="tipigenerali:SiNoType" nillable="false"/>
+												<xs:element name="disabilitaSensoriale" type="tipigenerali:SiNoType" nillable="false"/>
+												<xs:element name="assegnoMensAutonomAPA" nillable="false" minOccurs="0">
+													<xs:simpleType>
+														<xs:restriction base="xs:decimal">
+															<xs:fractionDigits value="2"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:element>
+												<xs:element name="contributoMensAiutoFam" nillable="false" minOccurs="0">
+													<xs:simpleType>
+														<xs:restriction base="xs:decimal">
+															<xs:fractionDigits value="2"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:element>
+												<xs:element name="sostegnoMensVitaIndip" nillable="false" minOccurs="0">
+													<xs:simpleType>
+														<xs:restriction base="xs:decimal">
+															<xs:fractionDigits value="2"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:element>
+												<xs:element name="sostegnoMensProgSaluteMentale" nillable="false" minOccurs="0">
+													<xs:simpleType>
+														<xs:restriction base="xs:decimal">
+															<xs:fractionDigits value="2"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:element>
+												<xs:element name="isee" type="tipigenerali:IseeType" nillable="false" minOccurs="0"/>
+												<xs:element name="dataUVD" type="tipigenerali:DataType" nillable="false"/>
+												<xs:element name="durataMesiUVD" type="xs:int" nillable="false"/>
+												<xs:element name="nOreContratto" type="xs:int" nillable="false" minOccurs="0"/>
+												<xs:element name="contestualePresenzaAddetti" type="xs:string" nillable="false" minOccurs="0"/>
+												<xs:element name="assegnoAccompagnamento" type="tipigenerali:SiNoType"/>
+												<xs:element name="motivoChiusura" type="xs:string" nillable="false" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="fondoSolidarieta" nillable="false">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="isee" type="tipigenerali:IseeType" nillable="false" minOccurs="0"/>
+												<xs:element name="totaleErogato" nillable="false">
+													<xs:simpleType>
+														<xs:restriction base="xs:decimal">
+															<xs:fractionDigits value="2"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="domiciliare" nillable="false">
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="dettaglio" type="tipigenerali:DettaglioDomiciliareType" nillable="false"/>
+									<xs:element name="sad" type="SADType" nillable="false"/>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="residenziale" nillable="false">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="struttura" type="xs:string" nillable="true"/>
+									<xs:element name="codice_famiglia" type="xs:string" nillable="true"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="diarioType">
+		<xs:sequence>
+			<xs:element name="data" type="tipigenerali:DataType" nillable="false"/>
+			<xs:element name="note" type="tipigenerali:NoteType" nillable="true"/>
+			<xs:element name="tipo" type="xs:string" nillable="true"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="personaRiferimentoType">
+		<xs:sequence>
+			<xs:element name="datiBase" type="tipigenerali:AnagraficaBaseType" nillable="false"/>
+			<xs:element name="residenza" type="tipigenerali:IndirizzoType"/>
+			<xs:element name="telefono" type="xs:string" nillable="false" minOccurs="0"/>
+			<xs:element name="tipoRelazione" type="xs:string" nillable="false"/>
+			<xs:element name="appartenenzaNucleoFam" type="tipigenerali:SiNoType" nillable="false"/>
+			<xs:element name="note" type="tipigenerali:NoteType" nillable="false" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DettaglioMacrointerventoSADType">
+		<xs:sequence>
+			<xs:element name="tipologiaMacroInterventoSad" type="xs:string" nillable="false"/>
+			<xs:element name="arcoTemporale" type="xs:string" nillable="false"/>
+			<xs:element name="frequenza" type="xs:int" nillable="true"/>
+			<xs:element name="numeroVolte" type="xs:int" nillable="true"/>
+			<xs:element name="erogatore" type="xs:string" nillable="true"/>
+			<xs:element name="totOre" type="xs:int" nillable="true"/>
+			<xs:element name="totMin" type="xs:int" nillable="true"/>
+			<xs:element name="note" type="tipigenerali:NoteType" nillable="true"/>
+			<xs:element name="listaMicrointerventiCollegatiAttivi" type="listaMicroInterventiSADType" nillable="false"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="listaMicroInterventiSADType">
+		<xs:sequence>
+			<xs:element name="microinterventoSad" type="DettaglioMicrointerventoSADType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DettaglioMicrointerventoSADType">
+		<xs:sequence>
+			<xs:element name="tipologiaMicroInterventoSad" type="xs:string" nillable="false"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SADType">
+		<xs:sequence>
+			<xs:element name="obiettivi" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="macrointerventoSad" type="DettaglioMacrointerventoSADType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE suite SYSTEM "http://testng.org/testng-2.4.dtd">  -->
+<!DOCTYPE xml>
+<suite name="Suite1" verbose="1">
+	<test name="DetermineFormTest">
+		<classes>
+			<class name="it.wego.welfarego.determine.servlet.DetermineFormTest" />
+		</classes>
+	</test>
+</suite>
