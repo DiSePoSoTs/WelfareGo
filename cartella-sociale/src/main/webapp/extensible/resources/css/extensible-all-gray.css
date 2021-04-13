@@ -1,0 +1,178 @@
+/*!
+ * Styles for gray skin for Extensible Calendar Pro 1.5.0
+ * Author: Gabriel Sidler, sidler@teamup.com
+ */
+ 
+ 
+/* Calendar view toolbar background */
+.x-toolbar-default, .x-nlg .x-toolbar-default  {
+    background:url(../images/gray-theme/ext/toolbar-bg.gif) repeat-x scroll 0 0 transparent !important;
+}
+
+
+/*
+ * App west (date picker and resource list)
+ */
+#app-west {
+    border-right: 1px solid #D0D0D0 !important;
+}
+/* Background color below calendar list */
+#app-west .x-panel-body {
+    background: #F5F5F5 !important;
+}
+
+
+
+/*
+ * Calendar list
+ */
+/* Calendar list header background */
+.x-calendar-list .x-panel-header {
+    background:url(../images/gray-theme/ext/toolbar-bg.gif) repeat-x scroll 0 0 transparent !important;
+}
+
+
+
+/*
+ * Date picker
+ */
+/* Border */
+ .ext-cal-nav-picker {
+    border-color: #D0D0D0;
+}
+/* Date picker header background */
+.ext-cal-nav-picker .x-datepicker-header {
+    background:url(../images/gray-theme/ext/toolbar-bg.gif) repeat-x scroll 0 0 transparent !important;
+}
+/* Date picker header text: Set header text color used by Ext JS. All headers should use the same font. Why was this overriden in Extensible? */
+.ext-cal-nav-picker .x-datepicker-month .x-btn-inner {
+	font-family: tahoma,arial,verdana,sans-serif;
+}
+/* Arrows next and previous in header */
+.ext-cal-nav-picker .x-datepicker-prev a {
+    background-image: url(../images/gray-theme/ext/page-prev.gif);
+}
+.ext-cal-nav-picker .x-datepicker-next a {
+    background-image: url(../images/gray-theme/ext/page-next.gif);
+}
+/* Sheet with calendar dates */
+.ext-cal-nav-picker .x-datepicker-inner {
+    border-top: 1px solid #D0D0D0;
+}
+/* Weekday header */
+.ext-cal-nav-picker .x-datepicker-inner th {
+    border-bottom: 1px solid #D0D0D0;
+}
+.ext-cal-nav-picker .x-datepicker-footer {
+    background: url(../images/gray-theme/ext/toolbar-bg.gif) repeat-x scroll bottom left #D3E1F1;
+    border-top: 1px solid #E8E8E8;
+}
+.ext-cal-nav-picker .x-monthpicker {
+    border-color: #D0D0D0;
+}
+.ext-cal-nav-picker .x-monthpicker-buttons {
+    background: url(../images/gray-theme/ext/toolbar-bg.gif) repeat-x scroll bottom left #D3E1F1;
+}
+
+
+
+/*
+ * Calender list
+ */
+.x-calendar-list {
+    border-bottom: 1px solid #D0D0D0;
+}
+
+
+
+/*
+ * Daily, weekly and monthly calendar views.
+ */
+/* Background of cells on weekend days */
+.ext-cal-day-we {
+    background: #F6F6F6;
+}
+/* Background of cells on current day */
+.ext-cal-day-today {
+    background: #FFF4BF;
+}
+/* Background of cells before and after the current month */
+.ext-cal-day-prev,
+.ext-cal-day-next {
+    background: #EFEFEF;
+}
+
+
+
+/*
+ * Monthly calendar view
+ */
+/* Left border of header with weekday names. */
+.ext-cal-month-hd .ext-cal-hd-day {
+    border-left: 1px solid #D0D0D0;
+}
+
+.ext-cal-month-hd .ext-cal-hd-days-tbl {
+    border-top: 1px solid #D0D0D0;
+}
+/* Month view week link boxes */
+.ext-cal-monthview .ext-cal-week-link,
+.ext-cal-monthview .ext-cal-week-link-hd {
+    border-top: 1px solid #D0D0D0;
+}
+td.ext-cal-dtitle {
+    border-top:1px solid #D0D0D0;
+}
+/* Line between weeklink margin and dayly cells */
+.ext-cal-week-links .ext-cal-day-first {
+    border-left: 1px solid #D0D0D0;
+}
+
+
+/*
+ * Daily view and weekly calendar views.
+ */
+/* Calender view header for weekly view and daily view. */
+.ext-cal-dayview .ext-cal-hd-days-tbl {
+    background-color: #EFEFEF !important;
+}
+/* Hour column on daily view and weekly view. */
+.ext-cal-day-times {
+    background-color: #FFFBDD; /* #FFFBE8 */
+}
+/* Text color of daily view header cells. */
+td.ext-cal-dtitle {
+    color: #B0B0B0;
+}
+/* Border colors of header cell of daily view and weekly view. */
+.ext-cal-dayview .ext-cal-bg-tbl {
+    border-bottom: 1px solid #D0D0D0;
+    border-right: 1px solid #D0D0D0;
+}
+td.ext-cal-dtitle-first {
+    border-top: 1px solid #D0D0D0;
+}
+.ext-cal-day {
+    border-left: 1px solid #D0D0D0;
+    cursor: pointer;
+}
+
+
+
+/*
+ * Event details view
+*/
+/* Header */
+.ext-evt-edit-form .x-panel-header {
+    padding: 6px 4px 5px 5px !important; /* Needed to enforce toolbar height of event details view to be identical as toolbar height of date picker. */
+    background:url(../images/gray-theme/ext/toolbar-bg.gif) repeat-x scroll 0 0 transparent !important;
+}
+/* Set header color same as other headers */
+.ext-evt-edit-form .x-panel-header-text {
+    color: #555555;
+}
+/* Footer toolbar background */
+.ext-evt-edit-form .x-toolbar-footer {
+    background: none repeat scroll 0 0 #E8E8E8;
+}
+

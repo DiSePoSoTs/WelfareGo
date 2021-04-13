@@ -1,0 +1,30 @@
+Ext.define('wcs.model.RisultatiRicercaModel', {
+    extend: 'Ext.data.Model',
+    fields: [
+        'codAnag',
+        'tipoAnagrafe',
+        'relazione',
+        'cognome',
+        'nome',
+        {name:'dataNascita',type:'date'},
+        'cancellato',
+        'desComuneResidenza',
+        'codComuneResidenza',
+        'desViaResidenza',
+        'codViaResidenza',
+        'codiceFiscale',
+        'nomeConiuge',
+        'uot',
+        'sesso',
+        {name:'dataMorte',type:'date'},
+        'comuneNascita',
+        'cittadinanza',
+        'dataC',
+        'statoCivile',
+        'capResidenza',
+        'provinciaResidenza',
+        'codAnagComunale',
+        'posizioneAnagrafica',
+        'iban'
+    ]
+});

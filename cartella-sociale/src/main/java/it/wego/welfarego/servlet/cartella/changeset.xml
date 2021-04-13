@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<change-set xmlns='http://drools.org/drools-5.0/change-set'
+             xmlns:xs='http://www.w3.org/2001/XMLSchema-instance'
+             xs:schemaLocation='http://drools.org/drools-5.0/change-set.xsd http://anonsvn.jboss.org/repos/labs/labs/jbossrules/trunk/drools-api/src/main/resources/change-set-1.0.0.xsd' >
+	<add>
+		<!--
+		<resource
+			source='http://intalio.wego.it:16080/drools-guvnor/org.drools.guvnor.Guvnor/package/BlackRat/snapshot.drl'
+			type='DRL'
+			basicAuthentication="enabled"
+			username="username"
+			password="password"
+		/>
+		-->
+		<resource
+			source='http://intalio.wego.it:16080/drools-guvnor/org.drools.guvnor.Guvnor/package/welfarego/snapshot.drl'
+			type='DRL'
+			basicAuthentication="enabled"
+			username="username"
+			password="password"
+		/>
+	</add>
+</change-set>
