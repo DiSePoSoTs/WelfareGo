@@ -1,6 +1,7 @@
 .classpath
 .project
 .settings
+.properties
 .tern-project
 **/target/**
 cartella-sociale/**/webapp/ext/
