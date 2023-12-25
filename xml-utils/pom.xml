@@ -45,6 +45,21 @@
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.xml.soap</artifactId>
+			<version>10.0-b28</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.xml.ws</artifactId>
+			<version>3.0-b71</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.xml.bind</artifactId>
+			<version>3.0-Preview-b47b</version>
+		</dependency>
 	</dependencies>
 	<licenses>
 		<license>

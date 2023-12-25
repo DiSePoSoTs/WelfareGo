@@ -7,7 +7,7 @@ package it.wego.welfarego.persistence.entities;
 import com.google.common.base.Objects;
 import com.google.common.base.Strings;
 import com.google.common.collect.Maps;
-import it.wego.extjs.json.JsonBuilder;
+import groovy.json.JsonBuilder;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Collections;
@@ -235,30 +235,30 @@ public class UniqueTasklist implements Serializable {
 		return "it.wego.welfarego.persistence.entities.UniqueTasklist[id=" + id + "]";
 	}
 
-	public @Nullable String getExtraParameterFromCampoFlow8(String key) {
-		return getExtraParametersFromCampoFlow8().get(key);
-	}
+//	public @Nullable String getExtraParameterFromCampoFlow8(String key) {
+//		return getExtraParametersFromCampoFlow8().get(key);
+//	}
+//
+//	public Map<String, String> getExtraParametersFromCampoFlow8() {
+//		if (Strings.isNullOrEmpty(campoFlow8)) {
+//			return Collections.emptyMap();
+//		} else {
+//			try {
+//				return JsonBuilder.getGson().fromJson(campoFlow8, JsonBuilder.MAP_OF_STRINGS);
+//			} catch (Exception ex) {
+//				LoggerFactory.getLogger(this.getClass()).warn("", ex);
+//				return Collections.emptyMap();
+//			}
+//		}
+//	}
 
-	public Map<String, String> getExtraParametersFromCampoFlow8() {
-		if (Strings.isNullOrEmpty(campoFlow8)) {
-			return Collections.emptyMap();
-		} else {
-			try {
-				return JsonBuilder.getGson().fromJson(campoFlow8, JsonBuilder.MAP_OF_STRINGS);
-			} catch (Exception ex) {
-				LoggerFactory.getLogger(this.getClass()).warn("", ex);
-				return Collections.emptyMap();
-			}
-		}
-	}
-
-	public void putExtraParameterInCampoFlow8(String key, @Nullable String value) {
-		Map<String, String> map = Maps.newHashMap(getExtraParametersFromCampoFlow8());
-		if (value == null) {
-			map.remove(key);
-		} else {
-			map.put(key, value);
-		}
-		campoFlow8 = JsonBuilder.getGson().toJson(map);
-	}
+//	public void putExtraParameterInCampoFlow8(String key, @Nullable String value) {
+//		Map<String, String> map = Maps.newHashMap(getExtraParametersFromCampoFlow8());
+//		if (value == null) {
+//			map.remove(key);
+//		} else {
+//			map.put(key, value);
+//		}
+//		campoFlow8 = JsonBuilder.getGson().toJson(map);
+//	}
 }
