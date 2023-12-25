@@ -38,7 +38,7 @@ public class RicevutaDiario
     protected Long idDiario;
 
     /**
-     * Recupera il valore della propriet‡ idDiario.
+     * Recupera il valore della propriet√† idDiario.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class RicevutaDiario
     }
 
     /**
-     * Imposta il valore della propriet‡ idDiario.
+     * Imposta il valore della propriet√† idDiario.
      * 
      * @param value
      *     allowed object is

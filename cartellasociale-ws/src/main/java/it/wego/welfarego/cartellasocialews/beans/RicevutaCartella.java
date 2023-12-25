@@ -38,7 +38,7 @@ public class RicevutaCartella
     protected Long idCartella;
 
     /**
-     * Recupera il valore della propriet‡ idCartella.
+     * Recupera il valore della propriet√† idCartella.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class RicevutaCartella
     }
 
     /**
-     * Imposta il valore della propriet‡ idCartella.
+     * Imposta il valore della propriet√† idCartella.
      * 
      * @param value
      *     allowed object is

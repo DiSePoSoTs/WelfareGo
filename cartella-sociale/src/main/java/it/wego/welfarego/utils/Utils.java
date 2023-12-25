@@ -7,8 +7,8 @@ package it.wego.welfarego.utils;
 import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.UserLocalServiceUtil;
-import it.wego.welfarego.intalio.WelfareGoIntalioManager;
-import it.wego.welfarego.intalio.WelfaregoProcessBean;
+import it.wego.unique.intalio.IntalioManager;
+//import it.wego.unique.intalio.ProcessBean;
 import it.wego.welfarego.persistence.entities.Parametri;
 import it.wego.welfarego.persistence.dao.UtentiDao;
 import it.wego.welfarego.persistence.entities.Pai;
@@ -35,13 +35,13 @@ public class Utils {
      * @param codTmpl
      * @param desDoc
      * @return
-     * @deprecated use WelfareGoIntalioManager.getWelfaregoProcessBean()
+     * @deprecated use IntalioManager.getWelfaregoProcessBean()
      */
-    @Deprecated
-    public static WelfaregoProcessBean getWelfareGoIntalioManager(Pai pai, PaiIntervento intervento,
-            String codTmpl, String desDoc) {
-        return WelfareGoIntalioManager.getWelfaregoProcessBean(pai, intervento, codTmpl, desDoc);
-    }
+//    @Deprecated
+//    public static ProcessBean getWelfareGoIntalioManager(Pai pai, PaiIntervento intervento,
+//            String codTmpl, String desDoc) {
+//        return IntalioManager.getProcessBean(pai, intervento, codTmpl, desDoc);
+//    }
 
     public User getUser(HttpSession session) {
         User utenteConnesso = null;

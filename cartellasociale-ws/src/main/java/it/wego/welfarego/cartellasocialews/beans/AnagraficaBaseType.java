@@ -72,7 +72,7 @@ public class AnagraficaBaseType {
     protected NascitaType nascita;
 
     /**
-     * Recupera il valore della propriet‡ codiceNucleoFamiliare.
+     * Recupera il valore della propriet√† codiceNucleoFamiliare.
      * 
      * @return
      *     possible object is
@@ -84,7 +84,7 @@ public class AnagraficaBaseType {
     }
 
     /**
-     * Imposta il valore della propriet‡ codiceNucleoFamiliare.
+     * Imposta il valore della propriet√† codiceNucleoFamiliare.
      * 
      * @param value
      *     allowed object is
@@ -96,7 +96,7 @@ public class AnagraficaBaseType {
     }
 
     /**
-     * Recupera il valore della propriet‡ nome.
+     * Recupera il valore della propriet√† nome.
      * 
      * @return
      *     possible object is
@@ -108,7 +108,7 @@ public class AnagraficaBaseType {
     }
 
     /**
-     * Imposta il valore della propriet‡ nome.
+     * Imposta il valore della propriet√† nome.
      * 
      * @param value
      *     allowed object is
@@ -120,7 +120,7 @@ public class AnagraficaBaseType {
     }
 
     /**
-     * Recupera il valore della propriet‡ cognome.
+     * Recupera il valore della propriet√† cognome.
      * 
      * @return
      *     possible object is
@@ -132,7 +132,7 @@ public class AnagraficaBaseType {
     }
 
     /**
-     * Imposta il valore della propriet‡ cognome.
+     * Imposta il valore della propriet√† cognome.
      * 
      * @param value
      *     allowed object is
@@ -144,7 +144,7 @@ public class AnagraficaBaseType {
     }
 
     /**
-     * Recupera il valore della propriet‡ codiceFiscale.
+     * Recupera il valore della propriet√† codiceFiscale.
      * 
      * @return
      *     possible object is
@@ -156,7 +156,7 @@ public class AnagraficaBaseType {
     }
 
     /**
-     * Imposta il valore della propriet‡ codiceFiscale.
+     * Imposta il valore della propriet√† codiceFiscale.
      * 
      * @param value
      *     allowed object is
@@ -168,7 +168,7 @@ public class AnagraficaBaseType {
     }
 
     /**
-     * Recupera il valore della propriet‡ sesso.
+     * Recupera il valore della propriet√† sesso.
      * 
      * @return
      *     possible object is
@@ -180,7 +180,7 @@ public class AnagraficaBaseType {
     }
 
     /**
-     * Imposta il valore della propriet‡ sesso.
+     * Imposta il valore della propriet√† sesso.
      * 
      * @param value
      *     allowed object is
@@ -192,7 +192,7 @@ public class AnagraficaBaseType {
     }
 
     /**
-     * Recupera il valore della propriet‡ cittadinanza1.
+     * Recupera il valore della propriet√† cittadinanza1.
      * 
      */
     public long getCittadinanza1() {
@@ -200,7 +200,7 @@ public class AnagraficaBaseType {
     }
 
     /**
-     * Imposta il valore della propriet‡ cittadinanza1.
+     * Imposta il valore della propriet√† cittadinanza1.
      * 
      */
     public void setCittadinanza1(long value) {
@@ -208,7 +208,7 @@ public class AnagraficaBaseType {
     }
 
     /**
-     * Recupera il valore della propriet‡ cittadinanza2.
+     * Recupera il valore della propriet√† cittadinanza2.
      * 
      * @return
      *     possible object is
@@ -220,7 +220,7 @@ public class AnagraficaBaseType {
     }
 
     /**
-     * Imposta il valore della propriet‡ cittadinanza2.
+     * Imposta il valore della propriet√† cittadinanza2.
      * 
      * @param value
      *     allowed object is
@@ -232,7 +232,7 @@ public class AnagraficaBaseType {
     }
 
     /**
-     * Recupera il valore della propriet‡ nascita.
+     * Recupera il valore della propriet√† nascita.
      * 
      * @return
      *     possible object is
@@ -244,7 +244,7 @@ public class AnagraficaBaseType {
     }
 
     /**
-     * Imposta il valore della propriet‡ nascita.
+     * Imposta il valore della propriet√† nascita.
      * 
      * @param value
      *     allowed object is

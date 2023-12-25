@@ -36,7 +36,7 @@ public class DettaglioMicrointerventoSADType {
     protected String tipologiaMicroInterventoSad;
 
     /**
-     * Recupera il valore della propriet‡ tipologiaMicroInterventoSad.
+     * Recupera il valore della propriet√† tipologiaMicroInterventoSad.
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class DettaglioMicrointerventoSADType {
     }
 
     /**
-     * Imposta il valore della propriet‡ tipologiaMicroInterventoSad.
+     * Imposta il valore della propriet√† tipologiaMicroInterventoSad.
      * 
      * @param value
      *     allowed object is

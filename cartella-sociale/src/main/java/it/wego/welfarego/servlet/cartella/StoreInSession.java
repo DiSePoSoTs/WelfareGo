@@ -5,7 +5,7 @@
 package it.wego.welfarego.servlet.cartella;
 
 import com.google.gson.Gson;
-import it.wego.welfarego.insiel.cartellasociale.client.ProxyAuthenticator;
+//import it.wego.welfarego.insiel.cartellasociale.client.ProxyAuthenticator;
 import it.wego.welfarego.model.json.JSONGeneric;
 import it.wego.welfarego.persistence.entities.Parametri;
 import it.wego.welfarego.persistence.dao.UtentiDao;

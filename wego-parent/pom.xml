@@ -19,7 +19,7 @@
 		<module>../wegoutils</module>
 		<module>../db-dao</module>
 		<module>../xsd-pratica</module>
-<!-- 		<module>../welfarego-intalio-manager</module> -->
+ 		<module>../welfarego-intalio-manager</module>
 <!-- 		<module>../simia-ws</module> -->
 		<module>../extjs-addons</module>
 
@@ -51,7 +51,7 @@
 		<org.slf4j.version>1.7.26</org.slf4j.version>
 		<org.springframework.version>5.1.8.RELEASE</org.springframework.version>
 		<libs_dir>${project.parent.relativePath}</libs_dir>
-		<liferay.version>6.2</liferay.version>
+		<liferay.version>6.2.5</liferay.version>
 	</properties>
 
 	<dependencyManagement>

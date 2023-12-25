@@ -45,7 +45,7 @@ public class RiattivaCartella {
     protected String versione;
 
     /**
-     * Recupera il valore della propriet‡ idCartella.
+     * Recupera il valore della propriet√† idCartella.
      * 
      */
     public long getIdCartella() {
@@ -53,7 +53,7 @@ public class RiattivaCartella {
     }
 
     /**
-     * Imposta il valore della propriet‡ idCartella.
+     * Imposta il valore della propriet√† idCartella.
      * 
      */
     public void setIdCartella(long value) {
@@ -61,7 +61,7 @@ public class RiattivaCartella {
     }
 
     /**
-     * Recupera il valore della propriet‡ codiceOperatore.
+     * Recupera il valore della propriet√† codiceOperatore.
      * 
      * @return
      *     possible object is
@@ -73,7 +73,7 @@ public class RiattivaCartella {
     }
 
     /**
-     * Imposta il valore della propriet‡ codiceOperatore.
+     * Imposta il valore della propriet√† codiceOperatore.
      * 
      * @param value
      *     allowed object is
@@ -85,7 +85,7 @@ public class RiattivaCartella {
     }
 
     /**
-     * Recupera il valore della propriet‡ versione.
+     * Recupera il valore della propriet√† versione.
      * 
      * @return
      *     possible object is
@@ -97,7 +97,7 @@ public class RiattivaCartella {
     }
 
     /**
-     * Imposta il valore della propriet‡ versione.
+     * Imposta il valore della propriet√† versione.
      * 
      * @param value
      *     allowed object is

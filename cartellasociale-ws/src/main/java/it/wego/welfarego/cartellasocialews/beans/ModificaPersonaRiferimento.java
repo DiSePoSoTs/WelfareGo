@@ -59,7 +59,7 @@ public class ModificaPersonaRiferimento {
     protected String versione;
 
     /**
-     * Recupera il valore della propriet‡ idCartella.
+     * Recupera il valore della propriet√† idCartella.
      * 
      */
     public long getIdCartella() {
@@ -67,7 +67,7 @@ public class ModificaPersonaRiferimento {
     }
 
     /**
-     * Imposta il valore della propriet‡ idCartella.
+     * Imposta il valore della propriet√† idCartella.
      * 
      */
     public void setIdCartella(long value) {
@@ -75,7 +75,7 @@ public class ModificaPersonaRiferimento {
     }
 
     /**
-     * Recupera il valore della propriet‡ idPersonaRiferimento.
+     * Recupera il valore della propriet√† idPersonaRiferimento.
      * 
      */
     public long getIdPersonaRiferimento() {
@@ -83,7 +83,7 @@ public class ModificaPersonaRiferimento {
     }
 
     /**
-     * Imposta il valore della propriet‡ idPersonaRiferimento.
+     * Imposta il valore della propriet√† idPersonaRiferimento.
      * 
      */
     public void setIdPersonaRiferimento(long value) {
@@ -91,7 +91,7 @@ public class ModificaPersonaRiferimento {
     }
 
     /**
-     * Recupera il valore della propriet‡ personaRiferimento.
+     * Recupera il valore della propriet√† personaRiferimento.
      * 
      * @return
      *     possible object is
@@ -103,7 +103,7 @@ public class ModificaPersonaRiferimento {
     }
 
     /**
-     * Imposta il valore della propriet‡ personaRiferimento.
+     * Imposta il valore della propriet√† personaRiferimento.
      * 
      * @param value
      *     allowed object is
@@ -115,7 +115,7 @@ public class ModificaPersonaRiferimento {
     }
 
     /**
-     * Recupera il valore della propriet‡ dataModifica.
+     * Recupera il valore della propriet√† dataModifica.
      * 
      * @return
      *     possible object is
@@ -127,7 +127,7 @@ public class ModificaPersonaRiferimento {
     }
 
     /**
-     * Imposta il valore della propriet‡ dataModifica.
+     * Imposta il valore della propriet√† dataModifica.
      * 
      * @param value
      *     allowed object is
@@ -139,7 +139,7 @@ public class ModificaPersonaRiferimento {
     }
 
     /**
-     * Recupera il valore della propriet‡ codice.
+     * Recupera il valore della propriet√† codice.
      * 
      * @return
      *     possible object is
@@ -151,7 +151,7 @@ public class ModificaPersonaRiferimento {
     }
 
     /**
-     * Imposta il valore della propriet‡ codice.
+     * Imposta il valore della propriet√† codice.
      * 
      * @param value
      *     allowed object is
@@ -163,7 +163,7 @@ public class ModificaPersonaRiferimento {
     }
 
     /**
-     * Recupera il valore della propriet‡ versione.
+     * Recupera il valore della propriet√† versione.
      * 
      * @return
      *     possible object is
@@ -175,7 +175,7 @@ public class ModificaPersonaRiferimento {
     }
 
     /**
-     * Imposta il valore della propriet‡ versione.
+     * Imposta il valore della propriet√† versione.
      * 
      * @param value
      *     allowed object is

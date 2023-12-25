@@ -36,7 +36,7 @@ public class IndirizzoType {
     protected ToponimoType toponimo;
 
     /**
-     * Recupera il valore della propriet‡ toponimo.
+     * Recupera il valore della propriet√† toponimo.
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class IndirizzoType {
     }
 
     /**
-     * Imposta il valore della propriet‡ toponimo.
+     * Imposta il valore della propriet√† toponimo.
      * 
      * @param value
      *     allowed object is

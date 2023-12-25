@@ -78,7 +78,7 @@ public class AnagraficaType {
     protected XMLGregorianCalendar dataModifica;
 
     /**
-     * Recupera il valore della propriet‡ datiComuni.
+     * Recupera il valore della propriet√† datiComuni.
      * 
      * @return
      *     possible object is
@@ -90,7 +90,7 @@ public class AnagraficaType {
     }
 
     /**
-     * Imposta il valore della propriet‡ datiComuni.
+     * Imposta il valore della propriet√† datiComuni.
      * 
      * @param value
      *     allowed object is
@@ -102,7 +102,7 @@ public class AnagraficaType {
     }
 
     /**
-     * Recupera il valore della propriet‡ comuneCartella.
+     * Recupera il valore della propriet√† comuneCartella.
      * 
      * @return
      *     possible object is
@@ -114,7 +114,7 @@ public class AnagraficaType {
     }
 
     /**
-     * Imposta il valore della propriet‡ comuneCartella.
+     * Imposta il valore della propriet√† comuneCartella.
      * 
      * @param value
      *     allowed object is
@@ -126,7 +126,7 @@ public class AnagraficaType {
     }
 
     /**
-     * Recupera il valore della propriet‡ identificativoSottostrutturaSsc.
+     * Recupera il valore della propriet√† identificativoSottostrutturaSsc.
      * 
      * @return
      *     possible object is
@@ -138,7 +138,7 @@ public class AnagraficaType {
     }
 
     /**
-     * Imposta il valore della propriet‡ identificativoSottostrutturaSsc.
+     * Imposta il valore della propriet√† identificativoSottostrutturaSsc.
      * 
      * @param value
      *     allowed object is
@@ -150,7 +150,7 @@ public class AnagraficaType {
     }
 
     /**
-     * Recupera il valore della propriet‡ operatoreRiferimento.
+     * Recupera il valore della propriet√† operatoreRiferimento.
      * 
      * @return
      *     possible object is
@@ -162,7 +162,7 @@ public class AnagraficaType {
     }
 
     /**
-     * Imposta il valore della propriet‡ operatoreRiferimento.
+     * Imposta il valore della propriet√† operatoreRiferimento.
      * 
      * @param value
      *     allowed object is
@@ -174,7 +174,7 @@ public class AnagraficaType {
     }
 
     /**
-     * Recupera il valore della propriet‡ dataModifica.
+     * Recupera il valore della propriet√† dataModifica.
      * 
      * @return
      *     possible object is
@@ -186,7 +186,7 @@ public class AnagraficaType {
     }
 
     /**
-     * Imposta il valore della propriet‡ dataModifica.
+     * Imposta il valore della propriet√† dataModifica.
      * 
      * @param value
      *     allowed object is
@@ -243,7 +243,7 @@ public class AnagraficaType {
         protected AnagraficaType.DatiComuni.Residenza residenza;
 
         /**
-         * Recupera il valore della propriet‡ anagraficaBase.
+         * Recupera il valore della propriet√† anagraficaBase.
          * 
          * @return
          *     possible object is
@@ -255,7 +255,7 @@ public class AnagraficaType {
         }
 
         /**
-         * Imposta il valore della propriet‡ anagraficaBase.
+         * Imposta il valore della propriet√† anagraficaBase.
          * 
          * @param value
          *     allowed object is
@@ -267,7 +267,7 @@ public class AnagraficaType {
         }
 
         /**
-         * Recupera il valore della propriet‡ residenza.
+         * Recupera il valore della propriet√† residenza.
          * 
          * @return
          *     possible object is
@@ -279,7 +279,7 @@ public class AnagraficaType {
         }
 
         /**
-         * Imposta il valore della propriet‡ residenza.
+         * Imposta il valore della propriet√† residenza.
          * 
          * @param value
          *     allowed object is
@@ -328,7 +328,7 @@ public class AnagraficaType {
             protected XMLGregorianCalendar decorrenzaResidenza;
 
             /**
-             * Recupera il valore della propriet‡ indirizzoResidenza.
+             * Recupera il valore della propriet√† indirizzoResidenza.
              * 
              * @return
              *     possible object is
@@ -340,7 +340,7 @@ public class AnagraficaType {
             }
 
             /**
-             * Imposta il valore della propriet‡ indirizzoResidenza.
+             * Imposta il valore della propriet√† indirizzoResidenza.
              * 
              * @param value
              *     allowed object is
@@ -352,7 +352,7 @@ public class AnagraficaType {
             }
 
             /**
-             * Recupera il valore della propriet‡ tipologiaResidenza.
+             * Recupera il valore della propriet√† tipologiaResidenza.
              * 
              * @return
              *     possible object is
@@ -364,7 +364,7 @@ public class AnagraficaType {
             }
 
             /**
-             * Imposta il valore della propriet‡ tipologiaResidenza.
+             * Imposta il valore della propriet√† tipologiaResidenza.
              * 
              * @param value
              *     allowed object is
@@ -376,7 +376,7 @@ public class AnagraficaType {
             }
 
             /**
-             * Recupera il valore della propriet‡ decorrenzaResidenza.
+             * Recupera il valore della propriet√† decorrenzaResidenza.
              * 
              * @return
              *     possible object is
@@ -388,7 +388,7 @@ public class AnagraficaType {
             }
 
             /**
-             * Imposta il valore della propriet‡ decorrenzaResidenza.
+             * Imposta il valore della propriet√† decorrenzaResidenza.
              * 
              * @param value
              *     allowed object is

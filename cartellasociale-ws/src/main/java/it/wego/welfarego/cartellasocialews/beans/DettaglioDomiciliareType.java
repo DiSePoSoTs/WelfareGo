@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.XmlType;
 public class DettaglioDomiciliareType {
 
     protected Integer qtaMensili;
-    @XmlElementRef(name = "obiettivi", namespace = "http://tipigenerali.cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "obiettivi", namespace = "http://tipigenerali.cartellasociale.sanita.insiel.it", type = JAXBElement.class)
     protected JAXBElement<String> obiettivi;
-    @XmlElementRef(name = "erogatore", namespace = "http://tipigenerali.cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "erogatore", namespace = "http://tipigenerali.cartellasociale.sanita.insiel.it", type = JAXBElement.class)
     protected JAXBElement<String> erogatore;
 
     /**
-     * Recupera il valore della propriet‡ qtaMensili.
+     * Recupera il valore della propriet√† qtaMensili.
      * 
      * @return
      *     possible object is
@@ -56,7 +56,7 @@ public class DettaglioDomiciliareType {
     }
 
     /**
-     * Imposta il valore della propriet‡ qtaMensili.
+     * Imposta il valore della propriet√† qtaMensili.
      * 
      * @param value
      *     allowed object is
@@ -68,7 +68,7 @@ public class DettaglioDomiciliareType {
     }
 
     /**
-     * Recupera il valore della propriet‡ obiettivi.
+     * Recupera il valore della propriet√† obiettivi.
      * 
      * @return
      *     possible object is
@@ -80,7 +80,7 @@ public class DettaglioDomiciliareType {
     }
 
     /**
-     * Imposta il valore della propriet‡ obiettivi.
+     * Imposta il valore della propriet√† obiettivi.
      * 
      * @param value
      *     allowed object is
@@ -92,7 +92,7 @@ public class DettaglioDomiciliareType {
     }
 
     /**
-     * Recupera il valore della propriet‡ erogatore.
+     * Recupera il valore della propriet√† erogatore.
      * 
      * @return
      *     possible object is
@@ -104,7 +104,7 @@ public class DettaglioDomiciliareType {
     }
 
     /**
-     * Imposta il valore della propriet‡ erogatore.
+     * Imposta il valore della propriet√† erogatore.
      * 
      * @param value
      *     allowed object is

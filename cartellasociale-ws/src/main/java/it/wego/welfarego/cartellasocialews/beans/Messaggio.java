@@ -42,7 +42,7 @@ public class Messaggio {
     protected String descrizione;
 
     /**
-     * Recupera il valore della propriet‡ codice.
+     * Recupera il valore della propriet√† codice.
      * 
      * @return
      *     possible object is
@@ -54,7 +54,7 @@ public class Messaggio {
     }
 
     /**
-     * Imposta il valore della propriet‡ codice.
+     * Imposta il valore della propriet√† codice.
      * 
      * @param value
      *     allowed object is
@@ -66,7 +66,7 @@ public class Messaggio {
     }
 
     /**
-     * Recupera il valore della propriet‡ descrizione.
+     * Recupera il valore della propriet√† descrizione.
      * 
      * @return
      *     possible object is
@@ -78,7 +78,7 @@ public class Messaggio {
     }
 
     /**
-     * Imposta il valore della propriet‡ descrizione.
+     * Imposta il valore della propriet√† descrizione.
      * 
      * @param value
      *     allowed object is

@@ -44,7 +44,7 @@ public class ComuneType {
     protected String descrizione;
 
     /**
-     * Recupera il valore della propriet‡ codiceCatastale.
+     * Recupera il valore della propriet√† codiceCatastale.
      * 
      * @return
      *     possible object is
@@ -56,7 +56,7 @@ public class ComuneType {
     }
 
     /**
-     * Imposta il valore della propriet‡ codiceCatastale.
+     * Imposta il valore della propriet√† codiceCatastale.
      * 
      * @param value
      *     allowed object is
@@ -68,7 +68,7 @@ public class ComuneType {
     }
 
     /**
-     * Recupera il valore della propriet‡ codiceIstat.
+     * Recupera il valore della propriet√† codiceIstat.
      * 
      * @return
      *     possible object is
@@ -80,7 +80,7 @@ public class ComuneType {
     }
 
     /**
-     * Imposta il valore della propriet‡ codiceIstat.
+     * Imposta il valore della propriet√† codiceIstat.
      * 
      * @param value
      *     allowed object is
@@ -92,7 +92,7 @@ public class ComuneType {
     }
 
     /**
-     * Recupera il valore della propriet‡ descrizione.
+     * Recupera il valore della propriet√† descrizione.
      * 
      * @return
      *     possible object is
@@ -104,7 +104,7 @@ public class ComuneType {
     }
 
     /**
-     * Imposta il valore della propriet‡ descrizione.
+     * Imposta il valore della propriet√† descrizione.
      * 
      * @param value
      *     allowed object is

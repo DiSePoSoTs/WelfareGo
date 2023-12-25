@@ -44,7 +44,7 @@ public class Esito {
     protected String descrEsito;
 
     /**
-     * Recupera il valore della propriet‡ codEsito.
+     * Recupera il valore della propriet√† codEsito.
      * 
      * @return
      *     possible object is
@@ -56,7 +56,7 @@ public class Esito {
     }
 
     /**
-     * Imposta il valore della propriet‡ codEsito.
+     * Imposta il valore della propriet√† codEsito.
      * 
      * @param value
      *     allowed object is
@@ -68,7 +68,7 @@ public class Esito {
     }
 
     /**
-     * Recupera il valore della propriet‡ descrEsito.
+     * Recupera il valore della propriet√† descrEsito.
      * 
      * @return
      *     possible object is
@@ -80,7 +80,7 @@ public class Esito {
     }
 
     /**
-     * Imposta il valore della propriet‡ descrEsito.
+     * Imposta il valore della propriet√† descrEsito.
      * 
      * @param value
      *     allowed object is

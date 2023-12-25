@@ -54,7 +54,7 @@ public class InserimentoCartellaSociale {
     protected String versione;
 
     /**
-     * Recupera il valore della propriet‡ anagrafica.
+     * Recupera il valore della propriet√† anagrafica.
      * 
      * @return
      *     possible object is
@@ -66,7 +66,7 @@ public class InserimentoCartellaSociale {
     }
 
     /**
-     * Imposta il valore della propriet‡ anagrafica.
+     * Imposta il valore della propriet√† anagrafica.
      * 
      * @param value
      *     allowed object is
@@ -78,7 +78,7 @@ public class InserimentoCartellaSociale {
     }
 
     /**
-     * Recupera il valore della propriet‡ profilo.
+     * Recupera il valore della propriet√† profilo.
      * 
      * @return
      *     possible object is
@@ -90,7 +90,7 @@ public class InserimentoCartellaSociale {
     }
 
     /**
-     * Imposta il valore della propriet‡ profilo.
+     * Imposta il valore della propriet√† profilo.
      * 
      * @param value
      *     allowed object is
@@ -102,7 +102,7 @@ public class InserimentoCartellaSociale {
     }
 
     /**
-     * Recupera il valore della propriet‡ progetto.
+     * Recupera il valore della propriet√† progetto.
      * 
      * @return
      *     possible object is
@@ -114,7 +114,7 @@ public class InserimentoCartellaSociale {
     }
 
     /**
-     * Imposta il valore della propriet‡ progetto.
+     * Imposta il valore della propriet√† progetto.
      * 
      * @param value
      *     allowed object is
@@ -126,7 +126,7 @@ public class InserimentoCartellaSociale {
     }
 
     /**
-     * Recupera il valore della propriet‡ codice.
+     * Recupera il valore della propriet√† codice.
      * 
      * @return
      *     possible object is
@@ -138,7 +138,7 @@ public class InserimentoCartellaSociale {
     }
 
     /**
-     * Imposta il valore della propriet‡ codice.
+     * Imposta il valore della propriet√† codice.
      * 
      * @param value
      *     allowed object is
@@ -150,7 +150,7 @@ public class InserimentoCartellaSociale {
     }
 
     /**
-     * Recupera il valore della propriet‡ versione.
+     * Recupera il valore della propriet√† versione.
      * 
      * @return
      *     possible object is
@@ -162,7 +162,7 @@ public class InserimentoCartellaSociale {
     }
 
     /**
-     * Imposta il valore della propriet‡ versione.
+     * Imposta il valore della propriet√† versione.
      * 
      * @param value
      *     allowed object is

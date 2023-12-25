@@ -56,7 +56,7 @@ public class PersonaRiferimentoType {
     protected String note;
 
     /**
-     * Recupera il valore della propriet‡ datiBase.
+     * Recupera il valore della propriet√† datiBase.
      * 
      * @return
      *     possible object is
@@ -68,7 +68,7 @@ public class PersonaRiferimentoType {
     }
 
     /**
-     * Imposta il valore della propriet‡ datiBase.
+     * Imposta il valore della propriet√† datiBase.
      * 
      * @param value
      *     allowed object is
@@ -80,7 +80,7 @@ public class PersonaRiferimentoType {
     }
 
     /**
-     * Recupera il valore della propriet‡ residenza.
+     * Recupera il valore della propriet√† residenza.
      * 
      * @return
      *     possible object is
@@ -92,7 +92,7 @@ public class PersonaRiferimentoType {
     }
 
     /**
-     * Imposta il valore della propriet‡ residenza.
+     * Imposta il valore della propriet√† residenza.
      * 
      * @param value
      *     allowed object is
@@ -104,7 +104,7 @@ public class PersonaRiferimentoType {
     }
 
     /**
-     * Recupera il valore della propriet‡ telefono.
+     * Recupera il valore della propriet√† telefono.
      * 
      * @return
      *     possible object is
@@ -116,7 +116,7 @@ public class PersonaRiferimentoType {
     }
 
     /**
-     * Imposta il valore della propriet‡ telefono.
+     * Imposta il valore della propriet√† telefono.
      * 
      * @param value
      *     allowed object is
@@ -128,7 +128,7 @@ public class PersonaRiferimentoType {
     }
 
     /**
-     * Recupera il valore della propriet‡ tipoRelazione.
+     * Recupera il valore della propriet√† tipoRelazione.
      * 
      * @return
      *     possible object is
@@ -140,7 +140,7 @@ public class PersonaRiferimentoType {
     }
 
     /**
-     * Imposta il valore della propriet‡ tipoRelazione.
+     * Imposta il valore della propriet√† tipoRelazione.
      * 
      * @param value
      *     allowed object is
@@ -152,7 +152,7 @@ public class PersonaRiferimentoType {
     }
 
     /**
-     * Recupera il valore della propriet‡ appartenenzaNucleoFam.
+     * Recupera il valore della propriet√† appartenenzaNucleoFam.
      * 
      * @return
      *     possible object is
@@ -164,7 +164,7 @@ public class PersonaRiferimentoType {
     }
 
     /**
-     * Imposta il valore della propriet‡ appartenenzaNucleoFam.
+     * Imposta il valore della propriet√† appartenenzaNucleoFam.
      * 
      * @param value
      *     allowed object is
@@ -176,7 +176,7 @@ public class PersonaRiferimentoType {
     }
 
     /**
-     * Recupera il valore della propriet‡ note.
+     * Recupera il valore della propriet√† note.
      * 
      * @return
      *     possible object is
@@ -188,7 +188,7 @@ public class PersonaRiferimentoType {
     }
 
     /**
-     * Imposta il valore della propriet‡ note.
+     * Imposta il valore della propriet√† note.
      * 
      * @param value
      *     allowed object is

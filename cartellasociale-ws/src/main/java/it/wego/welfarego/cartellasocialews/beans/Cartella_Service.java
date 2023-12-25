@@ -43,7 +43,7 @@ public class Cartella_Service
     }
 
     public Cartella_Service(WebServiceFeature... features) {
-        super(__getWsdlLocation(), CARTELLA_QNAME, features);
+        super(__getWsdlLocation(), CARTELLA_QNAME);
     }
 
     public Cartella_Service(URL wsdlLocation) {
@@ -51,7 +51,7 @@ public class Cartella_Service
     }
 
     public Cartella_Service(URL wsdlLocation, WebServiceFeature... features) {
-        super(wsdlLocation, CARTELLA_QNAME, features);
+        super(wsdlLocation, CARTELLA_QNAME);
     }
 
     public Cartella_Service(URL wsdlLocation, QName serviceName) {
@@ -59,7 +59,7 @@ public class Cartella_Service
     }
 
     public Cartella_Service(URL wsdlLocation, QName serviceName, WebServiceFeature... features) {
-        super(wsdlLocation, serviceName, features);
+        super(wsdlLocation, serviceName);
     }
 
     /**

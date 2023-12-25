@@ -60,7 +60,7 @@ public class RispostaBase {
     protected List<Messaggio> avvisi;
 
     /**
-     * Recupera il valore della propriet‡ esito.
+     * Recupera il valore della propriet√† esito.
      * 
      * @return
      *     possible object is
@@ -72,7 +72,7 @@ public class RispostaBase {
     }
 
     /**
-     * Imposta il valore della propriet‡ esito.
+     * Imposta il valore della propriet√† esito.
      * 
      * @param value
      *     allowed object is

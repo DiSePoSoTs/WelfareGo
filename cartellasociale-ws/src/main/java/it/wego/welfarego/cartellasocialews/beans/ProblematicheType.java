@@ -117,13 +117,13 @@ public class ProblematicheType {
         protected String tipologiaMacroproblematica;
         @XmlElement(required = true)
         protected List<MicroProblematicaType> microproblematica;
-        @XmlElementRef(name = "noteAltro", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "noteAltro", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class)
         protected JAXBElement<String> noteAltro;
         @XmlElement(required = true, nillable = true)
         protected RilevanzaObiettiviType rilevanzaObiettivi;
 
         /**
-         * Recupera il valore della propriet‡ tipologiaMacroproblematica.
+         * Recupera il valore della propriet√† tipologiaMacroproblematica.
          * 
          * @return
          *     possible object is
@@ -135,7 +135,7 @@ public class ProblematicheType {
         }
 
         /**
-         * Imposta il valore della propriet‡ tipologiaMacroproblematica.
+         * Imposta il valore della propriet√† tipologiaMacroproblematica.
          * 
          * @param value
          *     allowed object is
@@ -176,7 +176,7 @@ public class ProblematicheType {
         }
 
         /**
-         * Recupera il valore della propriet‡ noteAltro.
+         * Recupera il valore della propriet√† noteAltro.
          * 
          * @return
          *     possible object is
@@ -188,7 +188,7 @@ public class ProblematicheType {
         }
 
         /**
-         * Imposta il valore della propriet‡ noteAltro.
+         * Imposta il valore della propriet√† noteAltro.
          * 
          * @param value
          *     allowed object is
@@ -200,7 +200,7 @@ public class ProblematicheType {
         }
 
         /**
-         * Recupera il valore della propriet‡ rilevanzaObiettivi.
+         * Recupera il valore della propriet√† rilevanzaObiettivi.
          * 
          * @return
          *     possible object is
@@ -212,7 +212,7 @@ public class ProblematicheType {
         }
 
         /**
-         * Imposta il valore della propriet‡ rilevanzaObiettivi.
+         * Imposta il valore della propriet√† rilevanzaObiettivi.
          * 
          * @param value
          *     allowed object is
