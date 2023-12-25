@@ -59,7 +59,7 @@ public class ProvinciaServlet extends JsonServlet {
             }
         }
     }
-    private final Function<Provincia, Map<String,Object>> provinciaTransformer = new JsonMapTransformer<Provincia>() {
+    private final Function<Provincia, Map> provinciaTransformer = new JsonMapTransformer<Provincia>() {
         @Override
         public void transformToMap(Provincia provincia) {
             put("codProvincia", provincia.getProvinciaPK().getCodProv());

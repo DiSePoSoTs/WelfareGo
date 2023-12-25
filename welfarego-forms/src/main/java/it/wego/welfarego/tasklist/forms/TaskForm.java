@@ -28,7 +28,7 @@ public class TaskForm extends AbstractStoreListener {
 
     private final static Map<String, String> conditionsMap;
     private static final String AUTO_SEARCH = "AUTO";
-    private static final Function<UniqueTasklist, Map<String,Object>> taskTransformerFunction = new JsonMapTransformer<UniqueTasklist>() {
+    private static final Function<UniqueTasklist, Map> taskTransformerFunction = new JsonMapTransformer<UniqueTasklist>() {
         @Override
         public void transformToMap(UniqueTasklist task) {
             Pai paiTask = task.getCodPai();
@@ -70,7 +70,7 @@ public class TaskForm extends AbstractStoreListener {
             put("timestamp", task.getTsCreazione() == null ? null : task.getTsCreazione().getTime() / 1000);
         }
     };
-    private static final Function<Appuntamento, Map<String,Object>> appTransformerFunction = new JsonMapTransformer<Appuntamento>() {
+    private static final Function<Appuntamento, Map> appTransformerFunction = new JsonMapTransformer<Appuntamento>() {
         @Override
         public void transformToMap(Appuntamento appuntamento) {
             Pai paiTask = appuntamento.getCodPai();

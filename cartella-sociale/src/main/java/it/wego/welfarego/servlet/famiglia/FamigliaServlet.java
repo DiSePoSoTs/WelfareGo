@@ -117,8 +117,7 @@ public class FamigliaServlet extends JsonServlet {
 				json.setMessage("Operazione eseguita correttamente");
 				return json;
 			} else if (Objects.equal(action, "read")) {
-				Function<VistaAnagrafe, Map<String,Object>> vistaAnagrafeSerializer = FamigliaSerializer
-						.getVistaAnagrafeSerializer(em);
+				Function<VistaAnagrafe, Map> vistaAnagrafeSerializer = FamigliaSerializer.getVistaAnagrafeSerializer(em);
 				JSONFamiglia json = new JSONFamiglia();
 				if (type.equals("anagrafica")) {
 
@@ -151,7 +150,7 @@ public class FamigliaServlet extends JsonServlet {
 				return json;
 			} else if (Objects.equal(action, "readForm")) {
 				Map<String,Object> map = null;
-				Function<VistaAnagrafe, Map<String,Object>> vistaAnagrafeSerializer = FamigliaSerializer.getVistaAnagrafeSerializer(em);
+				Function<VistaAnagrafe, Map> vistaAnagrafeSerializer = FamigliaSerializer.getVistaAnagrafeSerializer(em);
 				if (request.getParameter("codAnagFamiliare") != null) {
 					int codAnagFamiliare = Integer.valueOf(request.getParameter("codAnagFamiliare"));
 					AnagrafeSocDao dao = new AnagrafeSocDao(em);
@@ -228,11 +227,11 @@ public class FamigliaServlet extends JsonServlet {
 		}
 	}
 
-	private List getNucleo_familiare_anagrafe_comunale(Integer codAna, EntityManager em, Function<VistaAnagrafe, Map<String,Object>> vistaAnagrafeSerializer) {
+	private List getNucleo_familiare_anagrafe_comunale(Integer codAna, EntityManager em, Function<VistaAnagrafe, Map> vistaAnagrafeSerializer) {
 		AnagrafeFamigliaService anagrafeFamigliaService = new AnagrafeFamigliaService();
 		List<VistaAnagrafe> famigliareAnagrafeComunale = anagrafeFamigliaService.getNucleo_familiare_anagrafe_comunale(em, codAna);
 
-		Iterable<Map<String,Object>> transform = Iterables.transform(famigliareAnagrafeComunale, vistaAnagrafeSerializer);
+		Iterable<Map> transform = Iterables.transform(famigliareAnagrafeComunale, vistaAnagrafeSerializer);
 		return Lists.newArrayList(transform);
 	}
 

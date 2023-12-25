@@ -18,6 +18,7 @@ import it.wego.unique.intalio.IntalioManager;
 import it.wego.unique.intalio.processmanagement.TInstanceInfo;
 import it.wego.welfarego.cartellasocialews.CartellaSocialeWsClient;
 import it.wego.welfarego.dto.InterventoDto;
+import it.wego.welfarego.intalio.WelfareGoIntalioManager;
 import it.wego.welfarego.model.CivilmenteObbligatoBean;
 import it.wego.welfarego.model.ContribuzioneBean;
 import it.wego.welfarego.model.CronologiaInterventoBean;
@@ -635,14 +636,14 @@ public class InterventiServlet extends JsonServlet {
             for(UniqueTasklist task : listaTask){
                 if(!task.getTaskid().equals(UniqueTasklist.STANDALONE_TASK_ID)){
 
-                    IntalioManager welfareGoIntalioManager = new IntalioManager();
+                    WelfareGoIntalioManager welfareGoIntalioManager = new WelfareGoIntalioManager();
                     welfareGoIntalioManager.setProperty(IntalioManager.AUTHENTICATION_TOKEN, WelfaregoUtils.getConfig(IntalioManager.AUTHENTICATION_TOKEN));
                     welfareGoIntalioManager.setProperty(IntalioManager.AUTHENTICATION_URL, WelfaregoUtils.getConfig("PROPERTY_AUTHENTICATION_URL"));
                     welfareGoIntalioManager.setProperty(IntalioManager.TMS_URL, WelfaregoUtils.getConfig("PROPERTY_TMS_URL"));
                     welfareGoIntalioManager.setProperty(IntalioManager.COMPLETE_TASK_URL, WelfaregoUtils.getConfig("PROPERTY_COMPLETE_TASK_URL"));
 
                     welfareGoIntalioManager.setProperty(IntalioManager.INTALIO_URL,WelfaregoUtils.getConfig("PROPERTY_INTALIO_URL") );
-                    welfareGoIntalioManager.setProperty(IntalioManager.START_PROCESS_URL, WelfaregoUtils.getConfig("PROPERTY_START_PROCESS_URL"));
+                    welfareGoIntalioManager.setProperty(WelfareGoIntalioManager.START_PROCESS_URL, WelfaregoUtils.getConfig("PROPERTY_START_PROCESS_URL"));
                 	
                     TInstanceInfo instanceInfo =  welfareGoIntalioManager.getInstanceByTaskId(task.getTaskid());
                     welfareGoIntalioManager.getInstanceManagementService().terminate(Long.valueOf(instanceInfo.getIid()).longValue());
@@ -1033,14 +1034,14 @@ public class InterventiServlet extends JsonServlet {
         {
             if (!task.getTaskid().equals(UniqueTasklist.STANDALONE_TASK_ID))
             {
-                IntalioManager welfareGoIntalioManager = new IntalioManager();
+                WelfareGoIntalioManager welfareGoIntalioManager = new WelfareGoIntalioManager();
                 welfareGoIntalioManager.setProperty(IntalioManager.AUTHENTICATION_TOKEN, WelfaregoUtils.getConfig(IntalioManager.AUTHENTICATION_TOKEN));
                 welfareGoIntalioManager.setProperty(IntalioManager.AUTHENTICATION_URL, WelfaregoUtils.getConfig("PROPERTY_AUTHENTICATION_URL"));
                 welfareGoIntalioManager.setProperty(IntalioManager.TMS_URL, WelfaregoUtils.getConfig("PROPERTY_TMS_URL"));
                 welfareGoIntalioManager.setProperty(IntalioManager.COMPLETE_TASK_URL, WelfaregoUtils.getConfig("PROPERTY_COMPLETE_TASK_URL"));
 
                 welfareGoIntalioManager.setProperty(IntalioManager.INTALIO_URL,WelfaregoUtils.getConfig("PROPERTY_INTALIO_URL") );
-                welfareGoIntalioManager.setProperty(IntalioManager.START_PROCESS_URL, WelfaregoUtils.getConfig("PROPERTY_START_PROCESS_URL"));
+                welfareGoIntalioManager.setProperty(WelfareGoIntalioManager.START_PROCESS_URL, WelfaregoUtils.getConfig("PROPERTY_START_PROCESS_URL"));
             	
                 TInstanceInfo instanceInfo = welfareGoIntalioManager.getInstanceByTaskId(task.getTaskid());
                 welfareGoIntalioManager.getInstanceManagementService().terminate(Long.valueOf(instanceInfo.getIid()).longValue());

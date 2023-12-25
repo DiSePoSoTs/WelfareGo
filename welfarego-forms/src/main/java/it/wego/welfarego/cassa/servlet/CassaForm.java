@@ -96,7 +96,7 @@ public class CassaForm extends AbstractForm implements AbstractForm.Loadable, Ab
 	 
 	 
 	 @SuppressWarnings("rawtypes")
-	private static final Function<PaiIntervento, Map<String,Object>> interventoTransformerFunction = new JsonMapTransformer<PaiIntervento>() {
+	private static final Function<PaiIntervento, Map> interventoTransformerFunction = new JsonMapTransformer<PaiIntervento>() {
 	        @Override
 	        public void transformToMap(PaiIntervento bean ) {
 	           put("pai",bean.getPai().getCodPai());
@@ -112,7 +112,7 @@ public class CassaForm extends AbstractForm implements AbstractForm.Loadable, Ab
 	    };
 	    
 	    @SuppressWarnings("rawtypes")
-		private static final Function<LogCassa, Map<String,Object>> logcassaTransformerFunction = new JsonMapTransformer<LogCassa>() {
+		private static final Function<LogCassa, Map> logcassaTransformerFunction = new JsonMapTransformer<LogCassa>() {
 	        @Override
 	        public void transformToMap(LogCassa bean ) {
 	          put("id",bean.getId());

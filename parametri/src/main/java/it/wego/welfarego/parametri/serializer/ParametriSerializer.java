@@ -40,7 +40,7 @@ public class ParametriSerializer extends PersistenceAdapter {
 
     private static Gson gson = new Gson();
     
-    private static final Function<ParametriIndata, Map<String, Object>> PARAMETRI_INDATA_TO_GSON_FUNCTION = new JsonMapTransformer<ParametriIndata>() {
+    private static final Function<ParametriIndata, Map> PARAMETRI_INDATA_TO_GSON_FUNCTION = new JsonMapTransformer<ParametriIndata>() {
         @Override
         public void transformToMap(ParametriIndata p) {
             putRecord(StringConversion.escapeHtmlString(p.getDesParam()), p.getIdParamIndata().toString());
@@ -48,14 +48,14 @@ public class ParametriSerializer extends PersistenceAdapter {
         }
     };
     
-    private static final Function<Utenti, Map<String,Object>> UTENTI_TO_GSON_FUNCTION = new JsonMapTransformer<Utenti>() {
+    private static final Function<Utenti, Map> UTENTI_TO_GSON_FUNCTION = new JsonMapTransformer<Utenti>() {
         @Override
         public void transformToMap(Utenti u) {
             putRecord(u.getCognome() + " " + u.getNome(), u.getCodUte().toString());
         }
     };
 	
-	private static final Function<Associazione, Map<String,Object>> ASSOCIAZIONI_TO_GSON_FUNCTION = new JsonMapTransformer<Associazione>()
+	private static final Function<Associazione, Map> ASSOCIAZIONI_TO_GSON_FUNCTION = new JsonMapTransformer<Associazione>()
 	{
 		@Override
 		public void transformToMap(Associazione ass)
@@ -74,7 +74,7 @@ public class ParametriSerializer extends PersistenceAdapter {
         return gson.toJson(Lists.transform(new UtentiDao(getEntityManager()).findByTipologia(tipoUtente), UTENTI_TO_GSON_FUNCTION));
     }
     
-    private static final Function<Template, Map<String,Object>> templatesToGsonFunction = new JsonMapTransformer<Template>() {
+    private static final Function<Template, Map> templatesToGsonFunction = new JsonMapTransformer<Template>() {
         @Override
         public void transformToMap(Template u) {
             putRecord(u.getDesTmpl(), u.getCodTmpl().toString());
@@ -90,7 +90,7 @@ public class ParametriSerializer extends PersistenceAdapter {
                 Collections.singleton(JsonMapTransformer.createRecord("[ nessun template ]", "null")))));
     }
     
-    private static final Function<ListaAttesa, Map<String,Object>> listeAttesaToGsonFunction = new JsonMapTransformer<ListaAttesa>() {
+    private static final Function<ListaAttesa, Map> listeAttesaToGsonFunction = new JsonMapTransformer<ListaAttesa>() {
     
     	@Override
         public void transformToMap(ListaAttesa u) {
@@ -102,7 +102,7 @@ public class ParametriSerializer extends PersistenceAdapter {
         return gson.toJson(Lists.transform(new ListaAttesaDao(getEntityManager()).findAll(), listeAttesaToGsonFunction));
     }
 
-    private static final Function<TipologiaParametri, Map<String,Object>> tipologieParametroToGsonFunction = new JsonMapTransformer<TipologiaParametri>() {
+    private static final Function<TipologiaParametri, Map> tipologieParametroToGsonFunction = new JsonMapTransformer<TipologiaParametri>() {
         @Override
         public void transformToMap(TipologiaParametri u) {
             putRecord(u.getTipParam() + " - " + u.getDesTipParam(), u.getTipParam());

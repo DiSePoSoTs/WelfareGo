@@ -94,6 +94,11 @@
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
+			<groupId>it.wego.welfarego</groupId>
+			<artifactId>welfarego-intalio-manager</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>it.wego.utils</groupId>
 			<artifactId>wegoutils</artifactId>
 			<version>1.0-SNAPSHOT</version>
@@ -201,11 +206,11 @@
 			<groupId>net.sf.jodreports</groupId>
 			<artifactId>jodreports</artifactId>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>it.trieste.tcd</groupId>-->
-<!--			<artifactId>simia-ws</artifactId>-->
-<!--			<version>1.0-SNAPSHOT</version>-->
-<!--		</dependency>-->
+		<!--		<dependency>-->
+		<!--			<groupId>it.trieste.tcd</groupId>-->
+		<!--			<artifactId>simia-ws</artifactId>-->
+		<!--			<version>1.0-SNAPSHOT</version>-->
+		<!--		</dependency>-->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>

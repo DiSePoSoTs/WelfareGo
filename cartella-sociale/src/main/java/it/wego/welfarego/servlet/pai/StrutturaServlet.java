@@ -47,7 +47,7 @@ public class StrutturaServlet extends JsonServlet {
 				 StrutturaDao sdao = new StrutturaDao(em);
 				 List<Struttura> strutture = sdao.findStrutturaByCodTipInt(codTipInt);
 				 
-				 final Function<Struttura, Map<String,Object>> serializer = new JsonMapTransformer<Struttura>() {
+				 final Function<Struttura, Map> serializer = new JsonMapTransformer<Struttura>() {
 
 					@Override
 					public void transformToMap(Struttura obj) {

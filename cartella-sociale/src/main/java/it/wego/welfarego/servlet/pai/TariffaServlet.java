@@ -46,7 +46,7 @@ public class TariffaServlet extends JsonServlet
 					Integer idStruttura = Integer.parseInt(idStrutt);
 					TariffaDao tdao = new TariffaDao(em);
 					List<Tariffa> tariffe = tdao.findTariffaByStruttura(idStruttura);
-					final Function<Tariffa, Map<String,Object>> serializer = new JsonMapTransformer<Tariffa>()
+					final Function<Tariffa, Map> serializer = new JsonMapTransformer<Tariffa>()
 					{
 						@Override
 						public void transformToMap(Tariffa obj)
