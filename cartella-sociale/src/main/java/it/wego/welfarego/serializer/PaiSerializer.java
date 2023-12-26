@@ -271,7 +271,7 @@ public class PaiSerializer {
         return pai;
     }
     
-    public Function<Pai, Map<String,Object>> getPaiSerializer() {
+    public Function<Pai, Map> getPaiSerializer() {
         return new JsonMapTransformer<Pai>() {
             @Override
             public void transformToMap(Pai pai) {

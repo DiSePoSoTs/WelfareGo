@@ -129,7 +129,7 @@ public class LettereForm extends AbstractForm implements AbstractForm.Loadable, 
 	}
 	
 	@SuppressWarnings("rawtypes")
-	private static final Function<UniqueTasklist, Map<String,Object>> taskTransformerFunction =  new JsonMapTransformer<UniqueTasklist>() {
+	private static final Function<UniqueTasklist, Map> taskTransformerFunction =  new JsonMapTransformer<UniqueTasklist>() {
 
 		@Override
 		public void transformToMap(UniqueTasklist obj) {

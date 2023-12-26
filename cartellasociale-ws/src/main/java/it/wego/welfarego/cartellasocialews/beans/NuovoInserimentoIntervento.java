@@ -56,7 +56,7 @@ public class NuovoInserimentoIntervento {
     protected String versione;
 
     /**
-     * Recupera il valore della propriet‡ idCartella.
+     * Recupera il valore della propriet√† idCartella.
      * 
      */
     public long getIdCartella() {
@@ -64,7 +64,7 @@ public class NuovoInserimentoIntervento {
     }
 
     /**
-     * Imposta il valore della propriet‡ idCartella.
+     * Imposta il valore della propriet√† idCartella.
      * 
      */
     public void setIdCartella(long value) {
@@ -72,7 +72,7 @@ public class NuovoInserimentoIntervento {
     }
 
     /**
-     * Recupera il valore della propriet‡ intervento.
+     * Recupera il valore della propriet√† intervento.
      * 
      * @return
      *     possible object is
@@ -84,7 +84,7 @@ public class NuovoInserimentoIntervento {
     }
 
     /**
-     * Imposta il valore della propriet‡ intervento.
+     * Imposta il valore della propriet√† intervento.
      * 
      * @param value
      *     allowed object is
@@ -96,7 +96,7 @@ public class NuovoInserimentoIntervento {
     }
 
     /**
-     * Recupera il valore della propriet‡ dataModifica.
+     * Recupera il valore della propriet√† dataModifica.
      * 
      * @return
      *     possible object is
@@ -108,7 +108,7 @@ public class NuovoInserimentoIntervento {
     }
 
     /**
-     * Imposta il valore della propriet‡ dataModifica.
+     * Imposta il valore della propriet√† dataModifica.
      * 
      * @param value
      *     allowed object is
@@ -120,7 +120,7 @@ public class NuovoInserimentoIntervento {
     }
 
     /**
-     * Recupera il valore della propriet‡ codice.
+     * Recupera il valore della propriet√† codice.
      * 
      * @return
      *     possible object is
@@ -132,7 +132,7 @@ public class NuovoInserimentoIntervento {
     }
 
     /**
-     * Imposta il valore della propriet‡ codice.
+     * Imposta il valore della propriet√† codice.
      * 
      * @param value
      *     allowed object is
@@ -144,7 +144,7 @@ public class NuovoInserimentoIntervento {
     }
 
     /**
-     * Recupera il valore della propriet‡ versione.
+     * Recupera il valore della propriet√† versione.
      * 
      * @return
      *     possible object is
@@ -156,7 +156,7 @@ public class NuovoInserimentoIntervento {
     }
 
     /**
-     * Imposta il valore della propriet‡ versione.
+     * Imposta il valore della propriet√† versione.
      * 
      * @param value
      *     allowed object is

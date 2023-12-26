@@ -48,7 +48,7 @@ public class RilevanzaObiettiviType {
     protected String dettaglio;
 
     /**
-     * Recupera il valore della propriet‡ rilevanza.
+     * Recupera il valore della propriet√† rilevanza.
      * 
      * @return
      *     possible object is
@@ -60,7 +60,7 @@ public class RilevanzaObiettiviType {
     }
 
     /**
-     * Imposta il valore della propriet‡ rilevanza.
+     * Imposta il valore della propriet√† rilevanza.
      * 
      * @param value
      *     allowed object is
@@ -72,7 +72,7 @@ public class RilevanzaObiettiviType {
     }
 
     /**
-     * Recupera il valore della propriet‡ fronteggiamento.
+     * Recupera il valore della propriet√† fronteggiamento.
      * 
      * @return
      *     possible object is
@@ -84,7 +84,7 @@ public class RilevanzaObiettiviType {
     }
 
     /**
-     * Imposta il valore della propriet‡ fronteggiamento.
+     * Imposta il valore della propriet√† fronteggiamento.
      * 
      * @param value
      *     allowed object is
@@ -96,7 +96,7 @@ public class RilevanzaObiettiviType {
     }
 
     /**
-     * Recupera il valore della propriet‡ obiettivoPrevalente.
+     * Recupera il valore della propriet√† obiettivoPrevalente.
      * 
      * @return
      *     possible object is
@@ -108,7 +108,7 @@ public class RilevanzaObiettiviType {
     }
 
     /**
-     * Imposta il valore della propriet‡ obiettivoPrevalente.
+     * Imposta il valore della propriet√† obiettivoPrevalente.
      * 
      * @param value
      *     allowed object is
@@ -120,7 +120,7 @@ public class RilevanzaObiettiviType {
     }
 
     /**
-     * Recupera il valore della propriet‡ dettaglio.
+     * Recupera il valore della propriet√† dettaglio.
      * 
      * @return
      *     possible object is
@@ -132,7 +132,7 @@ public class RilevanzaObiettiviType {
     }
 
     /**
-     * Imposta il valore della propriet‡ dettaglio.
+     * Imposta il valore della propriet√† dettaglio.
      * 
      * @param value
      *     allowed object is

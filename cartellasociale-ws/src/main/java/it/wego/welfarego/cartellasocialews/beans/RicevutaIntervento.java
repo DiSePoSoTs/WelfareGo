@@ -38,7 +38,7 @@ public class RicevutaIntervento
     protected Long idIntervento;
 
     /**
-     * Recupera il valore della propriet‡ idIntervento.
+     * Recupera il valore della propriet√† idIntervento.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class RicevutaIntervento
     }
 
     /**
-     * Imposta il valore della propriet‡ idIntervento.
+     * Imposta il valore della propriet√† idIntervento.
      * 
      * @param value
      *     allowed object is

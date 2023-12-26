@@ -40,21 +40,21 @@ public class ConditionUtils {
 		return sb.toString();
 	}
 
-	public static List<Order> parseOrder(List<it.wego.extjs.beans.Order> orders, Map<String, String> fieldNames) {
-		List<Order> orderList = new ArrayList<Order>(orders.size());
-		for (it.wego.extjs.beans.Order order : orders) {
-			String field = fieldNames.get(order.getProperty());
-			if (field == null) {
-				field = fieldNames.get(order.getProperty().toUpperCase());
-			}
-			if (field == null) {
-				logger.warn("unknown order field : " + order.getProperty());
-				continue;
-			}
-			orderList.add(new Order(field, OrderDir.valueOf(order.getDirection().toUpperCase())));
-		}
-		return orderList;
-	}
+//	public static List<Order> parseOrder(List<it.wego.extjs.beans.Order> orders, Map<String, String> fieldNames) {
+//		List<Order> orderList = new ArrayList<Order>(orders.size());
+//		for (it.wego.extjs.beans.Order order : orders) {
+//			String field = fieldNames.get(order.getProperty());
+//			if (field == null) {
+//				field = fieldNames.get(order.getProperty().toUpperCase());
+//			}
+//			if (field == null) {
+//				logger.warn("unknown order field : " + order.getProperty());
+//				continue;
+//			}
+//			orderList.add(new Order(field, OrderDir.valueOf(order.getDirection().toUpperCase())));
+//		}
+//		return orderList;
+//	}
 
 	public static <T extends Object> TypedQuery<T> createQuery(EntityManager entityManager, Class<T> clazz, String queryStr, Collection<Condition> conditions, Collection<Assignment> assignments,List<Order> order, Integer limit, Integer offset) {
 		Condition condition = (conditions == null || conditions.isEmpty()) ? null : (conditions.size() == 1 ? conditions.iterator().next() : ConditionBuilder.and(conditions));

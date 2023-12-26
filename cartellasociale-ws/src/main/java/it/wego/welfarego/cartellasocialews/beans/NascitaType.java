@@ -47,7 +47,7 @@ public class NascitaType {
     protected ComuneType comune;
 
     /**
-     * Recupera il valore della propriet‡ data.
+     * Recupera il valore della propriet√† data.
      * 
      * @return
      *     possible object is
@@ -59,7 +59,7 @@ public class NascitaType {
     }
 
     /**
-     * Imposta il valore della propriet‡ data.
+     * Imposta il valore della propriet√† data.
      * 
      * @param value
      *     allowed object is
@@ -71,7 +71,7 @@ public class NascitaType {
     }
 
     /**
-     * Recupera il valore della propriet‡ stato.
+     * Recupera il valore della propriet√† stato.
      * 
      * @return
      *     possible object is
@@ -83,7 +83,7 @@ public class NascitaType {
     }
 
     /**
-     * Imposta il valore della propriet‡ stato.
+     * Imposta il valore della propriet√† stato.
      * 
      * @param value
      *     allowed object is
@@ -95,7 +95,7 @@ public class NascitaType {
     }
 
     /**
-     * Recupera il valore della propriet‡ comune.
+     * Recupera il valore della propriet√† comune.
      * 
      * @return
      *     possible object is
@@ -107,7 +107,7 @@ public class NascitaType {
     }
 
     /**
-     * Imposta il valore della propriet‡ comune.
+     * Imposta il valore della propriet√† comune.
      * 
      * @param value
      *     allowed object is

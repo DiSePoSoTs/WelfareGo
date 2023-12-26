@@ -47,7 +47,7 @@ public class DiarioType {
     protected String tipo;
 
     /**
-     * Recupera il valore della propriet‡ data.
+     * Recupera il valore della propriet√† data.
      * 
      * @return
      *     possible object is
@@ -59,7 +59,7 @@ public class DiarioType {
     }
 
     /**
-     * Imposta il valore della propriet‡ data.
+     * Imposta il valore della propriet√† data.
      * 
      * @param value
      *     allowed object is
@@ -71,7 +71,7 @@ public class DiarioType {
     }
 
     /**
-     * Recupera il valore della propriet‡ note.
+     * Recupera il valore della propriet√† note.
      * 
      * @return
      *     possible object is
@@ -83,7 +83,7 @@ public class DiarioType {
     }
 
     /**
-     * Imposta il valore della propriet‡ note.
+     * Imposta il valore della propriet√† note.
      * 
      * @param value
      *     allowed object is
@@ -95,7 +95,7 @@ public class DiarioType {
     }
 
     /**
-     * Recupera il valore della propriet‡ tipo.
+     * Recupera il valore della propriet√† tipo.
      * 
      * @return
      *     possible object is
@@ -107,7 +107,7 @@ public class DiarioType {
     }
 
     /**
-     * Imposta il valore della propriet‡ tipo.
+     * Imposta il valore della propriet√† tipo.
      * 
      * @param value
      *     allowed object is

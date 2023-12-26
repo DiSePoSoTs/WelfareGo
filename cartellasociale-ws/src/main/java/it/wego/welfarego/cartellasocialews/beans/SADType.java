@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class SADType {
 
-    @XmlElementRef(name = "obiettivi", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "obiettivi", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class)
     protected JAXBElement<String> obiettivi;
     @XmlElement(required = true)
     protected List<DettaglioMacrointerventoSADType> macrointerventoSad;
 
     /**
-     * Recupera il valore della propriet‡ obiettivi.
+     * Recupera il valore della propriet√† obiettivi.
      * 
      * @return
      *     possible object is
@@ -56,7 +56,7 @@ public class SADType {
     }
 
     /**
-     * Imposta il valore della propriet‡ obiettivi.
+     * Imposta il valore della propriet√† obiettivi.
      * 
      * @param value
      *     allowed object is

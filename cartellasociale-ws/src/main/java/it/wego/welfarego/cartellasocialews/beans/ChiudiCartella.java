@@ -60,7 +60,7 @@ public class ChiudiCartella {
     protected String versione;
 
     /**
-     * Recupera il valore della propriet‡ idCartella.
+     * Recupera il valore della propriet√† idCartella.
      * 
      */
     public long getIdCartella() {
@@ -68,7 +68,7 @@ public class ChiudiCartella {
     }
 
     /**
-     * Imposta il valore della propriet‡ idCartella.
+     * Imposta il valore della propriet√† idCartella.
      * 
      */
     public void setIdCartella(long value) {
@@ -76,7 +76,7 @@ public class ChiudiCartella {
     }
 
     /**
-     * Recupera il valore della propriet‡ motivo.
+     * Recupera il valore della propriet√† motivo.
      * 
      * @return
      *     possible object is
@@ -88,7 +88,7 @@ public class ChiudiCartella {
     }
 
     /**
-     * Imposta il valore della propriet‡ motivo.
+     * Imposta il valore della propriet√† motivo.
      * 
      * @param value
      *     allowed object is
@@ -100,7 +100,7 @@ public class ChiudiCartella {
     }
 
     /**
-     * Recupera il valore della propriet‡ data.
+     * Recupera il valore della propriet√† data.
      * 
      * @return
      *     possible object is
@@ -112,7 +112,7 @@ public class ChiudiCartella {
     }
 
     /**
-     * Imposta il valore della propriet‡ data.
+     * Imposta il valore della propriet√† data.
      * 
      * @param value
      *     allowed object is
@@ -124,7 +124,7 @@ public class ChiudiCartella {
     }
 
     /**
-     * Recupera il valore della propriet‡ note.
+     * Recupera il valore della propriet√† note.
      * 
      * @return
      *     possible object is
@@ -136,7 +136,7 @@ public class ChiudiCartella {
     }
 
     /**
-     * Imposta il valore della propriet‡ note.
+     * Imposta il valore della propriet√† note.
      * 
      * @param value
      *     allowed object is
@@ -148,7 +148,7 @@ public class ChiudiCartella {
     }
 
     /**
-     * Recupera il valore della propriet‡ codiceOperatore.
+     * Recupera il valore della propriet√† codiceOperatore.
      * 
      * @return
      *     possible object is
@@ -160,7 +160,7 @@ public class ChiudiCartella {
     }
 
     /**
-     * Imposta il valore della propriet‡ codiceOperatore.
+     * Imposta il valore della propriet√† codiceOperatore.
      * 
      * @param value
      *     allowed object is
@@ -172,7 +172,7 @@ public class ChiudiCartella {
     }
 
     /**
-     * Recupera il valore della propriet‡ versione.
+     * Recupera il valore della propriet√† versione.
      * 
      * @return
      *     possible object is
@@ -184,7 +184,7 @@ public class ChiudiCartella {
     }
 
     /**
-     * Imposta il valore della propriet‡ versione.
+     * Imposta il valore della propriet√† versione.
      * 
      * @param value
      *     allowed object is

@@ -51,7 +51,7 @@ public class ImpegniServlet extends JsonServlet {
 		try {
 			String action = getParameter("action");
 			Utenti connectedUser = (Utenti) request.getSession().getAttribute(SessionConstants.CONNECTED_USER);
-			List<Map<String,Object>> impegni = Lists.newArrayList();
+			List<Map> impegni = Lists.newArrayList();
 			String emptyString = getParameter("empty");
 
 			Validate.notNull(connectedUser, "no user logged");
@@ -68,7 +68,7 @@ public class ImpegniServlet extends JsonServlet {
 				final PaiIntervento paiIntervento = cntTipint == null || pai == null ? null
 						: new PaiInterventoDao(em).findByKey(pai.getCodPai(), codTipInt, cntTipint);
 				final AtomicReference<Boolean> isACaricoSet = new AtomicReference<Boolean>(false);
-				final Function<BudgetTipInterventoUot, Map<String,Object>> serializer = new JsonMapTransformer<BudgetTipInterventoUot>() {
+				final Function<BudgetTipInterventoUot, Map> serializer = new JsonMapTransformer<BudgetTipInterventoUot>() {
 
 					@Override
 					public void transformToMap(BudgetTipInterventoUot budgetTipInterventoUot) {
@@ -107,7 +107,7 @@ public class ImpegniServlet extends JsonServlet {
 					}
 				};
 
-				final Function<BudgetTipIntervento, Map<String,Object>> serializerBudg = new JsonMapTransformer<BudgetTipIntervento>() {
+				final Function<BudgetTipIntervento, Map> serializerBudg = new JsonMapTransformer<BudgetTipIntervento>() {
 
 					@Override
 					public void transformToMap(BudgetTipIntervento budgetTipIntervento) {

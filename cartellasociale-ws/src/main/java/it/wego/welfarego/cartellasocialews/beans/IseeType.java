@@ -44,7 +44,7 @@ public class IseeType {
     protected XMLGregorianCalendar dataScadenza;
 
     /**
-     * Recupera il valore della propriet‡ valore.
+     * Recupera il valore della propriet√† valore.
      * 
      * @return
      *     possible object is
@@ -56,7 +56,7 @@ public class IseeType {
     }
 
     /**
-     * Imposta il valore della propriet‡ valore.
+     * Imposta il valore della propriet√† valore.
      * 
      * @param value
      *     allowed object is
@@ -68,7 +68,7 @@ public class IseeType {
     }
 
     /**
-     * Recupera il valore della propriet‡ dataScadenza.
+     * Recupera il valore della propriet√† dataScadenza.
      * 
      * @return
      *     possible object is
@@ -80,7 +80,7 @@ public class IseeType {
     }
 
     /**
-     * Imposta il valore della propriet‡ dataScadenza.
+     * Imposta il valore della propriet√† dataScadenza.
      * 
      * @param value
      *     allowed object is

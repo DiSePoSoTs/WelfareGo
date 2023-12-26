@@ -68,7 +68,7 @@ public class DettaglioMacrointerventoSADType {
     protected ListaMicroInterventiSADType listaMicrointerventiCollegatiAttivi;
 
     /**
-     * Recupera il valore della propriet‡ tipologiaMacroInterventoSad.
+     * Recupera il valore della propriet√† tipologiaMacroInterventoSad.
      * 
      * @return
      *     possible object is
@@ -80,7 +80,7 @@ public class DettaglioMacrointerventoSADType {
     }
 
     /**
-     * Imposta il valore della propriet‡ tipologiaMacroInterventoSad.
+     * Imposta il valore della propriet√† tipologiaMacroInterventoSad.
      * 
      * @param value
      *     allowed object is
@@ -92,7 +92,7 @@ public class DettaglioMacrointerventoSADType {
     }
 
     /**
-     * Recupera il valore della propriet‡ arcoTemporale.
+     * Recupera il valore della propriet√† arcoTemporale.
      * 
      * @return
      *     possible object is
@@ -104,7 +104,7 @@ public class DettaglioMacrointerventoSADType {
     }
 
     /**
-     * Imposta il valore della propriet‡ arcoTemporale.
+     * Imposta il valore della propriet√† arcoTemporale.
      * 
      * @param value
      *     allowed object is
@@ -116,7 +116,7 @@ public class DettaglioMacrointerventoSADType {
     }
 
     /**
-     * Recupera il valore della propriet‡ frequenza.
+     * Recupera il valore della propriet√† frequenza.
      * 
      * @return
      *     possible object is
@@ -128,7 +128,7 @@ public class DettaglioMacrointerventoSADType {
     }
 
     /**
-     * Imposta il valore della propriet‡ frequenza.
+     * Imposta il valore della propriet√† frequenza.
      * 
      * @param value
      *     allowed object is
@@ -140,7 +140,7 @@ public class DettaglioMacrointerventoSADType {
     }
 
     /**
-     * Recupera il valore della propriet‡ numeroVolte.
+     * Recupera il valore della propriet√† numeroVolte.
      * 
      * @return
      *     possible object is
@@ -152,7 +152,7 @@ public class DettaglioMacrointerventoSADType {
     }
 
     /**
-     * Imposta il valore della propriet‡ numeroVolte.
+     * Imposta il valore della propriet√† numeroVolte.
      * 
      * @param value
      *     allowed object is
@@ -164,7 +164,7 @@ public class DettaglioMacrointerventoSADType {
     }
 
     /**
-     * Recupera il valore della propriet‡ erogatore.
+     * Recupera il valore della propriet√† erogatore.
      * 
      * @return
      *     possible object is
@@ -176,7 +176,7 @@ public class DettaglioMacrointerventoSADType {
     }
 
     /**
-     * Imposta il valore della propriet‡ erogatore.
+     * Imposta il valore della propriet√† erogatore.
      * 
      * @param value
      *     allowed object is
@@ -188,7 +188,7 @@ public class DettaglioMacrointerventoSADType {
     }
 
     /**
-     * Recupera il valore della propriet‡ totOre.
+     * Recupera il valore della propriet√† totOre.
      * 
      * @return
      *     possible object is
@@ -200,7 +200,7 @@ public class DettaglioMacrointerventoSADType {
     }
 
     /**
-     * Imposta il valore della propriet‡ totOre.
+     * Imposta il valore della propriet√† totOre.
      * 
      * @param value
      *     allowed object is
@@ -212,7 +212,7 @@ public class DettaglioMacrointerventoSADType {
     }
 
     /**
-     * Recupera il valore della propriet‡ totMin.
+     * Recupera il valore della propriet√† totMin.
      * 
      * @return
      *     possible object is
@@ -224,7 +224,7 @@ public class DettaglioMacrointerventoSADType {
     }
 
     /**
-     * Imposta il valore della propriet‡ totMin.
+     * Imposta il valore della propriet√† totMin.
      * 
      * @param value
      *     allowed object is
@@ -236,7 +236,7 @@ public class DettaglioMacrointerventoSADType {
     }
 
     /**
-     * Recupera il valore della propriet‡ note.
+     * Recupera il valore della propriet√† note.
      * 
      * @return
      *     possible object is
@@ -248,7 +248,7 @@ public class DettaglioMacrointerventoSADType {
     }
 
     /**
-     * Imposta il valore della propriet‡ note.
+     * Imposta il valore della propriet√† note.
      * 
      * @param value
      *     allowed object is
@@ -260,7 +260,7 @@ public class DettaglioMacrointerventoSADType {
     }
 
     /**
-     * Recupera il valore della propriet‡ listaMicrointerventiCollegatiAttivi.
+     * Recupera il valore della propriet√† listaMicrointerventiCollegatiAttivi.
      * 
      * @return
      *     possible object is
@@ -272,7 +272,7 @@ public class DettaglioMacrointerventoSADType {
     }
 
     /**
-     * Imposta il valore della propriet‡ listaMicrointerventiCollegatiAttivi.
+     * Imposta il valore della propriet√† listaMicrointerventiCollegatiAttivi.
      * 
      * @param value
      *     allowed object is

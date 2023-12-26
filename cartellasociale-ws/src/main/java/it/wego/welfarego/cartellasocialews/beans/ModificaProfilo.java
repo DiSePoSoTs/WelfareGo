@@ -49,7 +49,7 @@ public class ModificaProfilo {
     protected String versione;
 
     /**
-     * Recupera il valore della propriet‡ idCartella.
+     * Recupera il valore della propriet√† idCartella.
      * 
      */
     public long getIdCartella() {
@@ -57,7 +57,7 @@ public class ModificaProfilo {
     }
 
     /**
-     * Imposta il valore della propriet‡ idCartella.
+     * Imposta il valore della propriet√† idCartella.
      * 
      */
     public void setIdCartella(long value) {
@@ -65,7 +65,7 @@ public class ModificaProfilo {
     }
 
     /**
-     * Recupera il valore della propriet‡ profilo.
+     * Recupera il valore della propriet√† profilo.
      * 
      * @return
      *     possible object is
@@ -77,7 +77,7 @@ public class ModificaProfilo {
     }
 
     /**
-     * Imposta il valore della propriet‡ profilo.
+     * Imposta il valore della propriet√† profilo.
      * 
      * @param value
      *     allowed object is
@@ -89,7 +89,7 @@ public class ModificaProfilo {
     }
 
     /**
-     * Recupera il valore della propriet‡ codice.
+     * Recupera il valore della propriet√† codice.
      * 
      * @return
      *     possible object is
@@ -101,7 +101,7 @@ public class ModificaProfilo {
     }
 
     /**
-     * Imposta il valore della propriet‡ codice.
+     * Imposta il valore della propriet√† codice.
      * 
      * @param value
      *     allowed object is
@@ -113,7 +113,7 @@ public class ModificaProfilo {
     }
 
     /**
-     * Recupera il valore della propriet‡ versione.
+     * Recupera il valore della propriet√† versione.
      * 
      * @return
      *     possible object is
@@ -125,7 +125,7 @@ public class ModificaProfilo {
     }
 
     /**
-     * Imposta il valore della propriet‡ versione.
+     * Imposta il valore della propriet√† versione.
      * 
      * @param value
      *     allowed object is

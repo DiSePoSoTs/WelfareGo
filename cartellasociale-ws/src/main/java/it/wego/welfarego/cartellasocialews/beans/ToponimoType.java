@@ -52,7 +52,7 @@ public class ToponimoType {
     protected String cap;
 
     /**
-     * Recupera il valore della propriet‡ stato.
+     * Recupera il valore della propriet√† stato.
      * 
      * @return
      *     possible object is
@@ -64,7 +64,7 @@ public class ToponimoType {
     }
 
     /**
-     * Imposta il valore della propriet‡ stato.
+     * Imposta il valore della propriet√† stato.
      * 
      * @param value
      *     allowed object is
@@ -76,7 +76,7 @@ public class ToponimoType {
     }
 
     /**
-     * Recupera il valore della propriet‡ comune.
+     * Recupera il valore della propriet√† comune.
      * 
      * @return
      *     possible object is
@@ -88,7 +88,7 @@ public class ToponimoType {
     }
 
     /**
-     * Imposta il valore della propriet‡ comune.
+     * Imposta il valore della propriet√† comune.
      * 
      * @param value
      *     allowed object is
@@ -100,7 +100,7 @@ public class ToponimoType {
     }
 
     /**
-     * Recupera il valore della propriet‡ indirizzo.
+     * Recupera il valore della propriet√† indirizzo.
      * 
      * @return
      *     possible object is
@@ -112,7 +112,7 @@ public class ToponimoType {
     }
 
     /**
-     * Imposta il valore della propriet‡ indirizzo.
+     * Imposta il valore della propriet√† indirizzo.
      * 
      * @param value
      *     allowed object is
@@ -124,7 +124,7 @@ public class ToponimoType {
     }
 
     /**
-     * Recupera il valore della propriet‡ numeroCivico.
+     * Recupera il valore della propriet√† numeroCivico.
      * 
      * @return
      *     possible object is
@@ -136,7 +136,7 @@ public class ToponimoType {
     }
 
     /**
-     * Imposta il valore della propriet‡ numeroCivico.
+     * Imposta il valore della propriet√† numeroCivico.
      * 
      * @param value
      *     allowed object is
@@ -148,7 +148,7 @@ public class ToponimoType {
     }
 
     /**
-     * Recupera il valore della propriet‡ cap.
+     * Recupera il valore della propriet√† cap.
      * 
      * @return
      *     possible object is
@@ -160,7 +160,7 @@ public class ToponimoType {
     }
 
     /**
-     * Imposta il valore della propriet‡ cap.
+     * Imposta il valore della propriet√† cap.
      * 
      * @param value
      *     allowed object is

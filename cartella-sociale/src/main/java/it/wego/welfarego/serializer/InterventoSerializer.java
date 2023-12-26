@@ -42,7 +42,7 @@ public class InterventoSerializer {
 		esiti = pdao.findByTipParam(Parametri.ESITO_INTERVENTO);
 	}
 
-	public static Function<PaiIntervento, Map<String,Object>> getinterventoMinifiedSerializer() {
+	public static Function<PaiIntervento, Map> getinterventoMinifiedSerializer() {
 		return new JsonMapTransformer<PaiIntervento>() {
 			@Override
 			public void transformToMap(PaiIntervento intervento) {
@@ -101,7 +101,7 @@ public class InterventoSerializer {
 		};
 	}
 
-	public static Function<PaiIntervento, Map<String,Object>> getinterventoSocialCrtMinifiedSerializer() {
+	public static Function<PaiIntervento, Map> getinterventoSocialCrtMinifiedSerializer() {
 		return new JsonMapTransformer<PaiIntervento>() {
 			@Override
 			public void transformToMap(PaiIntervento intervento) {
@@ -133,7 +133,7 @@ public class InterventoSerializer {
 		};
 	}
 
-	public static Function<PaiIntervento, Map<String,Object>> getinterventoSerializer() {
+	public static Function<PaiIntervento, Map> getinterventoSerializer() {
 
 		return new JsonMapTransformer<PaiIntervento>() {
 			@Override

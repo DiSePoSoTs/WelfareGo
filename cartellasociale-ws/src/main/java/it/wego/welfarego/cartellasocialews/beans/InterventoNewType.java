@@ -163,17 +163,17 @@ public class InterventoNewType {
     protected String tipologiaIntervento;
     @XmlElement(required = true, nillable = true)
     protected String dettaglio;
-    @XmlElementRef(name = "subDettaglio", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "subDettaglio", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class)
     protected JAXBElement<SubDettaglioIntType> subDettaglio;
     @XmlElement(required = true, type = Integer.class, nillable = true)
     protected Integer durataPrevista;
-    @XmlElementRef(name = "note", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "note", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class)
     protected JAXBElement<String> note;
     protected BigDecimal importoTotaleErogato;
     protected InterventoNewType.SpecificazioneNew specificazioneNew;
 
     /**
-     * Recupera il valore della propriet‡ dataApertura.
+     * Recupera il valore della propriet√† dataApertura.
      * 
      * @return
      *     possible object is
@@ -185,7 +185,7 @@ public class InterventoNewType {
     }
 
     /**
-     * Imposta il valore della propriet‡ dataApertura.
+     * Imposta il valore della propriet√† dataApertura.
      * 
      * @param value
      *     allowed object is
@@ -197,7 +197,7 @@ public class InterventoNewType {
     }
 
     /**
-     * Recupera il valore della propriet‡ dataChiusura.
+     * Recupera il valore della propriet√† dataChiusura.
      * 
      * @return
      *     possible object is
@@ -209,7 +209,7 @@ public class InterventoNewType {
     }
 
     /**
-     * Imposta il valore della propriet‡ dataChiusura.
+     * Imposta il valore della propriet√† dataChiusura.
      * 
      * @param value
      *     allowed object is
@@ -221,7 +221,7 @@ public class InterventoNewType {
     }
 
     /**
-     * Recupera il valore della propriet‡ tipologiaIntervento.
+     * Recupera il valore della propriet√† tipologiaIntervento.
      * 
      * @return
      *     possible object is
@@ -233,7 +233,7 @@ public class InterventoNewType {
     }
 
     /**
-     * Imposta il valore della propriet‡ tipologiaIntervento.
+     * Imposta il valore della propriet√† tipologiaIntervento.
      * 
      * @param value
      *     allowed object is
@@ -245,7 +245,7 @@ public class InterventoNewType {
     }
 
     /**
-     * Recupera il valore della propriet‡ dettaglio.
+     * Recupera il valore della propriet√† dettaglio.
      * 
      * @return
      *     possible object is
@@ -257,7 +257,7 @@ public class InterventoNewType {
     }
 
     /**
-     * Imposta il valore della propriet‡ dettaglio.
+     * Imposta il valore della propriet√† dettaglio.
      * 
      * @param value
      *     allowed object is
@@ -269,7 +269,7 @@ public class InterventoNewType {
     }
 
     /**
-     * Recupera il valore della propriet‡ subDettaglio.
+     * Recupera il valore della propriet√† subDettaglio.
      * 
      * @return
      *     possible object is
@@ -281,7 +281,7 @@ public class InterventoNewType {
     }
 
     /**
-     * Imposta il valore della propriet‡ subDettaglio.
+     * Imposta il valore della propriet√† subDettaglio.
      * 
      * @param value
      *     allowed object is
@@ -293,7 +293,7 @@ public class InterventoNewType {
     }
 
     /**
-     * Recupera il valore della propriet‡ durataPrevista.
+     * Recupera il valore della propriet√† durataPrevista.
      * 
      * @return
      *     possible object is
@@ -305,7 +305,7 @@ public class InterventoNewType {
     }
 
     /**
-     * Imposta il valore della propriet‡ durataPrevista.
+     * Imposta il valore della propriet√† durataPrevista.
      * 
      * @param value
      *     allowed object is
@@ -317,7 +317,7 @@ public class InterventoNewType {
     }
 
     /**
-     * Recupera il valore della propriet‡ note.
+     * Recupera il valore della propriet√† note.
      * 
      * @return
      *     possible object is
@@ -329,7 +329,7 @@ public class InterventoNewType {
     }
 
     /**
-     * Imposta il valore della propriet‡ note.
+     * Imposta il valore della propriet√† note.
      * 
      * @param value
      *     allowed object is
@@ -341,7 +341,7 @@ public class InterventoNewType {
     }
 
     /**
-     * Recupera il valore della propriet‡ importoTotaleErogato.
+     * Recupera il valore della propriet√† importoTotaleErogato.
      * 
      * @return
      *     possible object is
@@ -353,7 +353,7 @@ public class InterventoNewType {
     }
 
     /**
-     * Imposta il valore della propriet‡ importoTotaleErogato.
+     * Imposta il valore della propriet√† importoTotaleErogato.
      * 
      * @param value
      *     allowed object is
@@ -365,7 +365,7 @@ public class InterventoNewType {
     }
 
     /**
-     * Recupera il valore della propriet‡ specificazioneNew.
+     * Recupera il valore della propriet√† specificazioneNew.
      * 
      * @return
      *     possible object is
@@ -377,7 +377,7 @@ public class InterventoNewType {
     }
 
     /**
-     * Imposta il valore della propriet‡ specificazioneNew.
+     * Imposta il valore della propriet√† specificazioneNew.
      * 
      * @param value
      *     allowed object is
@@ -506,7 +506,7 @@ public class InterventoNewType {
         protected InterventoNewType.SpecificazioneNew.Residenziale residenziale;
 
         /**
-         * Recupera il valore della propriet‡ economicoNew.
+         * Recupera il valore della propriet√† economicoNew.
          * 
          * @return
          *     possible object is
@@ -518,7 +518,7 @@ public class InterventoNewType {
         }
 
         /**
-         * Imposta il valore della propriet‡ economicoNew.
+         * Imposta il valore della propriet√† economicoNew.
          * 
          * @param value
          *     allowed object is
@@ -530,7 +530,7 @@ public class InterventoNewType {
         }
 
         /**
-         * Recupera il valore della propriet‡ domiciliare.
+         * Recupera il valore della propriet√† domiciliare.
          * 
          * @return
          *     possible object is
@@ -542,7 +542,7 @@ public class InterventoNewType {
         }
 
         /**
-         * Imposta il valore della propriet‡ domiciliare.
+         * Imposta il valore della propriet√† domiciliare.
          * 
          * @param value
          *     allowed object is
@@ -554,7 +554,7 @@ public class InterventoNewType {
         }
 
         /**
-         * Recupera il valore della propriet‡ residenziale.
+         * Recupera il valore della propriet√† residenziale.
          * 
          * @return
          *     possible object is
@@ -566,7 +566,7 @@ public class InterventoNewType {
         }
 
         /**
-         * Imposta il valore della propriet‡ residenziale.
+         * Imposta il valore della propriet√† residenziale.
          * 
          * @param value
          *     allowed object is
@@ -609,7 +609,7 @@ public class InterventoNewType {
             protected SADType sad;
 
             /**
-             * Recupera il valore della propriet‡ dettaglio.
+             * Recupera il valore della propriet√† dettaglio.
              * 
              * @return
              *     possible object is
@@ -621,7 +621,7 @@ public class InterventoNewType {
             }
 
             /**
-             * Imposta il valore della propriet‡ dettaglio.
+             * Imposta il valore della propriet√† dettaglio.
              * 
              * @param value
              *     allowed object is
@@ -633,7 +633,7 @@ public class InterventoNewType {
             }
 
             /**
-             * Recupera il valore della propriet‡ sad.
+             * Recupera il valore della propriet√† sad.
              * 
              * @return
              *     possible object is
@@ -645,7 +645,7 @@ public class InterventoNewType {
             }
 
             /**
-             * Imposta il valore della propriet‡ sad.
+             * Imposta il valore della propriet√† sad.
              * 
              * @param value
              *     allowed object is
@@ -740,7 +740,7 @@ public class InterventoNewType {
             protected InterventoNewType.SpecificazioneNew.EconomicoNew.FondoSolidarieta fondoSolidarieta;
 
             /**
-             * Recupera il valore della propriet‡ fapNew.
+             * Recupera il valore della propriet√† fapNew.
              * 
              * @return
              *     possible object is
@@ -752,7 +752,7 @@ public class InterventoNewType {
             }
 
             /**
-             * Imposta il valore della propriet‡ fapNew.
+             * Imposta il valore della propriet√† fapNew.
              * 
              * @param value
              *     allowed object is
@@ -764,7 +764,7 @@ public class InterventoNewType {
             }
 
             /**
-             * Recupera il valore della propriet‡ fondoSolidarieta.
+             * Recupera il valore della propriet√† fondoSolidarieta.
              * 
              * @return
              *     possible object is
@@ -776,7 +776,7 @@ public class InterventoNewType {
             }
 
             /**
-             * Imposta il valore della propriet‡ fondoSolidarieta.
+             * Imposta il valore della propriet√† fondoSolidarieta.
              * 
              * @param value
              *     allowed object is
@@ -886,7 +886,7 @@ public class InterventoNewType {
                 protected String motivoChiusura;
 
                 /**
-                 * Recupera il valore della propriet‡ tipologiaInterventoFap.
+                 * Recupera il valore della propriet√† tipologiaInterventoFap.
                  * 
                  * @return
                  *     possible object is
@@ -898,7 +898,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Imposta il valore della propriet‡ tipologiaInterventoFap.
+                 * Imposta il valore della propriet√† tipologiaInterventoFap.
                  * 
                  * @param value
                  *     allowed object is
@@ -910,7 +910,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Recupera il valore della propriet‡ abitareInclusivo.
+                 * Recupera il valore della propriet√† abitareInclusivo.
                  * 
                  * @return
                  *     possible object is
@@ -922,7 +922,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Imposta il valore della propriet‡ abitareInclusivo.
+                 * Imposta il valore della propriet√† abitareInclusivo.
                  * 
                  * @param value
                  *     allowed object is
@@ -934,7 +934,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Recupera il valore della propriet‡ punteggioKatz.
+                 * Recupera il valore della propriet√† punteggioKatz.
                  * 
                  * @return
                  *     possible object is
@@ -946,7 +946,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Imposta il valore della propriet‡ punteggioKatz.
+                 * Imposta il valore della propriet√† punteggioKatz.
                  * 
                  * @param value
                  *     allowed object is
@@ -958,7 +958,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Recupera il valore della propriet‡ punteggioCDRs.
+                 * Recupera il valore della propriet√† punteggioCDRs.
                  * 
                  * @return
                  *     possible object is
@@ -970,7 +970,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Imposta il valore della propriet‡ punteggioCDRs.
+                 * Imposta il valore della propriet√† punteggioCDRs.
                  * 
                  * @param value
                  *     allowed object is
@@ -982,7 +982,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Recupera il valore della propriet‡ demenzaCertificata.
+                 * Recupera il valore della propriet√† demenzaCertificata.
                  * 
                  * @return
                  *     possible object is
@@ -994,7 +994,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Imposta il valore della propriet‡ demenzaCertificata.
+                 * Imposta il valore della propriet√† demenzaCertificata.
                  * 
                  * @param value
                  *     allowed object is
@@ -1006,7 +1006,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Recupera il valore della propriet‡ disabilitaSensoriale.
+                 * Recupera il valore della propriet√† disabilitaSensoriale.
                  * 
                  * @return
                  *     possible object is
@@ -1018,7 +1018,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Imposta il valore della propriet‡ disabilitaSensoriale.
+                 * Imposta il valore della propriet√† disabilitaSensoriale.
                  * 
                  * @param value
                  *     allowed object is
@@ -1030,7 +1030,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Recupera il valore della propriet‡ importoMensile.
+                 * Recupera il valore della propriet√† importoMensile.
                  * 
                  * @return
                  *     possible object is
@@ -1042,7 +1042,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Imposta il valore della propriet‡ importoMensile.
+                 * Imposta il valore della propriet√† importoMensile.
                  * 
                  * @param value
                  *     allowed object is
@@ -1054,7 +1054,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Recupera il valore della propriet‡ isee.
+                 * Recupera il valore della propriet√† isee.
                  * 
                  * @return
                  *     possible object is
@@ -1066,7 +1066,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Imposta il valore della propriet‡ isee.
+                 * Imposta il valore della propriet√† isee.
                  * 
                  * @param value
                  *     allowed object is
@@ -1078,7 +1078,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Recupera il valore della propriet‡ dataUVM.
+                 * Recupera il valore della propriet√† dataUVM.
                  * 
                  * @return
                  *     possible object is
@@ -1090,7 +1090,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Imposta il valore della propriet‡ dataUVM.
+                 * Imposta il valore della propriet√† dataUVM.
                  * 
                  * @param value
                  *     allowed object is
@@ -1102,7 +1102,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Recupera il valore della propriet‡ etaDataUVM.
+                 * Recupera il valore della propriet√† etaDataUVM.
                  * 
                  * @return
                  *     possible object is
@@ -1114,7 +1114,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Imposta il valore della propriet‡ etaDataUVM.
+                 * Imposta il valore della propriet√† etaDataUVM.
                  * 
                  * @param value
                  *     allowed object is
@@ -1126,7 +1126,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Recupera il valore della propriet‡ durataMesiUVM.
+                 * Recupera il valore della propriet√† durataMesiUVM.
                  * 
                  */
                 public int getDurataMesiUVM() {
@@ -1134,7 +1134,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Imposta il valore della propriet‡ durataMesiUVM.
+                 * Imposta il valore della propriet√† durataMesiUVM.
                  * 
                  */
                 public void setDurataMesiUVM(int value) {
@@ -1142,7 +1142,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Recupera il valore della propriet‡ dataSegnalazione.
+                 * Recupera il valore della propriet√† dataSegnalazione.
                  * 
                  * @return
                  *     possible object is
@@ -1154,7 +1154,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Imposta il valore della propriet‡ dataSegnalazione.
+                 * Imposta il valore della propriet√† dataSegnalazione.
                  * 
                  * @param value
                  *     allowed object is
@@ -1166,7 +1166,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Recupera il valore della propriet‡ dataDecorrenza.
+                 * Recupera il valore della propriet√† dataDecorrenza.
                  * 
                  * @return
                  *     possible object is
@@ -1178,7 +1178,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Imposta il valore della propriet‡ dataDecorrenza.
+                 * Imposta il valore della propriet√† dataDecorrenza.
                  * 
                  * @param value
                  *     allowed object is
@@ -1190,7 +1190,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Recupera il valore della propriet‡ punteggioListaAttesa.
+                 * Recupera il valore della propriet√† punteggioListaAttesa.
                  * 
                  * @return
                  *     possible object is
@@ -1202,7 +1202,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Imposta il valore della propriet‡ punteggioListaAttesa.
+                 * Imposta il valore della propriet√† punteggioListaAttesa.
                  * 
                  * @param value
                  *     allowed object is
@@ -1214,7 +1214,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Recupera il valore della propriet‡ nOreContratto.
+                 * Recupera il valore della propriet√† nOreContratto.
                  * 
                  * @return
                  *     possible object is
@@ -1226,7 +1226,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Imposta il valore della propriet‡ nOreContratto.
+                 * Imposta il valore della propriet√† nOreContratto.
                  * 
                  * @param value
                  *     allowed object is
@@ -1238,7 +1238,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Recupera il valore della propriet‡ contestualePresenzaAddetti.
+                 * Recupera il valore della propriet√† contestualePresenzaAddetti.
                  * 
                  * @return
                  *     possible object is
@@ -1250,7 +1250,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Imposta il valore della propriet‡ contestualePresenzaAddetti.
+                 * Imposta il valore della propriet√† contestualePresenzaAddetti.
                  * 
                  * @param value
                  *     allowed object is
@@ -1262,7 +1262,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Recupera il valore della propriet‡ indennitaAccompagnamento.
+                 * Recupera il valore della propriet√† indennitaAccompagnamento.
                  * 
                  * @return
                  *     possible object is
@@ -1274,7 +1274,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Imposta il valore della propriet‡ indennitaAccompagnamento.
+                 * Imposta il valore della propriet√† indennitaAccompagnamento.
                  * 
                  * @param value
                  *     allowed object is
@@ -1286,7 +1286,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Recupera il valore della propriet‡ motivoChiusura.
+                 * Recupera il valore della propriet√† motivoChiusura.
                  * 
                  * @return
                  *     possible object is
@@ -1298,7 +1298,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Imposta il valore della propriet‡ motivoChiusura.
+                 * Imposta il valore della propriet√† motivoChiusura.
                  * 
                  * @param value
                  *     allowed object is
@@ -1350,7 +1350,7 @@ public class InterventoNewType {
                 protected BigDecimal totaleErogato;
 
                 /**
-                 * Recupera il valore della propriet‡ isee.
+                 * Recupera il valore della propriet√† isee.
                  * 
                  * @return
                  *     possible object is
@@ -1362,7 +1362,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Imposta il valore della propriet‡ isee.
+                 * Imposta il valore della propriet√† isee.
                  * 
                  * @param value
                  *     allowed object is
@@ -1374,7 +1374,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Recupera il valore della propriet‡ totaleErogato.
+                 * Recupera il valore della propriet√† totaleErogato.
                  * 
                  * @return
                  *     possible object is
@@ -1386,7 +1386,7 @@ public class InterventoNewType {
                 }
 
                 /**
-                 * Imposta il valore della propriet‡ totaleErogato.
+                 * Imposta il valore della propriet√† totaleErogato.
                  * 
                  * @param value
                  *     allowed object is
@@ -1435,7 +1435,7 @@ public class InterventoNewType {
             protected String codiceFamiglia;
 
             /**
-             * Recupera il valore della propriet‡ struttura.
+             * Recupera il valore della propriet√† struttura.
              * 
              * @return
              *     possible object is
@@ -1447,7 +1447,7 @@ public class InterventoNewType {
             }
 
             /**
-             * Imposta il valore della propriet‡ struttura.
+             * Imposta il valore della propriet√† struttura.
              * 
              * @param value
              *     allowed object is
@@ -1459,7 +1459,7 @@ public class InterventoNewType {
             }
 
             /**
-             * Recupera il valore della propriet‡ codiceFamiglia.
+             * Recupera il valore della propriet√† codiceFamiglia.
              * 
              * @return
              *     possible object is
@@ -1471,7 +1471,7 @@ public class InterventoNewType {
             }
 
             /**
-             * Imposta il valore della propriet‡ codiceFamiglia.
+             * Imposta il valore della propriet√† codiceFamiglia.
              * 
              * @param value
              *     allowed object is

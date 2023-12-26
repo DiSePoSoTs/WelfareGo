@@ -48,7 +48,7 @@ public class AzioniBackOffice {
     protected String versione;
 
     /**
-     * Recupera il valore della propriet‡ azione.
+     * Recupera il valore della propriet√† azione.
      * 
      * @return
      *     possible object is
@@ -60,7 +60,7 @@ public class AzioniBackOffice {
     }
 
     /**
-     * Imposta il valore della propriet‡ azione.
+     * Imposta il valore della propriet√† azione.
      * 
      * @param value
      *     allowed object is
@@ -72,7 +72,7 @@ public class AzioniBackOffice {
     }
 
     /**
-     * Recupera il valore della propriet‡ codice.
+     * Recupera il valore della propriet√† codice.
      * 
      * @return
      *     possible object is
@@ -84,7 +84,7 @@ public class AzioniBackOffice {
     }
 
     /**
-     * Imposta il valore della propriet‡ codice.
+     * Imposta il valore della propriet√† codice.
      * 
      * @param value
      *     allowed object is
@@ -96,7 +96,7 @@ public class AzioniBackOffice {
     }
 
     /**
-     * Recupera il valore della propriet‡ versione.
+     * Recupera il valore della propriet√† versione.
      * 
      * @return
      *     possible object is
@@ -108,7 +108,7 @@ public class AzioniBackOffice {
     }
 
     /**
-     * Imposta il valore della propriet‡ versione.
+     * Imposta il valore della propriet√† versione.
      * 
      * @param value
      *     allowed object is

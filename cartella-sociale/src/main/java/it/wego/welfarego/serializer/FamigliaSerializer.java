@@ -82,7 +82,7 @@ public enum FamigliaSerializer implements Function<AnagrafeSoc, Map<String, Obje
         return res;
     }
 
-    public static Function<VistaAnagrafe, Map<String,Object>> getVistaAnagrafeSerializer(final EntityManager entityManager) {
+    public static Function<VistaAnagrafe, Map> getVistaAnagrafeSerializer(final EntityManager entityManager) {
         return new JsonMapTransformer<VistaAnagrafe>() {
             @Override
             public void transformToMap(VistaAnagrafe vistaAnagrafe) {

@@ -45,6 +45,7 @@
 		<dependency>
 			<groupId>com.liferay.portal</groupId>
 			<artifactId>portal-service</artifactId>
+			<version>${liferay.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.liferay.portal</groupId>
@@ -65,12 +66,6 @@
 			<groupId>javax.portlet</groupId>
 			<artifactId>portlet-api</artifactId>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>it.wego.extjs</groupId> -->
-<!-- 			<artifactId>extjs</artifactId> -->
-<!-- 			<version>4.0.2a</version> -->
-<!-- 			<type>war</type> -->
-<!-- 		</dependency> -->
 		<dependency>
 			<groupId>it.wego.extjs</groupId>
 			<artifactId>extjs-addons</artifactId>
@@ -96,6 +91,11 @@
 		<dependency>
 			<groupId>it.wego.welfarego</groupId>
 			<artifactId>db-entities</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>it.wego.welfarego</groupId>
+			<artifactId>welfarego-intalio-manager</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
@@ -134,9 +134,9 @@
 			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>it.wego.welfarego</groupId>
-			<artifactId>welfarego-intalio-manager</artifactId>
-			<version>1.0-SNAPSHOT</version>
+			<groupId>it.wego.intalio</groupId>
+			<artifactId>intalio-manager</artifactId>
+			<version>2.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>it.wego.welfarego</groupId>
@@ -182,9 +182,9 @@
 			<artifactId>slf4j-api</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
 			<artifactId>ojdbc6</artifactId>
-			<groupId>com.oracle</groupId>
-			<scope>provided</scope>
+			<version>11.2.0.4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jdom</groupId>
@@ -206,11 +206,11 @@
 			<groupId>net.sf.jodreports</groupId>
 			<artifactId>jodreports</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>it.trieste.tcd</groupId>
-			<artifactId>simia-ws</artifactId>
-			<version>1.0-SNAPSHOT</version>
-		</dependency>
+		<!--		<dependency>-->
+		<!--			<groupId>it.trieste.tcd</groupId>-->
+		<!--			<artifactId>simia-ws</artifactId>-->
+		<!--			<version>1.0-SNAPSHOT</version>-->
+		<!--		</dependency>-->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>

@@ -49,7 +49,7 @@ public class ProgettoType {
     protected XMLGregorianCalendar dataModifica;
 
     /**
-     * Recupera il valore della propriet‡ problematiche.
+     * Recupera il valore della propriet√† problematiche.
      * 
      * @return
      *     possible object is
@@ -61,7 +61,7 @@ public class ProgettoType {
     }
 
     /**
-     * Imposta il valore della propriet‡ problematiche.
+     * Imposta il valore della propriet√† problematiche.
      * 
      * @param value
      *     allowed object is
@@ -73,7 +73,7 @@ public class ProgettoType {
     }
 
     /**
-     * Recupera il valore della propriet‡ risorse.
+     * Recupera il valore della propriet√† risorse.
      * 
      * @return
      *     possible object is
@@ -85,7 +85,7 @@ public class ProgettoType {
     }
 
     /**
-     * Imposta il valore della propriet‡ risorse.
+     * Imposta il valore della propriet√† risorse.
      * 
      * @param value
      *     allowed object is
@@ -97,7 +97,7 @@ public class ProgettoType {
     }
 
     /**
-     * Recupera il valore della propriet‡ note.
+     * Recupera il valore della propriet√† note.
      * 
      * @return
      *     possible object is
@@ -109,7 +109,7 @@ public class ProgettoType {
     }
 
     /**
-     * Imposta il valore della propriet‡ note.
+     * Imposta il valore della propriet√† note.
      * 
      * @param value
      *     allowed object is
@@ -121,7 +121,7 @@ public class ProgettoType {
     }
 
     /**
-     * Recupera il valore della propriet‡ dataModifica.
+     * Recupera il valore della propriet√† dataModifica.
      * 
      * @return
      *     possible object is
@@ -133,7 +133,7 @@ public class ProgettoType {
     }
 
     /**
-     * Imposta il valore della propriet‡ dataModifica.
+     * Imposta il valore della propriet√† dataModifica.
      * 
      * @param value
      *     allowed object is

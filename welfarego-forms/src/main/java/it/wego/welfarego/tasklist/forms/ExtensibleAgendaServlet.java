@@ -42,7 +42,7 @@ public class ExtensibleAgendaServlet extends JsonServlet {
     private final static Integer APPUNTAMENTO_CID = 1, INDISPONIBILITA_CID = 2;
 
     private final DateTimeFormatter dateTimeFormatter = ISODateTimeFormat.dateTimeNoMillis().withZone(DateTimeZone.forID("CET"));
-    private final Function<Appuntamento, Map<String,Object>> appuntamentoToMapTransformer = new JsonMapTransformer<Appuntamento>() {
+    private final Function<Appuntamento, Map> appuntamentoToMapTransformer = new JsonMapTransformer<Appuntamento>() {
         @Override
         public void transformToMap(Appuntamento appuntamento) {
             put("id", appuntamento.getIdApp());
@@ -54,7 +54,7 @@ public class ExtensibleAgendaServlet extends JsonServlet {
             put("ad", isAllDay(appuntamento.getTsIniApp(), appuntamento.getTsFineApp()));
         }
     };
-    private final Function<Indisponibilita, Map<String,Object>> indisponibilitaToMapTransformer = new JsonMapTransformer<Indisponibilita>() {
+    private final Function<Indisponibilita, Map> indisponibilitaToMapTransformer = new JsonMapTransformer<Indisponibilita>() {
         @Override
         public void transformToMap(Indisponibilita indisponibilita) {
             put("id", indisponibilita.getIdInd());

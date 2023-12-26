@@ -45,7 +45,7 @@ import static it.wego.welfarego.determine.servlet.logica.applicativa.DeterminaBu
 public class DetermineForm extends AbstractForm implements AbstractForm.Loadable, AbstractForm.Proceedable {
 
     private static final Map<StatoIntervento, Character[]> statoInt2statiInt;
-    private static final Function<PaiEventoBean, Map<String,Object>> determineTransformerFunction = new JsonMapTransformer<PaiEventoBean>() {
+    private static final Function<PaiEventoBean, Map> determineTransformerFunction = new JsonMapTransformer<PaiEventoBean>() {
         @Override
         public void transformToMap(PaiEventoBean bean) {
             put("id", bean.getId());

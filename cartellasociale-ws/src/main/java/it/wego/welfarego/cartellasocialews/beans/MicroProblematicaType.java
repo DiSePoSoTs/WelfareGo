@@ -48,7 +48,7 @@ public class MicroProblematicaType {
     protected XMLGregorianCalendar dataFine;
 
     /**
-     * Recupera il valore della propriet‡ tipologiaMicroproblematica.
+     * Recupera il valore della propriet√† tipologiaMicroproblematica.
      * 
      * @return
      *     possible object is
@@ -60,7 +60,7 @@ public class MicroProblematicaType {
     }
 
     /**
-     * Imposta il valore della propriet‡ tipologiaMicroproblematica.
+     * Imposta il valore della propriet√† tipologiaMicroproblematica.
      * 
      * @param value
      *     allowed object is
@@ -72,7 +72,7 @@ public class MicroProblematicaType {
     }
 
     /**
-     * Recupera il valore della propriet‡ dataInizio.
+     * Recupera il valore della propriet√† dataInizio.
      * 
      * @return
      *     possible object is
@@ -84,7 +84,7 @@ public class MicroProblematicaType {
     }
 
     /**
-     * Imposta il valore della propriet‡ dataInizio.
+     * Imposta il valore della propriet√† dataInizio.
      * 
      * @param value
      *     allowed object is
@@ -96,7 +96,7 @@ public class MicroProblematicaType {
     }
 
     /**
-     * Recupera il valore della propriet‡ dataFine.
+     * Recupera il valore della propriet√† dataFine.
      * 
      * @return
      *     possible object is
@@ -108,7 +108,7 @@ public class MicroProblematicaType {
     }
 
     /**
-     * Imposta il valore della propriet‡ dataFine.
+     * Imposta il valore della propriet√† dataFine.
      * 
      * @param value
      *     allowed object is

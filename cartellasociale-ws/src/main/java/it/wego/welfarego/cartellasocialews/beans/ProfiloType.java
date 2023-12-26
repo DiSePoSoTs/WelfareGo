@@ -126,7 +126,7 @@ public class ProfiloType {
     protected XMLGregorianCalendar dataModifica;
 
     /**
-     * Recupera il valore della propriet‡ abilitazione.
+     * Recupera il valore della propriet√† abilitazione.
      * 
      * @return
      *     possible object is
@@ -138,7 +138,7 @@ public class ProfiloType {
     }
 
     /**
-     * Imposta il valore della propriet‡ abilitazione.
+     * Imposta il valore della propriet√† abilitazione.
      * 
      * @param value
      *     allowed object is
@@ -150,7 +150,7 @@ public class ProfiloType {
     }
 
     /**
-     * Recupera il valore della propriet‡ datiPersonali.
+     * Recupera il valore della propriet√† datiPersonali.
      * 
      * @return
      *     possible object is
@@ -162,7 +162,7 @@ public class ProfiloType {
     }
 
     /**
-     * Imposta il valore della propriet‡ datiPersonali.
+     * Imposta il valore della propriet√† datiPersonali.
      * 
      * @param value
      *     allowed object is
@@ -174,7 +174,7 @@ public class ProfiloType {
     }
 
     /**
-     * Recupera il valore della propriet‡ datiFamiliari.
+     * Recupera il valore della propriet√† datiFamiliari.
      * 
      * @return
      *     possible object is
@@ -186,7 +186,7 @@ public class ProfiloType {
     }
 
     /**
-     * Imposta il valore della propriet‡ datiFamiliari.
+     * Imposta il valore della propriet√† datiFamiliari.
      * 
      * @param value
      *     allowed object is
@@ -198,7 +198,7 @@ public class ProfiloType {
     }
 
     /**
-     * Recupera il valore della propriet‡ datiProfessionali.
+     * Recupera il valore della propriet√† datiProfessionali.
      * 
      * @return
      *     possible object is
@@ -210,7 +210,7 @@ public class ProfiloType {
     }
 
     /**
-     * Imposta il valore della propriet‡ datiProfessionali.
+     * Imposta il valore della propriet√† datiProfessionali.
      * 
      * @param value
      *     allowed object is
@@ -222,7 +222,7 @@ public class ProfiloType {
     }
 
     /**
-     * Recupera il valore della propriet‡ domicilio.
+     * Recupera il valore della propriet√† domicilio.
      * 
      * @return
      *     possible object is
@@ -234,7 +234,7 @@ public class ProfiloType {
     }
 
     /**
-     * Imposta il valore della propriet‡ domicilio.
+     * Imposta il valore della propriet√† domicilio.
      * 
      * @param value
      *     allowed object is
@@ -246,7 +246,7 @@ public class ProfiloType {
     }
 
     /**
-     * Recupera il valore della propriet‡ dataModifica.
+     * Recupera il valore della propriet√† dataModifica.
      * 
      * @return
      *     possible object is
@@ -258,7 +258,7 @@ public class ProfiloType {
     }
 
     /**
-     * Imposta il valore della propriet‡ dataModifica.
+     * Imposta il valore della propriet√† dataModifica.
      * 
      * @param value
      *     allowed object is
@@ -300,7 +300,7 @@ public class ProfiloType {
         protected XMLGregorianCalendar dataPresaInCarico;
 
         /**
-         * Recupera il valore della propriet‡ dataPresaInCarico.
+         * Recupera il valore della propriet√† dataPresaInCarico.
          * 
          * @return
          *     possible object is
@@ -312,7 +312,7 @@ public class ProfiloType {
         }
 
         /**
-         * Imposta il valore della propriet‡ dataPresaInCarico.
+         * Imposta il valore della propriet√† dataPresaInCarico.
          * 
          * @param value
          *     allowed object is
@@ -362,7 +362,7 @@ public class ProfiloType {
         protected int numerositaNucleoFam;
 
         /**
-         * Recupera il valore della propriet‡ statoCivile.
+         * Recupera il valore della propriet√† statoCivile.
          * 
          * @return
          *     possible object is
@@ -374,7 +374,7 @@ public class ProfiloType {
         }
 
         /**
-         * Imposta il valore della propriet‡ statoCivile.
+         * Imposta il valore della propriet√† statoCivile.
          * 
          * @param value
          *     allowed object is
@@ -386,7 +386,7 @@ public class ProfiloType {
         }
 
         /**
-         * Recupera il valore della propriet‡ nucleoFamiliare.
+         * Recupera il valore della propriet√† nucleoFamiliare.
          * 
          * @return
          *     possible object is
@@ -398,7 +398,7 @@ public class ProfiloType {
         }
 
         /**
-         * Imposta il valore della propriet‡ nucleoFamiliare.
+         * Imposta il valore della propriet√† nucleoFamiliare.
          * 
          * @param value
          *     allowed object is
@@ -410,7 +410,7 @@ public class ProfiloType {
         }
 
         /**
-         * Recupera il valore della propriet‡ numerositaNucleoFam.
+         * Recupera il valore della propriet√† numerositaNucleoFam.
          * 
          */
         public int getNumerositaNucleoFam() {
@@ -418,7 +418,7 @@ public class ProfiloType {
         }
 
         /**
-         * Imposta il valore della propriet‡ numerositaNucleoFam.
+         * Imposta il valore della propriet√† numerositaNucleoFam.
          * 
          */
         public void setNumerositaNucleoFam(int value) {
@@ -483,19 +483,19 @@ public class ProfiloType {
         protected String statoInvalidita;
         @XmlSchemaType(name = "string")
         protected SiNoType attesaInvalidita;
-        @XmlElementRef(name = "assegnoAccompagnamento", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "assegnoAccompagnamento", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class)
         protected JAXBElement<SiNoType> assegnoAccompagnamento;
-        @XmlElementRef(name = "attesaAccompagnamento", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "attesaAccompagnamento", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class)
         protected JAXBElement<SiNoType> attesaAccompagnamento;
         @XmlElement(required = true, nillable = true)
         protected String provvedimentoGiudiziario;
-        @XmlElementRef(name = "tipoAssegno", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "tipoAssegno", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class)
         protected JAXBElement<String> tipoAssegno;
-        @XmlElementRef(name = "note", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "note", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class)
         protected JAXBElement<String> note;
 
         /**
-         * Recupera il valore della propriet‡ isee.
+         * Recupera il valore della propriet√† isee.
          * 
          * @return
          *     possible object is
@@ -507,7 +507,7 @@ public class ProfiloType {
         }
 
         /**
-         * Imposta il valore della propriet‡ isee.
+         * Imposta il valore della propriet√† isee.
          * 
          * @param value
          *     allowed object is
@@ -519,7 +519,7 @@ public class ProfiloType {
         }
 
         /**
-         * Recupera il valore della propriet‡ certificatoL104.
+         * Recupera il valore della propriet√† certificatoL104.
          * 
          * @return
          *     possible object is
@@ -531,7 +531,7 @@ public class ProfiloType {
         }
 
         /**
-         * Imposta il valore della propriet‡ certificatoL104.
+         * Imposta il valore della propriet√† certificatoL104.
          * 
          * @param value
          *     allowed object is
@@ -543,7 +543,7 @@ public class ProfiloType {
         }
 
         /**
-         * Recupera il valore della propriet‡ demenzaCertificata.
+         * Recupera il valore della propriet√† demenzaCertificata.
          * 
          * @return
          *     possible object is
@@ -555,7 +555,7 @@ public class ProfiloType {
         }
 
         /**
-         * Imposta il valore della propriet‡ demenzaCertificata.
+         * Imposta il valore della propriet√† demenzaCertificata.
          * 
          * @param value
          *     allowed object is
@@ -567,7 +567,7 @@ public class ProfiloType {
         }
 
         /**
-         * Recupera il valore della propriet‡ disabilitaSensoriali.
+         * Recupera il valore della propriet√† disabilitaSensoriali.
          * 
          * @return
          *     possible object is
@@ -579,7 +579,7 @@ public class ProfiloType {
         }
 
         /**
-         * Imposta il valore della propriet‡ disabilitaSensoriali.
+         * Imposta il valore della propriet√† disabilitaSensoriali.
          * 
          * @param value
          *     allowed object is
@@ -591,7 +591,7 @@ public class ProfiloType {
         }
 
         /**
-         * Recupera il valore della propriet‡ statoInvalidita.
+         * Recupera il valore della propriet√† statoInvalidita.
          * 
          * @return
          *     possible object is
@@ -603,7 +603,7 @@ public class ProfiloType {
         }
 
         /**
-         * Imposta il valore della propriet‡ statoInvalidita.
+         * Imposta il valore della propriet√† statoInvalidita.
          * 
          * @param value
          *     allowed object is
@@ -615,7 +615,7 @@ public class ProfiloType {
         }
 
         /**
-         * Recupera il valore della propriet‡ attesaInvalidita.
+         * Recupera il valore della propriet√† attesaInvalidita.
          * 
          * @return
          *     possible object is
@@ -627,7 +627,7 @@ public class ProfiloType {
         }
 
         /**
-         * Imposta il valore della propriet‡ attesaInvalidita.
+         * Imposta il valore della propriet√† attesaInvalidita.
          * 
          * @param value
          *     allowed object is
@@ -639,7 +639,7 @@ public class ProfiloType {
         }
 
         /**
-         * Recupera il valore della propriet‡ assegnoAccompagnamento.
+         * Recupera il valore della propriet√† assegnoAccompagnamento.
          * 
          * @return
          *     possible object is
@@ -651,7 +651,7 @@ public class ProfiloType {
         }
 
         /**
-         * Imposta il valore della propriet‡ assegnoAccompagnamento.
+         * Imposta il valore della propriet√† assegnoAccompagnamento.
          * 
          * @param value
          *     allowed object is
@@ -663,7 +663,7 @@ public class ProfiloType {
         }
 
         /**
-         * Recupera il valore della propriet‡ attesaAccompagnamento.
+         * Recupera il valore della propriet√† attesaAccompagnamento.
          * 
          * @return
          *     possible object is
@@ -675,7 +675,7 @@ public class ProfiloType {
         }
 
         /**
-         * Imposta il valore della propriet‡ attesaAccompagnamento.
+         * Imposta il valore della propriet√† attesaAccompagnamento.
          * 
          * @param value
          *     allowed object is
@@ -687,7 +687,7 @@ public class ProfiloType {
         }
 
         /**
-         * Recupera il valore della propriet‡ provvedimentoGiudiziario.
+         * Recupera il valore della propriet√† provvedimentoGiudiziario.
          * 
          * @return
          *     possible object is
@@ -699,7 +699,7 @@ public class ProfiloType {
         }
 
         /**
-         * Imposta il valore della propriet‡ provvedimentoGiudiziario.
+         * Imposta il valore della propriet√† provvedimentoGiudiziario.
          * 
          * @param value
          *     allowed object is
@@ -711,7 +711,7 @@ public class ProfiloType {
         }
 
         /**
-         * Recupera il valore della propriet‡ tipoAssegno.
+         * Recupera il valore della propriet√† tipoAssegno.
          * 
          * @return
          *     possible object is
@@ -723,7 +723,7 @@ public class ProfiloType {
         }
 
         /**
-         * Imposta il valore della propriet‡ tipoAssegno.
+         * Imposta il valore della propriet√† tipoAssegno.
          * 
          * @param value
          *     allowed object is
@@ -735,7 +735,7 @@ public class ProfiloType {
         }
 
         /**
-         * Recupera il valore della propriet‡ note.
+         * Recupera il valore della propriet√† note.
          * 
          * @return
          *     possible object is
@@ -747,7 +747,7 @@ public class ProfiloType {
         }
 
         /**
-         * Imposta il valore della propriet‡ note.
+         * Imposta il valore della propriet√† note.
          * 
          * @param value
          *     allowed object is
@@ -794,7 +794,7 @@ public class ProfiloType {
         protected String condizioneProfessionale;
 
         /**
-         * Recupera il valore della propriet‡ titoloStudio.
+         * Recupera il valore della propriet√† titoloStudio.
          * 
          * @return
          *     possible object is
@@ -806,7 +806,7 @@ public class ProfiloType {
         }
 
         /**
-         * Imposta il valore della propriet‡ titoloStudio.
+         * Imposta il valore della propriet√† titoloStudio.
          * 
          * @param value
          *     allowed object is
@@ -818,7 +818,7 @@ public class ProfiloType {
         }
 
         /**
-         * Recupera il valore della propriet‡ condizioneProfessionale.
+         * Recupera il valore della propriet√† condizioneProfessionale.
          * 
          * @return
          *     possible object is
@@ -830,7 +830,7 @@ public class ProfiloType {
         }
 
         /**
-         * Imposta il valore della propriet‡ condizioneProfessionale.
+         * Imposta il valore della propriet√† condizioneProfessionale.
          * 
          * @param value
          *     allowed object is
@@ -876,15 +876,15 @@ public class ProfiloType {
     public static class Domicilio {
 
         protected ToponimoType toponimo;
-        @XmlElementRef(name = "telefono", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "telefono", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class)
         protected JAXBElement<String> telefono;
-        @XmlElementRef(name = "condizioneAbitativa", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "condizioneAbitativa", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class)
         protected JAXBElement<String> condizioneAbitativa;
-        @XmlElementRef(name = "idoneitaAbitazione", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "idoneitaAbitazione", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class)
         protected JAXBElement<String> idoneitaAbitazione;
 
         /**
-         * Recupera il valore della propriet‡ toponimo.
+         * Recupera il valore della propriet√† toponimo.
          * 
          * @return
          *     possible object is
@@ -896,7 +896,7 @@ public class ProfiloType {
         }
 
         /**
-         * Imposta il valore della propriet‡ toponimo.
+         * Imposta il valore della propriet√† toponimo.
          * 
          * @param value
          *     allowed object is
@@ -908,7 +908,7 @@ public class ProfiloType {
         }
 
         /**
-         * Recupera il valore della propriet‡ telefono.
+         * Recupera il valore della propriet√† telefono.
          * 
          * @return
          *     possible object is
@@ -920,7 +920,7 @@ public class ProfiloType {
         }
 
         /**
-         * Imposta il valore della propriet‡ telefono.
+         * Imposta il valore della propriet√† telefono.
          * 
          * @param value
          *     allowed object is
@@ -932,7 +932,7 @@ public class ProfiloType {
         }
 
         /**
-         * Recupera il valore della propriet‡ condizioneAbitativa.
+         * Recupera il valore della propriet√† condizioneAbitativa.
          * 
          * @return
          *     possible object is
@@ -944,7 +944,7 @@ public class ProfiloType {
         }
 
         /**
-         * Imposta il valore della propriet‡ condizioneAbitativa.
+         * Imposta il valore della propriet√† condizioneAbitativa.
          * 
          * @param value
          *     allowed object is
@@ -956,7 +956,7 @@ public class ProfiloType {
         }
 
         /**
-         * Recupera il valore della propriet‡ idoneitaAbitazione.
+         * Recupera il valore della propriet√† idoneitaAbitazione.
          * 
          * @return
          *     possible object is
@@ -968,7 +968,7 @@ public class ProfiloType {
         }
 
         /**
-         * Imposta il valore della propriet‡ idoneitaAbitazione.
+         * Imposta il valore della propriet√† idoneitaAbitazione.
          * 
          * @param value
          *     allowed object is

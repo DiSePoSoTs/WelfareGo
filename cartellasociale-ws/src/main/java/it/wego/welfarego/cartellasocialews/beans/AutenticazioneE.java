@@ -48,7 +48,7 @@ public class AutenticazioneE {
     protected long uorgStrt0;
 
     /**
-     * Recupera il valore della propriet‡ utente.
+     * Recupera il valore della propriet√† utente.
      * 
      * @return
      *     possible object is
@@ -60,7 +60,7 @@ public class AutenticazioneE {
     }
 
     /**
-     * Imposta il valore della propriet‡ utente.
+     * Imposta il valore della propriet√† utente.
      * 
      * @param value
      *     allowed object is
@@ -72,7 +72,7 @@ public class AutenticazioneE {
     }
 
     /**
-     * Recupera il valore della propriet‡ password.
+     * Recupera il valore della propriet√† password.
      * 
      * @return
      *     possible object is
@@ -84,7 +84,7 @@ public class AutenticazioneE {
     }
 
     /**
-     * Imposta il valore della propriet‡ password.
+     * Imposta il valore della propriet√† password.
      * 
      * @param value
      *     allowed object is
@@ -96,7 +96,7 @@ public class AutenticazioneE {
     }
 
     /**
-     * Recupera il valore della propriet‡ uorgStrt0.
+     * Recupera il valore della propriet√† uorgStrt0.
      * 
      */
     public long getUorgStrt0() {
@@ -104,7 +104,7 @@ public class AutenticazioneE {
     }
 
     /**
-     * Imposta il valore della propriet‡ uorgStrt0.
+     * Imposta il valore della propriet√† uorgStrt0.
      * 
      */
     public void setUorgStrt0(long value) {
