@@ -2,7 +2,6 @@ package it.wego.welfarego.xsd.pratica.serializers;
 
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-import com.google.common.base.Objects;
 import com.google.common.collect.Collections2;
 import it.wego.welfarego.persistence.entities.AnagrafeSoc;
 import it.wego.welfarego.persistence.entities.Ente;

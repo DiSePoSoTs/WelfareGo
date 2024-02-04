@@ -11,7 +11,8 @@
         </init-param>
         <supports>
             <mime-type>text/html</mime-type>
-            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>view</portlet-mode>
+            <window-state>maximized</window-state>
         </supports>
         <portlet-info>
             <title>Gestione economica</title>

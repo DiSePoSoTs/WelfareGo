@@ -270,12 +270,12 @@ public class FamigliaServlet extends JsonServlet {
 		return json;
 	}
 
-	private enum FamSocTransformerFunction implements Function<AnagrafeFam, Map<String, Object>> {
+	private enum FamSocTransformerFunction implements Function<AnagrafeFam, Map> {
 
 		INSTANCE;
 
-		public Map<String, Object> apply(AnagrafeFam input) {
-			Map<String, Object> map = FamigliaSerializer.INSTANCE.apply(input.getAnagrafeSocTarget());
+		public Map apply(AnagrafeFam input) {
+			Map map = FamigliaSerializer.INSTANCE.apply(input.getAnagrafeSocTarget());
 			map.put("desQual", input.getCodQual().getDesParam());
 			map.put("codQual", input.getCodQual().getIdParamIndata().toString());
 			Pai pai = new PaiDao(PersistenceAdapterFactory.getPersistenceAdapter().getEntityManager())

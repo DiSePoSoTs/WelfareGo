@@ -20,13 +20,13 @@ import javax.persistence.EntityManager;
  *
  * @author giuseppe
  */
-public enum FamigliaSerializer implements Function<AnagrafeSoc, Map<String, Object>> {
+public enum FamigliaSerializer implements Function<AnagrafeSoc, Map> {
 
     INSTANCE;
 
-    public Map<String, Object> serializeAnagrafeSoc(AnagrafeSoc anagrafeSociale, int codAna, @Nullable Integer codAnaFam) {
+    public Map serializeAnagrafeSoc(AnagrafeSoc anagrafeSociale, int codAna, @Nullable Integer codAnaFam) {
         codAnaFam = MoreObjects.firstNonNull(codAnaFam, anagrafeSociale.getCodAna());
-        Map<String, Object> res = Maps.newLinkedHashMap();
+        Map res = Maps.newLinkedHashMap();
         if (anagrafeSociale.getLuogoResidenza() != null) {
             res.put("civicoResidenza", anagrafeSociale.getLuogoResidenza().getCodCiv());
             res.put("civicoResidenzaDes", anagrafeSociale.getLuogoResidenza().getCivicoText());
@@ -111,7 +111,7 @@ public enum FamigliaSerializer implements Function<AnagrafeSoc, Map<String, Obje
         };
     }
 
-    public Map<String, Object> apply(AnagrafeSoc input) {
+    public Map apply(AnagrafeSoc input) {
         Preconditions.checkNotNull(input);
         return serializeAnagrafeSoc(input, input.getCodAna(), null);
     }

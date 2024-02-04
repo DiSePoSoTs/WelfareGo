@@ -121,13 +121,13 @@
         <servlet-class>it.wego.welfarego.servlet.cartella.PopolaDatiServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>traferimento</servlet-name>
-        <servlet-class>it.wego.welfarego.servlet.cartella.traferimento</servlet-class>
+        <servlet-name>trasferimento</servlet-name>
+        <servlet-class>it.wego.welfarego.servlet.cartella.Trasferimento</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>ricercaBeneficiari</servlet-name>
-        <servlet-class>it.wego.welfarego.servlet.pai.ricercaBeneficiari</servlet-class>
-    </servlet>
+<!--     <servlet> -->
+<!--         <servlet-name>ricercaBeneficiari</servlet-name> -->
+<!--         <servlet-class>it.wego.welfarego.servlet.pai.ricercaBeneficiari</servlet-class> -->
+<!--     </servlet> -->
     <servlet>
         <servlet-name>agenda</servlet-name>
         <servlet-class>it.wego.welfarego.servlet.agenda.AgendaServlet</servlet-class>

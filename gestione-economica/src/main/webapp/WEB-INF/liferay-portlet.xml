@@ -4,11 +4,11 @@
     <portlet>
         <portlet-name>GestioneEconomica</portlet-name>
         <instanceable>false</instanceable>
-        <header-portlet-css>/ext/resources/css/ext-all.css</header-portlet-css>
-        <header-portlet-css>/ext/resources/css/ext-all-gray.css</header-portlet-css>
-        <header-portlet-css>/ext/resources/css/ext-liferay.css</header-portlet-css>
-        <header-portlet-javascript>/ext/ext-all.js</header-portlet-javascript>
-        <header-portlet-javascript>/ext/locale/ext-lang-it.js</header-portlet-javascript>
+        <header-portlet-css>/extensible/resources/css/extensible-all.css</header-portlet-css>
+        <header-portlet-css>/extensible/resources/css/extensible-all-gray.css</header-portlet-css>
+        <header-portlet-css>/extensible/resources/css/extensible-liferay.css</header-portlet-css>
+        <header-portlet-javascript>/extensible/lib/extensible-all.js</header-portlet-javascript>
+        <header-portlet-javascript>/extensible/locale/extensible-lang-it.js</header-portlet-javascript>
         <header-portlet-javascript>/js/wego-utils.js</header-portlet-javascript>
     </portlet>
     <role-mapper>
