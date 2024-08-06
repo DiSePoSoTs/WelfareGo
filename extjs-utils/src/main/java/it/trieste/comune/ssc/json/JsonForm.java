@@ -1,4 +1,4 @@
-package it.wego.json;
+package it.trieste.comune.ssc.json;
 
 /**
  * 
