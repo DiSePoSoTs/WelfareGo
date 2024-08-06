@@ -2,7 +2,7 @@
 <%@page import="it.wego.welfarego.xsd.cartellasociale.ElencoCartelleSociali.CartellaSociale"%>
 <%@page import="java.text.ParseException"%>
 <%@page import="javax.xml.bind.JAXBException"%>
-<%@page import="it.wego.welfarego.insiel.cartellasociale.client.Client"%>
+<%-- <%@page import="it.wego.welfarego.insiel.cartellasociale.client.Client"%> --%>
 <%@page import="it.wego.welfarego.persistence.entities.Utenti"%>
 <%@page import="it.wego.welfarego.persistence.dao.UtentiDao"%>
 <%@page import="it.wego.welfarego.persistence.entities.AnagrafeSoc"%>

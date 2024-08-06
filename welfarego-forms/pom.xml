@@ -192,6 +192,12 @@
 			<groupId>org.odftoolkit</groupId>
 			<artifactId>odfdom-java</artifactId>
 			<version>0.8.7</version>
+			<exclusions>
+				<exclusion>
+					<groupId>xml-apis</groupId>
+					<artifactId>xml-apis</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.jopendocument</groupId>

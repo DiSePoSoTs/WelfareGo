@@ -55,12 +55,12 @@ public class ConditionBuilder {
         return isIn(field, Arrays.asList(values));
     }
 
-    public static Condition isIn(String field, Collection values) {
+    public static Condition isIn(String field, Collection<?> values) {
         if (values.isEmpty()) {
             return SimpleConditions.FALSE;
         } else {
             if (values.iterator().next() instanceof Character) {
-                return new IsInCharCondition(field, values);
+                return new IsInCharCondition(field, (Collection<Character>) values);
             } else if (values.iterator().next() instanceof Integer) {
                 return new IsInIntCondition(field, values);
             } else {
