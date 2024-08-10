@@ -213,6 +213,10 @@ public class Parametri implements Serializable {
 	@Column(name = "COD_PARAM", nullable = false, length = 10)
 	private String codParam;
 
+	public String getCodParam() {
+		return codParam;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "FLG_ATTIVO", nullable = false)
 	private char flgAttivo;
@@ -221,6 +225,10 @@ public class Parametri implements Serializable {
 	@JoinColumn(name = "TIP_PARAM", referencedColumnName = "TIP_PARAM", nullable = false)
 	@ManyToOne(optional = false)
 	private TipologiaParametri tipParam;
+
+	public TipologiaParametri getTipParam() {
+		return tipParam;
+	}
 
 	@JoinFetch(value = JoinFetchType.OUTER)
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idParam")

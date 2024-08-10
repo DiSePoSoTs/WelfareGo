@@ -27,7 +27,7 @@ import lombok.Setter;
 @Table(name = "PAI_INTERVENTO")
 @NamedQueries({ @NamedQuery(name = "PaiIntervento.findAll", query = "SELECT p FROM PaiIntervento p"),
 		@NamedQuery(name = "PaiIntervento.findByCodPaiInterventiComune", query = "SELECT p FROM PaiIntervento p WHERE p.paiInterventoPK.codPai = :codPai AND p.associazione.id=1"),
-		@NamedQuery(name = "PaiIntervento.findByCodPaiInterventiEsterni", query = "SELECT p FROM PaiIntervento p WHERE p.paiInterventoPK.codPai = :codPai AND p.associazione.id != 1"),
+		@NamedQuery(name = "PaiIntervento.findByCodPaiInterventiEsterni", query = "SELECT p FROM PaiIntervento p WHERE p.paiInterventoPK.codPai = :codPai AND p.associazione.id <> 1"),
 		@NamedQuery(name = "PaiIntervento.findByCodPai", query = "SELECT p FROM PaiIntervento p WHERE p.paiInterventoPK.codPai = :codPai"),
 		@NamedQuery(name = "PaiIntervento.findByCodTipint", query = "SELECT p FROM PaiIntervento p WHERE p.paiInterventoPK.codTipint = :codTipint"),
 		@NamedQuery(name = "PaiIntervento.findByCntTipint", query = "SELECT p FROM PaiIntervento p WHERE p.paiInterventoPK.cntTipint = :cntTipint"),
@@ -70,9 +70,17 @@ public class PaiIntervento implements Serializable, Cloneable {
 	@EmbeddedId
 	protected PaiInterventoPK paiInterventoPK;
 
+	public PaiInterventoPK getPaiInterventoPK() {
+		return paiInterventoPK;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "STATO_INT", nullable = false)
 	private char statoInt;
+
+	public char getStatoInt() {
+		return statoInt;
+	}
 
 	@Column(name = "DT_ESEC")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -81,6 +89,10 @@ public class PaiIntervento implements Serializable, Cloneable {
 	@Column(name = "DT_CHIUS")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtChius;
+
+	public Date getDtChius() {
+		return dtChius;
+	}
 
 	@Column(name = "DT_SOSP")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -109,8 +121,16 @@ public class PaiIntervento implements Serializable, Cloneable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataRichiestaApprovazione;
 
+	public Date getDataRichiestaApprovazione() {
+		return dataRichiestaApprovazione;
+	}
+
 	@Column(name = "DUR_MESI")
 	private Integer durMesi;
+
+	public Integer getDurMesi() {
+		return durMesi;
+	}
 
 	@Column(name = "DUR_SETTIMANE")
 	private Integer durSettimane;
@@ -119,6 +139,10 @@ public class PaiIntervento implements Serializable, Cloneable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtAvvio;
 
+	public Date getDtAvvio() {
+		return dtAvvio;
+	}
+
 	@Column(name = "QUANTITA")
 	private BigDecimal quantita;
 
@@ -126,9 +150,17 @@ public class PaiIntervento implements Serializable, Cloneable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtFine;
 
+	public Date getDtFine() {
+		return dtFine;
+	}
+
 	@Column(name = "DT_FINE_INDIC")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataFineIndicativa;
+
+	public Date getDataFineIndicativa() {
+		return dataFineIndicativa;
+	}
 
 	@Column(name = "DT_AVVIO_PROP")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -161,16 +193,24 @@ public class PaiIntervento implements Serializable, Cloneable {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "interventoPadre")
 	private List<InterventiAssociati> interventiFigli;
 
-	@OneToOne(cascade = CascadeType.ALL, mappedBy = "interventoFiglio")
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "interventiFigli")
 	private InterventiAssociati interventoPadre;
 
 	@JoinColumn(name = "COD_TIPINT", referencedColumnName = "COD_TIPINT", nullable = false, insertable = false, updatable = false)
 	@ManyToOne(optional = false)
 	private TipologiaIntervento tipologiaIntervento;
 
+	public TipologiaIntervento getTipologiaIntervento() {
+		return tipologiaIntervento;
+	}
+
 	@JoinColumn(name = "DS_ID_PARAM_FASCIA_REDD", referencedColumnName = "ID_PARAM_INDATA")
 	@ManyToOne
 	private ParametriIndata dsIdParamFasciaRedd;
+
+	public ParametriIndata getDsIdParamFasciaRedd() {
+		return dsIdParamFasciaRedd;
+	}
 
 	// associazione di defauult = comune di trieste
 	@JoinColumn(name = "ID_ASSOCIAZIONE", referencedColumnName = "ID")
@@ -180,6 +220,10 @@ public class PaiIntervento implements Serializable, Cloneable {
 	@JoinColumn(name = "COD_PAI", referencedColumnName = "COD_PAI", nullable = false, insertable = false, updatable = false)
 	@ManyToOne(optional = false)
 	private Pai pai;
+
+	public Pai getPai() {
+		return pai;
+	}
 
 	@JoinColumn(name = "DS_COD_ANA_BENEF", referencedColumnName = "COD_ANA")
 	@ManyToOne
@@ -194,6 +238,10 @@ public class PaiIntervento implements Serializable, Cloneable {
 	@Column(name = "RINNOVATO", nullable = false)
 	private Integer rinnovato = 1;
 
+	public Integer getRinnovato() {
+		return rinnovato;
+	}
+
 	@JoinColumn(name = "DS_COD_ANA_RICHIEDENTE", referencedColumnName = "COD_ANA")
 	@ManyToOne
 	private AnagrafeSoc dsCodAnaRich;
@@ -201,8 +249,20 @@ public class PaiIntervento implements Serializable, Cloneable {
 	@Column(name = "IBAN_DELEGATO")
 	private String ibanDelegato;
 
+	public AnagrafeSoc getDsCodAnaBenef() {
+		return dsCodAnaBenef;
+	}
+
+	public String getIbanDelegato() {
+		return ibanDelegato;
+	}
+
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "paiIntervento")
 	private List<PaiEvento> paiEventoList;
+
+	public List<PaiEvento> getPaiEventoList() {
+		return paiEventoList;
+	}
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "paiIntervento")
 	private List<MandatoDettaglio> mandatoDettaglioList;
@@ -213,6 +273,10 @@ public class PaiIntervento implements Serializable, Cloneable {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "paiIntervento")
 	@MapKey(name = "codCampo")
 	private Map<String, MapDatiSpecificiIntervento> datiSpecificiByCod;
+
+	public Map<String, MapDatiSpecificiIntervento> getDatiSpecificiByCod() {
+		return datiSpecificiByCod;
+	}
 
 	@Column(name = "CSR_ID", length = 255)
 	private String idCsr;
@@ -242,6 +306,10 @@ public class PaiIntervento implements Serializable, Cloneable {
 	@JoinColumn(name = "ID_TARIFFA", referencedColumnName = "ID")
 	@ManyToOne
 	private Tariffa tariffa;
+
+	public Tariffa getTariffa() {
+		return tariffa;
+	}
 
 	@Column(name = "TESTO_AUTORIZZAZIONE")
 	private String testoAutorizzazione;

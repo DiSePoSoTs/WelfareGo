@@ -36,9 +36,17 @@ public class Provincia implements Serializable {
 	@Column(name = "DES_PROV", nullable = false, length = 765)
 	private String desProv;
 
+	public String getDesProv() {
+		return desProv;
+	}
+
 	@JoinColumn(name = "COD_STATO", referencedColumnName = "COD_STATO", nullable = false, insertable = false, updatable = false)
 	@ManyToOne(optional = false)
 	private Stato stato;
+
+	public Stato getStato() {
+		return stato;
+	}
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "provincia")
 	private List<Comune> comuneList;
@@ -47,9 +55,17 @@ public class Provincia implements Serializable {
 	@MapKey(name = "codCom")
 	private Map<String, Comune> comuniByCodCom;
 
+	public Map<String, Comune> getComuniByCodCom() {
+		return comuniByCodCom;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "COD_PROV", nullable = false, length = 10, insertable = false, updatable = false)
 	private String codProv;
+
+	public String getCodProv() {
+		return codProv;
+	}
 
 	public Provincia() {
 	}

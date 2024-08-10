@@ -67,14 +67,26 @@ public class ParametriIndata implements Serializable {
 	@ManyToOne(optional = false)
 	private Parametri idParam;
 
+	public Parametri getIdParam() {
+		return idParam;
+	}
+
 	// data params
 	@Basic(optional = false)
 	@Column(name = "DES_PARAM", nullable = false, length = 765)
 	private String desParam;
 
+	public String getDesParam() {
+		return desParam;
+	}
+
 	@Column(name = "DATE_PARAM")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dateParam;
+
+	public BigDecimal getDecimalParam() {
+		return decimalParam;
+	}
 
 	@Column(name = "DECIMAL_PARAM", precision = 16, scale = 6)
 	private BigDecimal decimalParam;

@@ -38,6 +38,14 @@ public class MapDatiSpecificiInterventoPK implements Serializable {
 	@Column(name = "COD_CAMPO", nullable = false, length = 20)
 	private String codCampo;
 
+	public void setCodCampo(String codCampo) {
+		this.codCampo = codCampo;
+	}
+
+	public String getCodCampo() {
+		return codCampo;
+	}
+
 	public MapDatiSpecificiInterventoPK() {
 	}
 

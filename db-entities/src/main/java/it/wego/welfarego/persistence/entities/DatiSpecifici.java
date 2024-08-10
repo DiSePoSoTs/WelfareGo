@@ -46,6 +46,10 @@ public class DatiSpecifici implements Serializable {
 	@Column(name = "COD_CAMPO", nullable = false, length = 20)
 	private String codCampo;
 
+	public String getCodCampo() {
+		return codCampo;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "DES_CAMPO", nullable = false, length = 60)
 	private String desCampo;

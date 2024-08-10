@@ -26,8 +26,16 @@ public class PaiMacroProblematicaPK implements Serializable {
 	@Column(name = "COD_PAI", nullable = false)
 	private Integer codPai;
 
+	public Integer getCodPai() {
+		return codPai;
+	}
+
 	@Column(name = "IP_MACRO_PROBLEMATICA", nullable = false)
 	private Integer ipMacroProblematica;
+
+	public Integer getIpMacroProblematica() {
+		return ipMacroProblematica;
+	}
 
 	public PaiMacroProblematicaPK() {
 	}

@@ -113,6 +113,10 @@ public class Fattura implements Serializable {
 	@Column(name = "MESE_RIF")
 	private Integer meseRif;
 
+	public Integer getMeseRif() {
+		return meseRif;
+	}
+
 	@Column(name = "PERIODO_DAL")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date periodoDal;
@@ -191,6 +195,10 @@ public class Fattura implements Serializable {
 	@Column(name = "RISCOSSO", precision = 9, scale = 4)
 	private BigDecimal riscosso;
 
+	public Integer getIdFatt() {
+		return idFatt;
+	}
+
 	@Id
 	@Basic(optional = false)
 	@GeneratedValue(generator = "fatturaSequence")
@@ -209,6 +217,10 @@ public class Fattura implements Serializable {
 					@JoinColumn(name = "ID_FATT_CORR", referencedColumnName = "ID_FATT", nullable = false) })
 	@ManyToMany
 	private List<Fattura> fatturaList;
+
+	public ParametriIndata getIdParamIva() {
+		return idParamIva;
+	}
 
 	@JoinColumn(name = "ID_PARAM_IVA", referencedColumnName = "ID_PARAM_INDATA")
 	@ManyToOne
@@ -238,6 +250,10 @@ public class Fattura implements Serializable {
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idFatt")
 	private List<FatturaDettaglio> fatturaDettaglioList;
+
+	public List<FatturaDettaglio> getFatturaDettaglioList() {
+		return fatturaDettaglioList;
+	}
 
 	public Fattura() {
 	}

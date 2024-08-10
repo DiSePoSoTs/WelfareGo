@@ -47,6 +47,10 @@ public class Tariffa implements Serializable {
 	@Column(name = "COSTO", nullable = false)
 	private BigDecimal costo;
 
+	public BigDecimal getCosto() {
+		return costo;
+	}
+
 	@Column(name = "DESCRIZIONE")
 	private String descrizione;
 

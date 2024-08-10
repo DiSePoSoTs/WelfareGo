@@ -87,6 +87,11 @@ public class TipologiaIntervento implements Serializable {
 	@Column(name = "COD_TIPINT", nullable = false, length = 10)
 	private String codTipint;
 
+	public String getCodTipint() {
+		return codTipint;
+	}
+
+
 	@Basic(optional = false)
 	@Column(name = "DES_TIPINT", nullable = false, length = 765)
 	private String desTipint;
@@ -102,6 +107,10 @@ public class TipologiaIntervento implements Serializable {
 	@Basic(optional = false)
 	@Column(name = "IMP_STD_COSTO", nullable = false, precision = 9, scale = 2)
 	private BigDecimal impStdCosto;
+
+	public BigDecimal getImpStdCosto() {
+		return impStdCosto;
+	}
 
 	@Column(name = "COD_PROC_FO", length = 10)
 	private String codProcFo;
@@ -151,6 +160,11 @@ public class TipologiaIntervento implements Serializable {
 	@Column(name = "FLG_RINNOVO_AUTO", nullable = false)
 	private String deveRestareAperto = FLG_RINNOVO_AUTOMATICO_N;
 
+	public String getDeveRestareAperto() {
+		return deveRestareAperto;
+	}
+
+
 	@Column(name = "FLG_RINNOVO", nullable = false)
 	private String flgRinnovo = FLG_RINNOVO_AUTOMATICO_N;
 
@@ -188,6 +202,11 @@ public class TipologiaIntervento implements Serializable {
 	@JoinColumn(name = "ID_PARAM_UNI_MIS", referencedColumnName = "ID_PARAM_INDATA")
 	@ManyToOne
 	private ParametriIndata idParamUniMis;
+
+	public ParametriIndata getIdParamUniMis() {
+		return idParamUniMis;
+	}
+
 
 	/**
 	 * tip param 'ci'
@@ -258,6 +277,11 @@ public class TipologiaIntervento implements Serializable {
 	@JoinColumn(name = "IP_ALIQUOTA_IVA", referencedColumnName = "ID_PARAM_INDATA")
 	@ManyToOne
 	private ParametriIndata ipAliquotaIva;
+
+	public ParametriIndata getIpAliquotaIva() {
+		return ipAliquotaIva;
+	}
+
 
 	@Column(name = "FLG_DOC_AUTORIZZAZIONE", nullable = false)
 	private char flgDocumentoDiAutorizzazione = 'N';

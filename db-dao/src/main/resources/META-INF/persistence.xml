@@ -72,7 +72,7 @@
 		<shared-cache-mode>NONE</shared-cache-mode>
 		<properties>
 			<property name="eclipselink.logging.logger"
-				value="it.wego.utils.eclipselink.logger.Log4jLogger" />
+				value="it.trieste.comune.ssc.utils.eclipselink.logger.Log4jLogger" />
 			<property name="eclipselink.logging.level" value="INFO" />
 			<property name="eclipselink.logging.parameters"
 				value="false" />

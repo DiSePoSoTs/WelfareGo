@@ -73,7 +73,7 @@
         <properties>
 
             <property name="eclipselink.ddl-generation.output-mode" value="database"/>
-            <property name="eclipselink.logging.logger" value="it.wego.utils.eclipselink.logger.Log4jLogger"/>
+            <property name="eclipselink.logging.logger" value="it.trieste.comune.ssc.utils.eclipselink.logger.Log4jLogger"/>
             <property name="eclipselink.logging.level" value="INFO"/>
             <property name="eclipselink.logging.parameters" value="fasle"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@172.16.1.118:1522:WEGOTEST"/>
@@ -148,7 +148,7 @@
 		<class>it.wego.welfarego.persistence.entities.Tariffa</class>
         <shared-cache-mode>ALL</shared-cache-mode>
         <properties>
-            <property name="eclipselink.logging.logger" value="it.wego.utils.eclipselink.logger.Log4jLogger"/>
+            <property name="eclipselink.logging.logger" value="it.trieste.comune.ssc.utils.eclipselink.logger.Log4jLogger"/>
             <property name="eclipselink.logging.level" value="ALL"/>
             <property name="eclipselink.logging.parameters" value="true"/>
             <!--<property name="eclipselink.jdbc.batch-writing" value="JDBC"/>-->

@@ -39,6 +39,10 @@ public class Comune implements Serializable {
 	@Column(name = "DES_COM", nullable = false, length = 765)
 	private String desCom;
 
+	public String getDesCom() {
+		return desCom;
+	}
+
 	@Column(name = "COD_CATAST", length = 4)
 	private String codCatast;
 
@@ -54,6 +58,14 @@ public class Comune implements Serializable {
 	@ManyToOne(optional = false)
 	private Provincia provincia;
 
+	public Provincia getProvincia() {
+		return provincia;
+	}
+
+	public Map<String, Toponomastica> getToponomasticaByCodVia() {
+		return toponomasticaByCodVia;
+	}
+
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "comune")
 	@MapKey(name = "codVia")
 	private Map<String, Toponomastica> toponomasticaByCodVia;
@@ -61,6 +73,10 @@ public class Comune implements Serializable {
 	@Basic(optional = false)
 	@Column(name = "COD_COM", nullable = false, length = 10, insertable = false, updatable = false)
 	private String codCom;
+
+	public String getCodCom() {
+		return codCom;
+	}
 
 	public Comune() {
 	}

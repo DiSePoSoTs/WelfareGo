@@ -36,9 +36,17 @@ public class Stato implements Serializable {
 	@Column(name = "COD_STATO", nullable = false, length = 10)
 	private String codStato;
 
+	public String getCodStato() {
+		return codStato;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "DES_STATO", nullable = false, length = 765)
 	private String desStato;
+
+	public String getDesStato() {
+		return desStato;
+	}
 
 	@Column(name = "COD_GRUPPO", length = 20)
 	private String codGruppo;
@@ -58,6 +66,10 @@ public class Stato implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "stato")
 	@MapKey(name = "codProv")
 	private Map<String, Provincia> provincieByCodProv;
+
+	public Map<String, Provincia> getProvincieByCodProv() {
+		return provincieByCodProv;
+	}
 
 	public Stato() {
 	}

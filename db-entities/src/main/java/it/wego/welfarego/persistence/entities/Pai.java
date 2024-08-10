@@ -212,9 +212,17 @@ public class Pai implements Serializable {
 	@ManyToOne(optional = false)
 	private ParametriIndata idParamUot;
 
+	public ParametriIndata getIdParamUot() {
+		return idParamUot;
+	}
+
 	@JoinColumn(name = "ID_PARAM_FASCIA", referencedColumnName = "ID_PARAM_INDATA", nullable = false)
 	@ManyToOne(optional = false)
 	private ParametriIndata idParamFascia;
+
+	public ParametriIndata getIdParamFascia() {
+		return idParamFascia;
+	}
 
 	@JoinColumn(name = "COD_ANA", referencedColumnName = "COD_ANA", nullable = false, insertable = false, updatable = false)
 	@ManyToOne(optional = false)
@@ -222,6 +230,10 @@ public class Pai implements Serializable {
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "codPai")
 	private List<UniqueTasklist> uniqueTasklistList;
+
+	public List<UniqueTasklist> getUniqueTasklistList() {
+		return uniqueTasklistList;
+	}
 
 	@OneToMany(mappedBy = "codPai")
 	private List<LogAnagrafe> logAnagrafeList;

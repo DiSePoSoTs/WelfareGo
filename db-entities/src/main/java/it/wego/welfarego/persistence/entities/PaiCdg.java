@@ -75,6 +75,10 @@ public class PaiCdg implements Serializable {
 	@Column(name = "IMP_COMPL", nullable = false, precision = 9, scale = 2)
 	private BigDecimal impCompl;
 
+	public void setImpCompl(BigDecimal impCompl) {
+		this.impCompl = impCompl;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "COD_CAP", nullable = false)
 	private int codCap;
@@ -96,6 +100,10 @@ public class PaiCdg implements Serializable {
 			@JoinColumn(name = "COD_IMPE", referencedColumnName = "COD_IMP", nullable = false, insertable = false, updatable = false) })
 	@OneToOne(optional = false)
 	private PaiInterventoMese paiInterventoMese;
+
+	public PaiInterventoMese getPaiInterventoMese() {
+		return paiInterventoMese;
+	}
 
 	@JoinColumn(name = "COD_ANA", referencedColumnName = "COD_ANA")
 	@ManyToOne

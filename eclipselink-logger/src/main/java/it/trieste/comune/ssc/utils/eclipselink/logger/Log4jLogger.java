@@ -1,4 +1,4 @@
-package it.wego.utils.eclipselink.logger;
+package it.trieste.comune.ssc.utils.eclipselink.logger;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

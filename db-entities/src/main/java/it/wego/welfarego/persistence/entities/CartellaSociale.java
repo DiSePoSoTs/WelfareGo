@@ -47,6 +47,10 @@ public class CartellaSociale implements Serializable {
 	@Column(name = "COD_ANA", nullable = false)
 	private Integer codAna;
 
+	public Integer getCodAna() {
+		return codAna;
+	}
+
 	@Column(name = "DES_CS", length = 765)
 	private String desCs;
 
@@ -63,6 +67,10 @@ public class CartellaSociale implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtAggAll;
 
+	public List<Pai> getPaiList() {
+		return paiList;
+	}
+
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "codAna")
 	private List<Pai> paiList;
 
@@ -73,6 +81,10 @@ public class CartellaSociale implements Serializable {
 	@JoinColumn(name = "COD_ANA", referencedColumnName = "COD_ANA", nullable = false, insertable = false, updatable = false)
 	@OneToOne(optional = false)
 	private AnagrafeSoc anagrafeSoc;
+
+	public AnagrafeSoc getAnagrafeSoc() {
+		return anagrafeSoc;
+	}
 
 	public CartellaSociale() {
 	}

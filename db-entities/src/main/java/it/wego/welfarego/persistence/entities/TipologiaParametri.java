@@ -55,6 +55,10 @@ public class TipologiaParametri implements Serializable {
 	@MapKey(name = "codParam")
 	private Map<String, Parametri> parametriByCodParam;
 
+	public Map<String, Parametri> getParametriByCodParam() {
+		return parametriByCodParam;
+	}
+
 	public TipologiaParametri() {
 	}
 

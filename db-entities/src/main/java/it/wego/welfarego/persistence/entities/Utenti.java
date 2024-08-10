@@ -72,6 +72,14 @@ public class Utenti implements Serializable {
 	@Column(name = "NOME", nullable = false, length = 765)
 	private String nome;
 
+	public String getNome() {
+		return nome;
+	}
+
+	public String getCognome() {
+		return cognome;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "COGNOME", nullable = false, length = 765)
 	private String cognome;

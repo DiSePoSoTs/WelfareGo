@@ -92,6 +92,22 @@ public class Mandato implements Serializable {
 	@Column(name = "NOME_BENEFICIARIO", nullable = false, length = 765)
 	private String nomeBeneficiario;
 
+	public String getCognomeBeneficiario() {
+		return cognomeBeneficiario;
+	}
+
+	public String getNomeBeneficiario() {
+		return nomeBeneficiario;
+	}
+
+	public String getCognomeDelegante() {
+		return cognomeDelegante;
+	}
+
+	public String getNomeDelegante() {
+		return nomeDelegante;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "CF_BENEFICIARIO", nullable = false, length = 16)
 	private String cfBeneficiario;

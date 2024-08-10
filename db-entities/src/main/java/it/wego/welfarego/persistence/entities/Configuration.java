@@ -43,6 +43,10 @@ public class Configuration implements Serializable {
 	@Column(name = "VALUE", nullable = false, length = 4000)
 	private String value;
 
+	public String getValue() {
+		return value;
+	}
+
 	@Column(name = "DESCRIPTION", length = 4000)
 	private String description;
 

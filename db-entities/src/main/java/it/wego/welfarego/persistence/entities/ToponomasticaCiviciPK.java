@@ -42,6 +42,10 @@ public class ToponomasticaCiviciPK implements Serializable {
 	@Column(name = "COD_CIV", nullable = false, length = 20)
 	private String codCiv;
 
+	public String getCodCiv() {
+		return codCiv;
+	}
+
 	public ToponomasticaCiviciPK() {
 	}
 

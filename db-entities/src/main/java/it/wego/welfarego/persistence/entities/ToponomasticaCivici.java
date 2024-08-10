@@ -44,6 +44,10 @@ public class ToponomasticaCivici implements Serializable {
 	@Column(name = "DES_CIV", nullable = false, length = 765)
 	private String desCiv;
 
+	public String getDesCiv() {
+		return desCiv;
+	}
+
 	@JoinColumns({
 			@JoinColumn(name = "COD_STATO", referencedColumnName = "COD_STATO", nullable = false, insertable = false, updatable = false),
 			@JoinColumn(name = "COD_PROV", referencedColumnName = "COD_PROV", nullable = false, insertable = false, updatable = false),
@@ -52,6 +56,10 @@ public class ToponomasticaCivici implements Serializable {
 	@ManyToOne(optional = false)
 	private Toponomastica toponomastica;
 
+	public Toponomastica getToponomastica() {
+		return toponomastica;
+	}
+
 	@JoinColumn(name = "ID_PARAM_UOT_RIF", referencedColumnName = "ID_PARAM_INDATA", nullable = false)
 	@ManyToOne(optional = false)
 	private ParametriIndata idParamUotRif;
@@ -59,6 +67,10 @@ public class ToponomasticaCivici implements Serializable {
 	@Basic(optional = false)
 	@Column(name = "COD_CIV", nullable = false, length = 20, insertable = false, updatable = false)
 	private String codCiv;
+
+	public String getCodCiv() {
+		return codCiv;
+	}
 
 	public ToponomasticaCivici() {
 	}

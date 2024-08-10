@@ -41,6 +41,14 @@ public class AnagrafeFam implements Serializable {
 	@ManyToOne(optional = false)
 	private AnagrafeSoc anagrafeSocTarget;
 	
+	public AnagrafeSoc getAnagrafeSocTarget() {
+		return anagrafeSocTarget;
+	}
+
+	public AnagrafeSoc getAnagrafeSocSource() {
+		return anagrafeSocSource;
+	}
+
 	@JoinColumn(name = "COD_ANA", referencedColumnName = "COD_ANA", nullable = false, insertable = false, updatable = false)
 	@ManyToOne(optional = false)
 	private AnagrafeSoc anagrafeSocSource;

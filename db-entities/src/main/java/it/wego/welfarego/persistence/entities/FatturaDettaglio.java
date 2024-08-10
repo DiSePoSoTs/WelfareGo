@@ -61,6 +61,10 @@ public class FatturaDettaglio implements Serializable {
 	@Column(name = "MESE_EFF", nullable = false)
 	private Integer meseEff;
 
+	public Integer getMeseEff() {
+		return meseEff;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "QT_INPUTATA", nullable = false, precision = 9, scale = 2)
 	private BigDecimal qtInputata;
@@ -72,11 +76,23 @@ public class FatturaDettaglio implements Serializable {
 	@Column(name = "IMPORTO", nullable = false, precision = 9, scale = 2)
 	private BigDecimal importo;
 
+	public BigDecimal getImporto() {
+		return importo;
+	}
+
 	@Column(name = "AUMENTO", precision = 9, scale = 2)
 	private BigDecimal aumento;
 
+	public BigDecimal getAumento() {
+		return aumento;
+	}
+
 	@Column(name = "RIDUZIONE", precision = 9, scale = 2)
 	private BigDecimal riduzione;
+
+	public BigDecimal getRiduzione() {
+		return riduzione;
+	}
 
 	@Column(name = "TIMBRO")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -92,8 +108,16 @@ public class FatturaDettaglio implements Serializable {
 	@Column(name = "VAR_STRAORD", precision = 9, scale = 2)
 	private BigDecimal varStraord;
 
+	public BigDecimal getVarStraord() {
+		return varStraord;
+	}
+
 	@Column(name = "CAUS_VAR", length = 60)
 	private String causVar;
+
+	public List<PaiInterventoMese> getPaiInterventoMeseList() {
+		return paiInterventoMeseList;
+	}
 
 	@OneToMany(mappedBy = "idFattDettaglio")
 	private List<PaiInterventoMese> paiInterventoMeseList;
@@ -105,6 +129,10 @@ public class FatturaDettaglio implements Serializable {
 	@JoinColumn(name = "ID_PARAM_UNITA_MISURA", referencedColumnName = "ID_PARAM_INDATA", nullable = false)
 	@ManyToOne(optional = false)
 	private ParametriIndata idParamUnitaMisura;
+
+	public Fattura getIdFatt() {
+		return idFatt;
+	}
 
 	@JoinColumn(name = "ID_FATT", referencedColumnName = "ID_FATT", nullable = false)
 	@ManyToOne(optional = false)

@@ -46,11 +46,19 @@ public class Luogo implements Serializable, Cloneable {
 	@ManyToOne
 	private Stato stato;
 
+	public Stato getStato() {
+		return stato;
+	}
+
 	@JoinColumns({
 			@JoinColumn(name = "COD_STATO", referencedColumnName = "COD_STATO", insertable = false, updatable = false),
 			@JoinColumn(name = "COD_PROV", referencedColumnName = "COD_PROV") })
 	@ManyToOne
 	private Provincia provincia;
+
+	public Provincia getProvincia() {
+		return provincia;
+	}
 
 	@JoinColumns({
 			@JoinColumn(name = "COD_STATO", referencedColumnName = "COD_STATO", insertable = false, updatable = false),
@@ -58,6 +66,10 @@ public class Luogo implements Serializable, Cloneable {
 			@JoinColumn(name = "COD_COM", referencedColumnName = "COD_COM") })
 	@ManyToOne
 	private Comune comune;
+
+	public Comune getComune() {
+		return comune;
+	}
 
 	@JoinColumns({
 			@JoinColumn(name = "COD_STATO", referencedColumnName = "COD_STATO", insertable = false, updatable = false),
@@ -67,6 +79,10 @@ public class Luogo implements Serializable, Cloneable {
 	@ManyToOne
 	private Toponomastica via;
 
+	public Toponomastica getVia() {
+		return via;
+	}
+
 	@JoinColumns({
 			@JoinColumn(name = "COD_STATO", referencedColumnName = "COD_STATO", insertable = false, updatable = false),
 			@JoinColumn(name = "COD_PROV", referencedColumnName = "COD_PROV", insertable = false, updatable = false),
@@ -75,6 +91,10 @@ public class Luogo implements Serializable, Cloneable {
 			@JoinColumn(name = "COD_CIV", referencedColumnName = "COD_CIV") })
 	@ManyToOne()
 	private ToponomasticaCivici civico;
+
+	public ToponomasticaCivici getCivico() {
+		return civico;
+	}
 
 	@Column(name = "DES_PROV")
 	private String provinciaStr;
@@ -90,6 +110,10 @@ public class Luogo implements Serializable, Cloneable {
 
 	@Column(name = "CAP")
 	private String cap;
+
+	public String getCap() {
+		return cap;
+	}
 
 	public Luogo() {
 	}

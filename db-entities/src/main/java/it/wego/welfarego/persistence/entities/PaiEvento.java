@@ -126,6 +126,10 @@ public class PaiEvento implements Serializable {
 	@ManyToOne
 	private Determine idDetermina;
 
+	public Determine getIdDetermina() {
+		return idDetermina;
+	}
+
 	public PaiEvento() {
 	}
 

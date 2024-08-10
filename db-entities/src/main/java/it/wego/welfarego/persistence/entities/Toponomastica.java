@@ -39,6 +39,10 @@ public class Toponomastica implements Serializable {
 	@Column(name = "DES_VIA", nullable = false, length = 765)
 	private String desVia;
 
+	public String getDesVia() {
+		return desVia;
+	}
+
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "toponomastica")
 	private List<ToponomasticaCivici> toponomasticaCiviciList;
 
@@ -49,13 +53,25 @@ public class Toponomastica implements Serializable {
 	@ManyToOne(optional = false)
 	private Comune comune;
 
+	public Comune getComune() {
+		return comune;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "COD_VIA", nullable = false, length = 20, insertable = false, updatable = false)
 	private String codVia;
 
+	public String getCodVia() {
+		return codVia;
+	}
+
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "toponomastica")
 	@MapKey(name = "codCiv")
 	private Map<String, ToponomasticaCivici> toponomasticaCiviciByCodCivico;
+
+	public Map<String, ToponomasticaCivici> getToponomasticaCiviciByCodCivico() {
+		return toponomasticaCiviciByCodCivico;
+	}
 
 	public Toponomastica() {
 	}

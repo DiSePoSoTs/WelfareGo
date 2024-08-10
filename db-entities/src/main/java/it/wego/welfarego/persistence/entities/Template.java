@@ -52,6 +52,10 @@ public class Template implements Serializable {
 	@Column(name = "CLOB_TMPL", nullable = false)
 	private String clobTmpl;
 
+	public String getClobTmpl() {
+		return clobTmpl;
+	}
+
 	@OneToMany(mappedBy = "codTmpl")
 	private List<UniqueTasklist> uniqueTasklistList;
 

@@ -83,6 +83,10 @@ public class AnagrafeSoc implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	public Integer getCodAna() {
+		return codAna;
+	}
+
 	@Id
 	@Basic(optional = false)
 	@GeneratedValue(generator = "anagrafeSocSequence")
@@ -93,6 +97,14 @@ public class AnagrafeSoc implements Serializable {
 	@Basic(optional = false)
 	@Column(name = "FLG_PERS_FG", length = 1, nullable = false)
 	private String flgPersFg = PERSONA_FISICA_F;
+
+	public String getNome() {
+		return nome;
+	}
+
+	public String getCognome() {
+		return cognome;
+	}
 
 	@Column(name = "NOME", length = 765)
 	private String nome;
@@ -117,6 +129,10 @@ public class AnagrafeSoc implements Serializable {
 
 	@Column(name = "COD_ANA_CIVILIA", length = 10)
 	private String codAnaCivilia;
+
+	public Date getDtNasc() {
+		return dtNasc;
+	}
 
 	@Column(name = "DT_NASC")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -186,6 +202,10 @@ public class AnagrafeSoc implements Serializable {
 	@Column(name = "IBAN_PAGAM", length = 30)
 	private String ibanPagam;
 
+	public String getIbanPagam() {
+		return ibanPagam;
+	}
+
 	@Column(name = "REDD_MENS", precision = 9, scale = 2)
 	private BigDecimal reddMens;
 
@@ -219,6 +239,10 @@ public class AnagrafeSoc implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "codAnaBeneficiario")
 	private List<Mandato> mandatoList1;
 
+	public CartellaSociale getCartellaSociale() {
+		return cartellaSociale;
+	}
+
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "anagrafeSoc")
 	private CartellaSociale cartellaSociale;
 
@@ -233,6 +257,14 @@ public class AnagrafeSoc implements Serializable {
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "anagrafeSoc")
 	private List<PaiInterventoAnagrafica> paiInterventoAnagraficaList;
+
+	public List<AnagrafeFam> getAnagrafeFamListAsSource() {
+		return anagrafeFamListAsSource;
+	}
+
+	public List<AnagrafeFam> getAnagrafeFamListAsTarget() {
+		return anagrafeFamListAsTarget;
+	}
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "anagrafeSocSource")
 	private List<AnagrafeFam> anagrafeFamListAsSource;
@@ -291,6 +323,10 @@ public class AnagrafeSoc implements Serializable {
 	@ManyToOne
 	private ParametriIndata idParamTit;
 
+	public void setCodStatoCitt(Stato codStatoCitt) {
+		this.codStatoCitt = codStatoCitt;
+	}
+
 	@JoinColumn(name = "COD_STATO_CITT", referencedColumnName = "COD_STATO")
 	@ManyToOne
 	private Stato codStatoCitt;
@@ -300,10 +336,18 @@ public class AnagrafeSoc implements Serializable {
 	@JoinFetch(value = JoinFetchType.INNER)
 	private Luogo luogoNascita = new Luogo();
 
+	public Luogo getLuogoDomicilio() {
+		return luogoDomicilio;
+	}
+
 	@JoinColumn(name = "COD_LUOGO_DOM", referencedColumnName = "COD_LUOGO", nullable = false)
 	@ManyToOne(cascade = { CascadeType.ALL })
 	@JoinFetch(value = JoinFetchType.INNER)
 	private Luogo luogoDomicilio = new Luogo();
+
+	public Luogo getLuogoResidenza() {
+		return luogoResidenza;
+	}
 
 	@JoinColumn(name = "COD_LUOGO_RES", referencedColumnName = "COD_LUOGO", nullable = false)
 	@ManyToOne(cascade = { CascadeType.ALL })

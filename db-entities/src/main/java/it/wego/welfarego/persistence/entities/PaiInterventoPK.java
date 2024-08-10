@@ -22,6 +22,18 @@ public class PaiInterventoPK implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	public Integer getCodPai() {
+		return codPai;
+	}
+
+	public String getCodTipint() {
+		return codTipint;
+	}
+
+	public Integer getCntTipint() {
+		return cntTipint;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "COD_PAI", nullable = false)
 	private Integer codPai;

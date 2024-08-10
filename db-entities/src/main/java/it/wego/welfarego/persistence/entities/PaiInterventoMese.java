@@ -61,12 +61,24 @@ public class PaiInterventoMese implements Serializable {
 	@EmbeddedId
 	protected PaiInterventoMesePK paiInterventoMesePK;
 
+	public PaiInterventoMesePK getPaiInterventoMesePK() {
+		return paiInterventoMesePK;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "BDG_PREV_EUR", nullable = false, precision = 9, scale = 2)
 	private BigDecimal bdgPrevEur;
 
+	public BigDecimal getBdgPrevEur() {
+		return bdgPrevEur;
+	}
+
 	@Column(name = "BDG_PREV_QTA", precision = 9, scale = 2)
 	private BigDecimal bdgPrevQta;
+
+	public BigDecimal getBdgPrevQta() {
+		return bdgPrevQta;
+	}
 
 	@Column(name = "BDG_CONS_EUR", precision = 9, scale = 2)
 	private BigDecimal bdgConsEur;
@@ -105,6 +117,10 @@ public class PaiInterventoMese implements Serializable {
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "paiInterventoMese")
 	private PaiCdg paiCdg;
 
+	public PaiIntervento getPaiIntervento() {
+		return paiIntervento;
+	}
+
 	@JoinColumns({
 			@JoinColumn(name = "COD_PAI", referencedColumnName = "COD_PAI", nullable = false, insertable = false, updatable = false),
 			@JoinColumn(name = "COD_TIPINT", referencedColumnName = "COD_TIPINT", nullable = false, insertable = false, updatable = false),
@@ -126,6 +142,10 @@ public class PaiInterventoMese implements Serializable {
 			@JoinColumn(name = "COD_IMP", referencedColumnName = "COD_IMPE", nullable = false, insertable = false, updatable = false) })
 	@ManyToOne(optional = false)
 	private BudgetTipIntervento budgetTipIntervento;
+
+	public BudgetTipIntervento getBudgetTipIntervento() {
+		return budgetTipIntervento;
+	}
 
 	@JoinColumn(name = "MOTIVAZIONE_VARIAZIONE_SPESA", referencedColumnName = "ID_PARAM_INDATA")
 	@ManyToOne
