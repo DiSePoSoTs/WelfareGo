@@ -50,6 +50,14 @@ public class Indisponibilita implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date tsIniApp;
 
+	public Date getTsIniApp() {
+		return tsIniApp;
+	}
+
+	public void setTsIniApp(Date tsIniApp) {
+		this.tsIniApp = tsIniApp;
+	}
+
 	@JoinColumn(name = "COD_AS", referencedColumnName = "COD_UTE", nullable = false)
 	@ManyToOne(optional = false)
 	private Utenti utenti;

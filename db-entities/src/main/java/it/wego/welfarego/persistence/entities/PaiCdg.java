@@ -59,6 +59,86 @@ public class PaiCdg implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date tsEveCfg;
 
+	public PaiCdgPK getPaiCdgPK() {
+		return paiCdgPK;
+	}
+
+	public void setPaiCdgPK(PaiCdgPK paiCdgPK) {
+		this.paiCdgPK = paiCdgPK;
+	}
+
+	public Date getTsEveCfg() {
+		return tsEveCfg;
+	}
+
+	public void setTsEveCfg(Date tsEveCfg) {
+		this.tsEveCfg = tsEveCfg;
+	}
+
+	public BigDecimal getQtaPrev() {
+		return qtaPrev;
+	}
+
+	public void setQtaPrev(BigDecimal qtaPrev) {
+		this.qtaPrev = qtaPrev;
+	}
+
+	public BigDecimal getQtaErog() {
+		return qtaErog;
+	}
+
+	public void setQtaErog(BigDecimal qtaErog) {
+		this.qtaErog = qtaErog;
+	}
+
+	public BigDecimal getImpStd() {
+		return impStd;
+	}
+
+	public void setImpStd(BigDecimal impStd) {
+		this.impStd = impStd;
+	}
+
+	public int getCodCap() {
+		return codCap;
+	}
+
+	public void setCodCap(int codCap) {
+		this.codCap = codCap;
+	}
+
+	public String getCcele() {
+		return ccele;
+	}
+
+	public void setCcele(String ccele) {
+		this.ccele = ccele;
+	}
+
+	public BigDecimal getImpVar() {
+		return impVar;
+	}
+
+	public void setImpVar(BigDecimal impVar) {
+		this.impVar = impVar;
+	}
+
+	public AnagrafeSoc getCodAna() {
+		return codAna;
+	}
+
+	public void setCodAna(AnagrafeSoc codAna) {
+		this.codAna = codAna;
+	}
+
+	public BigDecimal getImpCompl() {
+		return impCompl;
+	}
+
+	public void setPaiInterventoMese(PaiInterventoMese paiInterventoMese) {
+		this.paiInterventoMese = paiInterventoMese;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "QTA_PREV", nullable = false, precision = 9, scale = 2)
 	private BigDecimal qtaPrev;

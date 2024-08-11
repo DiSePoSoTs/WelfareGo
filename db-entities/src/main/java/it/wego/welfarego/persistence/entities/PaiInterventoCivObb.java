@@ -99,4 +99,20 @@ public class PaiInterventoCivObb implements Serializable {
 				+ paiInterventoCivObbPK + "]";
 	}
 
+	public BigDecimal getImpCo() {
+		return impCo;
+	}
+
+	public void setImpCo(BigDecimal impCo) {
+		this.impCo = impCo;
+	}
+
+	public AnagrafeSoc getAnagrafeSoc() {
+		return anagrafeSoc;
+	}
+
+	public void setAnagrafeSoc(AnagrafeSoc anagrafeSoc) {
+		this.anagrafeSoc = anagrafeSoc;
+	}
+
 }

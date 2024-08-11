@@ -7,7 +7,7 @@ package it.wego.welfarego.persistence.entities;
 import com.google.common.base.Objects;
 import com.google.common.base.Strings;
 import com.google.common.collect.Maps;
-import it.wego.extjs.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonBuilder;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Collections;
@@ -29,16 +29,13 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.slf4j.LoggerFactory;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "UNIQUE_TASKLIST")
 @NamedQueries({ @NamedQuery(name = "UniqueTasklist.findAll", query = "SELECT u FROM UniqueTasklist u"),
 		@NamedQuery(name = "UniqueTasklist.findById", query = "SELECT u FROM UniqueTasklist u WHERE u.id = :id"),
@@ -92,6 +89,98 @@ public class UniqueTasklist implements Serializable {
 	@Column(name = "TS_CREAZIONE", nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date tsCreazione = new Date();
+ 
+	public BigDecimal getId() {
+		return id;
+	}
+
+	public void setId(BigDecimal id) {
+		this.id = id;
+	}
+
+	public String getTaskid() {
+		return taskid;
+	}
+
+	public void setTaskid(String taskid) {
+		this.taskid = taskid;
+	}
+
+	public String getDesTask() {
+		return desTask;
+	}
+
+	public void setDesTask(String desTask) {
+		this.desTask = desTask;
+	}
+
+	public Date getTsCreazione() {
+		return tsCreazione;
+	}
+
+	public void setTsCreazione(Date tsCreazione) {
+		this.tsCreazione = tsCreazione;
+	}
+
+	public String getFlgEseguito() {
+		return flgEseguito;
+	}
+
+	public void setFlgEseguito(String flgEseguito) {
+		this.flgEseguito = flgEseguito;
+	}
+
+	public String getFlgTasknot() {
+		return flgTasknot;
+	}
+
+	public void setFlgTasknot(String flgTasknot) {
+		this.flgTasknot = flgTasknot;
+	}
+
+	public String getRuolo() {
+		return ruolo;
+	}
+
+	public void setRuolo(String ruolo) {
+		this.ruolo = ruolo;
+	}
+
+	public String getUot() {
+		return uot;
+	}
+
+	public void setUot(String uot) {
+		this.uot = uot;
+	}
+
+	public String getEsito() {
+		return esito;
+	}
+
+	public void setEsito(String esito) {
+		this.esito = esito;
+	}
+
+	public UniqueForm getForm() {
+		return form;
+	}
+
+	public void setForm(UniqueForm form) {
+		this.form = form;
+	}
+
+	public Template getCodTmpl() {
+		return codTmpl;
+	}
+
+	public void setCodTmpl(Template codTmpl) {
+		this.codTmpl = codTmpl;
+	}
+
+	public void setCodPai(Pai codPai) {
+		this.codPai = codPai;
+	}
 
 	@Basic(optional = false)
 	@Column(name = "FLG_ESEGUITO", nullable = false, length = 1)
@@ -109,6 +198,18 @@ public class UniqueTasklist implements Serializable {
 
 	@Column(name = "CAMPO_FLOW_1", length = 255)
 	private String campoFlow1;
+
+	public void setCampoFlow1(String campoFlow1) {
+		this.campoFlow1 = campoFlow1;
+	}
+
+	public void setCampoFlow2(String campoFlow2) {
+		this.campoFlow2 = campoFlow2;
+	}
+
+	public void setCampoFlow3(String campoFlow3) {
+		this.campoFlow3 = campoFlow3;
+	}
 
 	@Column(name = "CAMPO_FLOW_2", length = 255)
 	private String campoFlow2;
@@ -176,6 +277,14 @@ public class UniqueTasklist implements Serializable {
 	@JoinColumn(name = "COD_PAI", referencedColumnName = "COD_PAI", nullable = false)
 	@ManyToOne(optional = false)
 	private Pai codPai;
+
+	public PaiIntervento getPaiIntervento() {
+		return paiIntervento;
+	}
+
+	public Pai getCodPai() {
+		return codPai;
+	}
 
 	public UniqueTasklist() {
 	}

@@ -2,7 +2,7 @@ package it.wego.welfarego.pagamenti.fatture;
 
 import com.google.common.collect.Maps;
 import com.liferay.portal.service.UserLocalServiceUtil;
-import it.wego.extjs.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonBuilder;
 import it.wego.welfarego.pagamenti.AbstractAjaxController;
 import it.wego.welfarego.persistence.entities.Fattura;
 import it.wego.welfarego.persistence.entities.FatturaDettaglio;
@@ -63,20 +63,16 @@ public class AjaxFatturaDettaglio extends AbstractAjaxController {
     @ResourceMapping(value = "dettaglioDatiFatturazioni")
     public void dettaglioDatiFatturazioni(ResourceRequest request, ResourceResponse response) throws IOException, JSONException {
         //i valori null non vengono trasmessi (inseriti comunque per chiarezza e per facilitare eventuali modifiche future)
-//        EntityManager entityManager = Connection.getEntityManager();
-//        try {
         Query q = getEntityManager().createNamedQuery("Fattura.findByIdFatt");
         q.setParameter("idFatt", Integer.parseInt(request.getParameter("id")));
         Fattura fattura = (Fattura) q.getSingleResult();
-        Map jso = Maps.newHashMap();
+        Map<String, Object> jso = Maps.newHashMap();
         jso.put("id", fattura.getIdFatt());
-//            jso.put("totale_fattura", JSONObject.NULL);
         //TODO da ricalcolare???
         jso.put("contributo", fattura.getContributo() == null ? BigDecimal.ZERO : fattura.getContributo());
         jso.put("iva", fattura.getIdParamIva().getIdParamIndata());
         jso.put("importo_iva", fattura.getImpIva());
         jso.put("bollo", fattura.getBollo());
-//            jso.put("totale_periodo", JSONObject.NULL);
         jso.put("causale", fattura.getCausale());
         jso.put("note", fattura.getNote());
         jso.put("da_pagare", fattura.getImportoTotale());
@@ -85,12 +81,6 @@ public class AjaxFatturaDettaglio extends AbstractAjaxController {
         //        jso.put("modalita_pagamento", fattura.getIdParamPagam().getIdParamIndata());
         jso.put("codice_fiscale", fattura.getCodFisc());
         JsonBuilder.newInstance().withWriter(response.getWriter()).withData(jso).buildStoreResponse();
-//        } finally {
-//            entityManager.close();
-//        }
-//        JSONArray jsa = new JSONArray();
-//        jsa.put(jso);
-//        this.mandaRisposta(response, jsa, entityManager);
     }//dettaglioDatiFatturazioni
 
     /**
@@ -105,15 +95,13 @@ public class AjaxFatturaDettaglio extends AbstractAjaxController {
      */
     @ResourceMapping(value = "dettaglioVociFattura")
     public void dettaglioVociFattura(ResourceRequest request, ResourceResponse response) throws IOException, JSONException {
-//        EntityManager entityManager = Connection.getEntityManager();
-//        try { 
         JsonBuilder jsonBuilder = JsonBuilder.newInstance().withWriter(response.getWriter());
         Query q = getEntityManager().createNamedQuery("Fattura.findByIdFatt");
         q.setParameter("idFatt", Integer.parseInt(request.getParameter("id")));
         Fattura fattura = (Fattura) q.getSingleResult();
-//            JSONArray jsa = new JSONArray();
+
         for (FatturaDettaglio dettaglio : fattura.getFatturaDettaglioList()) {
-            Map jso = Maps.newHashMap();
+            Map<String, Object> jso = Maps.newHashMap();
             jso.put("id", dettaglio.getIdFattDettaglio().toString());
             jso.put("id_fattura", fattura.getIdFatt());
             jso.put("tipo_servizio", dettaglio.getCodTipint().getDesTipint());
@@ -128,23 +116,15 @@ public class AjaxFatturaDettaglio extends AbstractAjaxController {
             
             BigDecimal percentualeRiduzione = null;
             if (pi != null) {
-//                jso.put("idFascia", pi.getIdParamIndata().toString());
-//                jso.put("percentualeRiduzione", pi.getDecimalParam().toString());
                 percentualeRiduzione = pi.getDecimalParam();
                 jso.put("descrizioneRiduzione", pi.getDesParam());
             } else {
-//                jso.put("idFascia", null);
-//                jso.put("percentualeRiduzione", "0");
                 percentualeRiduzione = BigDecimal.ZERO;
                 jso.put("descrizioneRiduzione", "-");
             }
 
             jso.put("quantita", dettaglio.getQtInputata());
-//                double importoUnitario = dettaglio.getCodTipint().getImpStdEntr() == null ? 0d : dettaglio.getCodTipint().getImpStdEntr().doubleValue();
-//                importoUnitario = importoUnitario * (100 - dettaglio.getIdFatt().getPaiIntervento().getPai().getIdParamFascia().getDecimalParam().doubleValue()) / 100;
-//                jso.put("importo_unitario", importoUnitario);
-            
-//            jso.put("importo_unitario", dettaglio.getCodTipint().getImpStdCosto());
+
             BigDecimal costoStandard = getImportoStandard(dettaglio.getPaiIntervento(), getEntityManager());
             percentualeRiduzione = (new BigDecimal("100").subtract(percentualeRiduzione)).divide(new BigDecimal("100"));
             jso.put("importo_unitario", costoStandard.multiply(percentualeRiduzione).setScale(2, RoundingMode.DOWN));
@@ -161,15 +141,10 @@ public class AjaxFatturaDettaglio extends AbstractAjaxController {
             jso.put("aumento", dettaglio.getAumento());
             jso.put("variazione_straordinaria", dettaglio.getVarStraord());
             jso.put("mese", dettaglio.getMeseEff());
-//                jsa.put(jso);
             jsonBuilder.addRecord(jso);
-        }//for
+        }
         jsonBuilder.buildStoreResponse();
-//        } finally {
-//            entityManager.close();
-//        }
-//        this.mandaRisposta(response, jsa, entityManager);
-    }//dettaglioVociFattura
+    }
 
     /**
      * Carica dalla base di dati le voci della fattura.
@@ -183,7 +158,6 @@ public class AjaxFatturaDettaglio extends AbstractAjaxController {
      */
     @ResourceMapping(value = "dettaglioMesiPrecedentiFatturazioni")
     public void dettaglioMesiPrecedentiFatturazioni(ResourceRequest request, ResourceResponse response) throws IOException, JSONException {
-//        EntityManager entityManager = Connection.getEntityManager();
         Query q = getEntityManager().createNamedQuery("Fattura.findByIdFatt");
         q.setParameter("idFatt", Integer.parseInt(request.getParameter("id")));
         Fattura fattura = (Fattura) q.getSingleResult();
@@ -201,7 +175,7 @@ public class AjaxFatturaDettaglio extends AbstractAjaxController {
             jso.put("inserimento", "Si");
             jsa.put(jso);
             mesiPrecedentiAssegnati.add(mesePrecedente.getIdFatt());
-        }//for
+        }
         //nel caso che la fattura sia ancora modificabile aggiungo ancora le fatture
         //dei mesi precedenti, che non sono ancora assegnate.
         CriteriaBuilder cb = getEntityManager().getCriteriaBuilder();
@@ -211,9 +185,6 @@ public class AjaxFatturaDettaglio extends AbstractAjaxController {
         p = cb.and(p, cb.equal(r.get("paiIntervento").get("paiInterventoPK").get("codPai"), fattura.getPaiIntervento().getPai().getCodPai()));
         p = cb.and(p, cb.equal(r.get("paiIntervento").get("paiInterventoPK").get("codTipint"), fattura.getPaiIntervento().getPaiInterventoPK().getCodTipint()));
         p = cb.and(p, cb.equal(r.get("paiIntervento").get("paiInterventoPK").get("cntTipint"), fattura.getPaiIntervento().getPaiInterventoPK().getCntTipint()));
-//        p = cb.and(p, cb.isNotMember(mesiPrecedentiAssegnati, r.get("idFatt")));
-//        FIX: l'istruzione precedente in Oracle non funziona!!!
-//        corretto con l'if nel for successivo (si suppone al massimo una decina di cicli)
         c.where(p);
         List<Fattura> fatture = getEntityManager().createQuery(c).getResultList();
         for (Fattura mesiPrecedenti : fatture) {
@@ -243,7 +214,6 @@ public class AjaxFatturaDettaglio extends AbstractAjaxController {
      */
     @ResourceMapping(value = "dettaglioQuoteObbligatiFatturazioni")
     public void dettaglioQuoteObbligatiFatturazioni(ResourceRequest request, ResourceResponse response) throws IOException, JSONException {
-//        EntityManager entityManager = Connection.getEntityManager();
         Query q = getEntityManager().createNamedQuery("Fattura.findByIdFatt");
         q.setParameter("idFatt", Integer.parseInt(request.getParameter("id")));
         Fattura fattura = (Fattura) q.getSingleResult();
@@ -301,18 +271,12 @@ public class AjaxFatturaDettaglio extends AbstractAjaxController {
         fattura.setNote((String) jsoFattura.get("note"));
         fattura.setImportoTotale(new BigDecimal(((Number) jsoFattura.get("da_pagare")).doubleValue()));
         fattura.setCodFisc((String) jsoFattura.get("codice_fiscale"));
-//        ParametriIndata param = (ParametriIndata) entityManager.createNamedQuery("ParametriIndata.findByIdParamIndata").setParameter("idParamIndata", jsoFattura.get("modalita_pagamento")).getSingleResult();
-//        fattura.setIdParamPagam(param);
+
         fattura.setScadenza(ISODateTimeFormat.dateTimeParser().parseDateTime(jsoFattura.getString("scadenza")).toDate());
         fattura.setImpIva(new BigDecimal(((Number) jsoFattura.get("importo_iva")).doubleValue()));
         ParametriIndata param = (ParametriIndata) getEntityManager().createNamedQuery("ParametriIndata.findByIdParamIndata").setParameter("idParamIndata", jsoFattura.get("iva")).getSingleResult();
         fattura.setIdParamIva(param);
-//        synchronized (entityManager) {
-//        EntityTransaction t = entityManager.getTransaction();
-//        t.begin();
         getEntityManager().merge(fattura);
-//        t.commit();
-//        }//synchronized
         JSONArray risposta = new JSONArray();
         risposta.put(jsoFattura);
         this.mandaRisposta(response, new JSONArray(), null);
@@ -375,44 +339,12 @@ public class AjaxFatturaDettaglio extends AbstractAjaxController {
 
                 PaiEvento evento = Pratica.serializePaiEvento(paiInterventoMese.getPaiIntervento().getPai().getAnagrafeSoc(), paiInterventoMese.getPaiIntervento().getPai(), paiInterventoMese.getPaiIntervento(), "Modificata fattura collegata", utente);
                 getEntityManager().merge(evento);
-//                        if (modificaAumento != 0 || modificaRiduzione != 0)
-//                        {
-//                            MapDatiSpecificiIntervento datoSpecificoDetermina = null;
-//                            for (MapDatiSpecificiIntervento map : intervento.getPaiIntervento().getMapDatiSpecificiInterventoList())
-//                            {
-//                                if ("ds_imp_var".equals(map.getMapDatiSpecificiInterventoPK().getCodCampo()))
-//                                {
-//                                    datoSpecificoDetermina = map;
-//                                    break;
-//                                }//if
-//                            }//for
-//                            if (datoSpecificoDetermina == null)
-//                            {
-//                                datoSpecificoDetermina = new MapDatiSpecificiIntervento();
-//                                MapDatiSpecificiInterventoPK pk = new MapDatiSpecificiInterventoPK();
-//                                pk.setCntTipint(intervento.getPaiInterventoMesePK().getCntTipint());
-//                                pk.setCodCampo("ds_imp_var");
-//                                pk.setCodPai(intervento.getPaiInterventoMesePK().getCodPai());
-//                                pk.setCodTipint(intervento.getPaiInterventoMesePK().getCodTipint());
-//                                datoSpecificoDetermina.setMapDatiSpecificiInterventoPK(pk);
-//                                datoSpecificoDetermina.setValCampo("0.0");
-//                            }//if
-//                            Double variazione = Double.parseDouble(datoSpecificoDetermina.getValCampo());
-//                            variazione += (modificaRiduzione - modificaAumento) * proporzione;
-//                            datoSpecificoDetermina.setValCampo(variazione.toString());
-//                            entityManager.merge(datoSpecificoDetermina);
-//                        }//if
             }//for
             getEntityManager().merge(dettaglio);
             jsa.put(jsoDettaglio);
         }//for
-//                t.commit();
-//            }//synchronized
         this.mandaRisposta(response, jsa, null);
-//        }//try
-//        catch (Exception e) {
-//            e.printStackTrace();
-//        }//catch
+
     }//salvaDettaglioVociFattura
 
     /**
@@ -431,7 +363,6 @@ public class AjaxFatturaDettaglio extends AbstractAjaxController {
     @ResourceMapping(value = "salvaDettaglioMesiPrecedentiFatturazioni")
     @Transactional
     public void salvaDettaglioMesiPrecedentiFatturazioni(ResourceRequest request, ResourceResponse response) throws IOException, JSONException {
-//        EntityManager entityManager = Connection.getEntityManager();
         JSONArray jsaDati = new JSONArray(request.getParameter("data"));
         //presuppongo almeno una riga altrimenti la tabella non esegue la
         //chiamata AJAX di sincronizzazione.
@@ -440,7 +371,6 @@ public class AjaxFatturaDettaglio extends AbstractAjaxController {
         Fattura fattura = (Fattura) q.getSingleResult();
         //trovata la fattura cerco ancora le fatture precedenti
         List<Fattura> fatturePrecedenti = fattura.getFatturaList();
-//        synchronized (entityManager) {
         for (int i = 0; i < jsaDati.length(); i++) {
             if ("Si".equals(((JSONObject) jsaDati.get(i)).get("inserimento"))) {
                 q.setParameter("idFatt", ((JSONObject) jsaDati.get(i)).get("id"));
@@ -459,11 +389,7 @@ public class AjaxFatturaDettaglio extends AbstractAjaxController {
                 }//for
             }//else
         }//for
-//            EntityTransaction t = entityManager.getTransaction();
-//            t.begin();
         getEntityManager().persist(fattura);
-//            t.commit();
-//        }//synchronized
         this.mandaRisposta(response, jsaDati, null);
     }//salvaDettaglioMesiPrecedentiFatturazioni
 

@@ -43,12 +43,24 @@ public class BudgetTipInterventoUot implements Serializable {
 	@Column(name = "BDG_DISP_EUR", precision = 9, scale = 2)
 	private BigDecimal bdgDispEur;
 
+	public BigDecimal getBdgDispEur() {
+		return bdgDispEur;
+	}
+
 	@Column(name = "BDG_DISP_ORE", precision = 9, scale = 2)
 	private BigDecimal bdgDispOre;
+
+	public BigDecimal getBdgDispOre() {
+		return bdgDispOre;
+	}
 
 	@JoinColumn(name = "ID_PARAM_UOT", referencedColumnName = "ID_PARAM_INDATA", nullable = false, insertable = false, updatable = false)
 	@ManyToOne(optional = false)
 	private ParametriIndata parametriIndataUot;
+
+	public ParametriIndata getParametriIndataUot() {
+		return parametriIndataUot;
+	}
 
 	@JoinColumns({
 			@JoinColumn(name = "COD_TIPINT", referencedColumnName = "COD_TIPINT", nullable = false, insertable = false, updatable = false),
@@ -56,6 +68,10 @@ public class BudgetTipInterventoUot implements Serializable {
 			@JoinColumn(name = "COD_IMPE", referencedColumnName = "COD_IMPE", nullable = false, insertable = false, updatable = false) })
 	@ManyToOne(optional = false)
 	private BudgetTipIntervento budgetTipIntervento;
+
+	public BudgetTipIntervento getBudgetTipIntervento() {
+		return budgetTipIntervento;
+	}
 
 	public BudgetTipInterventoUot() {
 	}

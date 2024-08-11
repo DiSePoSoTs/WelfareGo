@@ -6,7 +6,7 @@ import com.google.common.base.Strings;
 import com.google.common.collect.Maps;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
-import it.wego.extjs.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonBuilder;
 import it.wego.welfarego.pagamenti.AbstractAjaxController;
 import it.wego.welfarego.pagamenti.ExportFileUtils;
 import it.wego.welfarego.persistence.dao.ParametriIndataDao;

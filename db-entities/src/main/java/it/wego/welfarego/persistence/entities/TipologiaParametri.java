@@ -40,6 +40,10 @@ public class TipologiaParametri implements Serializable {
 	@Column(name = "TIP_PARAM", nullable = false, length = 10)
 	private String tipParam;
 
+	public String getTipParam() {
+		return tipParam;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "DES_TIP_PARAM", nullable = false, length = 765)
 	private String desTipParam;

@@ -57,6 +57,10 @@ public class MandatoDettaglio implements Serializable {
 	@Column(name = "MESE_EFF", nullable = false)
 	private int meseEff;
 
+	public int getMeseEff() {
+		return meseEff;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "QT_ASSEGNATA", nullable = false, precision = 9, scale = 4)
 	private BigDecimal qtAssegnata;
@@ -79,6 +83,42 @@ public class MandatoDettaglio implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date timbro;
 
+	public void setMeseEff(int meseEff) {
+		this.meseEff = meseEff;
+	}
+
+	public void setQtAssegnata(BigDecimal qtAssegnata) {
+		this.qtAssegnata = qtAssegnata;
+	}
+
+	public void setCostoUnitario(BigDecimal costoUnitario) {
+		this.costoUnitario = costoUnitario;
+	}
+
+	public void setCostoTotale(BigDecimal costoTotale) {
+		this.costoTotale = costoTotale;
+	}
+
+	public void setTimbro(Date timbro) {
+		this.timbro = timbro;
+	}
+
+	public void setPaiInterventoMeseList(List<PaiInterventoMese> paiInterventoMeseList) {
+		this.paiInterventoMeseList = paiInterventoMeseList;
+	}
+
+	public void setIdParamUnitaMisura(ParametriIndata idParamUnitaMisura) {
+		this.idParamUnitaMisura = idParamUnitaMisura;
+	}
+
+	public void setPaiIntervento(PaiIntervento paiIntervento) {
+		this.paiIntervento = paiIntervento;
+	}
+
+	public void setIdMan(Mandato idMan) {
+		this.idMan = idMan;
+	}
+
 	@Id
 	@GeneratedValue(generator = "mandatoDettaglioSequence")
 	@SequenceGenerator(name = "mandatoDettaglioSequence", sequenceName = "WG_SEQ", allocationSize = 50)
@@ -86,8 +126,20 @@ public class MandatoDettaglio implements Serializable {
 	@Column(name = "ID_MAN_DETTAGLIO", nullable = false)
 	private Integer idManDettaglio;
 
+	public void setAumento(BigDecimal aumento) {
+		this.aumento = aumento;
+	}
+
+	public void setRiduzione(BigDecimal riduzione) {
+		this.riduzione = riduzione;
+	}
+
 	@OneToMany(mappedBy = "idManDettaglio")
 	private List<PaiInterventoMese> paiInterventoMeseList;
+
+	public List<PaiInterventoMese> getPaiInterventoMeseList() {
+		return paiInterventoMeseList;
+	}
 
 	@JoinColumn(name = "ID_PARAM_UNITA_MISURA", referencedColumnName = "ID_PARAM_INDATA", nullable = false)
 	@ManyToOne(optional = false)
@@ -156,5 +208,45 @@ public class MandatoDettaglio implements Serializable {
 	@Override
 	public String toString() {
 		return "it.wego.welfarego.persistence.entities.MandatoDettaglio[idManDettaglio=" + idManDettaglio + "]";
+	}
+
+	public BigDecimal getQtAssegnata() {
+		return qtAssegnata;
+	}
+
+	public BigDecimal getCostoUnitario() {
+		return costoUnitario;
+	}
+
+	public BigDecimal getCostoTotale() {
+		return costoTotale;
+	}
+
+	public BigDecimal getAumento() {
+		return aumento;
+	}
+
+	public BigDecimal getRiduzione() {
+		return riduzione;
+	}
+
+	public Date getTimbro() {
+		return timbro;
+	}
+
+	public Integer getIdManDettaglio() {
+		return idManDettaglio;
+	}
+
+	public ParametriIndata getIdParamUnitaMisura() {
+		return idParamUnitaMisura;
+	}
+
+	public PaiIntervento getPaiIntervento() {
+		return paiIntervento;
+	}
+
+	public Mandato getIdMan() {
+		return idMan;
 	}
 }

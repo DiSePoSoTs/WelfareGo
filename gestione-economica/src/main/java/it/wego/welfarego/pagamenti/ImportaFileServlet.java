@@ -11,11 +11,12 @@ import com.google.common.collect.Collections2;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import it.wego.extjs.json.JsonBuilder;
-import it.wego.extjs.json.JsonResponse;
-import it.wego.extjs.servlet.JsonServlet;
+import it.trieste.comune.ssc.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonResponse;
+import it.trieste.comune.ssc.json.JsonServlet;
 import it.wego.welfarego.persistence.utils.Connection;
 
+import java.lang.reflect.Method;
 import java.math.BigInteger;
 import java.util.Iterator;
 import java.util.List;
@@ -36,7 +37,10 @@ import org.apache.poi.ss.usermodel.Row;
  */
 public class ImportaFileServlet extends JsonServlet {
 
-    @Override
+
+	private static final long serialVersionUID = 1L;
+
+	@Override
     protected Object handleJsonRequest(HttpServletRequest request, HttpServletResponse response, Method method) throws Exception {
 
         AggiornaMandatiDaSicrawebService aggiornaMandatiDaSicrawebService = new AggiornaMandatiDaSicrawebService();

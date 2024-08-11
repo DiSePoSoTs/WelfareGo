@@ -37,6 +37,10 @@ public class AnagrafeFam implements Serializable {
 	@ManyToOne
 	private ParametriIndata codQual;
 	
+	public ParametriIndata getCodQual() {
+		return codQual;
+	}
+
 	@JoinColumn(name = "COD_ANA_FAM", referencedColumnName = "COD_ANA", nullable = false, insertable = false, updatable = false)
 	@ManyToOne(optional = false)
 	private AnagrafeSoc anagrafeSocTarget;

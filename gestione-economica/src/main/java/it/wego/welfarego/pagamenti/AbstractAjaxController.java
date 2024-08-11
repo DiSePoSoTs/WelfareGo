@@ -1,7 +1,7 @@
 package it.wego.welfarego.pagamenti;
 
 import com.google.gson.Gson;
-import it.wego.extjs.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonBuilder;
 import it.wego.welfarego.persistence.entities.AnagrafeSoc;
 import it.wego.welfarego.persistence.entities.ParametriIndata;
 import java.io.IOException;

@@ -46,6 +46,10 @@ public class UniqueForm implements Serializable {
 	@Column(name = "COD_FORM", nullable = false, length = 10)
 	private String codForm;
 
+	public String getCodForm() {
+		return codForm;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "DES_FORM", nullable = false, length = 765)
 	private String desForm;

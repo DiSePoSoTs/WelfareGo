@@ -50,6 +50,18 @@ public class Configuration implements Serializable {
 	@Column(name = "DESCRIPTION", length = 4000)
 	private String description;
 
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	public Configuration() {
 	}
 

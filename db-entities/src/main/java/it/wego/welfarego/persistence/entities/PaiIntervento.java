@@ -67,6 +67,10 @@ public class PaiIntervento implements Serializable, Cloneable {
 
 	private static final long serialVersionUID = 1L;
 
+	public Associazione getAssociazione() {
+		return associazione;
+	}
+
 	@EmbeddedId
 	protected PaiInterventoPK paiInterventoPK;
 
@@ -85,6 +89,342 @@ public class PaiIntervento implements Serializable, Cloneable {
 	@Column(name = "DT_ESEC")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtEsec;
+
+	public Date getDtApe() {
+		return dtApe;
+	}
+
+	public Date getDtEsec() {
+		return dtEsec;
+	}
+
+	public void setDtEsec(Date dtEsec) {
+		this.dtEsec = dtEsec;
+	}
+
+	public Date getDtSosp() {
+		return dtSosp;
+	}
+
+	public void setDtSosp(Date dtSosp) {
+		this.dtSosp = dtSosp;
+	}
+
+	public String getIndEsitoInt() {
+		return indEsitoInt;
+	}
+
+	public void setIndEsitoInt(String indEsitoInt) {
+		this.indEsitoInt = indEsitoInt;
+	}
+
+	public String getNoteChius() {
+		return noteChius;
+	}
+
+	public void setNoteChius(String noteChius) {
+		this.noteChius = noteChius;
+	}
+
+	public String getNoteSospensione() {
+		return noteSospensione;
+	}
+
+	public void setNoteSospensione(String noteSospensione) {
+		this.noteSospensione = noteSospensione;
+	}
+
+	public String getNumDetermina() {
+		return numDetermina;
+	}
+
+	public void setNumDetermina(String numDetermina) {
+		this.numDetermina = numDetermina;
+	}
+
+	public BigDecimal getCostoPrev() {
+		return costoPrev;
+	}
+
+	public void setCostoPrev(BigDecimal costoPrev) {
+		this.costoPrev = costoPrev;
+	}
+
+	public Integer getDurSettimane() {
+		return durSettimane;
+	}
+
+	public void setDurSettimane(Integer durSettimane) {
+		this.durSettimane = durSettimane;
+	}
+
+	public Date getDataAvvioProposta() {
+		return dataAvvioProposta;
+	}
+
+	public void setDataAvvioProposta(Date dataAvvioProposta) {
+		this.dataAvvioProposta = dataAvvioProposta;
+	}
+
+	public List<PaiDocumento> getPaiDocumentoList() {
+		return paiDocumentoList;
+	}
+
+	public void setPaiDocumentoList(List<PaiDocumento> paiDocumentoList) {
+		this.paiDocumentoList = paiDocumentoList;
+	}
+
+	public List<Fattura> getFatturaList() {
+		return fatturaList;
+	}
+
+	public void setFatturaList(List<Fattura> fatturaList) {
+		this.fatturaList = fatturaList;
+	}
+
+	public List<Mandato> getMandatoList() {
+		return mandatoList;
+	}
+
+	public void setMandatoList(List<Mandato> mandatoList) {
+		this.mandatoList = mandatoList;
+	}
+
+	public List<PaiInterventoMese> getPaiInterventoMeseList() {
+		return paiInterventoMeseList;
+	}
+
+	public void setPaiInterventoMeseList(List<PaiInterventoMese> paiInterventoMeseList) {
+		this.paiInterventoMeseList = paiInterventoMeseList;
+	}
+
+	public List<PaiInterventoCivObb> getPaiInterventoCivObbList() {
+		return paiInterventoCivObbList;
+	}
+
+	public void setPaiInterventoCivObbList(List<PaiInterventoCivObb> paiInterventoCivObbList) {
+		this.paiInterventoCivObbList = paiInterventoCivObbList;
+	}
+
+	public List<PaiInterventoAnagrafica> getPaiInterventoAnagraficaList() {
+		return paiInterventoAnagraficaList;
+	}
+
+	public void setPaiInterventoAnagraficaList(List<PaiInterventoAnagrafica> paiInterventoAnagraficaList) {
+		this.paiInterventoAnagraficaList = paiInterventoAnagraficaList;
+	}
+
+	public List<LogMessaggi> getLogMessaggiList() {
+		return logMessaggiList;
+	}
+
+	public void setLogMessaggiList(List<LogMessaggi> logMessaggiList) {
+		this.logMessaggiList = logMessaggiList;
+	}
+
+	public List<InterventiAssociati> getInterventiFigli() {
+		return interventiFigli;
+	}
+
+	public void setInterventiFigli(List<InterventiAssociati> interventiFigli) {
+		this.interventiFigli = interventiFigli;
+	}
+
+	public InterventiAssociati getInterventoPadre() {
+		return interventoPadre;
+	}
+
+	public void setInterventoPadre(InterventiAssociati interventoPadre) {
+		this.interventoPadre = interventoPadre;
+	}
+
+	public Integer getDurMesiProroga() {
+		return durMesiProroga;
+	}
+
+	public void setDurMesiProroga(Integer durMesiProroga) {
+		this.durMesiProroga = durMesiProroga;
+	}
+
+	public String getCodImpProroga() {
+		return codImpProroga;
+	}
+
+	public void setCodImpProroga(String codImpProroga) {
+		this.codImpProroga = codImpProroga;
+	}
+
+	public AnagrafeSoc getDsCodAnaRich() {
+		return dsCodAnaRich;
+	}
+
+	public void setDsCodAnaRich(AnagrafeSoc dsCodAnaRich) {
+		this.dsCodAnaRich = dsCodAnaRich;
+	}
+
+	public List<MandatoDettaglio> getMandatoDettaglioList() {
+		return mandatoDettaglioList;
+	}
+
+	public void setMandatoDettaglioList(List<MandatoDettaglio> mandatoDettaglioList) {
+		this.mandatoDettaglioList = mandatoDettaglioList;
+	}
+
+	public String getIdCsr() {
+		return idCsr;
+	}
+
+	public void setIdCsr(String idCsr) {
+		this.idCsr = idCsr;
+	}
+
+	public String getDatiOriginali() {
+		return datiOriginali;
+	}
+
+	public void setDatiOriginali(String datiOriginali) {
+		this.datiOriginali = datiOriginali;
+	}
+
+	public String getProtocollo() {
+		return protocollo;
+	}
+
+	public void setProtocollo(String protocollo) {
+		this.protocollo = protocollo;
+	}
+
+	public String getStatoAttuale() {
+		return statoAttuale;
+	}
+
+	public void setStatoAttuale(String statoAttuale) {
+		this.statoAttuale = statoAttuale;
+	}
+
+	public Date getDtFineProroga() {
+		return dtFineProroga;
+	}
+
+	public void setDtFineProroga(Date dtFineProroga) {
+		this.dtFineProroga = dtFineProroga;
+	}
+
+	public char getUrgente() {
+		return urgente;
+	}
+
+	public void setUrgente(char urgente) {
+		this.urgente = urgente;
+	}
+
+	public char getApprovazioneTecnica() {
+		return approvazioneTecnica;
+	}
+
+	public void setApprovazioneTecnica(char approvazioneTecnica) {
+		this.approvazioneTecnica = approvazioneTecnica;
+	}
+
+	public String getTestoAutorizzazione() {
+		return testoAutorizzazione;
+	}
+
+	public void setTestoAutorizzazione(String testoAutorizzazione) {
+		this.testoAutorizzazione = testoAutorizzazione;
+	}
+
+	public Date getDataCreazioneRecord() {
+		return dataCreazioneRecord;
+	}
+
+	public void setDataCreazioneRecord(Date dataCreazioneRecord) {
+		this.dataCreazioneRecord = dataCreazioneRecord;
+	}
+
+	public String getUtenteCreazioneRecord() {
+		return utenteCreazioneRecord;
+	}
+
+	public void setUtenteCreazioneRecord(String utenteCreazioneRecord) {
+		this.utenteCreazioneRecord = utenteCreazioneRecord;
+	}
+
+	public String getMotivazione() {
+		return motivazione;
+	}
+
+	public void setPaiInterventoPK(PaiInterventoPK paiInterventoPK) {
+		this.paiInterventoPK = paiInterventoPK;
+	}
+
+	public void setStatoInt(char statoInt) {
+		this.statoInt = statoInt;
+	}
+
+	public void setDtChius(Date dtChius) {
+		this.dtChius = dtChius;
+	}
+
+	public void setDtApe(Date dtApe) {
+		this.dtApe = dtApe;
+	}
+
+	public void setDataRichiestaApprovazione(Date dataRichiestaApprovazione) {
+		this.dataRichiestaApprovazione = dataRichiestaApprovazione;
+	}
+
+	public void setQuantita(BigDecimal quantita) {
+		this.quantita = quantita;
+	}
+
+	public void setDataFineIndicativa(Date dataFineIndicativa) {
+		this.dataFineIndicativa = dataFineIndicativa;
+	}
+
+	public void setUniqueTasklistList(List<UniqueTasklist> uniqueTasklistList) {
+		this.uniqueTasklistList = uniqueTasklistList;
+	}
+
+	public void setTipologiaIntervento(TipologiaIntervento tipologiaIntervento) {
+		this.tipologiaIntervento = tipologiaIntervento;
+	}
+
+	public void setDsIdParamFasciaRedd(ParametriIndata dsIdParamFasciaRedd) {
+		this.dsIdParamFasciaRedd = dsIdParamFasciaRedd;
+	}
+
+	public void setAssociazione(Associazione associazione) {
+		this.associazione = associazione;
+	}
+
+	public void setPai(Pai pai) {
+		this.pai = pai;
+	}
+
+	public void setDsCodAnaBenef(AnagrafeSoc dsCodAnaBenef) {
+		this.dsCodAnaBenef = dsCodAnaBenef;
+	}
+
+	public void setRinnovato(Integer rinnovato) {
+		this.rinnovato = rinnovato;
+	}
+
+	public void setPaiEventoList(List<PaiEvento> paiEventoList) {
+		this.paiEventoList = paiEventoList;
+	}
+
+	public void setDatiSpecificiByCod(Map<String, MapDatiSpecificiIntervento> datiSpecificiByCod) {
+		this.datiSpecificiByCod = datiSpecificiByCod;
+	}
+
+	public void setTariffa(Tariffa tariffa) {
+		this.tariffa = tariffa;
+	}
+
+	public void setMotivazione(String motivazione) {
+		this.motivazione = motivazione;
+	}
 
 	@Column(name = "DT_CHIUS")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -128,6 +468,10 @@ public class PaiIntervento implements Serializable, Cloneable {
 	@Column(name = "DUR_MESI")
 	private Integer durMesi;
 
+	public void setDurMesi(Integer durMesi) {
+		this.durMesi = durMesi;
+	}
+
 	public Integer getDurMesi() {
 		return durMesi;
 	}
@@ -139,6 +483,10 @@ public class PaiIntervento implements Serializable, Cloneable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtAvvio;
 
+	public void setDtAvvio(Date dtAvvio) {
+		this.dtAvvio = dtAvvio;
+	}
+
 	public Date getDtAvvio() {
 		return dtAvvio;
 	}
@@ -146,9 +494,17 @@ public class PaiIntervento implements Serializable, Cloneable {
 	@Column(name = "QUANTITA")
 	private BigDecimal quantita;
 
+	public BigDecimal getQuantita() {
+		return quantita;
+	}
+
 	@Column(name = "DT_FINE")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtFine;
+
+	public void setDtFine(Date dtFine) {
+		this.dtFine = dtFine;
+	}
 
 	public Date getDtFine() {
 		return dtFine;
@@ -178,6 +534,10 @@ public class PaiIntervento implements Serializable, Cloneable {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "paiIntervento")
 	private List<UniqueTasklist> uniqueTasklistList;
 
+	public List<UniqueTasklist> getUniqueTasklistList() {
+		return uniqueTasklistList;
+	}
+
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "paiIntervento")
 	private List<PaiInterventoMese> paiInterventoMeseList;
 
@@ -193,7 +553,7 @@ public class PaiIntervento implements Serializable, Cloneable {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "interventoPadre")
 	private List<InterventiAssociati> interventiFigli;
 
-	@OneToOne(cascade = CascadeType.ALL, mappedBy = "interventiFigli")
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "interventoFiglio")
 	private InterventiAssociati interventoPadre;
 
 	@JoinColumn(name = "COD_TIPINT", referencedColumnName = "COD_TIPINT", nullable = false, insertable = false, updatable = false)
@@ -269,6 +629,14 @@ public class PaiIntervento implements Serializable, Cloneable {
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "paiIntervento")
 	private List<MapDatiSpecificiIntervento> mapDatiSpecificiInterventoList;
+
+	public void setMapDatiSpecificiInterventoList(List<MapDatiSpecificiIntervento> mapDatiSpecificiInterventoList) {
+		this.mapDatiSpecificiInterventoList = mapDatiSpecificiInterventoList;
+	}
+
+	public List<MapDatiSpecificiIntervento> getMapDatiSpecificiInterventoList() {
+		return mapDatiSpecificiInterventoList;
+	}
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "paiIntervento")
 	@MapKey(name = "codCampo")

@@ -96,6 +96,11 @@ public class TipologiaIntervento implements Serializable {
 	@Column(name = "DES_TIPINT", nullable = false, length = 765)
 	private String desTipint;
 
+	public String getDesTipint() {
+		return desTipint;
+	}
+
+
 	@Basic(optional = false)
 	@Column(name = "FLG_PAI", nullable = false)
 	private char flgPai;
@@ -125,9 +130,19 @@ public class TipologiaIntervento implements Serializable {
 	@Column(name = "FLG_FATT", nullable = false)
 	private char flgFatt;
 
+	public char getFlgFatt() {
+		return flgFatt;
+	}
+
+
 	@Basic(optional = false)
 	@Column(name = "FLG_PAGAM", nullable = false)
 	private char flgPagam;
+
+	public char getFlgPagam() {
+		return flgPagam;
+	}
+
 
 	@Column(name = "COD_INT_CSR", length = 20)
 	private String codIntCsr;
@@ -141,6 +156,10 @@ public class TipologiaIntervento implements Serializable {
 	@Basic(optional = false)
 	@Column(name = "IMP_STD_ENTR", nullable = false, precision = 9, scale = 2)
 	private BigDecimal impStdEntr;
+
+	public BigDecimal getImpStdEntr() {
+		return impStdEntr;
+	}
 
 	@Basic(optional = false)
 	@Column(name = "IMP_STD_SPESA", nullable = false, precision = 9, scale = 2)
@@ -164,9 +183,12 @@ public class TipologiaIntervento implements Serializable {
 		return deveRestareAperto;
 	}
 
-
 	@Column(name = "FLG_RINNOVO", nullable = false)
 	private String flgRinnovo = FLG_RINNOVO_AUTOMATICO_N;
+
+	public String getFlgRinnovo() {
+		return flgRinnovo;
+	}
 
 	/**
 	 * valori accettabili: {'F','D'}
@@ -174,6 +196,11 @@ public class TipologiaIntervento implements Serializable {
 	@Basic(optional = false)
 	@Column(name = "FLG_FINE_DURATA", nullable = false)
 	private char flgFineDurata;
+
+	public char getFlgFineDurata() {
+		return flgFineDurata;
+	}
+
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "tipologiaIntervento")
 	private List<BudgetTipIntervento> budgetTipInterventoList;
@@ -215,6 +242,11 @@ public class TipologiaIntervento implements Serializable {
 	@ManyToOne(optional = false)
 	private ParametriIndata idParamClasseTipint;
 
+	public ParametriIndata getIdParamClasseTipint() {
+		return idParamClasseTipint;
+	}
+
+
 	/**
 	 * tip param 'sa'
 	 */
@@ -226,9 +258,19 @@ public class TipologiaIntervento implements Serializable {
 	@ManyToOne
 	private Template codTmplLettPag;
 
+	public Template getCodTmplLettPag() {
+		return codTmplLettPag;
+	}
+
+
 	@JoinColumn(name = "COD_TMPL_CHIUS", referencedColumnName = "COD_TMPL", nullable = false)
 	@ManyToOne(optional = false)
 	private Template codTmplChius;
+
+	public Template getCodTmplChius() {
+		return codTmplChius;
+	}
+
 
 	@JoinColumn(name = "COD_TMPL_VAR", referencedColumnName = "COD_TMPL", nullable = false)
 	@ManyToOne(optional = false)
@@ -258,12 +300,26 @@ public class TipologiaIntervento implements Serializable {
 	@ManyToOne(optional = false)
 	private Template codTmplComliq;
 
+	public Template getCodTmplComliq() {
+		return codTmplComliq;
+	}
+
+
 	@Basic(optional = false)
 	@Column(name = "FLG_RICEVUTA", nullable = false)
 	private String flgRicevuta;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "tipologiaIntervento")
 	private List<MapDatiSpecTipint> mapDatiSpecTipintList;
+
+	public String getResponsabileProcedimento() {
+		return responsabileProcedimento;
+	}
+
+	public String getUfficioDiRiferimento() {
+		return ufficioDiRiferimento;
+	}
+
 
 	@Column(name = "RESP_PROC")
 	private String responsabileProcedimento;
@@ -395,6 +451,14 @@ public class TipologiaIntervento implements Serializable {
 
 	public boolean isSad() {
 		return Objects.equal(getCodTipint(), COD_TIPINT_SAD);
+	}
+
+	public String getCcele() {
+		return ccele;
+	}
+
+	public BigDecimal getImpStdSpesa() {
+		return impStdSpesa;
 	}
 
 }

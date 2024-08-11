@@ -26,6 +26,18 @@ public class PaiInterventoPK implements Serializable {
 		return codPai;
 	}
 
+	public void setCodPai(Integer codPai) {
+		this.codPai = codPai;
+	}
+
+	public void setCodTipint(String codTipint) {
+		this.codTipint = codTipint;
+	}
+
+	public void setCntTipint(Integer cntTipint) {
+		this.cntTipint = cntTipint;
+	}
+
 	public String getCodTipint() {
 		return codTipint;
 	}

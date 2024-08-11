@@ -57,9 +57,65 @@ public class FatturaDettaglio implements Serializable {
 	@Column(name = "ANNO_EFF", nullable = false)
 	private Integer annoEff;
 
+	public void setAnnoEff(Integer annoEff) {
+		this.annoEff = annoEff;
+	}
+
+	public Integer getAnnoEff() {
+		return annoEff;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "MESE_EFF", nullable = false)
 	private Integer meseEff;
+
+	public Date getTimbro() {
+		return timbro;
+	}
+
+	public void setTimbro(Date timbro) {
+		this.timbro = timbro;
+	}
+
+	public String getCausVar() {
+		return causVar;
+	}
+
+	public void setCausVar(String causVar) {
+		this.causVar = causVar;
+	}
+
+	public void setMeseEff(Integer meseEff) {
+		this.meseEff = meseEff;
+	}
+
+	public void setQtInputata(BigDecimal qtInputata) {
+		this.qtInputata = qtInputata;
+	}
+
+	public void setImporto(BigDecimal importo) {
+		this.importo = importo;
+	}
+
+	public void setVarStraord(BigDecimal varStraord) {
+		this.varStraord = varStraord;
+	}
+
+	public void setPaiInterventoMeseList(List<PaiInterventoMese> paiInterventoMeseList) {
+		this.paiInterventoMeseList = paiInterventoMeseList;
+	}
+
+	public void setCodTipint(TipologiaIntervento codTipint) {
+		this.codTipint = codTipint;
+	}
+
+	public void setIdParamUnitaMisura(ParametriIndata idParamUnitaMisura) {
+		this.idParamUnitaMisura = idParamUnitaMisura;
+	}
+
+	public void setIdFatt(Fattura idFatt) {
+		this.idFatt = idFatt;
+	}
 
 	public Integer getMeseEff() {
 		return meseEff;
@@ -68,6 +124,10 @@ public class FatturaDettaglio implements Serializable {
 	@Basic(optional = false)
 	@Column(name = "QT_INPUTATA", nullable = false, precision = 9, scale = 2)
 	private BigDecimal qtInputata;
+
+	public BigDecimal getQtInputata() {
+		return qtInputata;
+	}
 
 	/**
 	 * importo imponibile, senza tasse/iva
@@ -105,6 +165,14 @@ public class FatturaDettaglio implements Serializable {
 	@Column(name = "ID_FATT_DETTAGLIO", nullable = false)
 	private Integer idFattDettaglio;
 
+	public Integer getIdFattDettaglio() {
+		return idFattDettaglio;
+	}
+
+	public ParametriIndata getIdParamUnitaMisura() {
+		return idParamUnitaMisura;
+	}
+
 	@Column(name = "VAR_STRAORD", precision = 9, scale = 2)
 	private BigDecimal varStraord;
 
@@ -125,6 +193,10 @@ public class FatturaDettaglio implements Serializable {
 	@JoinColumn(name = "COD_TIPINT", referencedColumnName = "COD_TIPINT", nullable = false)
 	@ManyToOne(optional = false)
 	private TipologiaIntervento codTipint;
+
+	public TipologiaIntervento getCodTipint() {
+		return codTipint;
+	}
 
 	@JoinColumn(name = "ID_PARAM_UNITA_MISURA", referencedColumnName = "ID_PARAM_INDATA", nullable = false)
 	@ManyToOne(optional = false)
@@ -246,5 +318,13 @@ public class FatturaDettaglio implements Serializable {
 	public BigDecimal getTotaleVariazioniNegativeConIva() {
 		return getTotaleVariazioniNegativeSenzaIva()
 				.multiply(BigDecimal.ONE.add(getIdParamIva().getDecimalPercentageParamAsDecimal()));
+	}
+
+	public void setAumento(BigDecimal aumento) {
+		this.aumento = aumento;
+	}
+
+	public void setRiduzione(BigDecimal riduzione) {
+		this.riduzione = riduzione;
 	}
 }

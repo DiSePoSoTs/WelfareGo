@@ -38,6 +38,10 @@ public class Associazione implements Serializable {
 	@Column(name = "ID")
 	private Integer id;
 
+	public Integer getId() {
+		return id;
+	}
+
 	@Column(name = "NOME")
 	private String nome;
 

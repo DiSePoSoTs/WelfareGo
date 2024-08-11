@@ -92,6 +92,46 @@ public class PaiEvento implements Serializable {
 	@Column(name = "DES_EVENTO", length = 3000)
 	private String desEvento;
 
+	public void setTsEvePai(Date tsEvePai) {
+		this.tsEvePai = tsEvePai;
+	}
+
+	public void setPaiDox(String paiDox) {
+		this.paiDox = paiDox;
+	}
+
+	public void setBreDox(String breDox) {
+		this.breDox = breDox;
+	}
+
+	public void setDesEvento(String desEvento) {
+		this.desEvento = desEvento;
+	}
+
+	public void setFlgDxStampa(char flgDxStampa) {
+		this.flgDxStampa = flgDxStampa;
+	}
+
+	public void setIdEvento(Integer idEvento) {
+		this.idEvento = idEvento;
+	}
+
+	public void setCodUte(Utenti codUte) {
+		this.codUte = codUte;
+	}
+
+	public void setPaiIntervento(PaiIntervento paiIntervento) {
+		this.paiIntervento = paiIntervento;
+	}
+
+	public void setCodPai(Pai codPai) {
+		this.codPai = codPai;
+	}
+
+	public void setIdDetermina(Determine idDetermina) {
+		this.idDetermina = idDetermina;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "FLG_DX_STAMPA", nullable = false)
 	private char flgDxStampa;
@@ -121,6 +161,18 @@ public class PaiEvento implements Serializable {
 	@JoinColumn(name = "COD_PAI", referencedColumnName = "COD_PAI", nullable = false)
 	@ManyToOne(optional = false)
 	private Pai codPai;
+
+	public Utenti getCodUte() {
+		return codUte;
+	}
+
+	public PaiIntervento getPaiIntervento() {
+		return paiIntervento;
+	}
+
+	public Pai getCodPai() {
+		return codPai;
+	}
 
 	@JoinColumn(name = "ID_DETERMINA", referencedColumnName = "ID_DETERMINA")
 	@ManyToOne

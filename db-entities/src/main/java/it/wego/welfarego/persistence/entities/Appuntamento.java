@@ -41,10 +41,16 @@ public class Appuntamento implements Serializable {
 	@Column(name = "TS_FINE_APP", nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date tsFineApp;
+
 	@Basic(optional = false)
 	@Column(name = "TS_INI_APP", nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date tsIniApp;
+
+	public Date getTsIniApp() {
+		return tsIniApp;
+	}
+
 	@Column(name = "NOTE", length = 3000)
 	private String note;
 	@JoinColumn(name = "COD_UTE", referencedColumnName = "COD_UTE", nullable = false)

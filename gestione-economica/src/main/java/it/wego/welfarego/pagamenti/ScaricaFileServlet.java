@@ -7,8 +7,9 @@ package it.wego.welfarego.pagamenti;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
-import it.wego.extjs.servlet.JsonServlet;
+import it.trieste.comune.ssc.json.JsonServlet;
 import java.io.File;
+import java.lang.reflect.Method;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -18,6 +19,7 @@ import java.util.Collections;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.io.FileUtils;
+import org.checkerframework.checker.nullness.qual.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,17 +29,20 @@ import org.slf4j.LoggerFactory;
  */
 public class ScaricaFileServlet extends JsonServlet {
     
-    private final static int CACHE_LIMIT = 1000;
-   
-  
+	private static final long serialVersionUID = 1L;
+
+	private final static int CACHE_LIMIT = 1000;
+     
    private static   Map<String, String> map = new LinkedHashMap<String, String>(CACHE_LIMIT+1,.75F,true) {
-        @Override
+		@Override
         protected boolean removeEldestEntry(Entry<String, String> eldest) {
         	logger.info("Sto cancellando il file"+  eldest.getValue() + " con chiava" + eldest.getKey() +" Il size della mappa è" + size());
             return size() > CACHE_LIMIT;
         }
     };
     private final static Logger logger = LoggerFactory.getLogger(ScaricaFileServlet.class);
+
+
   
     static {
         if (logger.isDebugEnabled()) {
@@ -75,5 +80,8 @@ public class ScaricaFileServlet extends JsonServlet {
         FileUtils.copyFile(file, response.getOutputStream());
         return SKIP_RESPONSE;
     }
+
+
+
 
 }

@@ -120,9 +120,81 @@ public class Mandato implements Serializable {
 	@Column(name = "GRUPPO", nullable = false, length = 100)
 	private String gruppo;
 
+	public void setPeriodoDal(Date periodoDal) {
+		this.periodoDal = periodoDal;
+	}
+
+	public void setCodAnaDelegante(AnagrafeSoc codAnaDelegante) {
+		this.codAnaDelegante = codAnaDelegante;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "MESE_RIF", nullable = false)
 	private int meseRif;
+
+	public void setNumDecr(int numDecr) {
+		this.numDecr = numDecr;
+	}
+
+	public void setPaiIntervento(PaiIntervento paiIntervento) {
+		this.paiIntervento = paiIntervento;
+	}
+
+	public void setNomeBeneficiario(String nomeBeneficiario) {
+		this.nomeBeneficiario = nomeBeneficiario;
+	}
+
+	public void setPeriodoAl(Date periodoAl) {
+		this.periodoAl = periodoAl;
+	}
+
+	public void setTimbro(Date timbro) {
+		this.timbro = timbro;
+	}
+
+	public void setDataDecr(Date dataDecr) {
+		this.dataDecr = dataDecr;
+	}
+
+	public void setAnnoDecr(int annoDecr) {
+		this.annoDecr = annoDecr;
+	}
+
+	public void setCapitoloDecr(int capitoloDecr) {
+		this.capitoloDecr = capitoloDecr;
+	}
+
+	public void setCognomeBeneficiario(String cognomeBeneficiario) {
+		this.cognomeBeneficiario = cognomeBeneficiario;
+	}
+
+	public void setCfBeneficiario(String cfBeneficiario) {
+		this.cfBeneficiario = cfBeneficiario;
+	}
+
+	public void setIndirizzo(String indirizzo) {
+		this.indirizzo = indirizzo;
+	}
+
+	public void setGruppo(String gruppo) {
+		this.gruppo = gruppo;
+	}
+
+	public void setMeseRif(int meseRif) {
+		this.meseRif = meseRif;
+	}
+
+	public void setIdParamFascia(ParametriIndata idParamFascia) {
+		this.idParamFascia = idParamFascia;
+	}
+
+	public void setIdParamStato(ParametriIndata idParamStato) {
+		this.idParamStato = idParamStato;
+	}
+
+	public void setCodAnaBeneficiario(AnagrafeSoc codAnaBeneficiario) {
+		this.codAnaBeneficiario = codAnaBeneficiario;
+	}
 
 	@Column(name = "PERIODO_DAL")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -136,14 +208,46 @@ public class Mandato implements Serializable {
 	@Column(name = "CF_DELEGANTE", nullable = false, length = 16)
 	private String cfDelegante;
 
+	public void setCfDelegante(String cfDelegante) {
+		this.cfDelegante = cfDelegante;
+	}
+
+	public void setCognomeDelegante(String cognomeDelegante) {
+		this.cognomeDelegante = cognomeDelegante;
+	}
+
+	public void setModalitaErogazione(String modalitaErogazione) {
+		this.modalitaErogazione = modalitaErogazione;
+	}
+
+	public void setIban(String iban) {
+		this.iban = iban;
+	}
+
+	public void setImporto(BigDecimal importo) {
+		this.importo = importo;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+
 	@Column(name = "COGNOME_DELEGANTE", length = 765)
 	private String cognomeDelegante;
 
 	@Column(name = "NOME_DELEGANTE", length = 765)
 	private String nomeDelegante;
 
+	public void setNomeDelegante(String nomeDelegante) {
+		this.nomeDelegante = nomeDelegante;
+	}
+
 	@Column(name = "MODALITA_EROGAZIONE", length = 765)
 	private String modalitaErogazione;
+
+	public String getModalitaErogazione() {
+		return modalitaErogazione;
+	}
 
 	@Column(name = "IBAN", length = 30)
 	private String iban;
@@ -151,6 +255,94 @@ public class Mandato implements Serializable {
 	@Basic(optional = false)
 	@Column(name = "IMPORTO", nullable = false, precision = 9, scale = 4)
 	private BigDecimal importo;
+
+	public int getAnnoDecr() {
+		return annoDecr;
+	}
+
+	public int getCapitoloDecr() {
+		return capitoloDecr;
+	}
+
+	public int getNumDecr() {
+		return numDecr;
+	}
+
+	public Date getDataDecr() {
+		return dataDecr;
+	}
+
+	public String getCfBeneficiario() {
+		return cfBeneficiario;
+	}
+
+	public String getIndirizzo() {
+		return indirizzo;
+	}
+
+	public String getGruppo() {
+		return gruppo;
+	}
+
+	public int getMeseRif() {
+		return meseRif;
+	}
+
+	public Date getPeriodoDal() {
+		return periodoDal;
+	}
+
+	public Date getPeriodoAl() {
+		return periodoAl;
+	}
+
+	public String getCfDelegante() {
+		return cfDelegante;
+	}
+
+	public String getIban() {
+		return iban;
+	}
+
+	public BigDecimal getImporto() {
+		return importo;
+	}
+
+	public Date getTimbro() {
+		return timbro;
+	}
+
+	public Integer getIdMan() {
+		return idMan;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	public ParametriIndata getIdParamFascia() {
+		return idParamFascia;
+	}
+
+	public ParametriIndata getIdParamStato() {
+		return idParamStato;
+	}
+
+	public PaiIntervento getPaiIntervento() {
+		return paiIntervento;
+	}
+
+	public AnagrafeSoc getCodAnaDelegante() {
+		return codAnaDelegante;
+	}
+
+	public AnagrafeSoc getCodAnaBeneficiario() {
+		return codAnaBeneficiario;
+	}
+
+	public List<MandatoDettaglio> getMandatoDettaglioList() {
+		return mandatoDettaglioList;
+	}
 
 	@Column(name = "TIMBRO")
 	@Temporal(TemporalType.TIMESTAMP)

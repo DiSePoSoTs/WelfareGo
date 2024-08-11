@@ -26,9 +26,21 @@ public class MapDatiSpecificiInterventoPK implements Serializable {
 	@Column(name = "COD_PAI", nullable = false)
 	private Integer codPai;
 
+	public void setCodPai(Integer codPai) {
+		this.codPai = codPai;
+	}
+
+	public void setCntTipint(Integer cntTipint) {
+		this.cntTipint = cntTipint;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "COD_TIPINT", nullable = false, length = 10)
 	private String codTipint;
+
+	public void setCodTipint(String codTipint) {
+		this.codTipint = codTipint;
+	}
 
 	@Basic(optional = false)
 	@Column(name = "CNT_TIPINT", nullable = false)

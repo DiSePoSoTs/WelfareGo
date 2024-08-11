@@ -1,7 +1,7 @@
 package it.wego.welfarego.pagamenti;
 
-import it.wego.extjs.json.JsonBuilder;
-import it.wego.extjs.json.JsonMapTransformer;
+import it.trieste.comune.ssc.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonMapTransformer;
 import it.wego.welfarego.persistence.entities.Parametri;
 import it.wego.welfarego.persistence.dao.BudgetTipoInterventoDao;
 import it.wego.welfarego.persistence.dao.ParametriIndataDao;

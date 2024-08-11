@@ -38,6 +38,34 @@ public class PaiInterventoMesePK implements Serializable {
 	@Column(name = "ANNO_EFF", nullable = false)
 	private short annoEff;
 
+	public int getCodPai() {
+		return codPai;
+	}
+
+	public String getCodTipint() {
+		return codTipint;
+	}
+
+	public int getCntTipint() {
+		return cntTipint;
+	}
+
+	public short getMeseEff() {
+		return meseEff;
+	}
+
+	public short getAnno() {
+		return anno;
+	}
+
+	public String getCodImp() {
+		return codImp;
+	}
+
+	public short getAnnoEff() {
+		return annoEff;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "MESE_EFF", nullable = false)
 	private short meseEff;
@@ -117,5 +145,33 @@ public class PaiInterventoMesePK implements Serializable {
 		String msg = String.format(msgTemplate, codPai, codTipint, cntTipint, annoEff, meseEff, anno, codImp);
 
 		return msg;
+	}
+
+	public void setCodPai(int codPai) {
+		this.codPai = codPai;
+	}
+
+	public void setCodTipint(String codTipint) {
+		this.codTipint = codTipint;
+	}
+
+	public void setCntTipint(int cntTipint) {
+		this.cntTipint = cntTipint;
+	}
+
+	public void setAnnoEff(short annoEff) {
+		this.annoEff = annoEff;
+	}
+
+	public void setMeseEff(short meseEff) {
+		this.meseEff = meseEff;
+	}
+
+	public void setAnno(short anno) {
+		this.anno = anno;
+	}
+
+	public void setCodImp(String codImp) {
+		this.codImp = codImp;
 	}
 }

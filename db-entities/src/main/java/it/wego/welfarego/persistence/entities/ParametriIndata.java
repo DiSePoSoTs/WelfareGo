@@ -58,6 +58,10 @@ public class ParametriIndata implements Serializable {
 	@Column(name = "ID_PARAM_INDATA", nullable = false)
 	private Integer idParamIndata;
 
+	public Integer getIdParamIndata() {
+		return idParamIndata;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "DT_INI_VAL", nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
@@ -93,6 +97,10 @@ public class ParametriIndata implements Serializable {
 
 	@Column(name = "TXT1_PARAM", length = 90)
 	private String txt1Param;
+
+	public String getTxt1Param() {
+		return txt1Param;
+	}
 
 	@Column(name = "TXT2_PARAM", length = 90)
 	private String txt2Param;
@@ -180,6 +188,10 @@ public class ParametriIndata implements Serializable {
 
 	public BigDecimal getDecimalPercentageParamAsPercentage() {
 		return getDecimalPercentageParamAsDecimal().multiply(BigDecimal.valueOf(100));
+	}
+
+	public void setDecimalParam(BigDecimal decimalParam) {
+		this.decimalParam = decimalParam;
 	}
 
 }

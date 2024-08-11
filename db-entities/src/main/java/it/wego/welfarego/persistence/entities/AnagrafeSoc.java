@@ -98,12 +98,296 @@ public class AnagrafeSoc implements Serializable {
 	@Column(name = "FLG_PERS_FG", length = 1, nullable = false)
 	private String flgPersFg = PERSONA_FISICA_F;
 
+	public String getFlgPersFg() {
+		return flgPersFg;
+	}
+
 	public String getNome() {
 		return nome;
 	}
 
 	public String getCognome() {
 		return cognome;
+	}
+
+	public void setCodAna(Integer codAna) {
+		this.codAna = codAna;
+	}
+
+	public void setFlgPersFg(String flgPersFg) {
+		this.flgPersFg = flgPersFg;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
+	}
+
+	public void setCodFisc(String codFisc) {
+		this.codFisc = codFisc;
+	}
+
+	public void setPartIva(String partIva) {
+		this.partIva = partIva;
+	}
+
+	public void setRagSoc(String ragSoc) {
+		this.ragSoc = ragSoc;
+	}
+
+	public void setCodAnaCom(String codAnaCom) {
+		this.codAnaCom = codAnaCom;
+	}
+
+	public void setCodAnaFamCom(String codAnaFamCom) {
+		this.codAnaFamCom = codAnaFamCom;
+	}
+
+	public void setCodAnaCivilia(String codAnaCivilia) {
+		this.codAnaCivilia = codAnaCivilia;
+	}
+
+	public void setDtNasc(Date dtNasc) {
+		this.dtNasc = dtNasc;
+	}
+
+	public void setDataRichiestaAssegnoAccompagnamento(Date dataRichiestaAssegnoAccompagnamento) {
+		this.dataRichiestaAssegnoAccompagnamento = dataRichiestaAssegnoAccompagnamento;
+	}
+
+	public void setRichiestaAssegnoAccompagnamento(Character richiestaAssegnoAccompagnamento) {
+		this.richiestaAssegnoAccompagnamento = richiestaAssegnoAccompagnamento;
+	}
+
+	public void setDataUpdateReddito(Date dataUpdateReddito) {
+		this.dataUpdateReddito = dataUpdateReddito;
+	}
+
+	public void setReddito(BigDecimal reddito) {
+		this.reddito = reddito;
+	}
+
+	public void setFlgSex(String flgSex) {
+		this.flgSex = flgSex;
+	}
+
+	public void setNumTel(String numTel) {
+		this.numTel = numTel;
+	}
+
+	public void setNumCell(String numCell) {
+		this.numCell = numCell;
+	}
+
+	public void setFlgSms(char flgSms) {
+		this.flgSms = flgSms;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setFlgEmail(char flgEmail) {
+		this.flgEmail = flgEmail;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+
+	public void setAttivitaLavoroStudio(String attivitaLavoroStudio) {
+		this.attivitaLavoroStudio = attivitaLavoroStudio;
+	}
+
+	public void setZona(String zona) {
+		this.zona = zona;
+	}
+
+	public void setSottozona(String sottozona) {
+		this.sottozona = sottozona;
+	}
+
+	public void setCodAss(String codAss) {
+		this.codAss = codAss;
+	}
+
+	public void setDistSan(String distSan) {
+		this.distSan = distSan;
+	}
+
+	public void setEnteGestore(String enteGestore) {
+		this.enteGestore = enteGestore;
+	}
+
+	public void setMedicoBase(String medicoBase) {
+		this.medicoBase = medicoBase;
+	}
+
+	public void setPresso(String presso) {
+		this.presso = presso;
+	}
+
+	public void setIbanPagam(String ibanPagam) {
+		this.ibanPagam = ibanPagam;
+	}
+
+	public void setReddMens(BigDecimal reddMens) {
+		this.reddMens = reddMens;
+	}
+
+	public void setFlgAccomp(String flgAccomp) {
+		this.flgAccomp = flgAccomp;
+	}
+
+	public void setCognomeConiuge(String cognomeConiuge) {
+		this.cognomeConiuge = cognomeConiuge;
+	}
+
+	public void setDtMorte(Date dtMorte) {
+		this.dtMorte = dtMorte;
+	}
+
+	public void setPercInvCiv(Short percInvCiv) {
+		this.percInvCiv = percInvCiv;
+	}
+
+	public void setDtAggAb(Date dtAggAb) {
+		this.dtAggAb = dtAggAb;
+	}
+
+	public void setDataAggBatch(Date dataAggBatch) {
+		this.dataAggBatch = dataAggBatch;
+	}
+
+	public void setFatturaList(List<Fattura> fatturaList) {
+		this.fatturaList = fatturaList;
+	}
+
+	public void setMandatoList(List<Mandato> mandatoList) {
+		this.mandatoList = mandatoList;
+	}
+
+	public void setMandatoList1(List<Mandato> mandatoList1) {
+		this.mandatoList1 = mandatoList1;
+	}
+
+	public void setCartellaSociale(CartellaSociale cartellaSociale) {
+		this.cartellaSociale = cartellaSociale;
+	}
+
+	public void setPaiCdgList(List<PaiCdg> paiCdgList) {
+		this.paiCdgList = paiCdgList;
+	}
+
+	public void setLogAnagrafeList(List<LogAnagrafe> logAnagrafeList) {
+		this.logAnagrafeList = logAnagrafeList;
+	}
+
+	public void setPaiInterventoCivObbList(List<PaiInterventoCivObb> paiInterventoCivObbList) {
+		this.paiInterventoCivObbList = paiInterventoCivObbList;
+	}
+
+	public void setPaiInterventoAnagraficaList(List<PaiInterventoAnagrafica> paiInterventoAnagraficaList) {
+		this.paiInterventoAnagraficaList = paiInterventoAnagraficaList;
+	}
+
+	public void setAnagrafeFamListAsSource(List<AnagrafeFam> anagrafeFamListAsSource) {
+		this.anagrafeFamListAsSource = anagrafeFamListAsSource;
+	}
+
+	public void setAnagrafeFamListAsTarget(List<AnagrafeFam> anagrafeFamListAsTarget) {
+		this.anagrafeFamListAsTarget = anagrafeFamListAsTarget;
+	}
+
+	public void setContattoList(List<Contatto> contattoList) {
+		this.contattoList = contattoList;
+	}
+
+	public void setIdParamStatoFis(ParametriIndata idParamStatoFis) {
+		this.idParamStatoFis = idParamStatoFis;
+	}
+
+	public void setIdParamTipologiaResidenza(ParametriIndata idParamTipologiaResidenza) {
+		this.idParamTipologiaResidenza = idParamTipologiaResidenza;
+	}
+
+	public void setCodSegnDa(ParametriIndata codSegnDa) {
+		this.codSegnDa = codSegnDa;
+	}
+
+	public void setCondFam(ParametriIndata condFam) {
+		this.condFam = condFam;
+	}
+
+	public void setCodStatoNaz(ParametriIndata codStatoNaz) {
+		this.codStatoNaz = codStatoNaz;
+	}
+
+	public void setIdParamRedd(ParametriIndata idParamRedd) {
+		this.idParamRedd = idParamRedd;
+	}
+
+	public void setIdParamCondProf(ParametriIndata idParamCondProf) {
+		this.idParamCondProf = idParamCondProf;
+	}
+
+	public void setIdParamStatoCiv(ParametriIndata idParamStatoCiv) {
+		this.idParamStatoCiv = idParamStatoCiv;
+	}
+
+	public void setIdParamModPagam(ParametriIndata idParamModPagam) {
+		this.idParamModPagam = idParamModPagam;
+	}
+
+	public void setIdParamTipAll(ParametriIndata idParamTipAll) {
+		this.idParamTipAll = idParamTipAll;
+	}
+
+	public void setIdParamPosAna(ParametriIndata idParamPosAna) {
+		this.idParamPosAna = idParamPosAna;
+	}
+
+	public void setIdParamTit(ParametriIndata idParamTit) {
+		this.idParamTit = idParamTit;
+	}
+
+	public void setLuogoNascita(Luogo luogoNascita) {
+		this.luogoNascita = luogoNascita;
+	}
+
+	public void setLuogoDomicilio(Luogo luogoDomicilio) {
+		this.luogoDomicilio = luogoDomicilio;
+	}
+
+	public void setLuogoResidenza(Luogo luogoResidenza) {
+		this.luogoResidenza = luogoResidenza;
+	}
+
+	public void setIdCsr(String idCsr) {
+		this.idCsr = idCsr;
+	}
+
+	public void setCodUteEducatore(Utenti codUteEducatore) {
+		this.codUteEducatore = codUteEducatore;
+	}
+
+	public void setDiario(String diario) {
+		this.diario = diario;
+	}
+
+	public void setCreationUser(Utenti creationUser) {
+		this.creationUser = creationUser;
+	}
+
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
+	}
+
+	public void setDataUltimaRetifica(Date dataUltimaRetifica) {
+		this.dataUltimaRetifica = dataUltimaRetifica;
 	}
 
 	@Column(name = "NOME", length = 765)
@@ -115,17 +399,33 @@ public class AnagrafeSoc implements Serializable {
 	@Column(name = "COD_FISC", length = 16)
 	private String codFisc;
 
+	public String getCodFisc() {
+		return codFisc;
+	}
+
+	public String getPartIva() {
+		return partIva;
+	}
+
 	@Column(name = "PART_IVA", length = 11)
 	private String partIva;
 
 	@Column(name = "RAG_SOC", length = 765)
 	private String ragSoc;
 
+	public String getRagSoc() {
+		return ragSoc;
+	}
+
 	@Column(name = "COD_ANA_COM", length = 10)
 	private String codAnaCom;
 
 	@Column(name = "COD_ANA_FAM_COM", length = 10)
 	private String codAnaFamCom;
+
+	public String getCodAnaFamCom() {
+		return codAnaFamCom;
+	}
 
 	@Column(name = "COD_ANA_CIVILIA", length = 10)
 	private String codAnaCivilia;
@@ -199,6 +499,10 @@ public class AnagrafeSoc implements Serializable {
 	@Column(name = "PRESSO", length = 40)
 	private String presso;
 
+	public String getPresso() {
+		return presso;
+	}
+
 	@Column(name = "IBAN_PAGAM", length = 30)
 	private String ibanPagam;
 
@@ -221,6 +525,10 @@ public class AnagrafeSoc implements Serializable {
 
 	@Column(name = "PERC_INV_CIV")
 	private Short percInvCiv;
+
+	public String getNumCell() {
+		return numCell;
+	}
 
 	@Column(name = "DT_AGG_AB")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -338,6 +646,10 @@ public class AnagrafeSoc implements Serializable {
 
 	public Luogo getLuogoDomicilio() {
 		return luogoDomicilio;
+	}
+
+	public Luogo getLuogoNascita() {
+		return luogoNascita;
 	}
 
 	@JoinColumn(name = "COD_LUOGO_DOM", referencedColumnName = "COD_LUOGO", nullable = false)

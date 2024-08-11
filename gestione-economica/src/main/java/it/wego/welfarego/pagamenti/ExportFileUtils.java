@@ -908,10 +908,6 @@ public class ExportFileUtils {
             return getFattura().hasEsenzioneIva();
         }
 
-        //        public BigDecimal getIvaTotale() {
-////            return getIvaParam().getDecimalPercentageParamAsDecimal().multiply(getCostoTotale()); //TODO check this\
-//            return getFattura().getImpIva();
-//        }
         public BigDecimal getImportoTotale() {
             return getFattura().getImportoTotale();
         }
@@ -934,7 +930,6 @@ public class ExportFileUtils {
 
         public Date getDataDx() {
             return getFattura().getTimbro();// TODO
-//.getFatturaDettaglioList().iterator().next().getPaiInterventoMeseList().iterator().next().getBudgetTipIntervento().getDtDx(); // TODO
         }
 
         public String getResponsabileProcedimento() {
@@ -972,7 +967,6 @@ public class ExportFileUtils {
                     ArrayList<InterventoRecord> interventoRecordList = Lists.newArrayList(interventoRecord);
                     BigDecimal variazionePositiva = interventoRecord.getVariazionePositiva();
                     BigDecimal variazioneNegativa = interventoRecord.getVariazioneNegativa();
-//                    logger.info("vpos = {}, vnev = {}", variazionePositiva, variazioneNegativa);
                     if (BigDecimal.ZERO.compareTo(variazionePositiva) != 0) {
                         interventoRecordList.add(interventoRecord.new InterventoVariazioneRecord(interventoRecord.getVariazionePositivaSenzaIva(), variazionePositiva));
                     }
@@ -982,16 +976,6 @@ public class ExportFileUtils {
                     return interventoRecordList;
                 }
             })));
-            //            return Lists.newArrayList(Iterables.transform(getFatturaList(), new Function<Fattura, InterventoRecord>() {
-            //                public InterventoRecord apply(final Fattura fattura) {
-            //                    return new InterventoRecord() {
-            //                        @Override
-            //                        public Fattura getFattura() {
-            //                            return fattura;
-            //                        }
-            //                    };
-            //                }
-            //            }));
         }
     }
 
@@ -1004,46 +988,9 @@ public class ExportFileUtils {
                         public Fattura getFattura() {
                             return fattura;
                         }
-//                        @Override
-//                        public AnagrafeSoc getAnagrafeSocObbligato() {
-//                            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//                        }
                     };
                 }
             }));
-//            List<Iterable<Fattura>> fatturaAggregataList = Lists.newArrayList();
-//            for (Entry<Integer, Collection<Fattura>> entry : Multimaps.index(fatturaList, new Function<Fattura, Integer>() {
-//                public Integer apply(Fattura fattura) {
-//                    return fattura.getNumFatt();
-//                }
-//            }).asMap().entrySet()) {
-//                if (entry.getKey() == 0) { // se manca numero fattura
-//                    Iterables.addAll(fatturaAggregataList, Iterables.transform(entry.getValue(), new Function<Fattura, Iterable<Fattura>>() {
-//                        public Iterable<Fattura> apply(Fattura input) {
-//                            return Collections.singleton(input);
-//                        }
-//                    }));
-//                } else {
-//                    fatturaAggregataList.add(entry.getValue());
-//                }
-//            }
-//            return Lists.newArrayList(Iterables.transform(fatturaAggregataList, new Function<Iterable<Fattura>, FatturaRow>() {
-//                public FatturaRow apply(final Iterable<Fattura> fatturaIterable) {
-//                    return new FatturaRow() {
-//                        final List<Fattura> fatturaList = Collections.unmodifiableList(Lists.newArrayList(fatturaIterable));
-//
-//                        @Override
-//                        public List<Fattura> getFatturaList() {
-//                            return fatturaList;
-//                        }
-//
-//                        @Override
-//                        public AnagrafeSoc getAnagrafeSocObbligato() {
-//                            return getFattura().getCodAna();
-//                        }
-//                    };
-//                }
-//            }));
         }
     };
 
@@ -1068,9 +1015,6 @@ public class ExportFileUtils {
             public Iterable apply(FatturaRow fatturaRow) {
 
                 List row = Lists.newArrayList();
-//                PaiIntervento paiIntervento = fatturaRow.getFattura().getPaiIntervento();
-//                Pai pai = fatturaRow.getPai();
-//                AnagrafeSoc anagrafeSocSoggetto = pai.getAnagrafeSoc();
                 AnagrafeSoc anagrafeSocPagante = fatturaRow.getAnagrafeSocObbligato();
                 AnagrafeSoc anagrafeSocTitolareFattura = fatturaRow.getPai().getAnagrafeSoc();
                 Date dataDiEmissione = fatturaRow.getDataDiEmissione();
@@ -1097,11 +1041,6 @@ public class ExportFileUtils {
                         paganteCap = Strings.nullToEmpty(anagrafeSocPagante.getLuogoDestinazione().getCap()),
                         paganteComune = anagrafeSocPagante.getLuogoDestinazione().getComuneText(),
                         paganteProvincia = anagrafeSocPagante.getLuogoDestinazione().getProvinciaText(),
-//                        paganteIndirizzo = luogoPagante.getIndirizzoText(),
-//                        paganteCap= Strings.nullToEmpty(luogoPagante.getCap()),
-//                        paganteComune = luogoPagante.getComuneText(),
-//                        paganteProvincia = luogoPagante.getProvinciaText(),
-
                         codiceUnoTreNove = new DecimalFormat("0000").format(getParam0139()),
                         annoUsufrutto = fatturaRow.getFattura().getAnno(),
                         annoMeseUsufrutto = annoUsufrutto + new DecimalFormat("00").format(calEmiss.get(Calendar.MONTH) + 1),
@@ -1112,9 +1051,6 @@ public class ExportFileUtils {
                         codiceUnoTreNoveDec = new DecimalFormat("#.##").format(Double.valueOf(codiceUnoTreNove) / 100),
                         campoZeroUnoA = codiceUnoTreNoveDec + "/" + annoUsufrutto + "/" + numeroFatturaSeiCifre,
                         datiGeneraliDocumento_Causale;
-                // Modifica del mese  di riferimento includento il primo e l'ultimo mese di rifetimento della fattura (se compresa tra più mesi)
-//                        String campoZeroQuattroA = pai.getIdParamUot().getDesParam() + " – Serv fruiti periodo : " + getMeseDesc(fatturaRow.getMeseDiRiferimento()).toUpperCase().substring(0, 3) + " " + fatturaRow.getFattura().getFatturaDettaglioList().get(0).getAnnoEff();
-
 
                 datiGeneraliDocumento_Causale = getVar01d_oppure_var04a(fatturaRow);
                 XlsCell datiGeneraliDocumento_Data = new XlsCell(dataDiEmissione, US_DATE_FORMAT);

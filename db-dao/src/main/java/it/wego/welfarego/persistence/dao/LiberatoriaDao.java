@@ -1,5 +1,5 @@
 package it.wego.welfarego.persistence.dao;
-import it.wego.extjs.json.JsonSortInfo;
+import it.trieste.comune.ssc.json.JsonSortInfo;
 import java.util.Date;
 import java.util.List;
 

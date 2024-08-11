@@ -102,14 +102,30 @@ public class Luogo implements Serializable, Cloneable {
 	@Column(name = "DES_COM")
 	private String comuneStr;
 
+	public String getComuneStr() {
+		return comuneStr;
+	}
+
 	@Column(name = "DES_VIA")
 	private String viaStr;
+
+	public String getViaStr() {
+		return viaStr;
+	}
 
 	@Column(name = "DES_CIV")
 	private String civicoStr;
 
+	public String getCivicoStr() {
+		return civicoStr;
+	}
+
 	@Column(name = "CAP")
 	private String cap;
+
+	public void setCap(String cap) {
+		this.cap = cap;
+	}
 
 	public String getCap() {
 		return cap;

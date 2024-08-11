@@ -38,6 +38,62 @@ public class PaiCdgPK implements Serializable {
 	@Column(name = "COD_ANNO", nullable = false)
 	private short codAnno;
 
+	public int getCodPai() {
+		return codPai;
+	}
+
+	public void setCodPai(int codPai) {
+		this.codPai = codPai;
+	}
+
+	public String getCodTipint() {
+		return codTipint;
+	}
+
+	public void setCodTipint(String codTipint) {
+		this.codTipint = codTipint;
+	}
+
+	public int getCntTipint() {
+		return cntTipint;
+	}
+
+	public void setCntTipint(int cntTipint) {
+		this.cntTipint = cntTipint;
+	}
+
+	public short getCodAnno() {
+		return codAnno;
+	}
+
+	public void setCodAnno(short codAnno) {
+		this.codAnno = codAnno;
+	}
+
+	public String getCodImpe() {
+		return codImpe;
+	}
+
+	public void setCodImpe(String codImpe) {
+		this.codImpe = codImpe;
+	}
+
+	public short getAnnoEff() {
+		return annoEff;
+	}
+
+	public void setAnnoEff(short annoEff) {
+		this.annoEff = annoEff;
+	}
+
+	public short getMeseEff() {
+		return meseEff;
+	}
+
+	public void setMeseEff(short meseEff) {
+		this.meseEff = meseEff;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "COD_IMPE", nullable = false)
 	private String codImpe;

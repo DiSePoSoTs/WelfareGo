@@ -41,9 +41,37 @@ public class BudgetTipIntervento implements Serializable {
 	@EmbeddedId
 	protected BudgetTipInterventoPK budgetTipInterventoPK;
 
+	public BudgetTipInterventoPK getBudgetTipInterventoPK() {
+		return budgetTipInterventoPK;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "COD_CONTO", nullable = false)
 	private int codConto;
+
+	public int getNumDx() {
+		return numDx;
+	}
+
+	public void setNumDx(int numDx) {
+		this.numDx = numDx;
+	}
+
+	public Date getDtDx() {
+		return dtDx;
+	}
+
+	public void setDtDx(Date dtDx) {
+		this.dtDx = dtDx;
+	}
+
+	public int getCodConto() {
+		return codConto;
+	}
+
+	public BigDecimal getBdgDispEur() {
+		return bdgDispEur;
+	}
 
 	@Basic(optional = false)
 	@Column(name = "COD_SCONTO", nullable = false)
@@ -52,9 +80,17 @@ public class BudgetTipIntervento implements Serializable {
 	@Column(name = "ANNO_EROGAZIONE")
 	private Short annoErogazione;
 
+	public Short getAnnoErogazione() {
+		return annoErogazione;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "COD_CAP", nullable = false)
 	private int codCap;
+
+	public int getCodCap() {
+		return codCap;
+	}
 
 	@Basic(optional = false)
 	@Column(name = "NUM_DX", nullable = false)
@@ -70,6 +106,10 @@ public class BudgetTipIntervento implements Serializable {
 
 	@Column(name = "BDG_DISP_ORE", precision = 9, scale = 2)
 	private BigDecimal bdgDispOre;
+
+	public BigDecimal getBdgDispOre() {
+		return bdgDispOre;
+	}
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "budgetTipIntervento")
 	private List<PaiInterventoMese> paiInterventoMeseList;

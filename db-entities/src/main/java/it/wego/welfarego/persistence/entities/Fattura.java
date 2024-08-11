@@ -91,13 +91,25 @@ public class Fattura implements Serializable {
 	@Column(name = "ANNO", nullable = false, length = 4)
 	private String anno;
 
+	public String getAnno() {
+		return anno;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "NUM_FATT", nullable = false)
 	private int numFatt;
 
+	public int getNumFatt() {
+		return numFatt;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "COD_FISC", nullable = false, length = 16)
 	private String codFisc;
+
+	public String getCodFisc() {
+		return codFisc;
+	}
 
 	@Basic(optional = false)
 	@Column(name = "NOME", nullable = false, length = 765)
@@ -125,13 +137,37 @@ public class Fattura implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date periodoAl;
 
+	public Date getPeriodoDal() {
+		return periodoDal;
+	}
+
+	public void setPeriodoDal(Date periodoDal) {
+		this.periodoDal = periodoDal;
+	}
+
+	public Date getPeriodoAl() {
+		return periodoAl;
+	}
+
+	public void setPeriodoAl(Date periodoAl) {
+		this.periodoAl = periodoAl;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "SCADENZA", nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date scadenza;
 
+	public Date getScadenza() {
+		return scadenza;
+	}
+
 	@Column(name = "CF_OBBLIGATO1", length = 16)
 	private String cfObbligato1;
+
+	public String getCfObbligato1() {
+		return cfObbligato1;
+	}
 
 	@Column(name = "NOME_OBBL1", length = 765)
 	private String nomeObbl1;
@@ -144,6 +180,26 @@ public class Fattura implements Serializable {
 
 	@Column(name = "QUOTA_OBBLIGATO1", precision = 9, scale = 4)
 	private BigDecimal quotaObbligato1;
+
+	public BigDecimal getQuotaObbligato1() {
+		return quotaObbligato1;
+	}
+
+	public String getCfObbligato2() {
+		return cfObbligato2;
+	}
+
+	public BigDecimal getQuotaObbligato2() {
+		return quotaObbligato2;
+	}
+
+	public String getCfObbligato3() {
+		return cfObbligato3;
+	}
+
+	public BigDecimal getQuotaObbligato3() {
+		return quotaObbligato3;
+	}
 
 	@Column(name = "CF_OBBLIGATO2", length = 16)
 	private String cfObbligato2;
@@ -172,12 +228,32 @@ public class Fattura implements Serializable {
 	@Column(name = "INDIRIZZO_OBBL3", length = 765)
 	private String indirizzoObbl3;
 
+	public String getIndirizzoObbl3() {
+		return indirizzoObbl3;
+	}
+
 	@Column(name = "QUOTA_OBBLIGATO3", precision = 9, scale = 4)
 	private BigDecimal quotaObbligato3;
 
 	@Basic(optional = false)
 	@Column(name = "IMPORTO_TOTALE", nullable = false, precision = 9, scale = 4)
 	private BigDecimal importoTotale;
+
+	public void setImpIva(BigDecimal impIva) {
+		this.impIva = impIva;
+	}
+
+	public void setIdParamIva(ParametriIndata idParamIva) {
+		this.idParamIva = idParamIva;
+	}
+
+	public BigDecimal getImportoTotale() {
+		return importoTotale;
+	}
+
+	public BigDecimal getBollo() {
+		return bollo;
+	}
 
 	@Column(name = "BOLLO", precision = 9, scale = 4)
 	private BigDecimal bollo;
@@ -189,11 +265,27 @@ public class Fattura implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date timbro;
 
+	public Date getTimbro() {
+		return timbro;
+	}
+
 	@Column(name = "CAUSALE", length = 3000)
 	private String causale;
 
+	public String getNote() {
+		return note;
+	}
+
+	public String getCausale() {
+		return causale;
+	}
+
 	@Column(name = "RISCOSSO", precision = 9, scale = 4)
 	private BigDecimal riscosso;
+
+	public BigDecimal getRiscosso() {
+		return riscosso;
+	}
 
 	public Integer getIdFatt() {
 		return idFatt;
@@ -209,14 +301,154 @@ public class Fattura implements Serializable {
 	@Column(name = "IMP_IVA", precision = 9, scale = 2)
 	private BigDecimal impIva;
 
+	public BigDecimal getImpIva() {
+		return impIva;
+	}
+
 	@Column(name = "CONTRIBUTO", precision = 9, scale = 4)
 	private BigDecimal contributo;
+
+	public BigDecimal getContributo() {
+		return contributo;
+	}
 
 	@JoinTable(name = "FATTURA_MESI_PRECEDENTI", joinColumns = {
 			@JoinColumn(name = "ID_FATT_PRINC", referencedColumnName = "ID_FATT", nullable = false) }, inverseJoinColumns = {
 					@JoinColumn(name = "ID_FATT_CORR", referencedColumnName = "ID_FATT", nullable = false) })
 	@ManyToMany
 	private List<Fattura> fatturaList;
+
+	public void setFatturaList(List<Fattura> fatturaList) {
+		this.fatturaList = fatturaList;
+	}
+
+	public List<Fattura> getFatturaList() {
+		return fatturaList;
+	}
+
+	public String getNomeObbl1() {
+		return nomeObbl1;
+	}
+
+	public void setNomeObbl1(String nomeObbl1) {
+		this.nomeObbl1 = nomeObbl1;
+	}
+
+	public String getCognomeObbl1() {
+		return cognomeObbl1;
+	}
+
+	public void setCognomeObbl1(String cognomeObbl1) {
+		this.cognomeObbl1 = cognomeObbl1;
+	}
+
+	public String getIndirizzoObbl1() {
+		return indirizzoObbl1;
+	}
+
+	public void setIndirizzoObbl1(String indirizzoObbl1) {
+		this.indirizzoObbl1 = indirizzoObbl1;
+	}
+
+	public String getNomeObbl2() {
+		return nomeObbl2;
+	}
+
+	public void setNomeObbl2(String nomeObbl2) {
+		this.nomeObbl2 = nomeObbl2;
+	}
+
+	public String getCognomeObbl2() {
+		return cognomeObbl2;
+	}
+
+	public void setCognomeObbl2(String cognomeObbl2) {
+		this.cognomeObbl2 = cognomeObbl2;
+	}
+
+	public String getIndirizzoObbl2() {
+		return indirizzoObbl2;
+	}
+
+	public void setIndirizzoObbl2(String indirizzoObbl2) {
+		this.indirizzoObbl2 = indirizzoObbl2;
+	}
+
+	public String getNomeObbl3() {
+		return nomeObbl3;
+	}
+
+	public void setNomeObbl3(String nomeObbl3) {
+		this.nomeObbl3 = nomeObbl3;
+	}
+
+	public String getCognomeObbl3() {
+		return cognomeObbl3;
+	}
+
+	public void setCognomeObbl3(String cognomeObbl3) {
+		this.cognomeObbl3 = cognomeObbl3;
+	}
+
+	public void setCfObbligato1(String cfObbligato1) {
+		this.cfObbligato1 = cfObbligato1;
+	}
+
+	public void setCfObbligato2(String cfObbligato2) {
+		this.cfObbligato2 = cfObbligato2;
+	}
+
+	public void setCfObbligato3(String cfObbligato3) {
+		this.cfObbligato3 = cfObbligato3;
+	}
+
+	public void setIndirizzoObbl3(String indirizzoObbl3) {
+		this.indirizzoObbl3 = indirizzoObbl3;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCognome() {
+		return cognome;
+	}
+
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
+	}
+
+	public AnagrafeSoc getCodAna() {
+		return codAna;
+	}
+
+	public void setCodAna(AnagrafeSoc codAna) {
+		this.codAna = codAna;
+	}
+
+	public void setAnno(String anno) {
+		this.anno = anno;
+	}
+
+	public void setMeseRif(Integer meseRif) {
+		this.meseRif = meseRif;
+	}
+
+	public void setContributo(BigDecimal contributo) {
+		this.contributo = contributo;
+	}
+
+	public void setIdParamFascia(ParametriIndata idParamFascia) {
+		this.idParamFascia = idParamFascia;
+	}
+
+	public void setPaiIntervento(PaiIntervento paiIntervento) {
+		this.paiIntervento = paiIntervento;
+	}
 
 	public ParametriIndata getIdParamIva() {
 		return idParamIva;
@@ -234,9 +466,21 @@ public class Fattura implements Serializable {
 	@ManyToOne(optional = false)
 	private ParametriIndata idParamFascia;
 
+	public ParametriIndata getIdParamFascia() {
+		return idParamFascia;
+	}
+
 	@JoinColumn(name = "ID_PARAM_STATO", referencedColumnName = "ID_PARAM_INDATA", nullable = false)
 	@ManyToOne(optional = false)
 	private ParametriIndata idParamStato;
+
+	public ParametriIndata getIdParamStato() {
+		return idParamStato;
+	}
+
+	public void setIdParamStato(ParametriIndata idParamStato) {
+		this.idParamStato = idParamStato;
+	}
 
 	@JoinColumns({ @JoinColumn(name = "COD_PAI", referencedColumnName = "COD_PAI", nullable = false),
 			@JoinColumn(name = "COD_TIPINT", referencedColumnName = "COD_TIPINT", nullable = false),
@@ -244,12 +488,20 @@ public class Fattura implements Serializable {
 	@ManyToOne(optional = false)
 	private PaiIntervento paiIntervento;
 
+	public PaiIntervento getPaiIntervento() {
+		return paiIntervento;
+	}
+
 	@JoinColumn(name = "COD_ANA", referencedColumnName = "COD_ANA", nullable = false)
 	@ManyToOne(optional = false)
 	private AnagrafeSoc codAna;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idFatt")
 	private List<FatturaDettaglio> fatturaDettaglioList;
+
+	public void setFatturaDettaglioList(List<FatturaDettaglio> fatturaDettaglioList) {
+		this.fatturaDettaglioList = fatturaDettaglioList;
+	}
 
 	public List<FatturaDettaglio> getFatturaDettaglioList() {
 		return fatturaDettaglioList;
@@ -385,5 +637,49 @@ public class Fattura implements Serializable {
 
 	public Integer getMeseDiRiferimento() {
 		return MoreObjects.firstNonNull(getMeseRif(), getFatturaDettaglioList().iterator().next().getMeseEff());
+	}
+
+	public void setNumFatt(int numFatt) {
+		this.numFatt = numFatt;
+	}
+
+	public void setScadenza(Date scadenza) {
+		this.scadenza = scadenza;
+	}
+
+	public void setTimbro(Date timbro) {
+		this.timbro = timbro;
+	}
+
+	public void setQuotaObbligato1(BigDecimal quotaObbligato1) {
+		this.quotaObbligato1 = quotaObbligato1;
+	}
+
+	public void setQuotaObbligato2(BigDecimal quotaObbligato2) {
+		this.quotaObbligato2 = quotaObbligato2;
+	}
+
+	public void setQuotaObbligato3(BigDecimal quotaObbligato3) {
+		this.quotaObbligato3 = quotaObbligato3;
+	}
+
+	public void setBollo(BigDecimal bollo) {
+		this.bollo = bollo;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+
+	public void setCausale(String causale) {
+		this.causale = causale;
+	}
+
+	public void setCodFisc(String codFisc) {
+		this.codFisc = codFisc;
+	}
+
+	public void setImportoTotale(BigDecimal importoTotale) {
+		this.importoTotale = importoTotale;
 	}
 }

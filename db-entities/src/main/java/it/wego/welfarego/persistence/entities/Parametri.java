@@ -234,6 +234,10 @@ public class Parametri implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idParam")
 	private List<ParametriIndata> parametriIndataList;
 
+	public List<ParametriIndata> getParametriIndataList() {
+		return parametriIndataList;
+	}
+
 	public Parametri() {
 	}
 

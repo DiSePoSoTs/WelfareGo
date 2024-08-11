@@ -10,7 +10,6 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import it.wego.extjs.beans.Order;
 import it.wego.persistence.PersistenceAdapter;
-import it.wego.welfarego.persistence.constants.PaiConstants;
 import it.wego.welfarego.persistence.entities.Appuntamento;
 import it.wego.welfarego.persistence.entities.Pai;
 import it.wego.welfarego.persistence.entities.PaiDocumento;

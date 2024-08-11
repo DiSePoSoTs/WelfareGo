@@ -5,6 +5,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import it.wego.persistence.PersistenceAdapter;
 import it.wego.persistence.objects.Condition;
+import it.wego.persistence.objects.Order.OrderDir;
 import it.wego.welfarego.persistence.entities.Utenti;
 import it.wego.welfarego.persistence.entities.Appuntamento;
 import it.wego.welfarego.persistence.entities.Pai;

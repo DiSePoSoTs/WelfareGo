@@ -82,8 +82,60 @@ public class CartellaSociale implements Serializable {
 	@OneToOne(optional = false)
 	private AnagrafeSoc anagrafeSoc;
 
+	public void setAnagrafeSoc(AnagrafeSoc anagrafeSoc) {
+		this.anagrafeSoc = anagrafeSoc;
+	}
+
 	public AnagrafeSoc getAnagrafeSoc() {
 		return anagrafeSoc;
+	}
+
+	public void setCodAna(Integer codAna) {
+		this.codAna = codAna;
+	}
+
+	public void setDesCs(String desCs) {
+		this.desCs = desCs;
+	}
+
+	public void setDtApCs(Date dtApCs) {
+		this.dtApCs = dtApCs;
+	}
+
+	public void setDtChCs(Date dtChCs) {
+		this.dtChCs = dtChCs;
+	}
+
+	public void setDtAggAll(Date dtAggAll) {
+		this.dtAggAll = dtAggAll;
+	}
+
+	public void setPaiList(List<Pai> paiList) {
+		this.paiList = paiList;
+	}
+
+	public void setIdParamTipAll(ParametriIndata idParamTipAll) {
+		this.idParamTipAll = idParamTipAll;
+	}
+
+	public String getDesCs() {
+		return desCs;
+	}
+
+	public Date getDtApCs() {
+		return dtApCs;
+	}
+
+	public Date getDtChCs() {
+		return dtChCs;
+	}
+
+	public Date getDtAggAll() {
+		return dtAggAll;
+	}
+
+	public ParametriIndata getIdParamTipAll() {
+		return idParamTipAll;
 	}
 
 	public CartellaSociale() {

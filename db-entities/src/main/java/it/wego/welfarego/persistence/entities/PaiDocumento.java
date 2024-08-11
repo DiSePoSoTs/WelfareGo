@@ -54,18 +54,78 @@ public class PaiDocumento implements Serializable {
 	@Column(name = "ID_DOCUMENTO", nullable = false)
 	private Integer idDocumento;
 
+	public String getCodTipdoc() {
+		return codTipdoc;
+	}
+
+	public PaiIntervento getPaiIntervento() {
+		return paiIntervento;
+	}
+
+	public Pai getCodPai() {
+		return codPai;
+	}
+
+	public void setIdDocumento(Integer idDocumento) {
+		this.idDocumento = idDocumento;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "COD_TIPDOC", nullable = false, length = 20)
 	private String codTipdoc;
+
+	public BigInteger getVer() {
+		return ver;
+	}
+
+	public void setCodTipdoc(String codTipdoc) {
+		this.codTipdoc = codTipdoc;
+	}
+
+	public void setDtDoc(Date dtDoc) {
+		this.dtDoc = dtDoc;
+	}
+
+	public void setBlobDoc(String blobDoc) {
+		this.blobDoc = blobDoc;
+	}
+
+	public void setNomeFile(String nomeFile) {
+		this.nomeFile = nomeFile;
+	}
+
+	public void setTipoDetermina(String tipoDetermina) {
+		this.tipoDetermina = tipoDetermina;
+	}
+
+	public void setCodUteAut(Utenti codUteAut) {
+		this.codUteAut = codUteAut;
+	}
+
+	public void setPaiIntervento(PaiIntervento paiIntervento) {
+		this.paiIntervento = paiIntervento;
+	}
 
 	@Basic(optional = false)
 	@Column(name = "VER", nullable = false)
 	private BigInteger ver;
 
+	public void setVer(BigInteger ver) {
+		this.ver = ver;
+	}
+
+	public void setCodPai(Pai codPai) {
+		this.codPai = codPai;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "DT_DOC", nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtDoc;
+
+	public Date getDtDoc() {
+		return dtDoc;
+	}
 
 	@Basic(optional = false)
 	@Lob

@@ -40,6 +40,10 @@ public class MapDatiSpecTipint implements Serializable {
 	@EmbeddedId
 	protected MapDatiSpecTipintPK mapDatiSpecTipintPK;
 
+	public MapDatiSpecTipintPK getMapDatiSpecTipintPK() {
+		return mapDatiSpecTipintPK;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "ROW_CAMPO", nullable = false)
 	private short rowCampo;
@@ -56,6 +60,10 @@ public class MapDatiSpecTipint implements Serializable {
 	@ManyToOne(optional = false)
 	@JoinFetch(value = JoinFetchType.INNER)
 	private DatiSpecifici datiSpecifici;
+
+	public DatiSpecifici getDatiSpecifici() {
+		return datiSpecifici;
+	}
 
 	public MapDatiSpecTipint() {
 	}

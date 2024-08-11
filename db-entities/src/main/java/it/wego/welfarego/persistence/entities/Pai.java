@@ -91,6 +91,10 @@ public class Pai implements Serializable {
 	@Column(name = "COD_PAI", nullable = false)
 	private Integer codPai;
 
+	public Integer getCodPai() {
+		return codPai;
+	}
+
 	@Column(name = "COD_ANA", nullable = false)
 	private Integer rawCodAna;
 
@@ -99,10 +103,26 @@ public class Pai implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtApePai;
 
+	public Date getDtApePai() {
+		return dtApePai;
+	}
+
 	public static final Character STATO_APERTO = 'A', STATO_CHIUSO = 'C', STATO_SOSPESO = 'S', STATO_RIFIUTATO = 'R';
 	@Basic(optional = false)
 	@Column(name = "FLG_STATO_PAI", nullable = false)
 	private char flgStatoPai;
+
+	public void setFlgStatoPai(char flgStatoPai) {
+		this.flgStatoPai = flgStatoPai;
+	}
+
+	public void setDtChiusPai(Date dtChiusPai) {
+		this.dtChiusPai = dtChiusPai;
+	}
+
+	public CartellaSociale getCodAna() {
+		return codAna;
+	}
 
 	@Column(name = "FLG_CSR")
 	private Character flgCsr;
@@ -196,9 +216,17 @@ public class Pai implements Serializable {
 	@OneToMany(mappedBy = "codPai")
 	private List<PaiDocumento> paiDocumentoList;
 
+	public List<PaiDocumento> getPaiDocumentoList() {
+		return paiDocumentoList;
+	}
+
 	@JoinColumn(name = "COD_UTE_AS", referencedColumnName = "COD_UTE")
 	@ManyToOne
 	private Utenti codUteAs;
+
+	public Utenti getCodUteAs() {
+		return codUteAs;
+	}
 
 	@JoinColumn(name = "ID_PARAM_CERTIFICATO_L104", referencedColumnName = "ID_PARAM_INDATA")
 	@ManyToOne
@@ -240,6 +268,10 @@ public class Pai implements Serializable {
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "codPai")
 	private List<Appuntamento> appuntamentoList;
+
+	public List<Appuntamento> getAppuntamentoList() {
+		return appuntamentoList;
+	}
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "pai")
 	private List<PaiIntervento> paiInterventoList;

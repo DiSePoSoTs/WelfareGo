@@ -61,6 +61,18 @@ public class PaiInterventoMese implements Serializable {
 	@EmbeddedId
 	protected PaiInterventoMesePK paiInterventoMesePK;
 
+	public void setIdManDettaglio(MandatoDettaglio idManDettaglio) {
+		this.idManDettaglio = idManDettaglio;
+	}
+
+	public MandatoDettaglio getIdManDettaglio() {
+		return idManDettaglio;
+	}
+
+	public void setPaiInterventoMesePK(PaiInterventoMesePK paiInterventoMesePK) {
+		this.paiInterventoMesePK = paiInterventoMesePK;
+	}
+
 	public PaiInterventoMesePK getPaiInterventoMesePK() {
 		return paiInterventoMesePK;
 	}
@@ -75,6 +87,38 @@ public class PaiInterventoMese implements Serializable {
 
 	@Column(name = "BDG_PREV_QTA", precision = 9, scale = 2)
 	private BigDecimal bdgPrevQta;
+
+	public BigDecimal getBdgConsEur() {
+		return bdgConsEur;
+	}
+
+	public void setBdgConsEur(BigDecimal bdgConsEur) {
+		this.bdgConsEur = bdgConsEur;
+	}
+
+	public BigDecimal getBdgConsQta() {
+		return bdgConsQta;
+	}
+
+	public void setBdgConsQta(BigDecimal bdgConsQta) {
+		this.bdgConsQta = bdgConsQta;
+	}
+
+	public BigDecimal getBdgConsQtaBenef() {
+		return bdgConsQtaBenef;
+	}
+
+	public void setBdgConsQtaBenef(BigDecimal bdgConsQtaBenef) {
+		this.bdgConsQtaBenef = bdgConsQtaBenef;
+	}
+
+	public void setBdgPrevEur(BigDecimal bdgPrevEur) {
+		this.bdgPrevEur = bdgPrevEur;
+	}
+
+	public void setBdgPrevQta(BigDecimal bdgPrevQta) {
+		this.bdgPrevQta = bdgPrevQta;
+	}
 
 	public BigDecimal getBdgPrevQta() {
 		return bdgPrevQta;
@@ -92,8 +136,48 @@ public class PaiInterventoMese implements Serializable {
 	@Column(name = "BDG_CONS_VAR", precision = 9, scale = 2)
 	private BigDecimal bdgConsVar;
 
+	public BigDecimal getBdgConsVar() {
+		return bdgConsVar;
+	}
+
+	public BigDecimal getGgAssenza() {
+		return ggAssenza;
+	}
+
+	public void setBdgConsVar(BigDecimal bdgConsVar) {
+		this.bdgConsVar = bdgConsVar;
+	}
+
+	public void setGgAssenza(BigDecimal ggAssenza) {
+		this.ggAssenza = ggAssenza;
+	}
+
+	public void setPaiCdg(PaiCdg paiCdg) {
+		this.paiCdg = paiCdg;
+	}
+
 	@Column(name = "BDG_CONS_RIENTR", precision = 9, scale = 2)
 	private BigDecimal bdgConsRientr;
+
+	public PaiCdg getPaiCdg() {
+		return paiCdg;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+
+	public String getCausVar() {
+		return causVar;
+	}
+
+	public void setCausVar(String causVar) {
+		this.causVar = causVar;
+	}
 
 	@Column(name = "CAUS_VAR", length = 60)
 	private String causVar;
@@ -136,6 +220,10 @@ public class PaiInterventoMese implements Serializable {
 	@ManyToOne
 	private FatturaDettaglio idFattDettaglio;
 
+	public FatturaDettaglio getIdFattDettaglio() {
+		return idFattDettaglio;
+	}
+
 	@JoinColumns({
 			@JoinColumn(name = "COD_TIPINT", referencedColumnName = "COD_TIPINT", nullable = false, insertable = false, updatable = false),
 			@JoinColumn(name = "ANNO", referencedColumnName = "COD_ANNO", nullable = false, insertable = false, updatable = false),
@@ -150,6 +238,14 @@ public class PaiInterventoMese implements Serializable {
 	@JoinColumn(name = "MOTIVAZIONE_VARIAZIONE_SPESA", referencedColumnName = "ID_PARAM_INDATA")
 	@ManyToOne
 	private ParametriIndata motivazioneVariazioneSpesa;
+
+	public void setMotivazioneVariazioneSpesa(ParametriIndata motivazioneVariazioneSpesa) {
+		this.motivazioneVariazioneSpesa = motivazioneVariazioneSpesa;
+	}
+
+	public ParametriIndata getMotivazioneVariazioneSpesa() {
+		return motivazioneVariazioneSpesa;
+	}
 
 	@JoinColumn(name = "ID_PARAM_FASCIA", referencedColumnName = "ID_PARAM_INDATA", nullable = false)
 	@ManyToOne(optional = false)
@@ -215,6 +311,46 @@ public class PaiInterventoMese implements Serializable {
 
 		String msg = String.format(msgTemplate, paiInterventoMesePK, df.format(bdgDispEur), df.format(bdgPrevQta));
 		return msg;
+	}
+
+	public char getFlgProp() {
+		return flgProp;
+	}
+
+	public void setFlgProp(char flgProp) {
+		this.flgProp = flgProp;
+	}
+
+	public ParametriIndata getIdParamFascia() {
+		return idParamFascia;
+	}
+
+	public void setIdParamFascia(ParametriIndata idParamFascia) {
+		this.idParamFascia = idParamFascia;
+	}
+
+	public void setBdgConsRientr(BigDecimal bdgConsRientr) {
+		this.bdgConsRientr = bdgConsRientr;
+	}
+
+	public Integer getGenerato() {
+		return generato;
+	}
+
+	public void setGenerato(Integer generato) {
+		this.generato = generato;
+	}
+
+	public void setPaiIntervento(PaiIntervento paiIntervento) {
+		this.paiIntervento = paiIntervento;
+	}
+
+	public void setBudgetTipIntervento(BudgetTipIntervento budgetTipIntervento) {
+		this.budgetTipIntervento = budgetTipIntervento;
+	}
+
+	public void setIdFattDettaglio(FatturaDettaglio idFattDettaglio) {
+		this.idFattDettaglio = idFattDettaglio;
 	}
 
 }
