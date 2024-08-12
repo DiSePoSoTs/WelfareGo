@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package it.wego.extjs.servlet;
+package it.trieste.comune.ssc.servlet;
 
 import com.google.common.base.Objects;
 import com.google.common.base.Optional;
