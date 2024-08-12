@@ -10,7 +10,6 @@
 
 
 	<modules>
-		<!-- 		<module>../extjs</module> -->
 		<module>../eclipselink-logger</module>
 		<module>../extjs-utils</module>
 		<module>../persistence-utils</module>
@@ -19,22 +18,15 @@
 		<module>../wegoutils</module>
 		<module>../db-dao</module>
 		<module>../xsd-pratica</module>
-		
-		<!-- 		<module>../simia-ws</module> -->
 		<module>../extjs-addons</module>
-
 		<module>../cartellasociale-ws</module>
 		<module>../processi-batch</module>
-		
 		<module>../parametri</module>
-		<module>../welfarego-intalio-manager</module>
+ 		<module>../welfarego-intalio-manager</module>
 		<module>../cartella-sociale</module>
 		<module>../undoredo</module>
 		<module>../ws-utils</module>
-		<!-- 		<module>../welfarego-services</module> -->
 		<module>../welfarego-forms</module>
-		<!-- 		<module>../WelfaregoWebService</module> -->
-		<!-- 		<module>../WelfaregoWsClient</module> -->
 		<module>../gestione-economica</module>
 	</modules>
 
@@ -51,9 +43,9 @@
 		<junit.version>4.12</junit.version>
 		<org.drools.version>5.6.0.Final</org.drools.version>
 		<org.slf4j.version>1.7.26</org.slf4j.version>
-		<org.springframework.version>5.1.8.RELEASE</org.springframework.version>
+		<org.springframework.version>5.3.32</org.springframework.version>
 		<libs_dir>${project.parent.relativePath}</libs_dir>
-		<liferay.version>6.2.5</liferay.version>
+		<liferay.portal.version>6.2.5</liferay.portal.version>
 	</properties>
 
 	<dependencyManagement>
@@ -229,7 +221,6 @@
 				<artifactId>milton-api</artifactId>
 				<version>1.8.1.4</version>
 			</dependency>
-
 			<dependency>
 				<groupId>org.eclipse.persistence</groupId>
 				<artifactId>eclipselink</artifactId>
@@ -359,11 +350,45 @@
 			<dependency>
 				<groupId>com.liferay.portal</groupId>
 				<artifactId>portal-service</artifactId>
-				<version>${liferay.version}</version>
+				<version>${liferay.portal.version}</version>
 				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.liferay.portal</groupId>
+				<artifactId>util-bridges</artifactId>
+				<version>${liferay.portal.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.liferay.portal</groupId>
+				<artifactId>util-taglib</artifactId>
+				<version>${liferay.portal.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.liferay.portal</groupId>
+				<artifactId>util-java</artifactId>
+				<version>${liferay.portal.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	<build>
+    <!-- To define the plugin version in your parent POM -->
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.4.0</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <!-- To use the plugin goals in your POM or parent POM -->
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 	<repositories>
 		<repository>
 			<id>spring</id>
@@ -397,8 +422,7 @@
 	<pluginRepositories>
 		<pluginRepository>
 			<id>liferay-public-releases</id>
-			<url>
-				https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/</url>
+			<url>https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>

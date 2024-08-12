@@ -19,26 +19,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<skipTests>true</skipTests>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
 	</properties>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>com.liferay.maven.plugins</groupId>
-				<artifactId>liferay-maven-plugin</artifactId>
-				<version>${liferay.version}</version>
-				<configuration>
-					<autoDeployDir>${liferay.auto.deploy.dir}</autoDeployDir>
-					<appServerDeployDir>${liferay.app.server.deploy.dir}</appServerDeployDir>
-					<appServerLibGlobalDir>${liferay.app.server.lib.global.dir}</appServerLibGlobalDir>
-					<appServerPortalDir>${liferay.app.server.portal.dir}</appServerPortalDir>
-					<liferayVersion>${liferay.version}</liferayVersion>
-					<pluginType>portlet</pluginType>
-				</configuration>
-			</plugin>
-		</plugins>
 		<finalName>Parametri</finalName>
 	</build>
 
@@ -115,12 +100,6 @@
 			<version>1.0-SNAPSHOT</version>
 			<type>jar</type>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>it.wego.extjs</groupId>-->
-<!--			<artifactId>extjs</artifactId>-->
-<!--			<version>4.0.2a</version>-->
-<!--			<type>war</type>-->
-<!--		</dependency>-->
 		<dependency>
 			<groupId>org.apache.ant</groupId>
 			<artifactId>ant</artifactId>

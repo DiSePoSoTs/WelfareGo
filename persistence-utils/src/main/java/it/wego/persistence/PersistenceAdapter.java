@@ -214,11 +214,11 @@ public class PersistenceAdapter {
         return getSingleResult(createQuery(getEntityManager(), clazz, customSelect, conditions, null, null, null, null));
     }
 
-    public int executeUpdate(Class clazz, String query, Condition condition, Collection<Assignment> assignments) {
+    public int executeUpdate(Class<?> clazz, String query, Condition condition, Collection<Assignment> assignments) {
         return createQuery(getEntityManager(), clazz, query, condition, assignments, null, null, null).executeUpdate();
     }
 
-    public int executeUpdate(Class clazz, String query, Condition condition, Assignment... assignments) {
+    public int executeUpdate(Class<?> clazz, String query, Condition condition, Assignment... assignments) {
         return executeUpdate(clazz, query, condition, Arrays.asList(assignments));
     }
 

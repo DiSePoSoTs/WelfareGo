@@ -121,12 +121,8 @@
         <servlet-class>it.wego.welfarego.servlet.cartella.PopolaDatiServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>traferimento</servlet-name>
-        <servlet-class>it.wego.welfarego.servlet.cartella.traferimento</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ricercaBeneficiari</servlet-name>
-        <servlet-class>it.wego.welfarego.servlet.pai.ricercaBeneficiari</servlet-class>
+        <servlet-name>trasferimento</servlet-name>
+        <servlet-class>it.wego.welfarego.servlet.cartella.Trasferimento</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>agenda</servlet-name>
@@ -298,12 +294,8 @@
         <url-pattern>/popola</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>traferimento</servlet-name>
-        <url-pattern>/traferimento</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ricercaBeneficiari</servlet-name>
-        <url-pattern>/ricercaBeneficiari</url-pattern>
+        <servlet-name>trasferimento</servlet-name>
+        <url-pattern>/trasferimento</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>agenda</servlet-name>

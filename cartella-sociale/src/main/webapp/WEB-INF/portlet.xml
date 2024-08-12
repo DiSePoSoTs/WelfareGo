@@ -3,18 +3,19 @@
     <portlet>
         <description>Cartella sociale</description>
         <portlet-name>CartellaSociale</portlet-name>
-        <display-name>Cartella sociale</display-name>
+        <display-name>Cartella Sociale</display-name>
         <portlet-class>it.wego.welfarego.cartellasociale.portlet.CartellaSocialePortlet</portlet-class>
         <expiration-cache>0</expiration-cache>
         <supports>
             <mime-type>text/html</mime-type>
-            <portlet-mode>VIEW</portlet-mode>
-            <portlet-mode>EDIT</portlet-mode>
-            <portlet-mode>HELP</portlet-mode>
+            <portlet-mode>view</portlet-mode>
+            <portlet-mode>help</portlet-mode>
+            <portlet-mode>edit</portlet-mode>
+            <window-state>maximized</window-state>
         </supports>
         <resource-bundle>it.wego.welfarego.cartellasociale.portlet.messages</resource-bundle>
         <portlet-info>
-            <title>Cartella sociale</title>
+            <title>Cartella Sociale</title>
             <short-title>CartellaSociale</short-title>
         </portlet-info>
     </portlet>

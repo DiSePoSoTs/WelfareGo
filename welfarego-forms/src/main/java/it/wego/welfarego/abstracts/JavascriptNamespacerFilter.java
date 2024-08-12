@@ -158,12 +158,10 @@ public class JavascriptNamespacerFilter implements Filter {
 			return bos.toByteArray();
 		}
 
-		@Override
 		public boolean isReady() {
 			return true;
 		}
 
-		@Override
 		public void setWriteListener(WriteListener writeListener) {
 			// TODO Auto-generated method stub
 		}

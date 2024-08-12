@@ -374,7 +374,7 @@ public class PaiSerializer {
         };
     }
     
-    public @Nullable Map<String, Object> serializePaiBean(Pai pai) {
+    public @Nullable Map serializePaiBean(Pai pai) {
         return getPaiSerializer().apply(pai);
     }
 

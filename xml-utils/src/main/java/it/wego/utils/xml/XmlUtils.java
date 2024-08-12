@@ -56,103 +56,44 @@ public class XmlUtils {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	private final static Logger slogger = LoggerFactory.getLogger(XmlUtils.class);
 	private static final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-	private static final XPathFactory xPathFactory = XPathFactory.newInstance();
-	private static final TransformerFactory transformerFactory = TransformerFactory.newInstance();
-	private final XPath xPath = xPathFactory.newXPath();
-	private final Supplier<DocumentBuilder> documentBuilderSupplier = Suppliers
-			.memoize(new Supplier<DocumentBuilder>() {
-				public DocumentBuilder get() {
-					try {
-						return documentBuilderFactory.newDocumentBuilder();
-					} catch (ParserConfigurationException ex) {
-						throw new RuntimeException(ex);
-					}
-				}
-			});
-
-	private final Supplier<Transformer> transformerSupplier = Suppliers.memoize(new Supplier<Transformer>() {
-		public Transformer get() {
-			try {
-				Transformer transformer = transformerFactory.newTransformer();
-				transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION,
-						configuration.includeHeader ? "no" : "yes");
-				transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-				transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
-				transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-				return transformer;
-			} catch (TransformerConfigurationException ex) {
-				throw new RuntimeException(ex);
-			}
-		}
-	});
-
-	private final Supplier<Canonicalizer> canonicalizerSupplier = Suppliers.memoize(new Supplier<Canonicalizer>() {
-		public Canonicalizer get() {
-			try {
-				return Canonicalizer.getInstance(Canonicalizer.ALGO_ID_C14N_OMIT_COMMENTS);
-			} catch (InvalidCanonicalizerException ex) {
-				throw new RuntimeException(ex);
-			}
-		}
-	});
-
-	private final LoadingCache<String, XPathExpression> xpathExpressions = CacheBuilder.newBuilder().concurrencyLevel(1)
-			.build(new CacheLoader<String, XPathExpression>() {
-				@Override
-				public XPathExpression load(String xpath) throws Exception {
-					return xPath.compile(xpath);
-				}
-			});
-
-	private final static LoadingCache<Class[], JAXBContext> jaxbContexts = CacheBuilder.newBuilder().concurrencyLevel(1)
-			.build(new CacheLoader<Class[], JAXBContext>() {
-				@Override
-				public JAXBContext load(Class[] key) throws Exception {
-					slogger.debug("preparing context for classes {}", key);
-					return JAXBContext.newInstance(key);
-				}
-			});
-
-	private final ValidationEventHandler jaxbValidationEventHandlerLogger = new ValidationEventHandler() {
-		public boolean handleEvent(ValidationEvent event) {
-			logger.debug("jaxb event : {}", event.toString());
-			return true;
-		}
-	};
-
-	private final LoadingCache<Class[], Marshaller> jaxbMarshallers = CacheBuilder.newBuilder().concurrencyLevel(1)
-			.build(new CacheLoader<Class[], Marshaller>() {
-				@Override
-				public Marshaller load(Class[] key) throws Exception {
-					Marshaller marshaller = jaxbContexts.get(key).createMarshaller();
-					marshaller.setEventHandler(jaxbValidationEventHandlerLogger);
-					marshaller.setProperty(Marshaller.JAXB_FRAGMENT,
-							configuration.includeHeader ? Boolean.FALSE : Boolean.TRUE);// skip xml header
-					marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-					return marshaller;
-				}
-			});
-	private final LoadingCache<Class[], Unmarshaller> jaxbUnmarshallers = CacheBuilder.newBuilder().concurrencyLevel(1)
-			.build(new CacheLoader<Class[], Unmarshaller>() {
-				@Override
-				public Unmarshaller load(Class[] key) throws Exception {
-					Unmarshaller unmarshaller = jaxbContexts.get(key).createUnmarshaller();
-					unmarshaller.setEventHandler(jaxbValidationEventHandlerLogger);
-					return unmarshaller;
-				}
-			});
-
+	
 	static {
 		try {
 			documentBuilderFactory.setNamespaceAware(true);
 			documentBuilderFactory.setIgnoringElementContentWhitespace(true);
-			if (!Init.isInitialized()) {
+			if (!Init.isInitialized())
 				Init.init();
-			}
 		} catch (Exception ex) {
 			slogger.error("error initializing xmlUtils", ex);
 		}
 	}
+	
+	private static final XPathFactory xPathFactory = XPathFactory.newInstance();
+	private static final TransformerFactory transformerFactory = TransformerFactory.newInstance();
+	private final XPath xPath = xPathFactory.newXPath();
+	private final Supplier<DocumentBuilder> documentBuilderSupplier=Suppliers.memoize(new Supplier<DocumentBuilder>(){public DocumentBuilder get(){try{return documentBuilderFactory.newDocumentBuilder();}catch(ParserConfigurationException ex){throw new RuntimeException(ex);}}});
+
+	private final Supplier<Transformer> transformerSupplier=Suppliers.memoize(new Supplier<Transformer>(){public Transformer get(){try{Transformer transformer=transformerFactory.newTransformer();transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION,configuration.includeHeader?"no":"yes");transformer.setOutputProperty(OutputKeys.INDENT,"yes");transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount","4");transformer.setOutputProperty(OutputKeys.ENCODING,"UTF-8");return transformer;}catch(TransformerConfigurationException ex){throw new RuntimeException(ex);}}});
+
+	private final Supplier<Canonicalizer> canonicalizerSupplier=Suppliers.memoize(new Supplier<Canonicalizer>(){public Canonicalizer get(){try{return Canonicalizer.getInstance(Canonicalizer.ALGO_ID_C14N_OMIT_COMMENTS);}catch(InvalidCanonicalizerException ex){throw new RuntimeException(ex);}}});
+
+	private final LoadingCache<String, XPathExpression> xpathExpressions=CacheBuilder.newBuilder().concurrencyLevel(1).build(new CacheLoader<String,XPathExpression>(){@Override public XPathExpression load(String xpath)throws Exception{return xPath.compile(xpath);}});
+
+	private final static LoadingCache<Class<?>[], JAXBContext> jaxbContexts=CacheBuilder.newBuilder().concurrencyLevel(1).build(new CacheLoader<Class<?>[],JAXBContext>(){@Override public JAXBContext load(Class<?>[]key)throws Exception{slogger.debug("preparing context for classes {}",key);return JAXBContext.newInstance(key);}});
+
+	private final ValidationEventHandler jaxbValidationEventHandlerLogger = new ValidationEventHandler() {
+		public boolean handleEvent(ValidationEvent event) {
+			logger.debug("jaxb event : {}",event.toString());return true;}};
+
+	private final LoadingCache<Class<?>[], Marshaller> jaxbMarshallers=CacheBuilder.newBuilder().concurrencyLevel(1).build(new CacheLoader<Class<?>[],Marshaller>(){@Override public Marshaller load(Class<?>[]key)throws Exception{Marshaller marshaller=jaxbContexts.get(key).createMarshaller();marshaller.setEventHandler(jaxbValidationEventHandlerLogger);marshaller.setProperty(Marshaller.JAXB_FRAGMENT,configuration.includeHeader?Boolean.FALSE:Boolean.TRUE);// skip
+																																																																																																																		// xml
+																																																																																																																		// header
+	marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);return marshaller;}});
+
+	private final LoadingCache<Class<?>[], Unmarshaller> jaxbUnmarshallers=CacheBuilder.newBuilder().concurrencyLevel(1).build(new CacheLoader<Class<?>[],Unmarshaller>(){@Override public Unmarshaller load(Class<?>[]key)throws Exception{Unmarshaller unmarshaller=jaxbContexts.get(key).createUnmarshaller();unmarshaller.setEventHandler(jaxbValidationEventHandlerLogger);return unmarshaller;}});
+
+
+
 	private final XmlUtilsConfiguration configuration;
 
 	private XmlUtils(XmlUtilsConfiguration configuration) {
@@ -180,9 +121,10 @@ public class XmlUtils {
 
 	private final static LoadingCache<XmlUtilsConfiguration, ObjectPool> instancesPoolMap = CacheBuilder.newBuilder()
 			.build(new CacheLoader<XmlUtilsConfiguration, ObjectPool>() {
+				
 				@Override
-				public ObjectPool load(final XmlUtilsConfiguration xmlUtilsFactory) throws Exception {
-					return new SoftReferenceObjectPool(new BasePooledObjectFactory<XmlUtils>() {
+				public ObjectPool<XmlUtils> load(final XmlUtilsConfiguration xmlUtilsFactory) throws Exception {
+					ObjectPool<XmlUtils> objectPool = (ObjectPool<XmlUtils>) new BasePooledObjectFactory<XmlUtils>() {
 						@Override
 						public XmlUtils create() throws Exception {
 							return new XmlUtils(xmlUtilsFactory);
@@ -192,10 +134,11 @@ public class XmlUtils {
 						public PooledObject<XmlUtils> wrap(XmlUtils obj) {
 							return new DefaultPooledObject<XmlUtils>(obj);
 						}
-					});
+					};
+					return objectPool;
 				}
 			});
-
+	
 	private static XmlUtils getInstance(final XmlUtilsConfiguration configuration) {
 		try {
 			return (XmlUtils) instancesPoolMap.get(configuration).borrowObject();
@@ -219,15 +162,15 @@ public class XmlUtils {
 		}
 	}
 
-	public JAXBContext getJAXBContext(Class... classes) {
+	public JAXBContext getJAXBContext(Class<?>... classes) {
 		return jaxbContexts.getUnchecked(classes);
 	}
 
-	public Marshaller getJAXBMarshaller(Class... classes) {
+	public Marshaller getJAXBMarshaller(Class<?>... classes) {
 		return jaxbMarshallers.getUnchecked(classes);
 	}
 
-	public Unmarshaller getJAXBUnmarshaller(Class... classes) {
+	public Unmarshaller getJAXBUnmarshaller(Class<?>... classes) {
 		return jaxbUnmarshallers.getUnchecked(classes);
 	}
 
@@ -490,11 +433,7 @@ public class XmlUtils {
 		}
 	}
 
-	private static final Function<Node, String> getNodeTextContentFunction = new Function<Node, String>() {
-		public String apply(Node input) {
-			return input.getTextContent();
-		}
-	};
+	private static final Function<Node, String> getNodeTextContentFunction=new Function<Node,String>(){public String apply(Node input){return input.getTextContent();}};
 
 	public final static class XmlUtilsConfiguration implements Cloneable {
 

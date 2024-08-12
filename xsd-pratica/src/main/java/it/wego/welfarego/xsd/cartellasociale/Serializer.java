@@ -4,8 +4,6 @@
  */
 package it.wego.welfarego.xsd.cartellasociale;
 
-//import it.wego.welfarego.persistence.constants.Interventi;
-import it.wego.welfarego.persistence.dao.AnagrafeFamigliaDao;
 import it.wego.welfarego.persistence.entities.AnagrafeFam;
 import it.wego.welfarego.persistence.entities.AnagrafeSoc;
 import it.wego.welfarego.persistence.entities.MapDatiSpecificiIntervento;
@@ -14,8 +12,6 @@ import it.wego.welfarego.persistence.entities.PaiInterventoCivObb;
 import it.wego.welfarego.persistence.entities.PaiInterventoMese;
 import it.wego.welfarego.persistence.entities.ParametriIndata;
 import it.wego.welfarego.xsd.Utils;
-import it.wego.welfarego.xsd.cartellasociale.ElencoCartelleSociali.CartellaSociale;
-import it.wego.welfarego.xsd.cartellasociale.ElencoCartelleSociali.CartellaSociale.AnagraficaUtente;
 import it.wego.welfarego.xsd.cartellasociale.ElencoCartelleSociali.CartellaSociale.ElencoPersoneRiferimento;
 import it.wego.welfarego.xsd.cartellasociale.ElencoCartelleSociali.CartellaSociale.ElencoPersoneRiferimento.PersonaRiferimento;
 import it.wego.welfarego.xsd.cartellasociale.ElencoCartelleSociali.CartellaSociale.NonPai;
@@ -148,11 +144,6 @@ public class Serializer {
         np.setEta(String.valueOf(eta));
         TipologiaUtenteType tipo = getTipologiaUtente(eta);
         np.setTipologiaUtente(tipo);
-//        np.setTipologiaDiagnosiSociale(DiagnosiSocialeType.fromValue(pai.getIdParamDiagSoc().getIdParam().getCodParam()));
-//        np.setNoteDiagnosiSociale(pai.getNoteDiagSoc());
-        //np.setImporto(null);
-        //np.setNoteChiusura(ITALIA);
-        //np.setNoteIntervento(ITALIA);
         return np;
     }
 
