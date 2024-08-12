@@ -1,7 +1,7 @@
 package it.wego.welfarego.serializer;
 
-import it.wego.extjs.json.JsonBuilder;
-import it.wego.extjs.json.JsonStoreResponse;
+import it.trieste.comune.ssc.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonStoreResponse;
 import it.wego.welfarego.persistence.dao.NoteCondiviseDao;
 import it.wego.welfarego.persistence.entities.NoteCondivise;
 import org.testng.annotations.Test;

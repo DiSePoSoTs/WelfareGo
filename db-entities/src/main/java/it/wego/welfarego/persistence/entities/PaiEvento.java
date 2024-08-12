@@ -80,6 +80,18 @@ public class PaiEvento implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date tsEvePai;
 
+	public Date getTsEvePai() {
+		return tsEvePai;
+	}
+
+	public String getPaiDox() {
+		return paiDox;
+	}
+
+	public String getDesEvento() {
+		return desEvento;
+	}
+
 	@Basic(optional = false)
 	@Lob
 	@Column(name = "PAI_DOX", nullable = false)

@@ -2,7 +2,7 @@ package it.wego.welfarego.determine.servlet.logica.applicativa;
 
 import com.google.common.base.Strings;
 import it.wego.dynodtpp.DynamicOdtUtils;
-import it.wego.extjs.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonBuilder;
 import it.wego.persistence.PersistenceAdapter;
 import it.wego.persistence.PersistenceAdapterFactory;
 import it.wego.welfarego.commons.utils.ReportUtils;

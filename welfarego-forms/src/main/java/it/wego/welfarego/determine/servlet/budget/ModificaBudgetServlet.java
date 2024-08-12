@@ -1,7 +1,7 @@
 package it.wego.welfarego.determine.servlet.budget;
 
 
-import it.wego.extjs.servlet.JsonServlet;
+import it.trieste.comune.ssc.servlet.JsonServlet;
 import it.wego.welfarego.determine.servlet.budget.router.ModificaBudgetRouter;
 import org.json.JSONObject;
 import org.slf4j.Logger;

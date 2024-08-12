@@ -1,6 +1,6 @@
 package it.wego.welfarego.azione.models;
 
-import it.wego.json.GsonObject;
+import it.trieste.comune.ssc.json.GsonObject;
 import java.util.Date;
 
 /**

@@ -5,8 +5,8 @@
 package it.wego.welfarego.parametri.servlet;
 
 import com.google.gson.Gson;
-import it.wego.json.JSonUtils;
-import it.wego.json.JsonMessage;
+import it.trieste.comune.ssc.json.JSonUtils;
+import it.trieste.comune.ssc.json.JsonMessage;
 import it.wego.web.WebUtils;
 import it.wego.welfarego.model.json.JSONGeneric;
 import it.wego.welfarego.parametri.model.ListeBean;

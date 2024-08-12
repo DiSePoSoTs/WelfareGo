@@ -553,7 +553,7 @@ public class PaiIntervento implements Serializable, Cloneable {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "interventoPadre")
 	private List<InterventiAssociati> interventiFigli;
 
-	@OneToOne(cascade = CascadeType.ALL, mappedBy = "interventoFiglio")
+	@OneToOne(cascade = CascadeType.ALL)	//, mappedBy = "interventoFiglio")
 	private InterventiAssociati interventoPadre;
 
 	@JoinColumn(name = "COD_TIPINT", referencedColumnName = "COD_TIPINT", nullable = false, insertable = false, updatable = false)

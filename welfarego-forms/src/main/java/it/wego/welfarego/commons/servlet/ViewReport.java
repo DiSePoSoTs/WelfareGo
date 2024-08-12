@@ -5,7 +5,7 @@
 package it.wego.welfarego.commons.servlet;
 
 import com.google.gson.reflect.TypeToken;
-import it.wego.json.JSonUtils;
+import it.trieste.comune.ssc.json.JSonUtils;
 import it.wego.web.WebUtils;
 import it.wego.welfarego.commons.utils.ReportUtils;
 import java.io.IOException;

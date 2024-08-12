@@ -1,6 +1,6 @@
 package it.wego.welfarego.azione.forms;
 
-import it.wego.extjs.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonBuilder;
 import it.wego.welfarego.abstracts.AbstractForm;
 import it.wego.welfarego.cartellasocialews.CartellaSocialeWsClient;
 import it.wego.welfarego.persistence.dao.PaiInterventoDao;

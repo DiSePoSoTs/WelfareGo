@@ -20,8 +20,8 @@ import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 
 import it.wego.conversions.StringConversion;
-import it.wego.extjs.json.JsonBuilder;
-import it.wego.extjs.json.JsonMapTransformer;
+import it.trieste.comune.ssc.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonMapTransformer;
 import it.wego.persistence.objects.Condition;
 import it.wego.welfarego.abstracts.AbstractForm;
 import it.wego.welfarego.persistence.dao.LogCassaDao;

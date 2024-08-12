@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.common.base.Function;
 import com.google.common.collect.Collections2;
 
-import it.wego.extjs.json.JsonMapTransformer;
-import it.wego.extjs.servlet.JsonServlet;
+import it.trieste.comune.ssc.json.JsonMapTransformer;
+import it.trieste.comune.ssc.servlet.JsonServlet;
 import it.wego.welfarego.model.json.JSONStruttura;
 import it.wego.welfarego.persistence.dao.StrutturaDao;
 import it.wego.welfarego.persistence.entities.Struttura;

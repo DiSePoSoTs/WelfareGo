@@ -10,7 +10,7 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import it.wego.conversions.StringConversion;
 import it.wego.dynodtpp.DynamicOdtUtils;
-import it.wego.extjs.servlet.JsonServlet;
+import it.trieste.comune.ssc.servlet.JsonServlet;
 import it.wego.welfarego.bre.utils.BreMessage;
 import it.wego.welfarego.bre.utils.BreUtils;
 import it.wego.welfarego.cartellasocialews.CartellaSocialeWsClient;

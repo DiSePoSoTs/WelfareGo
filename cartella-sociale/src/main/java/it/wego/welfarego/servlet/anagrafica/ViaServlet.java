@@ -5,8 +5,8 @@
 package it.wego.welfarego.servlet.anagrafica;
 
 import com.google.common.base.Strings;
-import it.wego.extjs.servlet.AbstractJsonServlet;
-import it.wego.extjs.servlet.JsonServlet;
+import it.trieste.comune.ssc.servlet.AbstractJsonServlet;
+import it.trieste.comune.ssc.servlet.JsonServlet;
 import it.wego.welfarego.model.ViaBean;
 import it.wego.welfarego.model.json.JSONVia;
 import it.wego.welfarego.persistence.dao.ToponomasticaDao;

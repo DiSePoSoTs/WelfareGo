@@ -1,7 +1,7 @@
 package it.wego.welfarego.persistence.dao;
 
 import com.google.common.base.Strings;
-import it.wego.extjs.beans.Order;
+import it.trieste.comune.ssc.beans.Order;
 import java.util.Date;
 import it.wego.persistence.PersistenceAdapter;
 import it.wego.persistence.objects.Condition;

@@ -1,6 +1,6 @@
 package it.wego.welfarego.model.json;
 
-import it.wego.extjs.json.JsonStoreResponse;
+import it.trieste.comune.ssc.json.JsonStoreResponse;
 import java.util.Collection;
 
 /**

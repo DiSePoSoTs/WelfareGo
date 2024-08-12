@@ -4,8 +4,8 @@
  */
 package it.wego.welfarego.utils;
 
-import it.wego.extjs.json.JsonBuilder;
-import it.wego.extjs.json.JsonMapTransformer;
+import it.trieste.comune.ssc.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonMapTransformer;
 import it.wego.persistence.PersistenceAdapter;
 import it.wego.persistence.PersistenceAdapterFactory;
 import it.wego.welfarego.persistence.dao.ComuneDao;

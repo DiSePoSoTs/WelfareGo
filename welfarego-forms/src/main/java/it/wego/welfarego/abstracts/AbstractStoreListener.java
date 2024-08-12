@@ -1,12 +1,10 @@
 package it.wego.welfarego.abstracts;
 
-import it.wego.extjs.beans.Order;
+import it.trieste.comune.ssc.beans.Order;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import javax.persistence.EntityManager;
 
 /**
  * rappresenta un generico componente lato server per la gestione delle

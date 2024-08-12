@@ -5,7 +5,7 @@ import com.google.common.base.Predicate;
 import com.google.common.base.Strings;
 import com.google.common.collect.Iterables;
 import com.google.gson.reflect.TypeToken;
-import it.wego.extjs.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonBuilder;
 import it.wego.welfarego.abstracts.AbstractForm;
 import it.wego.welfarego.azione.stores.InterventiStoreListener;
 import it.wego.welfarego.azione.utils.IntalioAdapter;

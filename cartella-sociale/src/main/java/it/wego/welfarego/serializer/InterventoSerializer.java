@@ -8,7 +8,7 @@ import com.google.common.base.*;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.Iterables;
 import it.wego.conversions.StringConversion;
-import it.wego.extjs.json.JsonMapTransformer;
+import it.trieste.comune.ssc.json.JsonMapTransformer;
 import it.wego.welfarego.persistence.dao.*;
 import it.wego.welfarego.persistence.entities.*;
 import it.wego.welfarego.persistence.utils.Connection;

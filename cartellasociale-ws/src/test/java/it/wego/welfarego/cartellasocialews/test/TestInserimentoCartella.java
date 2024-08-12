@@ -4,7 +4,7 @@
  */
 package it.wego.welfarego.cartellasocialews.test;
 
-import it.wego.extjs.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonBuilder;
 import it.wego.welfarego.cartellasocialews.beans.RicevutaCartella;
 
 import org.junit.Ignore;

@@ -1,6 +1,6 @@
 package it.wego.welfarego.azione.stores;
 
-import it.wego.extjs.beans.Order;
+import it.trieste.comune.ssc.beans.Order;
 import it.wego.persistence.PersistenceAdapter;
 import it.wego.persistence.PersistenceAdapterFactory;
 import it.wego.welfarego.abstracts.AbstractForm;

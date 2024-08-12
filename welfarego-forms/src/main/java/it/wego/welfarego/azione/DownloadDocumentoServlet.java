@@ -4,7 +4,7 @@ import org.jodconverter.document.DefaultDocumentFormatRegistry;
 import org.jodconverter.document.DocumentFormat;
 import org.jodconverter.document.DocumentFormatRegistry;
 import com.google.common.base.Preconditions;
-import it.wego.extjs.servlet.JsonServlet;
+import it.trieste.comune.ssc.servlet.JsonServlet;
 import it.wego.persistence.PersistenceAdapter;
 import it.wego.persistence.PersistenceAdapterFactory;
 import it.wego.welfarego.persistence.dao.PaiDocumentoDao;

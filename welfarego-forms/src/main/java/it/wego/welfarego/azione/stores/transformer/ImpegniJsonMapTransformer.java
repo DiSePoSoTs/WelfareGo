@@ -1,6 +1,6 @@
 package it.wego.welfarego.azione.stores.transformer;
 
-import it.wego.extjs.json.JsonMapTransformer;
+import it.trieste.comune.ssc.json.JsonMapTransformer;
 import it.wego.welfarego.persistence.dao.PaiInterventoDao;
 import it.wego.welfarego.persistence.dao.PaiInterventoMeseDaoCached;
 import it.wego.welfarego.persistence.entities.*;

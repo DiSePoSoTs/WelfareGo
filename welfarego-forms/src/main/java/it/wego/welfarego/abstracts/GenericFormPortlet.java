@@ -1,7 +1,7 @@
 package it.wego.welfarego.abstracts;
 
 import biz.no_ip.anyplace.blinkfish.BlinkFish;
-import it.wego.json.JSonUtils;
+import it.trieste.comune.ssc.json.JSonUtils;
 import it.wego.persistence.PersistenceAdapterFactory;
 import java.io.IOException;
 import java.io.Writer;

@@ -87,6 +87,30 @@ public class TipologiaIntervento implements Serializable {
 	@Column(name = "COD_TIPINT", nullable = false, length = 10)
 	private String codTipint;
 
+	public char getFlgDocumentoDiAutorizzazione() {
+		return flgDocumentoDiAutorizzazione;
+	}
+
+	public Template getTmplDocumentoDiAutorizzazione() {
+		return tmplDocumentoDiAutorizzazione;
+	}
+
+	public Template getCodTmplEse() {
+		return codTmplEse;
+	}
+
+	public Template getCodTmplVar() {
+		return codTmplVar;
+	}
+
+	public Template getCodTmplEseMul() {
+		return codTmplEseMul;
+	}
+
+	public ListaAttesa getCodListaAtt() {
+		return codListaAtt;
+	}
+
 	public String getCodTipint() {
 		return codTipint;
 	}

@@ -6,8 +6,8 @@
 package it.wego.welfarego.servlet.pai;
 
 import com.google.gson.Gson;
-import it.wego.extjs.json.JsonSortInfo;
-import it.wego.extjs.servlet.JsonServlet;
+import it.trieste.comune.ssc.json.JsonSortInfo;
+import it.trieste.comune.ssc.servlet.JsonServlet;
 import it.wego.welfarego.model.LiberatoriaBean;
 import it.wego.welfarego.model.json.JSONLiberatoria;
 import it.wego.welfarego.persistence.dao.LiberatoriaDao;

@@ -2,7 +2,7 @@ package it.wego.welfarego.abstracts;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import it.wego.extjs.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonBuilder;
 import it.wego.persistence.PersistenceAdapterFactory;
 import it.wego.web.WebUtils;
 import java.io.IOException;

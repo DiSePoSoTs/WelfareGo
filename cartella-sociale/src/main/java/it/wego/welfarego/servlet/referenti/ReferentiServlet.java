@@ -6,7 +6,7 @@ package it.wego.welfarego.servlet.referenti;
 
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
-import it.wego.extjs.servlet.JsonServlet;
+import it.trieste.comune.ssc.servlet.JsonServlet;
 import it.wego.welfarego.model.ReferenteBean;
 import it.wego.welfarego.model.json.JSONReferenteSingolo;
 import it.wego.welfarego.model.json.JSONReferenti;

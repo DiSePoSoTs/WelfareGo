@@ -1,6 +1,6 @@
 package it.wego.welfarego.azione.forms;
 
-import it.wego.json.JsonMessage;
+import it.trieste.comune.ssc.json.JsonMessage;
 import it.wego.welfarego.abstracts.AbstractForm;
 import it.wego.welfarego.azione.utils.IntalioAdapter;
 import it.wego.welfarego.persistence.entities.PaiEvento;

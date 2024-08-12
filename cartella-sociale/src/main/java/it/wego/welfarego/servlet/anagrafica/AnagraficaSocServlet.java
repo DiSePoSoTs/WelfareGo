@@ -2,9 +2,9 @@ package it.wego.welfarego.servlet.anagrafica;
 
 import com.google.common.base.Objects;
 import com.google.common.base.Strings;
-import it.wego.extjs.json.JsonBuilder;
-import it.wego.extjs.json.JsonMapTransformer;
-import it.wego.extjs.servlet.JsonServlet;
+import it.trieste.comune.ssc.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonMapTransformer;
+import it.trieste.comune.ssc.servlet.JsonServlet;
 import it.wego.persistence.PersistenceAdapter;
 import it.wego.persistence.PersistenceAdapterFactory;
 import it.wego.welfarego.persistence.dao.AnagrafeSocDao;

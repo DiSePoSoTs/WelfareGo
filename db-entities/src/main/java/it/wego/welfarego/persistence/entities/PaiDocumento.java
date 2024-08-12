@@ -66,6 +66,10 @@ public class PaiDocumento implements Serializable {
 		return codPai;
 	}
 
+	public Integer getIdDocumento() {
+		return idDocumento;
+	}
+
 	public void setIdDocumento(Integer idDocumento) {
 		this.idDocumento = idDocumento;
 	}

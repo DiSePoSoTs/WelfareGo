@@ -49,6 +49,30 @@ public class InterventiAssociati implements Serializable {
 	@ManyToOne(optional = false)
 	private PaiIntervento interventoPadre;
 
+	public PaiIntervento getInterventoPadre() {
+		return interventoPadre;
+	}
+
+	public PaiIntervento getInterventoFiglio() {
+		return interventoFiglio;
+	}
+
+	public String getTipoLegame() {
+		return tipoLegame;
+	}
+
+	public void setTipoLegame(String tipoLegame) {
+		this.tipoLegame = tipoLegame;
+	}
+
+	public void setInterventoPadre(PaiIntervento interventoPadre) {
+		this.interventoPadre = interventoPadre;
+	}
+
+	public void setInterventoFiglio(PaiIntervento interventoFiglio) {
+		this.interventoFiglio = interventoFiglio;
+	}
+
 	@JoinColumns({ @JoinColumn(name = "COD_PAI1", referencedColumnName = "COD_PAI", nullable = false),
 			@JoinColumn(name = "COD_TIPINT1", referencedColumnName = "COD_TIPINT", nullable = false),
 			@JoinColumn(name = "CNT_TIPINT1", referencedColumnName = "CNT_TIPINT", nullable = false) })

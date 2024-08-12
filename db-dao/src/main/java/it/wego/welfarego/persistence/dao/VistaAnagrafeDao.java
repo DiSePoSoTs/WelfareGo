@@ -4,7 +4,7 @@ import com.google.common.base.Objects;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
-import it.wego.extjs.beans.Order;
+import it.trieste.comune.ssc.beans.Order;
 import it.trieste.comune.ssc.json.JsonBuilder;
 import it.wego.persistence.PersistenceAdapter;
 import it.wego.welfarego.persistence.entities.AnagrafeSoc;

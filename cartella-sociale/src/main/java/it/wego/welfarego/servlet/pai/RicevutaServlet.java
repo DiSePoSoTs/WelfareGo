@@ -7,7 +7,7 @@ package it.wego.welfarego.servlet.pai;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import it.wego.dynodtpp.DynamicOdtUtils;
-import it.wego.extjs.servlet.JsonServlet;
+import it.trieste.comune.ssc.servlet.JsonServlet;
 import it.wego.persistence.PersistenceAdapter;
 import it.wego.persistence.PersistenceAdapterFactory;
 import it.wego.utils.xml.XmlUtils;

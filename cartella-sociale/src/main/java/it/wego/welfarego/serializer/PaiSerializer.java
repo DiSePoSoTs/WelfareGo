@@ -6,7 +6,7 @@ import com.google.common.base.Predicates;
 import com.google.common.base.Strings;
 import com.google.common.collect.Maps;
 import it.wego.conversions.StringConversion;
-import it.wego.extjs.json.JsonMapTransformer;
+import it.trieste.comune.ssc.json.JsonMapTransformer;
 import it.wego.welfarego.persistence.entities.Parametri;
 import it.wego.welfarego.persistence.dao.AnagrafeSocDao;
 import it.wego.welfarego.persistence.dao.CartellaDao;

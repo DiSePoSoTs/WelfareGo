@@ -52,6 +52,30 @@ public class NoteCondivise implements Serializable {
 	@ManyToOne(optional = false)
 	private AnagrafeSoc anagrafeSoc;
 
+	public Integer getId() {
+		return id;
+	}
+
+	public Utenti getCodUte() {
+		return codUte;
+	}
+
+	public AnagrafeSoc getAnagrafeSoc() {
+		return anagrafeSoc;
+	}
+
+	public Date getDtInserimento() {
+		return dtInserimento;
+	}
+
+	public String getTitolo() {
+		return titolo;
+	}
+
+	public String getEsteso() {
+		return esteso;
+	}
+
 	@Column(name = "DATA_INSERIMENTO")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtInserimento = new Date();

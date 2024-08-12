@@ -22,7 +22,6 @@
 		<module>../cartellasociale-ws</module>
 		<module>../processi-batch</module>
 		<module>../parametri</module>
- 		<module>../welfarego-intalio-manager</module>
 		<module>../cartella-sociale</module>
 		<module>../undoredo</module>
 		<module>../ws-utils</module>

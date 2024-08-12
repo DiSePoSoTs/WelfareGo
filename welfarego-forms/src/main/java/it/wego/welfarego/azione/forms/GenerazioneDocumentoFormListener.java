@@ -2,7 +2,7 @@ package it.wego.welfarego.azione.forms;
 
 import com.google.common.base.Strings;
 import it.wego.dynodtpp.DynamicOdtUtils;
-import it.wego.extjs.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonBuilder;
 import it.wego.welfarego.abstracts.AbstractForm;
 import it.wego.welfarego.azione.models.GenericDocumentoDataModel;
 import it.wego.welfarego.azione.utils.IntalioAdapter;

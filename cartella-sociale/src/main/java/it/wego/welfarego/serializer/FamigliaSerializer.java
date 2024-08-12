@@ -9,7 +9,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Maps;
 import it.wego.conversions.StringConversion;
-import it.wego.extjs.json.JsonMapTransformer;
+import it.trieste.comune.ssc.json.JsonMapTransformer;
 import it.wego.welfarego.persistence.entities.AnagrafeSoc;
 import it.wego.welfarego.persistence.entities.VistaAnagrafe;
 import java.util.Map;

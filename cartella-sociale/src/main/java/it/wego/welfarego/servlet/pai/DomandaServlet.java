@@ -2,7 +2,7 @@ package it.wego.welfarego.servlet.pai;
 
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
-import it.wego.extjs.servlet.JsonServlet;
+import it.trieste.comune.ssc.servlet.JsonServlet;
 import it.wego.webdav.DavResourceContext;
 import it.wego.webdav.DavUtils;
 import it.wego.welfarego.persistence.entities.Parametri;

@@ -9,7 +9,7 @@ import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import it.wego.conversions.StringConversion;
-import it.wego.extjs.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonBuilder;
 import it.wego.welfarego.model.DettaglioBean;
 import it.wego.welfarego.model.GiornoBean;
 import it.wego.welfarego.model.ImpegnoBean;

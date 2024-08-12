@@ -1,9 +1,9 @@
 package it.wego.welfarego.azione.forms;
 
 import it.wego.welfarego.abstracts.AbstractForm;
-import it.wego.json.GsonObject;
-import it.wego.json.JsonForm;
-import it.wego.json.JsonMessage;
+import it.trieste.comune.ssc.json.GsonObject;
+import it.trieste.comune.ssc.json.JsonForm;
+import it.trieste.comune.ssc.json.JsonMessage;
 import it.wego.welfarego.azione.utils.IntalioAdapter;
 import java.util.Date;
 

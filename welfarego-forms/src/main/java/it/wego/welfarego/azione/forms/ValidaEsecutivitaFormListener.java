@@ -1,6 +1,6 @@
 package it.wego.welfarego.azione.forms;
 
-import it.wego.extjs.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonBuilder;
 import it.wego.persistence.PersistenceAdapterFactory;
 import it.wego.welfarego.abstracts.AbstractForm;
 import it.wego.welfarego.abstracts.AbstractServlet;

@@ -3,7 +3,7 @@ package it.wego.welfarego.cartellasocialews;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Maps;
-import it.wego.extjs.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonBuilder;
 import it.wego.utils.xml.XmlUtils;
 import it.wego.welfarego.persistence.dao.AnagrafeSocDao;
 import it.wego.welfarego.persistence.dao.PaiDao;

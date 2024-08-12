@@ -1,17 +1,14 @@
 package it.wego.welfarego.listeattesa;
 
-import it.wego.extjs.beans.MultipleFieldPojoComparator;
-import it.wego.extjs.beans.Order;
-import it.wego.welfarego.abstracts.AbstractForm;
+import it.trieste.comune.ssc.beans.MultipleFieldPojoComparator;
+import it.trieste.comune.ssc.beans.Order;
 import it.wego.welfarego.abstracts.AbstractStoreListener;
 import it.wego.welfarego.determine.model.PaiInterventoBean;
 import it.wego.welfarego.persistence.dao.PaiInterventoDao;
 import it.wego.welfarego.persistence.entities.ListaAttesa;
 import it.wego.welfarego.persistence.entities.PaiIntervento;
 import it.wego.welfarego.persistence.entities.TipologiaIntervento;
-
 import java.util.*;
-import javax.persistence.EntityManager;
 
 /**
  *

@@ -6,7 +6,7 @@ package it.wego.welfarego.dao.test;
  */
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
-import it.wego.extjs.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonBuilder;
 import it.wego.welfarego.persistence.dao.AnagrafeSocDao;
 import it.wego.welfarego.persistence.dao.PaiInterventoDao;
 import it.wego.welfarego.persistence.entities.AnagrafeSoc;

@@ -5,7 +5,7 @@ import freemarker.template.DefaultObjectWrapperBuilder;
 import freemarker.template.Template;
 import freemarker.template.TemplateDateModel;
 import freemarker.template.TemplateExceptionHandler;
-import it.wego.json.JsonMessage;
+import it.trieste.comune.ssc.json.JsonMessage;
 import it.wego.welfarego.commons.listener.WelfaregoFormsContextListener;
 import it.wego.welfarego.commons.utils.ToolsUtils;
 import it.wego.welfarego.persistence.constants.Configurations;

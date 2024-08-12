@@ -91,6 +91,46 @@ public class Pai implements Serializable {
 	@Column(name = "COD_PAI", nullable = false)
 	private Integer codPai;
 
+	public Integer getNumNuc() {
+		return numNuc;
+	}
+
+	public String getMotiv() {
+		return motiv;
+	}
+
+	public void setNumNuc(Integer numNuc) {
+		this.numNuc = numNuc;
+	}
+
+	public void setDtApePai(Date dtApePai) {
+		this.dtApePai = dtApePai;
+	}
+
+	public void setCodUteAs(Utenti codUteAs) {
+		this.codUteAs = codUteAs;
+	}
+
+	public void setIdParamUot(ParametriIndata idParamUot) {
+		this.idParamUot = idParamUot;
+	}
+
+	public void setIdParamFascia(ParametriIndata idParamFascia) {
+		this.idParamFascia = idParamFascia;
+	}
+
+	public ParametriIndata getIdParamCertificatoL104() {
+		return idParamCertificatoL104;
+	}
+
+	public void setIdParamCertificatoL104(ParametriIndata idParamCertificatoL104) {
+		this.idParamCertificatoL104 = idParamCertificatoL104;
+	}
+
+	public char getFlgStatoPai() {
+		return flgStatoPai;
+	}
+
 	public Integer getCodPai() {
 		return codPai;
 	}

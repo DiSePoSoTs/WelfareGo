@@ -6,11 +6,11 @@ package it.wego.welfarego.servlet.pai;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
-import it.wego.extjs.json.JsonBuilder;
-import it.wego.extjs.json.JsonMapTransformer;
-import it.wego.extjs.json.JsonSortInfo;
-import it.wego.extjs.json.JsonStoreResponse;
-import it.wego.extjs.servlet.JsonServlet;
+import it.trieste.comune.ssc.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonMapTransformer;
+import it.trieste.comune.ssc.json.JsonSortInfo;
+import it.trieste.comune.ssc.json.JsonStoreResponse;
+import it.trieste.comune.ssc.servlet.JsonServlet;
 import it.wego.welfarego.persistence.dao.ParametriIndataDao;
 import it.wego.welfarego.persistence.dao.TipologiaInterventoDao;
 import it.wego.welfarego.persistence.entities.TipologiaIntervento;

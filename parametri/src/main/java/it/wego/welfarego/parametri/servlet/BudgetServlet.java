@@ -5,7 +5,7 @@
 package it.wego.welfarego.parametri.servlet;
 
 import it.wego.conversions.StringConversion;
-import it.wego.extjs.servlet.JsonServlet;
+import it.trieste.comune.ssc.servlet.JsonServlet;
 import it.wego.web.WebUtils;
 import it.wego.welfarego.model.json.JSONGeneric;
 import it.wego.welfarego.parametri.model.BudgetBean;

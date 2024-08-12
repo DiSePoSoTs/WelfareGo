@@ -1,8 +1,7 @@
 package it.wego.welfarego.persistence.dao;
 
-import com.google.common.collect.Iterables;
-import it.wego.extjs.beans.Order;
-import static it.wego.persistence.ConditionBuilder.*;
+
+import it.trieste.comune.ssc.beans.Order;
 import it.wego.persistence.PersistenceAdapter;
 import it.wego.welfarego.persistence.entities.Pai;
 import it.wego.welfarego.persistence.entities.PaiDocumento;

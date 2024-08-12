@@ -4,8 +4,8 @@
  */
 package it.wego.welfarego.servlet.anagrafica;
 
-import it.wego.extjs.servlet.AbstractJsonServlet;
-import it.wego.extjs.servlet.JsonServlet;
+import it.trieste.comune.ssc.servlet.AbstractJsonServlet;
+import it.trieste.comune.ssc.servlet.JsonServlet;
 import it.wego.welfarego.model.StatoBean;
 import it.wego.welfarego.model.json.JSONStato;
 import it.wego.welfarego.persistence.dao.StatoDao;

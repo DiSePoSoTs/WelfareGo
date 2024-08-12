@@ -6,9 +6,9 @@ package it.wego.welfarego.servlet.anagrafica;
 
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
-import it.wego.extjs.json.JsonBuilder;
-import it.wego.extjs.json.JsonSortInfo;
-import it.wego.extjs.servlet.JsonServlet;
+import it.trieste.comune.ssc.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonSortInfo;
+import it.trieste.comune.ssc.servlet.JsonServlet;
 import it.wego.welfarego.model.ComboBean;
 import it.wego.welfarego.model.json.JSONCombo;
 import it.wego.welfarego.persistence.dao.UtentiDao;

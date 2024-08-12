@@ -9,7 +9,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
-import it.wego.extjs.servlet.JsonServlet;
+import it.trieste.comune.ssc.servlet.JsonServlet;
 import it.wego.welfarego.model.DatoSpecifico;
 import it.wego.welfarego.model.json.JSONDatiSpecifici;
 import it.wego.welfarego.persistence.dao.MapDatiSpecTipIntDao;

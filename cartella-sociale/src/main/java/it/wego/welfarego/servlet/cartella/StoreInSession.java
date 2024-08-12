@@ -5,7 +5,7 @@
 package it.wego.welfarego.servlet.cartella;
 
 import com.google.gson.Gson;
-import it.wego.welfarego.insiel.cartellasociale.client.ProxyAuthenticator;
+//import it.wego.welfarego.insiel.cartellasociale.client.ProxyAuthenticator;
 import it.wego.welfarego.model.json.JSONGeneric;
 import it.wego.welfarego.persistence.entities.Parametri;
 import it.wego.welfarego.persistence.dao.UtentiDao;
@@ -122,8 +122,8 @@ public class StoreInSession extends HttpServlet {
                 String password = Parametri.getProxyPassword(em);
                 Log.APP.info("- proxy username: " + username);
                 Log.APP.info("- proxy password: " + password);
-                ProxyAuthenticator pa = new ProxyAuthenticator(username, password);
-                Authenticator.setDefault(pa);
+                //ProxyAuthenticator pa = new ProxyAuthenticator(username, password);
+                //Authenticator.setDefault(pa);
             }
         } catch (Exception ex) {
             Log.APP.error("Si è verificato un errore cercando di reperire la configurazione del proxy", ex);

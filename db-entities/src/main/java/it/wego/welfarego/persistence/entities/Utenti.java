@@ -72,6 +72,22 @@ public class Utenti implements Serializable {
 	@Column(name = "NOME", nullable = false, length = 765)
 	private String nome;
 
+	public ParametriIndata getIdParamUot() {
+		return idParamUot;
+	}
+
+	public Integer getCodUte() {
+		return codUte;
+	}
+
+	public Associazione getAssociazione() {
+		return associazione;
+	}
+
+	public void setIdParamUot(ParametriIndata idParamUot) {
+		this.idParamUot = idParamUot;
+	}
+
 	public String getNome() {
 		return nome;
 	}

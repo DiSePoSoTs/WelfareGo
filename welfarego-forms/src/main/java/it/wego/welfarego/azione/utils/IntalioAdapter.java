@@ -1,13 +1,13 @@
 package it.wego.welfarego.azione.utils;
 
 import com.google.common.base.Objects;
-import it.wego.extjs.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonBuilder;
 import it.wego.persistence.PersistenceAdapterFactory;
 import it.wego.persistence.PersistenceAdapter;
 import it.wego.unique.intalio.completeTask.Output;
 import it.wego.unique.intalio.processmanagement.TInstanceInfo;
 import  it.wego.unique.intalio.IntalioManager;
-import it.wego.welfarego.intalio.WelfareGoIntalioManager;
+//import it.wego.welfarego.intalio.WelfareGoIntalioManager;
 import it.wego.welfarego.persistence.dao.TaskDao;
 import it.wego.welfarego.persistence.entities.UniqueTasklist;
 import it.wego.welfarego.utils.WelfaregoUtils;
@@ -74,14 +74,14 @@ public class IntalioAdapter {
             try {
                 PersistenceAdapter persistenceAdapter = PersistenceAdapterFactory.getPersistenceAdapter();
                 TaskDao taskDao = new TaskDao(persistenceAdapter.getEntityManager());
-                WelfareGoIntalioManager welfareGoIntalioManager = new WelfareGoIntalioManager();
-                welfareGoIntalioManager.setProperty(IntalioManager.AUTHENTICATION_TOKEN, WelfaregoUtils.getConfig(IntalioManager.AUTHENTICATION_TOKEN));
-                welfareGoIntalioManager.setProperty(IntalioManager.AUTHENTICATION_URL, WelfaregoUtils.getConfig("PROPERTY_AUTHENTICATION_URL"));
-                welfareGoIntalioManager.setProperty(IntalioManager.TMS_URL, WelfaregoUtils.getConfig("PROPERTY_TMS_URL"));
-                welfareGoIntalioManager.setProperty(IntalioManager.COMPLETE_TASK_URL, WelfaregoUtils.getConfig("PROPERTY_COMPLETE_TASK_URL"));
-                //FIX ME             
+//                WelfareGoIntalioManager welfareGoIntalioManager = new WelfareGoIntalioManager();
+//                welfareGoIntalioManager.setProperty(IntalioManager.AUTHENTICATION_TOKEN, WelfaregoUtils.getConfig(IntalioManager.AUTHENTICATION_TOKEN));
+//                welfareGoIntalioManager.setProperty(IntalioManager.AUTHENTICATION_URL, WelfaregoUtils.getConfig("PROPERTY_AUTHENTICATION_URL"));
+//                welfareGoIntalioManager.setProperty(IntalioManager.TMS_URL, WelfaregoUtils.getConfig("PROPERTY_TMS_URL"));
+//                welfareGoIntalioManager.setProperty(IntalioManager.COMPLETE_TASK_URL, WelfaregoUtils.getConfig("PROPERTY_COMPLETE_TASK_URL"));
+//                //FIX ME             
               //  welfareGoIntalioManager.setProperty(IntalioManager.INTALIO_URL,WelfaregoUtils.getConfig("PROPERTY_INTALIO_URL") );
-                welfareGoIntalioManager.setProperty(WelfareGoIntalioManager.START_PROCESS_URL, WelfaregoUtils.getConfig("PROPERTY_START_PROCESS_URL"));
+                //welfareGoIntalioManager.setProperty(WelfareGoIntalioManager.START_PROCESS_URL, WelfaregoUtils.getConfig("PROPERTY_START_PROCESS_URL"));
                 List<UniqueTasklist> scheduledTask;
                 while (true) {
                     synchronized (lock) {

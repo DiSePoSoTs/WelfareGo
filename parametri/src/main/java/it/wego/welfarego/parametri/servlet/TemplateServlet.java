@@ -6,7 +6,7 @@ package it.wego.welfarego.parametri.servlet;
 
 import com.google.common.base.Strings;
 import com.sun.star.embed.UnreachableStateException;
-import it.wego.extjs.servlet.JsonServlet;
+import it.trieste.comune.ssc.servlet.JsonServlet;
 import it.wego.welfarego.model.json.JSONGeneric;
 import it.wego.welfarego.parametri.model.TemplateBean;
 import it.wego.welfarego.parametri.model.json.JSONTemplate;

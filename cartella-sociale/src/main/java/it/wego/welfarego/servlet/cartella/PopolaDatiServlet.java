@@ -8,8 +8,8 @@ import com.google.common.base.Strings;
 import com.google.common.collect.Maps;
 
 import it.wego.conversions.StringConversion;
-import it.wego.extjs.json.JsonBuilder;
-import it.wego.extjs.servlet.JsonServlet;
+import it.trieste.comune.ssc.json.JsonBuilder;
+import it.trieste.comune.ssc.servlet.JsonServlet;
 import it.wego.welfarego.model.AnagraficaBean;
 import it.wego.welfarego.model.json.JSONAnagrafica;
 import it.wego.welfarego.model.json.JSONCondizione;

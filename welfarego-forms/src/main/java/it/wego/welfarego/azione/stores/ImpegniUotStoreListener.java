@@ -1,11 +1,11 @@
 package it.wego.welfarego.azione.stores;
 
 import com.google.common.base.Strings;
-import it.wego.extjs.json.JsonStoreResponse;
+import it.trieste.comune.ssc.json.JsonStoreResponse;
 import it.wego.welfarego.abstracts.AbstractStoreListener;
-import it.wego.extjs.beans.Order;
-import it.wego.extjs.json.JsonBuilder;
-import it.wego.extjs.json.JsonMapTransformer;
+import it.trieste.comune.ssc.beans.Order;
+import it.trieste.comune.ssc.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonMapTransformer;
 import it.wego.welfarego.abstracts.AbstractForm;
 import it.wego.welfarego.persistence.dao.BudgetTipoInterventoUotDao;
 import it.wego.welfarego.persistence.dao.PaiInterventoDao;

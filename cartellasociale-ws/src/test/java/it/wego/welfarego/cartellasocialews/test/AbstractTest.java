@@ -5,7 +5,7 @@
 package it.wego.welfarego.cartellasocialews.test;
 
 import com.google.common.base.Strings;
-import it.wego.extjs.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonBuilder;
 import it.wego.welfarego.cartellasocialews.CartellaSocialeWsClient;
 import it.wego.welfarego.persistence.utils.Connection;
 import java.util.Properties;

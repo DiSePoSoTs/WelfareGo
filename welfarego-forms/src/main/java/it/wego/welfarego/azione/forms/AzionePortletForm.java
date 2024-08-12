@@ -1,6 +1,6 @@
 package it.wego.welfarego.azione.forms;
 
-import it.wego.json.JSonUtils;
+import it.trieste.comune.ssc.json.JSonUtils;
 import it.wego.welfarego.abstracts.AbstractForm;
 import it.wego.welfarego.abstracts.AbstractFtlPortletForm;
 import it.wego.welfarego.commons.utils.ToolsUtils;

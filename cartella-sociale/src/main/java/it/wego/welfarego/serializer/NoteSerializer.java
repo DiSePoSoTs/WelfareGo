@@ -3,7 +3,7 @@
  */
 package it.wego.welfarego.serializer;
 
-import it.wego.extjs.json.JsonMapTransformer;
+import it.trieste.comune.ssc.json.JsonMapTransformer;
 import it.wego.welfarego.persistence.entities.NoteCondivise;
 
 

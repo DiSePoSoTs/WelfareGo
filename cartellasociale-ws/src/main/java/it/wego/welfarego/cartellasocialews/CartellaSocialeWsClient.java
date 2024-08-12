@@ -5,7 +5,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.collect.Maps;
 import com.google.gson.Gson;
-import it.wego.extjs.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonBuilder;
 import it.wego.utils.xml.WsUtils;
 import it.wego.welfarego.cartellasocialews.beans.*;
 import it.wego.welfarego.persistence.dao.CodaCsrDao;

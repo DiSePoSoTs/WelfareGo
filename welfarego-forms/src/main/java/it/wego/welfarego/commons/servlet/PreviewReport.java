@@ -4,7 +4,7 @@
  */
 package it.wego.welfarego.commons.servlet;
 
-import it.wego.json.JSonUtils;
+import it.trieste.comune.ssc.json.JSonUtils;
 import it.wego.persistence.PersistenceAdapter;
 import it.wego.persistence.PersistenceAdapterFactory;
 import it.wego.web.WebUtils;

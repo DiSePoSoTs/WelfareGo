@@ -90,6 +90,54 @@ public class UniqueTasklist implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date tsCreazione = new Date();
  
+	public String getCampoForm1() {
+		return campoForm1;
+	}
+
+	public String getCampoForm2() {
+		return campoForm2;
+	}
+
+	public String getCampoForm3() {
+		return campoForm3;
+	}
+
+	public String getCampoForm4() {
+		return campoForm4;
+	}
+
+	public String getCampoForm5() {
+		return campoForm5;
+	}
+
+	public String getCampoForm6() {
+		return campoForm6;
+	}
+
+	public String getCampoForm7() {
+		return campoForm7;
+	}
+
+	public void setCampoForm2(String campoForm2) {
+		this.campoForm2 = campoForm2;
+	}
+
+	public String getCampoForm8() {
+		return campoForm8;
+	}
+
+	public void setCampoForm1(String campoForm1) {
+		this.campoForm1 = campoForm1;
+	}
+
+	public String getCampoFlow8() {
+		return campoFlow8;
+	}
+
+	public String getCampoFlow1() {
+		return campoFlow1;
+	}
+
 	public BigDecimal getId() {
 		return id;
 	}

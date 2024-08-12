@@ -1,7 +1,7 @@
 package it.wego.welfarego.listeattesa;
 
-import it.wego.json.GsonObject;
-import it.wego.json.JsonMessage;
+import it.trieste.comune.ssc.json.GsonObject;
+import it.trieste.comune.ssc.json.JsonMessage;
 import it.wego.welfarego.abstracts.AbstractForm;
 import it.wego.welfarego.persistence.entities.Pai;
 import it.wego.welfarego.persistence.entities.PaiEvento;
