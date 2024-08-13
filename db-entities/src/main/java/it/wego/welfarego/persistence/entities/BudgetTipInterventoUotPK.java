@@ -34,6 +34,14 @@ public class BudgetTipInterventoUotPK implements Serializable {
 	@Column(name = "COD_IMPE", nullable = false)
 	private String codImpe;
 
+	public String getCodTipint() {
+		return codTipint;
+	}
+
+	public short getCodAnno() {
+		return codAnno;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "ID_PARAM_UOT", nullable = false)
 	private int idParamUot;

@@ -167,6 +167,10 @@ public class TipologiaIntervento implements Serializable {
 	@Column(name = "FLG_PAGAM", nullable = false)
 	private char flgPagam;
 
+	public String getCodIntCsr() {
+		return codIntCsr;
+	}
+
 	public Template getCodTmplVarMul() {
 		return codTmplVarMul;
 	}
