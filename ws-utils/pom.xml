@@ -28,26 +28,6 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.apache.ws.commons.axiom</groupId>
-			<artifactId>axiom-api</artifactId>
-			<version>${org.apache.ws.commons.axiom.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.ws.commons.axiom</groupId>
-			<artifactId>axiom-impl</artifactId>
-			<version>${org.apache.ws.commons.axiom.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.ws.commons.schema</groupId>
-			<artifactId>XmlSchema</artifactId>
-			<version>1.4.7</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.neethi</groupId>
-			<artifactId>neethi</artifactId>
-			<version>3.1.1</version>
-		</dependency>
-		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-transport-local</artifactId>
 			<version>1.8.2</version>

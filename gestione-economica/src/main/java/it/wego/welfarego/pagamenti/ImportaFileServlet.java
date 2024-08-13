@@ -13,10 +13,9 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import it.trieste.comune.ssc.json.JsonBuilder;
 import it.trieste.comune.ssc.json.JsonResponse;
-import it.trieste.comune.ssc.json.JsonServlet;
+import it.trieste.comune.ssc.servlet.JsonServlet;
 import it.wego.welfarego.persistence.utils.Connection;
 
-import java.lang.reflect.Method;
 import java.math.BigInteger;
 import java.util.Iterator;
 import java.util.List;

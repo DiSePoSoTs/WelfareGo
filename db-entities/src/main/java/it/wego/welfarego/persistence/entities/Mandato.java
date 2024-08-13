@@ -71,6 +71,10 @@ public class Mandato implements Serializable {
 	@Column(name = "ANNO_DECR", nullable = false)
 	private int annoDecr;
 
+	public void setMandatoDettaglioList(List<MandatoDettaglio> mandatoDettaglioList) {
+		this.mandatoDettaglioList = mandatoDettaglioList;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "CAPITOLO_DECR", nullable = false)
 	private int capitoloDecr;

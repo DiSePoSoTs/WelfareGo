@@ -1,13 +1,9 @@
 package it.wego.welfarego.pagamenti.pagamenti.cercapagamenti;
 
-import com.google.common.base.Strings;
 import it.wego.persistence.ConditionUtils;
 import it.wego.persistence.objects.Condition;
 import it.wego.welfarego.persistence.entities.Mandato;
 import org.eclipse.persistence.internal.jpa.EJBQueryImpl;
-import org.eclipse.persistence.internal.jpa.JPAQuery;
-//import org.eclipse.persistence.jpa.JPAQuery;  org.eclipse.persistence:eclipselink
-import org.eclipse.persistence.queries.DatabaseQuery;
 import org.testng.annotations.Test;
 
 import javax.persistence.EntityManager;

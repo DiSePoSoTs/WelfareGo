@@ -1,6 +1,6 @@
 package it.wego.welfarego.pagamenti.pagamenti;
 
-import it.wego.extjs.json.JsonBuilder;
+import it.trieste.comune.ssc.json.JsonBuilder;
 import org.powermock.api.mockito.PowerMockito;
 import org.testng.annotations.Test;
 
@@ -16,8 +16,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.testng.Assert.assertEquals;
 
-//@RunWith(PowerMockRunner.class)
-//@PrepareForTest(AjaxPagamento.class)
 public class AjaxPagamentoTest {
 
 
