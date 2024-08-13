@@ -58,6 +58,26 @@ public class Struttura implements Serializable {
 		return indirizzo;
 	}
 
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public TipologiaIntervento getIntervento() {
+		return intervento;
+	}
+
+	public void setIntervento(TipologiaIntervento intervento) {
+		this.intervento = intervento;
+	}
+
+	public void setIndirizzo(String indirizzo) {
+		this.indirizzo = indirizzo;
+	}
+
+	public void setCsrId(String csrId) {
+		this.csrId = csrId;
+	}
+
 	public String getCsrId() {
 		return csrId;
 	}

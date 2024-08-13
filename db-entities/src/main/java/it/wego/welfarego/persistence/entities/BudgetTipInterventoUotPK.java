@@ -38,6 +38,10 @@ public class BudgetTipInterventoUotPK implements Serializable {
 		return codTipint;
 	}
 
+	public void setCodAnno(short codAnno) {
+		this.codAnno = codAnno;
+	}
+
 	public String getCodImpe() {
 		return codImpe;
 	}
@@ -46,9 +50,25 @@ public class BudgetTipInterventoUotPK implements Serializable {
 		return codAnno;
 	}
 
+	public int getIdParamUot() {
+		return idParamUot;
+	}
+
+	public void setIdParamUot(int idParamUot) {
+		this.idParamUot = idParamUot;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "ID_PARAM_UOT", nullable = false)
 	private int idParamUot;
+
+	public void setCodTipint(String codTipint) {
+		this.codTipint = codTipint;
+	}
+
+	public void setCodImpe(String codImpe) {
+		this.codImpe = codImpe;
+	}
 
 	public BudgetTipInterventoUotPK() {
 	}

@@ -122,6 +122,10 @@ public class AnagrafeSoc implements Serializable {
 		return paiCdgList;
 	}
 
+	public String getCodAnaCivilia() {
+		return codAnaCivilia;
+	}
+
 	public List<LogAnagrafe> getLogAnagrafeList() {
 		return logAnagrafeList;
 	}

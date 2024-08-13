@@ -58,4 +58,8 @@ public class Associazione implements Serializable {
 		return "id=" + id + ", nome=" + nome;
 	}
 
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 }

@@ -40,6 +40,10 @@ public class Ente implements Serializable {
 	@Column(name = "DESCRIZIONE", length = 765)
 	private String descrizione;
 
+	public String getNome() {
+		return nome;
+	}
+
 	@OneToMany(mappedBy = "ente")    
 	private List<Struttura> strutturaList;
 

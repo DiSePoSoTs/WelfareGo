@@ -162,13 +162,188 @@ public class TipologiaIntervento implements Serializable {
 		return flgFatt;
 	}
 
-
 	@Basic(optional = false)
 	@Column(name = "FLG_PAGAM", nullable = false)
 	private char flgPagam;
 
 	public void setFlgRinnovo(String flgRinnovo) {
 		this.flgRinnovo = flgRinnovo;
+	}
+
+	public void setCodTipint(String codTipint) {
+		this.codTipint = codTipint;
+	}
+
+	public void setDesTipint(String desTipint) {
+		this.desTipint = desTipint;
+	}
+
+	public void setFlgPai(char flgPai) {
+		this.flgPai = flgPai;
+	}
+
+	public void setCcele(String ccele) {
+		this.ccele = ccele;
+	}
+
+	public void setCodProcFo(String codProcFo) {
+		this.codProcFo = codProcFo;
+	}
+
+	public void setCodProcEse(String codProcEse) {
+		this.codProcEse = codProcEse;
+	}
+
+	public void setCodProcGest(String codProcGest) {
+		this.codProcGest = codProcGest;
+	}
+
+	public void setFlgFatt(char flgFatt) {
+		this.flgFatt = flgFatt;
+	}
+
+	public void setFlgPagam(char flgPagam) {
+		this.flgPagam = flgPagam;
+	}
+
+	public void setCodIntCsr(String codIntCsr) {
+		this.codIntCsr = codIntCsr;
+	}
+
+	public void setCodTipintCsr(String codTipintCsr) {
+		this.codTipintCsr = codTipintCsr;
+	}
+
+	public void setImpStdEntr(BigDecimal impStdEntr) {
+		this.impStdEntr = impStdEntr;
+	}
+
+	public void setImpStdSpesa(BigDecimal impStdSpesa) {
+		this.impStdSpesa = impStdSpesa;
+	}
+
+	public void setFlgRdbfap(Character flgRdbfap) {
+		this.flgRdbfap = flgRdbfap;
+	}
+
+	public void setFlgAttivo(char flgAttivo) {
+		this.flgAttivo = flgAttivo;
+	}
+
+	public void setFlgVis(char flgVis) {
+		this.flgVis = flgVis;
+	}
+
+	public void setDeveRestareAperto(String deveRestareAperto) {
+		this.deveRestareAperto = deveRestareAperto;
+	}
+
+	public void setFlgFineDurata(char flgFineDurata) {
+		this.flgFineDurata = flgFineDurata;
+	}
+
+	public void setFatturaDettaglioList(List<FatturaDettaglio> fatturaDettaglioList) {
+		this.fatturaDettaglioList = fatturaDettaglioList;
+	}
+
+	public void setPaiInterventoList(List<PaiIntervento> paiInterventoList) {
+		this.paiInterventoList = paiInterventoList;
+	}
+
+	public void setCodListaAtt(ListaAttesa codListaAtt) {
+		this.codListaAtt = codListaAtt;
+	}
+
+	public void setIdParamGrute(ParametriIndata idParamGrute) {
+		this.idParamGrute = idParamGrute;
+	}
+
+	public void setIdParamSrv(ParametriIndata idParamSrv) {
+		this.idParamSrv = idParamSrv;
+	}
+
+	public void setIdParamClasseTipint(ParametriIndata idParamClasseTipint) {
+		this.idParamClasseTipint = idParamClasseTipint;
+	}
+
+	public void setIdParamStruttura(ParametriIndata idParamStruttura) {
+		this.idParamStruttura = idParamStruttura;
+	}
+
+	public void setCodTmplLettPag(Template codTmplLettPag) {
+		this.codTmplLettPag = codTmplLettPag;
+	}
+
+	public void setCodTmplChius(Template codTmplChius) {
+		this.codTmplChius = codTmplChius;
+	}
+
+	public void setCodTmplVar(Template codTmplVar) {
+		this.codTmplVar = codTmplVar;
+	}
+
+	public void setCodTmplEse(Template codTmplEse) {
+		this.codTmplEse = codTmplEse;
+	}
+
+	public void setCodTmplEseMul(Template codTmplEseMul) {
+		this.codTmplEseMul = codTmplEseMul;
+	}
+
+	public void setCodTmplVarMul(Template codTmplVarMul) {
+		this.codTmplVarMul = codTmplVarMul;
+	}
+
+	public void setCodTmplChiusMul(Template codTmplChiusMul) {
+		this.codTmplChiusMul = codTmplChiusMul;
+	}
+
+	public void setCodTmplRicevuta(Template codTmplRicevuta) {
+		this.codTmplRicevuta = codTmplRicevuta;
+	}
+
+	public void setCodTmplComliq(Template codTmplComliq) {
+		this.codTmplComliq = codTmplComliq;
+	}
+
+	public void setFlgRicevuta(String flgRicevuta) {
+		this.flgRicevuta = flgRicevuta;
+	}
+
+	public void setMapDatiSpecTipintList(List<MapDatiSpecTipint> mapDatiSpecTipintList) {
+		this.mapDatiSpecTipintList = mapDatiSpecTipintList;
+	}
+
+	public void setResponsabileProcedimento(String responsabileProcedimento) {
+		this.responsabileProcedimento = responsabileProcedimento;
+	}
+
+	public void setUfficioDiRiferimento(String ufficioDiRiferimento) {
+		this.ufficioDiRiferimento = ufficioDiRiferimento;
+	}
+
+	public void setFlgAppTec(char flgAppTec) {
+		this.flgAppTec = flgAppTec;
+	}
+
+	public void setIpAliquotaIva(ParametriIndata ipAliquotaIva) {
+		this.ipAliquotaIva = ipAliquotaIva;
+	}
+
+	public void setFlgDocumentoDiAutorizzazione(char flgDocumentoDiAutorizzazione) {
+		this.flgDocumentoDiAutorizzazione = flgDocumentoDiAutorizzazione;
+	}
+
+	public void setTmplDocumentoDiAutorizzazione(Template tmplDocumentoDiAutorizzazione) {
+		this.tmplDocumentoDiAutorizzazione = tmplDocumentoDiAutorizzazione;
+	}
+
+	public void setImpStdCosto(BigDecimal impStdCosto) {
+		this.impStdCosto = impStdCosto;
+	}
+
+	public void setIdParamUniMis(ParametriIndata idParamUniMis) {
+		this.idParamUniMis = idParamUniMis;
 	}
 
 	public char getFlgPai() {

@@ -100,6 +100,38 @@ public class ParametriIndata implements Serializable {
 		return txt2Param;
 	}
 
+	public void setDtIniVal(Date dtIniVal) {
+		this.dtIniVal = dtIniVal;
+	}
+
+	public void setIdParam(Parametri idParam) {
+		this.idParam = idParam;
+	}
+
+	public void setDateParam(Date dateParam) {
+		this.dateParam = dateParam;
+	}
+
+	public void setTxt1Param(String txt1Param) {
+		this.txt1Param = txt1Param;
+	}
+
+	public void setTxt2Param(String txt2Param) {
+		this.txt2Param = txt2Param;
+	}
+
+	public void setTxt3Param(String txt3Param) {
+		this.txt3Param = txt3Param;
+	}
+
+	public void setTxt4Param(String txt4Param) {
+		this.txt4Param = txt4Param;
+	}
+
+	public void setDesParam(String desParam) {
+		this.desParam = desParam;
+	}
+
 	public String getTxt3Param() {
 		return txt3Param;
 	}

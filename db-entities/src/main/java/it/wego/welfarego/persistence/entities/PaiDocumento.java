@@ -110,6 +110,14 @@ public class PaiDocumento implements Serializable {
 		this.codTipdoc = codTipdoc;
 	}
 
+	public void setNumProt(String numProt) {
+		this.numProt = numProt;
+	}
+
+	public void setDtProt(Date dtProt) {
+		this.dtProt = dtProt;
+	}
+
 	public void setDtDoc(Date dtDoc) {
 		this.dtDoc = dtDoc;
 	}

@@ -37,6 +37,66 @@ public class LogCassa implements Serializable {
 
 	public static final String OPERAZIONE_AGGIUNTA = "VERSAMENTO";
 
+	public String getTipoOperazione() {
+		return tipoOperazione;
+	}
+
+	public void setTipoOperazione(String tipoOperazione) {
+		this.tipoOperazione = tipoOperazione;
+	}
+
+	public String getParametri() {
+		return parametri;
+	}
+
+	public void setParametri(String parametri) {
+		this.parametri = parametri;
+	}
+
+	public BigDecimal getImporto() {
+		return importo;
+	}
+
+	public void setImportoTotale(BigDecimal importoTotale) {
+		this.importoTotale = importoTotale;
+	}
+
+	public void setImporto(BigDecimal importo) {
+		this.importo = importo;
+	}
+
+	public BigDecimal getCodPai() {
+		return codPai;
+	}
+
+	public void setCodPai(BigDecimal codPai) {
+		this.codPai = codPai;
+	}
+
+	public BigDecimal getIntervento() {
+		return intervento;
+	}
+
+	public void setIntervento(BigDecimal intervento) {
+		this.intervento = intervento;
+	}
+
+	public Date getDataOperazione() {
+		return dataOperazione;
+	}
+
+	public void setDataOperazione(Date dataOperazione) {
+		this.dataOperazione = dataOperazione;
+	}
+
+	public BigDecimal getId() {
+		return id;
+	}
+
+	public BigDecimal getImportoTotale() {
+		return importoTotale;
+	}
+
 	public static final String OPERAZIONE_PRELIEVO = "PRELIEVO";
 
 	private static final long serialVersionUID = 1L;

@@ -32,6 +32,38 @@ import lombok.Setter;
 
 })
 public class RicevutaCassa implements Serializable {
+	public Integer getNumeroRicevuta() {
+		return numeroRicevuta;
+	}
+
+	public void setNumeroRicevuta(Integer numeroRicevuta) {
+		this.numeroRicevuta = numeroRicevuta;
+	}
+
+	public BigDecimal getImporto() {
+		return importo;
+	}
+
+	public void setImporto(BigDecimal importo) {
+		this.importo = importo;
+	}
+
+	public Date getDataEmissione() {
+		return dataEmissione;
+	}
+
+	public String getUtente() {
+		return utente;
+	}
+
+	public void setUtente(String utente) {
+		this.utente = utente;
+	}
+
+	public void setDataEmissione(Date dataEmissione) {
+		this.dataEmissione = dataEmissione;
+	}
+
 	private static final long serialVersionUID = 1L;
 	@EmbeddedId
 	protected RicevutaCassaPK ricevutaCassaPK;

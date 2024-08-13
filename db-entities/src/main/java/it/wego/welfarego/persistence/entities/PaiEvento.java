@@ -88,6 +88,14 @@ public class PaiEvento implements Serializable {
 		return paiDox;
 	}
 
+	public char getFlgDxStampa() {
+		return flgDxStampa;
+	}
+
+	public Integer getIdEvento() {
+		return idEvento;
+	}
+
 	public String getDesEvento() {
 		return desEvento;
 	}

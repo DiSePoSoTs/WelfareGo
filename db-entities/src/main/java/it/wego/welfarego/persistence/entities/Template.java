@@ -51,13 +51,29 @@ public class Template implements Serializable {
 		return codTmpl;
 	}
 
+	public void setClobTmpl(String clobTmpl) {
+		this.clobTmpl = clobTmpl;
+	}
+
 	@Basic(optional = false)
 	@Lob
 	@Column(name = "CLOB_TMPL", nullable = false)
 	private String clobTmpl;
 
+	public void setCodTmpl(Integer codTmpl) {
+		this.codTmpl = codTmpl;
+	}
+
+	public void setDesTmpl(String desTmpl) {
+		this.desTmpl = desTmpl;
+	}
+
 	public String getNomeFile() {
 		return nomeFile;
+	}
+
+	public void setNomeFile(String nomeFile) {
+		this.nomeFile = nomeFile;
 	}
 
 	public String getClobTmpl() {

@@ -153,8 +153,60 @@ public class Utenti implements Serializable {
 		return profilo;
 	}
 
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public void setProfilo(char profilo) {
+		this.profilo = profilo;
+	}
+
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
+	}
+
+	public void setProblematiche(char problematiche) {
+		this.problematiche = problematiche;
+	}
+
+	public void setNumTel(String numTel) {
+		this.numTel = numTel;
+	}
+
+	public void setNumCell(String numCell) {
+		this.numCell = numCell;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+
+	public void setMotivazione(char motivazione) {
+		this.motivazione = motivazione;
+	}
+
+	public void setIdParamSer(ParametriIndata idParamSer) {
+		this.idParamSer = idParamSer;
+	}
+
+	public void setIdParamLvlAbil(ParametriIndata idParamLvlAbil) {
+		this.idParamLvlAbil = idParamLvlAbil;
+	}
+
+	public void setIdParamPo(ParametriIndata idParamPo) {
+		this.idParamPo = idParamPo;
+	}
+
+	public void setCodUte(Integer codUte) {
+		this.codUte = codUte;
+	}
+
+	public void setCodFisc(String codFisc) {
+		this.codFisc = codFisc;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public List<PaiDocumento> getPaiDocumentoList() {

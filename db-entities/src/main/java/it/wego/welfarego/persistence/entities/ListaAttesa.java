@@ -55,6 +55,74 @@ public class ListaAttesa implements Serializable {
 		return flgTipint;
 	}
 
+	public void setCodListaAtt(Integer codListaAtt) {
+		this.codListaAtt = codListaAtt;
+	}
+
+	public void setDesListaAtt(String desListaAtt) {
+		this.desListaAtt = desListaAtt;
+	}
+
+	public void setFlgTipint(char flgTipint) {
+		this.flgTipint = flgTipint;
+	}
+
+	public void setFlgCog(char flgCog) {
+		this.flgCog = flgCog;
+	}
+
+	public void setFlgNom(char flgNom) {
+		this.flgNom = flgNom;
+	}
+
+	public void setFlgCodFisc(char flgCodFisc) {
+		this.flgCodFisc = flgCodFisc;
+	}
+
+	public void setFlgIsee(char flgIsee) {
+		this.flgIsee = flgIsee;
+	}
+
+	public List<TipologiaIntervento> getTipologiaInterventoList() {
+		return tipologiaInterventoList;
+	}
+
+	public void setFlgDtNasc(char flgDtNasc) {
+		this.flgDtNasc = flgDtNasc;
+	}
+
+	public void setFlgDtDom(char flgDtDom) {
+		this.flgDtDom = flgDtDom;
+	}
+
+	public void setFlgBina(char flgBina) {
+		this.flgBina = flgBina;
+	}
+
+	public void setFlgAs(char flgAs) {
+		this.flgAs = flgAs;
+	}
+
+	public void setFlgUot(char flgUot) {
+		this.flgUot = flgUot;
+	}
+
+	public void setFlgDistSan(char flgDistSan) {
+		this.flgDistSan = flgDistSan;
+	}
+
+	public void setFlgRef(char flgRef) {
+		this.flgRef = flgRef;
+	}
+
+	public void setFlgNumFigli(char flgNumFigli) {
+		this.flgNumFigli = flgNumFigli;
+	}
+
+	public void setTipologiaInterventoList(List<TipologiaIntervento> tipologiaInterventoList) {
+		this.tipologiaInterventoList = tipologiaInterventoList;
+	}
+
 	public char getFlgCog() {
 		return flgCog;
 	}

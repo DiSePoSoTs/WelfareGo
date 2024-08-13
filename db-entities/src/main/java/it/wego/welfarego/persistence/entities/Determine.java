@@ -63,6 +63,10 @@ public class Determine implements Serializable {
 		this.idDetermina = idDetermina;
 	}
 
+	public List<PaiEvento> getPaiEventoList() {
+		return paiEventoList;
+	}
+
 	public Date getTsDetermina() {
 		return tsDetermina;
 	}
@@ -83,6 +87,18 @@ public class Determine implements Serializable {
 		return hash;
 	}
 
+	public Integer getIdDetermina() {
+		return idDetermina;
+	}
+
+	public void setTsDetermina(Date tsDetermina) {
+		this.tsDetermina = tsDetermina;
+	}
+
+	public void setNumDetermina(String numDetermina) {
+		this.numDetermina = numDetermina;
+	}
+
 	@Override
 	public boolean equals(Object object) {
 		// TODO: Warning - this method won't work in the case the id fields are not set
@@ -95,6 +111,10 @@ public class Determine implements Serializable {
 			return false;
 		}
 		return true;
+	}
+
+	public void setPaiEventoList(List<PaiEvento> paiEventoList) {
+		this.paiEventoList = paiEventoList;
 	}
 
 	@Override

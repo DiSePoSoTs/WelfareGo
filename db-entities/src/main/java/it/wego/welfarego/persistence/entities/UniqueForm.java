@@ -54,6 +54,22 @@ public class UniqueForm implements Serializable {
 	@Column(name = "DES_FORM", nullable = false, length = 765)
 	private String desForm;
 
+	public String getDesForm() {
+		return desForm;
+	}
+
+	public String getUrlForm() {
+		return urlForm;
+	}
+
+	public String getParamForm() {
+		return paramForm;
+	}
+
+	public String getClassForm() {
+		return classForm;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "URL_FORM", nullable = false, length = 255)
 	private String urlForm;

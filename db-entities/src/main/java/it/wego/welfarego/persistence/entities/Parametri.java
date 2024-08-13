@@ -174,6 +174,14 @@ public class Parametri implements Serializable {
 		return em.find(Configuration.class, "url.insiel.csr").getValue();
 	}
 
+	public void setTipParam(TipologiaParametri tipParam) {
+		this.tipParam = tipParam;
+	}
+
+	public void setParametriIndataList(List<ParametriIndata> parametriIndataList) {
+		this.parametriIndataList = parametriIndataList;
+	}
+
 	public static boolean isCSREnabled(EntityManager em) {
 		return Boolean.valueOf(em.find(Configuration.class, "abilita.csr").getValue());
 	}
@@ -216,6 +224,18 @@ public class Parametri implements Serializable {
 	@Basic(optional = false)
 	@Column(name = "COD_PARAM", nullable = false, length = 10)
 	private String codParam;
+
+	public char getFlgAttivo() {
+		return flgAttivo;
+	}
+
+	public void setFlgAttivo(char flgAttivo) {
+		this.flgAttivo = flgAttivo;
+	}
+
+	public void setCodParam(String codParam) {
+		this.codParam = codParam;
+	}
 
 	public String getCodParam() {
 		return codParam;

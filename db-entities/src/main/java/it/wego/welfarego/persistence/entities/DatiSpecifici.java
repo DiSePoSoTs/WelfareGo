@@ -58,6 +58,58 @@ public class DatiSpecifici implements Serializable {
 		return flgObb;
 	}
 
+	public void setFlgObb(char flgObb) {
+		this.flgObb = flgObb;
+	}
+
+	public void setTipoCampo(char tipoCampo) {
+		this.tipoCampo = tipoCampo;
+	}
+
+	public void setValAmm(String valAmm) {
+		this.valAmm = valAmm;
+	}
+
+	public void setFlgEdit(char flgEdit) {
+		this.flgEdit = flgEdit;
+	}
+
+	public void setFlgVis(char flgVis) {
+		this.flgVis = flgVis;
+	}
+
+	public void setValDef(String valDef) {
+		this.valDef = valDef;
+	}
+
+	public void setRegExpr(String regExpr) {
+		this.regExpr = regExpr;
+	}
+
+	public void setMsgErrore(String msgErrore) {
+		this.msgErrore = msgErrore;
+	}
+
+	public void setLunghezza(short lunghezza) {
+		this.lunghezza = lunghezza;
+	}
+
+	public void setCodCampo(String codCampo) {
+		this.codCampo = codCampo;
+	}
+
+	public void setDesCampo(String desCampo) {
+		this.desCampo = desCampo;
+	}
+
+	public void setCodCampoCsr(String codCampoCsr) {
+		this.codCampoCsr = codCampoCsr;
+	}
+
+	public void setDecimali(Short decimali) {
+		this.decimali = decimali;
+	}
+
 	public char getTipoCampo() {
 		return tipoCampo;
 	}

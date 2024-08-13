@@ -40,6 +40,18 @@ public class Indisponibilita implements Serializable {
 	@Column(name = "ID_IND", nullable = false)
 	private Integer idInd;
 
+	public Utenti getUtenti() {
+		return utenti;
+	}
+
+	public void setUtenti(Utenti utenti) {
+		this.utenti = utenti;
+	}
+
+	public void setTsFineApp(Date tsFineApp) {
+		this.tsFineApp = tsFineApp;
+	}
+
 	public Integer getIdInd() {
 		return idInd;
 	}

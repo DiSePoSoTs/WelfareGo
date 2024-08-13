@@ -47,6 +47,10 @@ public class UotIndirizzo implements Serializable {
 	@Column(name = "CIVICO")
 	private String civico;
 
+	public Integer getUot() {
+		return uot;
+	}
+
 	@Column(name = "BARRATO")
 	private String barrato;
 

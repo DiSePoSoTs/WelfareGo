@@ -27,6 +27,18 @@ public class MapDatiSpecTipintPK implements Serializable {
 	@Column(name = "COD_TIPINT", nullable = false, length = 10)
 	private String codTipint;
 
+	public String getCodTipint() {
+		return codTipint;
+	}
+
+	public void setCodTipint(String codTipint) {
+		this.codTipint = codTipint;
+	}
+
+	public void setCodCampo(String codCampo) {
+		this.codCampo = codCampo;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "COD_CAMPO", nullable = false, length = 20)
 	private String codCampo;

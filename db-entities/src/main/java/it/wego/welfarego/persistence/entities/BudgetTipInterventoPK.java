@@ -26,6 +26,18 @@ public class BudgetTipInterventoPK implements Serializable {
 	@Column(name = "COD_TIPINT", nullable = false, length = 10)
 	private String codTipint;
 
+	public void setCodTipint(String codTipint) {
+		this.codTipint = codTipint;
+	}
+
+	public void setCodAnno(short codAnno) {
+		this.codAnno = codAnno;
+	}
+
+	public void setCodImpe(String codImpe) {
+		this.codImpe = codImpe;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "COD_ANNO", nullable = false)
 	private short codAnno;

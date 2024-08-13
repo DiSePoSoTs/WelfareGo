@@ -56,6 +56,18 @@ public class MapDatiSpecTipint implements Serializable {
 	@Column(name = "ROW_CAMPO", nullable = false)
 	private short rowCampo;
 
+	public void setRowCampo(short rowCampo) {
+		this.rowCampo = rowCampo;
+	}
+
+	public void setColCampo(short colCampo) {
+		this.colCampo = colCampo;
+	}
+
+	public void setMapDatiSpecTipintPK(MapDatiSpecTipintPK mapDatiSpecTipintPK) {
+		this.mapDatiSpecTipintPK = mapDatiSpecTipintPK;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "COL_CAMPO", nullable = false)
 	private short colCampo;

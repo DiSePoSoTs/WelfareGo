@@ -69,6 +69,26 @@ public class BudgetTipIntervento implements Serializable {
 		this.numDx = numDx;
 	}
 
+	public void setBudgetTipInterventoPK(BudgetTipInterventoPK budgetTipInterventoPK) {
+		this.budgetTipInterventoPK = budgetTipInterventoPK;
+	}
+
+	public void setAnnoErogazione(Short annoErogazione) {
+		this.annoErogazione = annoErogazione;
+	}
+
+	public void setCodConto(int codConto) {
+		this.codConto = codConto;
+	}
+
+	public void setCodSconto(int codSconto) {
+		this.codSconto = codSconto;
+	}
+
+	public void setCodCap(int codCap) {
+		this.codCap = codCap;
+	}
+
 	public Date getDtDx() {
 		return dtDx;
 	}

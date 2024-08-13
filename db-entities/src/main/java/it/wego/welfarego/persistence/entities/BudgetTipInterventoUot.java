@@ -54,6 +54,18 @@ public class BudgetTipInterventoUot implements Serializable {
 		return bdgDispOre;
 	}
 
+	public void setBdgDispEur(BigDecimal bdgDispEur) {
+		this.bdgDispEur = bdgDispEur;
+	}
+
+	public void setBudgetTipInterventoUotPK(BudgetTipInterventoUotPK budgetTipInterventoUotPK) {
+		this.budgetTipInterventoUotPK = budgetTipInterventoUotPK;
+	}
+
+	public void setBdgDispOre(BigDecimal bdgDispOre) {
+		this.bdgDispOre = bdgDispOre;
+	}
+
 	public BudgetTipInterventoUotPK getBudgetTipInterventoUotPK() {
 		return budgetTipInterventoUotPK;
 	}
