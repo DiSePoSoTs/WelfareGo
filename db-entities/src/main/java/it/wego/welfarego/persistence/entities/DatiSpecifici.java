@@ -70,6 +70,10 @@ public class DatiSpecifici implements Serializable {
 	@Column(name = "FLG_EDIT", nullable = false)
 	private char flgEdit;
 
+	public String getCodCampoCsr() {
+		return codCampoCsr;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "FLG_VIS", nullable = false)
 	private char flgVis;
@@ -89,6 +93,14 @@ public class DatiSpecifici implements Serializable {
 	@Basic(optional = false)
 	@Column(name = "LUNGHEZZA", nullable = false)
 	private short lunghezza;
+
+	public String getDesCampo() {
+		return desCampo;
+	}
+
+	public Short getDecimali() {
+		return decimali;
+	}
 
 	@Column(name = "DECIMALI")
 	private Short decimali;

@@ -47,6 +47,10 @@ public class Template implements Serializable {
 	@Column(name = "NOME_FILE", length = 765)
 	private String nomeFile;
 
+	public Integer getCodTmpl() {
+		return codTmpl;
+	}
+
 	@Basic(optional = false)
 	@Lob
 	@Column(name = "CLOB_TMPL", nullable = false)
@@ -58,6 +62,10 @@ public class Template implements Serializable {
 
 	@OneToMany(mappedBy = "codTmpl")
 	private List<UniqueTasklist> uniqueTasklistList;
+
+	public String getDesTmpl() {
+		return desTmpl;
+	}
 
 	@OneToMany(mappedBy = "codTmpl")
 	private List<PaiEvento> paiEventoList;

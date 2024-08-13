@@ -68,6 +68,10 @@ public class Utenti implements Serializable {
 	@Column(name = "COD_FISC", nullable = false, length = 16)
 	private String codFisc;
 
+	public String getCodFisc() {
+		return codFisc;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "NOME", nullable = false, length = 765)
 	private String nome;

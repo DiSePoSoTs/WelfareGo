@@ -44,6 +44,14 @@ public class TipologiaParametri implements Serializable {
 		return tipParam;
 	}
 
+	public String getDesTipParam() {
+		return desTipParam;
+	}
+
+	public char getFlgIndata() {
+		return flgIndata;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "DES_TIP_PARAM", nullable = false, length = 765)
 	private String desTipParam;

@@ -42,6 +42,10 @@ public class Struttura implements Serializable {
 	@Column(name = "INDIRIZZO")
 	private String indirizzo;
 
+	public String getCsrId() {
+		return csrId;
+	}
+
 	@JoinColumn(name = "COD_TIPINT", referencedColumnName = "COD_TIPINT")
 	@ManyToOne
 	private TipologiaIntervento intervento;

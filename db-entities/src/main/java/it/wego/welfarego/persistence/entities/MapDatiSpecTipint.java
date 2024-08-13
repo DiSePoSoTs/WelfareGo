@@ -61,6 +61,10 @@ public class MapDatiSpecTipint implements Serializable {
 	@JoinFetch(value = JoinFetchType.INNER)
 	private DatiSpecifici datiSpecifici;
 
+	public short getColCampo() {
+		return colCampo;
+	}
+
 	public DatiSpecifici getDatiSpecifici() {
 		return datiSpecifici;
 	}

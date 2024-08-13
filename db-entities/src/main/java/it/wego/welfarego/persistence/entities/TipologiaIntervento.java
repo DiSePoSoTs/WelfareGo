@@ -91,6 +91,10 @@ public class TipologiaIntervento implements Serializable {
 		return flgDocumentoDiAutorizzazione;
 	}
 
+	public String getCodTipintCsr() {
+		return codTipintCsr;
+	}
+
 	public Template getTmplDocumentoDiAutorizzazione() {
 		return tmplDocumentoDiAutorizzazione;
 	}
@@ -162,6 +166,18 @@ public class TipologiaIntervento implements Serializable {
 	@Basic(optional = false)
 	@Column(name = "FLG_PAGAM", nullable = false)
 	private char flgPagam;
+
+	public Template getCodTmplVarMul() {
+		return codTmplVarMul;
+	}
+
+	public Template getCodTmplChiusMul() {
+		return codTmplChiusMul;
+	}
+
+	public Template getCodTmplRicevuta() {
+		return codTmplRicevuta;
+	}
 
 	public char getFlgPagam() {
 		return flgPagam;

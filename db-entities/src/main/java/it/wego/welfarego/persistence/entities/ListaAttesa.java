@@ -83,6 +83,14 @@ public class ListaAttesa implements Serializable {
 	@Column(name = "FLG_DT_DOM", nullable = false)
 	private char flgDtDom;
 
+	public String getDesListaAtt() {
+		return desListaAtt;
+	}
+
+	public Integer getCodListaAtt() {
+		return codListaAtt;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "FLG_BINA", nullable = false)
 	private char flgBina;

@@ -67,6 +67,10 @@ public class ParametriIndata implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtIniVal;
 
+	public Date getDateParam() {
+		return dateParam;
+	}
+
 	@JoinColumn(name = "ID_PARAM", referencedColumnName = "ID_PARAM", nullable = false)
 	@ManyToOne(optional = false)
 	private Parametri idParam;

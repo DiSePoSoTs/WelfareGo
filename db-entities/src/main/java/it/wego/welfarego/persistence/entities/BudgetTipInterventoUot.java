@@ -54,6 +54,10 @@ public class BudgetTipInterventoUot implements Serializable {
 		return bdgDispOre;
 	}
 
+	public BudgetTipInterventoUotPK getBudgetTipInterventoUotPK() {
+		return budgetTipInterventoUotPK;
+	}
+
 	@JoinColumn(name = "ID_PARAM_UOT", referencedColumnName = "ID_PARAM_INDATA", nullable = false, insertable = false, updatable = false)
 	@ManyToOne(optional = false)
 	private ParametriIndata parametriIndataUot;

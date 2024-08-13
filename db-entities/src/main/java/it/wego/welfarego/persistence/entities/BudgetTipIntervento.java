@@ -49,6 +49,10 @@ public class BudgetTipIntervento implements Serializable {
 	@Column(name = "COD_CONTO", nullable = false)
 	private int codConto;
 
+	public List<BudgetTipInterventoUot> getBudgetTipInterventoUotList() {
+		return budgetTipInterventoUotList;
+	}
+
 	public int getNumDx() {
 		return numDx;
 	}
@@ -79,6 +83,10 @@ public class BudgetTipIntervento implements Serializable {
 
 	@Column(name = "ANNO_EROGAZIONE")
 	private Short annoErogazione;
+
+	public int getCodSconto() {
+		return codSconto;
+	}
 
 	public Short getAnnoErogazione() {
 		return annoErogazione;
