@@ -48,6 +48,10 @@ public class Provincia implements Serializable {
 		return stato;
 	}
 
+	public ProvinciaPK getProvinciaPK() {
+		return provinciaPK;
+	}
+
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "provincia")
 	private List<Comune> comuneList;
 

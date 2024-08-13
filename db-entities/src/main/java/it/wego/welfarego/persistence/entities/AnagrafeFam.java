@@ -30,6 +30,18 @@ import javax.persistence.Table;
 public class AnagrafeFam implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	public AnagrafeFamPK getAnagrafeFamPK() {
+		return anagrafeFamPK;
+	}
+
+	public void setAnagrafeFamPK(AnagrafeFamPK anagrafeFamPK) {
+		this.anagrafeFamPK = anagrafeFamPK;
+	}
+
+	public void setCodQual(ParametriIndata codQual) {
+		this.codQual = codQual;
+	}
+
 	@EmbeddedId
 	protected AnagrafeFamPK anagrafeFamPK;
 	

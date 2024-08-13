@@ -48,6 +48,14 @@ public class ToponomasticaCivici implements Serializable {
 		return desCiv;
 	}
 
+	public ToponomasticaCiviciPK getToponomasticaCiviciPK() {
+		return toponomasticaCiviciPK;
+	}
+
+	public ParametriIndata getIdParamUotRif() {
+		return idParamUotRif;
+	}
+
 	@JoinColumns({
 			@JoinColumn(name = "COD_STATO", referencedColumnName = "COD_STATO", nullable = false, insertable = false, updatable = false),
 			@JoinColumn(name = "COD_PROV", referencedColumnName = "COD_PROV", nullable = false, insertable = false, updatable = false),

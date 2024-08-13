@@ -87,12 +87,220 @@ public class AnagrafeSoc implements Serializable {
 		return codAna;
 	}
 
+	public Character getRichiestaAssegnoAccompagnamento() {
+		return richiestaAssegnoAccompagnamento;
+	}
+
+	public BigDecimal getReddito() {
+		return reddito;
+	}
+
+	public BigDecimal getReddMens() {
+		return reddMens;
+	}
+
 	@Id
 	@Basic(optional = false)
 	@GeneratedValue(generator = "anagrafeSocSequence")
 	@SequenceGenerator(name = "anagrafeSocSequence", sequenceName = "WG_SEQ", allocationSize = 50)
 	@Column(name = "COD_ANA", nullable = false)
 	private Integer codAna;
+
+	public Date getDataUpdateReddito() {
+		return dataUpdateReddito;
+	}
+
+	public List<Mandato> getMandatoList() {
+		return mandatoList;
+	}
+
+	public List<Mandato> getMandatoList1() {
+		return mandatoList1;
+	}
+
+	public List<PaiCdg> getPaiCdgList() {
+		return paiCdgList;
+	}
+
+	public List<LogAnagrafe> getLogAnagrafeList() {
+		return logAnagrafeList;
+	}
+
+	public List<PaiInterventoCivObb> getPaiInterventoCivObbList() {
+		return paiInterventoCivObbList;
+	}
+
+	public List<PaiInterventoAnagrafica> getPaiInterventoAnagraficaList() {
+		return paiInterventoAnagraficaList;
+	}
+
+	public List<Contatto> getContattoList() {
+		return contattoList;
+	}
+
+	public Utenti getCreationUser() {
+		return creationUser;
+	}
+
+	public Date getCreationDate() {
+		return creationDate;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getSottozona() {
+		return sottozona;
+	}
+
+	public Date getDataAggBatch() {
+		return dataAggBatch;
+	}
+
+	public List<Fattura> getFatturaList() {
+		return fatturaList;
+	}
+
+	public ParametriIndata getIdParamModPagam() {
+		return idParamModPagam;
+	}
+
+	public String getIdCsr() {
+		return idCsr;
+	}
+
+	public String getDiario() {
+		return diario;
+	}
+
+	public Date getDataUltimaRetifica() {
+		return dataUltimaRetifica;
+	}
+
+	public String getEnteGestore() {
+		return enteGestore;
+	}
+
+	public String getFlgAccomp() {
+		return flgAccomp;
+	}
+
+	public String getZona() {
+		return zona;
+	}
+
+	public Short getPercInvCiv() {
+		return percInvCiv;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	public String getNumTel() {
+		return numTel;
+	}
+
+	public String getMedicoBase() {
+		return medicoBase;
+	}
+
+	public ParametriIndata getIdParamStatoFis() {
+		return idParamStatoFis;
+	}
+
+	public ParametriIndata getIdParamTipologiaResidenza() {
+		return idParamTipologiaResidenza;
+	}
+
+	public ParametriIndata getIdParamTipAll() {
+		return idParamTipAll;
+	}
+
+	public ParametriIndata getIdParamTit() {
+		return idParamTit;
+	}
+
+	public char getFlgEmail() {
+		return flgEmail;
+	}
+
+	public ParametriIndata getIdParamRedd() {
+		return idParamRedd;
+	}
+
+	public ParametriIndata getIdParamStatoCiv() {
+		return idParamStatoCiv;
+	}
+
+	public String getFlgSex() {
+		return flgSex;
+	}
+
+	public char getFlgSms() {
+		return flgSms;
+	}
+
+	public ParametriIndata getIdParamCondProf() {
+		return idParamCondProf;
+	}
+
+	public ParametriIndata getIdParamPosAna() {
+		return idParamPosAna;
+	}
+
+	public Date getDataRichiestaAssegnoAccompagnamento() {
+		return dataRichiestaAssegnoAccompagnamento;
+	}
+
+	public String getDistSan() {
+		return distSan;
+	}
+
+	public Date getDtAggAb() {
+		return dtAggAb;
+	}
+
+	public ParametriIndata getCondFam() {
+		return condFam;
+	}
+
+	public String getAttivitaLavoroStudio() {
+		return attivitaLavoroStudio;
+	}
+
+	public String getCognomeConiuge() {
+		return cognomeConiuge;
+	}
+
+	public Date getDtMorte() {
+		return dtMorte;
+	}
+
+	public ParametriIndata getCodStatoNaz() {
+		return codStatoNaz;
+	}
+
+	public Utenti getCodUteEducatore() {
+		return codUteEducatore;
+	}
+
+	public String getCodAnaCom() {
+		return codAnaCom;
+	}
+
+	public String getCodAss() {
+		return codAss;
+	}
+
+	public ParametriIndata getCodSegnDa() {
+		return codSegnDa;
+	}
+
+	public Stato getCodStatoCitt() {
+		return codStatoCitt;
+	}
 
 	@Basic(optional = false)
 	@Column(name = "FLG_PERS_FG", length = 1, nullable = false)

@@ -39,6 +39,14 @@ public class Toponomastica implements Serializable {
 	@Column(name = "DES_VIA", nullable = false, length = 765)
 	private String desVia;
 
+	public ToponomasticaPK getToponomasticaPK() {
+		return toponomasticaPK;
+	}
+
+	public List<ToponomasticaCivici> getToponomasticaCiviciList() {
+		return toponomasticaCiviciList;
+	}
+
 	public String getDesVia() {
 		return desVia;
 	}

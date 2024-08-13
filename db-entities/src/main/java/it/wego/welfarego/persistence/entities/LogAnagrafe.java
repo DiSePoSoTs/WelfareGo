@@ -41,6 +41,38 @@ public class LogAnagrafe implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date tsEve;
 
+	public Date getTsEve() {
+		return tsEve;
+	}
+
+	public void setTsEve(Date tsEve) {
+		this.tsEve = tsEve;
+	}
+
+	public Utenti getCodUte() {
+		return codUte;
+	}
+
+	public void setCodUte(Utenti codUte) {
+		this.codUte = codUte;
+	}
+
+	public Pai getCodPai() {
+		return codPai;
+	}
+
+	public void setCodPai(Pai codPai) {
+		this.codPai = codPai;
+	}
+
+	public AnagrafeSoc getCodAna() {
+		return codAna;
+	}
+
+	public void setCodAna(AnagrafeSoc codAna) {
+		this.codAna = codAna;
+	}
+
 	@JoinColumn(name = "COD_UTE", referencedColumnName = "COD_UTE", nullable = false)
 	@ManyToOne(optional = false)
 	private Utenti codUte;

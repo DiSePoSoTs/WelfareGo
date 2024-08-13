@@ -96,8 +96,24 @@ public class ParametriIndata implements Serializable {
 		return decimalParam;
 	}
 
+	public String getTxt2Param() {
+		return txt2Param;
+	}
+
+	public String getTxt3Param() {
+		return txt3Param;
+	}
+
+	public String getTxt4Param() {
+		return txt4Param;
+	}
+
 	@Column(name = "DECIMAL_PARAM", precision = 16, scale = 6)
 	private BigDecimal decimalParam;
+
+	public Date getDtIniVal() {
+		return dtIniVal;
+	}
 
 	@Column(name = "TXT1_PARAM", length = 90)
 	private String txt1Param;

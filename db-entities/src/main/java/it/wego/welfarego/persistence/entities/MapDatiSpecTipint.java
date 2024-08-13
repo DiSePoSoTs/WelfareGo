@@ -35,6 +35,14 @@ import lombok.Setter;
 		@NamedQuery(name = "MapDatiSpecTipint.findByColCampo", query = "SELECT m FROM MapDatiSpecTipint m WHERE m.colCampo = :colCampo") })
 public class MapDatiSpecTipint implements Serializable {
 
+	public short getRowCampo() {
+		return rowCampo;
+	}
+
+	public TipologiaIntervento getTipologiaIntervento() {
+		return tipologiaIntervento;
+	}
+
 	private static final long serialVersionUID = 1L;
 
 	@EmbeddedId

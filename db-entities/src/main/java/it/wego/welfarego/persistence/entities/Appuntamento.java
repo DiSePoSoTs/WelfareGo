@@ -37,6 +37,66 @@ public class Appuntamento implements Serializable {
 	@SequenceGenerator(name = "appuntamentoSequence", sequenceName = "WG_SEQ", allocationSize = 50)
 	@Column(name = "ID_APP", nullable = false)
 	private Integer idApp;
+	public Integer getIdApp() {
+		return idApp;
+	}
+
+	public void setIdApp(Integer idApp) {
+		this.idApp = idApp;
+	}
+
+	public Date getTsFineApp() {
+		return tsFineApp;
+	}
+
+	public void setTsFineApp(Date tsFineApp) {
+		this.tsFineApp = tsFineApp;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+
+	public Utenti getCodUte() {
+		return codUte;
+	}
+
+	public void setCodUte(Utenti codUte) {
+		this.codUte = codUte;
+	}
+
+	public Utenti getUtenti() {
+		return utenti;
+	}
+
+	public void setUtenti(Utenti utenti) {
+		this.utenti = utenti;
+	}
+
+	public Pai getCodPai() {
+		return codPai;
+	}
+
+	public void setCodPai(Pai codPai) {
+		this.codPai = codPai;
+	}
+
+	public int getCodAs() {
+		return codAs;
+	}
+
+	public void setCodAs(int codAs) {
+		this.codAs = codAs;
+	}
+
+	public void setTsIniApp(Date tsIniApp) {
+		this.tsIniApp = tsIniApp;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "TS_FINE_APP", nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)

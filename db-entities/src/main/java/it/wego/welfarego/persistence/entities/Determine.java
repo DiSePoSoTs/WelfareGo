@@ -63,6 +63,14 @@ public class Determine implements Serializable {
 		this.idDetermina = idDetermina;
 	}
 
+	public Date getTsDetermina() {
+		return tsDetermina;
+	}
+
+	public String getNumDetermina() {
+		return numDetermina;
+	}
+
 	public Determine(Integer idDetermina, Date tsDetermina) {
 		this.idDetermina = idDetermina;
 		this.tsDetermina = tsDetermina;

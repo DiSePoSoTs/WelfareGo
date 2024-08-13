@@ -76,6 +76,94 @@ public class CodaCsr implements Serializable {
 	@Column(name = "AZIONE")
 	private String azione;
 
+	public void setNumeroTentativi(int numeroTentativi) {
+		this.numeroTentativi = numeroTentativi;
+	}
+
+	public Date getDtCallcsr() {
+		return dtCallcsr;
+	}
+
+	public void setDtCallcsr(Date dtCallcsr) {
+		this.dtCallcsr = dtCallcsr;
+	}
+
+	public Date getDtInscsr() {
+		return dtInscsr;
+	}
+
+	public void setDtInscsr(Date dtInscsr) {
+		this.dtInscsr = dtInscsr;
+	}
+
+	public String getTestoErrore() {
+		return testoErrore;
+	}
+
+	public void setTestoErrore(String testoErrore) {
+		this.testoErrore = testoErrore;
+	}
+
+	public BigInteger getCodAna() {
+		return codAna;
+	}
+
+	public Date getDtInscoda() {
+		return dtInscoda;
+	}
+
+	public void setDtInscoda(Date dtInscoda) {
+		this.dtInscoda = dtInscoda;
+	}
+
+	public void setCodAna(BigInteger codAna) {
+		this.codAna = codAna;
+	}
+
+	public void setCodPai(BigInteger codPai) {
+		this.codPai = codPai;
+	}
+
+	public void setCodTipint(String codTipint) {
+		this.codTipint = codTipint;
+	}
+
+	public void setCntTipint(BigInteger cntTipint) {
+		this.cntTipint = cntTipint;
+	}
+
+	public void setAzione(String azione) {
+		this.azione = azione;
+	}
+
+	public void setDtAvvio(Date dtAvvio) {
+		this.dtAvvio = dtAvvio;
+	}
+
+	public BigInteger getCodPai() {
+		return codPai;
+	}
+
+	public String getCodTipint() {
+		return codTipint;
+	}
+
+	public BigInteger getCntTipint() {
+		return cntTipint;
+	}
+
+	public String getAzione() {
+		return azione;
+	}
+
+	public int getNumeroTentativi() {
+		return numeroTentativi;
+	}
+
+	public Date getDtAvvio() {
+		return dtAvvio;
+	}
+
 	@Column(name = "DT_INSCODA")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtInscoda;

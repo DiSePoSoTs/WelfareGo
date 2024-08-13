@@ -56,6 +56,10 @@ public class Luogo implements Serializable, Cloneable {
 	@ManyToOne
 	private Provincia provincia;
 
+	public String getProvinciaStr() {
+		return provinciaStr;
+	}
+
 	public Provincia getProvincia() {
 		return provincia;
 	}

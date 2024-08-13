@@ -322,6 +322,222 @@ public class Pai implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "pai")
 	private List<PaiMacroProblematica> paiMacroProblematicaList;
 
+	public void setCarAltro(String carAltro) {
+		this.carAltro = carAltro;
+	}
+
+	public void setDtPg(Date dtPg) {
+		this.dtPg = dtPg;
+	}
+
+	public void setDtDiag(Date dtDiag) {
+		this.dtDiag = dtDiag;
+	}
+
+	public void setDtCambioFascia(Date dtCambioFascia) {
+		this.dtCambioFascia = dtCambioFascia;
+	}
+
+	public void setMotivChius(String motivChius) {
+		this.motivChius = motivChius;
+	}
+
+	public void setFlgCarSa(Character flgCarSa) {
+		this.flgCarSa = flgCarSa;
+	}
+
+	public void setFlgCarSs(Character flgCarSs) {
+		this.flgCarSs = flgCarSs;
+	}
+
+	public void setFlgCarParr(Character flgCarParr) {
+		this.flgCarParr = flgCarParr;
+	}
+
+	public void setNumPg(String numPg) {
+		this.numPg = numPg;
+	}
+
+	public void setNumFigli(Integer numFigli) {
+		this.numFigli = numFigli;
+	}
+
+	public void setNumFigliConv(Integer numFigliConv) {
+		this.numFigliConv = numFigliConv;
+	}
+
+	public void setFlgCarVol(Character flgCarVol) {
+		this.flgCarVol = flgCarVol;
+	}
+
+	public void setMotiv(String motiv) {
+		this.motiv = motiv;
+	}
+
+	public void setIsee3(BigDecimal isee3) {
+		this.isee3 = isee3;
+	}
+
+	public void setFlgCarAltro(Character flgCarAltro) {
+		this.flgCarAltro = flgCarAltro;
+	}
+
+	public void setIsee(BigDecimal isee) {
+		this.isee = isee;
+	}
+
+	public void setIsee2(BigDecimal isee2) {
+		this.isee2 = isee2;
+	}
+
+	public void setDtScadIsee(Date dtScadIsee) {
+		this.dtScadIsee = dtScadIsee;
+	}
+
+	public void setHabitat(Character habitat) {
+		this.habitat = habitat;
+	}
+
+	public void setCodAna(CartellaSociale codAna) {
+		this.codAna = codAna;
+	}
+
+	public String getCarAltro() {
+		return carAltro;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public static Character getStatoAperto() {
+		return STATO_APERTO;
+	}
+
+	public static Character getStatoChiuso() {
+		return STATO_CHIUSO;
+	}
+
+	public static Character getStatoSospeso() {
+		return STATO_SOSPESO;
+	}
+
+	public static Character getStatoRifiutato() {
+		return STATO_RIFIUTATO;
+	}
+
+	public Character getFlgCsr() {
+		return flgCsr;
+	}
+
+	public Date getDtInvioCsr() {
+		return dtInvioCsr;
+	}
+
+	public Character getFlgModCsr() {
+		return flgModCsr;
+	}
+
+	public Date getDtChiusPai() {
+		return dtChiusPai;
+	}
+
+	public String getMotivChius() {
+		return motivChius;
+	}
+
+	public String getNumPg() {
+		return numPg;
+	}
+
+	public Date getDtPg() {
+		return dtPg;
+	}
+
+	public Integer getNumFigli() {
+		return numFigli;
+	}
+
+	public Integer getNumFigliConv() {
+		return numFigliConv;
+	}
+
+	public String getProvvGiudiz() {
+		return provvGiudiz;
+	}
+
+	public String getNoteCondFam() {
+		return noteCondFam;
+	}
+
+	public Character getFlgAgeSan() {
+		return flgAgeSan;
+	}
+
+	public Character getFlgCarSa() {
+		return flgCarSa;
+	}
+
+	public Character getFlgCarSs() {
+		return flgCarSs;
+	}
+
+	public Character getFlgCarVol() {
+		return flgCarVol;
+	}
+
+	public Character getFlgCarParr() {
+		return flgCarParr;
+	}
+
+	public Character getFlgCarAltro() {
+		return flgCarAltro;
+	}
+
+	public Date getDtDiag() {
+		return dtDiag;
+	}
+
+	public BigDecimal getIsee() {
+		return isee;
+	}
+
+	public BigDecimal getIsee2() {
+		return isee2;
+	}
+
+	public BigDecimal getIsee3() {
+		return isee3;
+	}
+
+	public Date getDtScadIsee() {
+		return dtScadIsee;
+	}
+
+	public Character getFlgDemenza() {
+		return flgDemenza;
+	}
+
+	public Character getHabitat() {
+		return habitat;
+	}
+
+	public List<LogAnagrafe> getLogAnagrafeList() {
+		return logAnagrafeList;
+	}
+
+	public List<PaiEvento> getPaiEventoList() {
+		return paiEventoList;
+	}
+
+	public Date getDtCambioFascia() {
+		return dtCambioFascia;
+	}
+
+	public Short getAdl() {
+		return adl;
+	}
+
 	@Column(name = "DT_CAMBIO_FASCIA")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtCambioFascia;

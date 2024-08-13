@@ -35,6 +35,18 @@ public class ComunePK implements Serializable {
 	@Column(name = "COD_COM", nullable = false, length = 10)
 	private String codCom;
 
+	public String getCodStato() {
+		return codStato;
+	}
+
+	public String getCodProv() {
+		return codProv;
+	}
+
+	public String getCodCom() {
+		return codCom;
+	}
+
 	public ComunePK() {
 	}
 

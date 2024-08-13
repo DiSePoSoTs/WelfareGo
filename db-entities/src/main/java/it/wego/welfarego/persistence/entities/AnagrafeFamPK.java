@@ -31,6 +31,22 @@ public class AnagrafeFamPK implements Serializable {
 	@Column(name = "COD_ANA_FAM", nullable = false)
 	private int codAnaFam;
 
+	public int getCodAna() {
+		return codAna;
+	}
+
+	public void setCodAna(int codAna) {
+		this.codAna = codAna;
+	}
+
+	public int getCodAnaFam() {
+		return codAnaFam;
+	}
+
+	public void setCodAnaFam(int codAnaFam) {
+		this.codAnaFam = codAnaFam;
+	}
+
 	public AnagrafeFamPK() {
 	}
 

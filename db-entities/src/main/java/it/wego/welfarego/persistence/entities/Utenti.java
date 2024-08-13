@@ -104,6 +104,10 @@ public class Utenti implements Serializable {
 	@Column(name = "COGNOME", nullable = false, length = 765)
 	private String cognome;
 
+	public String getUsername() {
+		return username;
+	}
+
 	@Column(name = "NUM_TEL", length = 20)
 	private String numTel;
 
@@ -112,6 +116,82 @@ public class Utenti implements Serializable {
 
 	@Column(name = "EMAIL", length = 200)
 	private String email;
+
+	public String getNumTel() {
+		return numTel;
+	}
+
+	public String getNumCell() {
+		return numCell;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	public char getMotivazione() {
+		return motivazione;
+	}
+
+	public char getProblematiche() {
+		return problematiche;
+	}
+
+	public void setAssociazione(Associazione associazione) {
+		this.associazione = associazione;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public char getProfilo() {
+		return profilo;
+	}
+
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
+	}
+
+	public List<PaiDocumento> getPaiDocumentoList() {
+		return paiDocumentoList;
+	}
+
+	public List<Pai> getPaiList() {
+		return paiList;
+	}
+
+	public List<Indisponibilita> getIndisponibilitaList() {
+		return indisponibilitaList;
+	}
+
+	public List<LogAnagrafe> getLogAnagrafeList() {
+		return logAnagrafeList;
+	}
+
+	public List<PaiEvento> getPaiEventoList() {
+		return paiEventoList;
+	}
+
+	public ParametriIndata getIdParamSer() {
+		return idParamSer;
+	}
+
+	public ParametriIndata getIdParamLvlAbil() {
+		return idParamLvlAbil;
+	}
+
+	public List<Contatto> getContattoList() {
+		return contattoList;
+	}
+
+	public ParametriIndata getIdParamPo() {
+		return idParamPo;
+	}
 
 	@Column(name = "NOTE", length = 3000)
 	private String note;

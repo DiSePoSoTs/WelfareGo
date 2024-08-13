@@ -46,6 +46,22 @@ public class Comune implements Serializable {
 	@Column(name = "COD_CATAST", length = 4)
 	private String codCatast;
 
+	public ComunePK getComunePK() {
+		return comunePK;
+	}
+
+	public String getCodCatast() {
+		return codCatast;
+	}
+
+	public String getCodIstat() {
+		return codIstat;
+	}
+
+	public List<Toponomastica> getToponomasticaList() {
+		return toponomasticaList;
+	}
+
 	@Column(name = "COD_ISTAT")
 	private String codIstat;
 

@@ -57,6 +57,42 @@ public class Liberatoria implements Serializable {
 	@ManyToOne
 	private Utenti codUte;
 
+	public BigDecimal getId() {
+		return id;
+	}
+
+	public void setAssociazione(Associazione associazione) {
+		this.associazione = associazione;
+	}
+
+	public void setDtFirma(Date dtFirma) {
+		this.dtFirma = dtFirma;
+	}
+
+	public void setCodUte(Utenti codUte) {
+		this.codUte = codUte;
+	}
+
+	public Associazione getAssociazione() {
+		return associazione;
+	}
+
+	public Date getDtFirma() {
+		return dtFirma;
+	}
+
+	public Utenti getCodUte() {
+		return codUte;
+	}
+
+	public AnagrafeSoc getAnagrafeSoc() {
+		return anagrafeSoc;
+	}
+
+	public void setAnagrafeSoc(AnagrafeSoc anagrafeSoc) {
+		this.anagrafeSoc = anagrafeSoc;
+	}
+
 	public Liberatoria() {
 
 	}

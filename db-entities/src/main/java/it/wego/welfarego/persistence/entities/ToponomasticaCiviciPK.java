@@ -22,6 +22,22 @@ import lombok.Setter;
 public class ToponomasticaCiviciPK implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	public String getCodStato() {
+		return codStato;
+	}
+
+	public String getCodProv() {
+		return codProv;
+	}
+
+	public String getCodCom() {
+		return codCom;
+	}
+
+	public String getCodVia() {
+		return codVia;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "COD_STATO", nullable = false, length = 10)
 	private String codStato;

@@ -57,6 +57,14 @@ public class BudgetTipIntervento implements Serializable {
 		return numDx;
 	}
 
+	public void setBdgDispEur(BigDecimal bdgDispEur) {
+		this.bdgDispEur = bdgDispEur;
+	}
+
+	public void setBdgDispOre(BigDecimal bdgDispOre) {
+		this.bdgDispOre = bdgDispOre;
+	}
+
 	public void setNumDx(int numDx) {
 		this.numDx = numDx;
 	}

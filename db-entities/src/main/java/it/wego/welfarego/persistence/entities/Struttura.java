@@ -42,6 +42,22 @@ public class Struttura implements Serializable {
 	@Column(name = "INDIRIZZO")
 	private String indirizzo;
 
+	public Ente getEnte() {
+		return ente;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public String getIndirizzo() {
+		return indirizzo;
+	}
+
 	public String getCsrId() {
 		return csrId;
 	}

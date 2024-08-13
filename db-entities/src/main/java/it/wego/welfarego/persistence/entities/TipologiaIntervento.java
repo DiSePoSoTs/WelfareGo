@@ -167,8 +167,80 @@ public class TipologiaIntervento implements Serializable {
 	@Column(name = "FLG_PAGAM", nullable = false)
 	private char flgPagam;
 
+	public void setFlgRinnovo(String flgRinnovo) {
+		this.flgRinnovo = flgRinnovo;
+	}
+
+	public char getFlgPai() {
+		return flgPai;
+	}
+
+	public String getCodProcFo() {
+		return codProcFo;
+	}
+
+	public String getCodProcEse() {
+		return codProcEse;
+	}
+
+	public String getCodProcGest() {
+		return codProcGest;
+	}
+
+	public Character getFlgRdbfap() {
+		return flgRdbfap;
+	}
+
+	public char getFlgAttivo() {
+		return flgAttivo;
+	}
+
+	public char getFlgVis() {
+		return flgVis;
+	}
+
+	public List<FatturaDettaglio> getFatturaDettaglioList() {
+		return fatturaDettaglioList;
+	}
+
+	public List<PaiIntervento> getPaiInterventoList() {
+		return paiInterventoList;
+	}
+
+	public ParametriIndata getIdParamGrute() {
+		return idParamGrute;
+	}
+
+	public ParametriIndata getIdParamSrv() {
+		return idParamSrv;
+	}
+
+	public ParametriIndata getIdParamStruttura() {
+		return idParamStruttura;
+	}
+
+	public List<MapDatiSpecTipint> getMapDatiSpecTipintList() {
+		return mapDatiSpecTipintList;
+	}
+
+	public Integer getContatoreRicevuta() {
+		return contatoreRicevuta;
+	}
+
+	public void setContatoreRicevuta(Integer contatoreRicevuta) {
+		this.contatoreRicevuta = contatoreRicevuta;
+	}
+
+	public char getFlgAppTec() {
+		return flgAppTec;
+	}
+
 	public String getCodIntCsr() {
 		return codIntCsr;
+	}
+
+	public String getFlgRicevuta() {
+		return flgRicevuta;
 	}
 
 	public Template getCodTmplVarMul() {

@@ -54,6 +54,50 @@ public class DatiSpecifici implements Serializable {
 	@Column(name = "DES_CAMPO", nullable = false, length = 60)
 	private String desCampo;
 
+	public char getFlgObb() {
+		return flgObb;
+	}
+
+	public char getTipoCampo() {
+		return tipoCampo;
+	}
+
+	public String getValAmm() {
+		return valAmm;
+	}
+
+	public char getFlgEdit() {
+		return flgEdit;
+	}
+
+	public char getFlgVis() {
+		return flgVis;
+	}
+
+	public String getValDef() {
+		return valDef;
+	}
+
+	public String getRegExpr() {
+		return regExpr;
+	}
+
+	public String getMsgErrore() {
+		return msgErrore;
+	}
+
+	public short getLunghezza() {
+		return lunghezza;
+	}
+
+	public List<MapDatiSpecTipint> getMapDatiSpecTipintList() {
+		return mapDatiSpecTipintList;
+	}
+
+	public List<MapDatiSpecificiIntervento> getMapDatiSpecificiInterventoList() {
+		return mapDatiSpecificiInterventoList;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "FLG_OBB", nullable = false)
 	private char flgObb;

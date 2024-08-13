@@ -56,6 +56,10 @@ public class Template implements Serializable {
 	@Column(name = "CLOB_TMPL", nullable = false)
 	private String clobTmpl;
 
+	public String getNomeFile() {
+		return nomeFile;
+	}
+
 	public String getClobTmpl() {
 		return clobTmpl;
 	}

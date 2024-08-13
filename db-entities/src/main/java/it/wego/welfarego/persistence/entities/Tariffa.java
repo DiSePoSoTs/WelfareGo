@@ -58,8 +58,24 @@ public class Tariffa implements Serializable {
 	@Column(name = "FORFAIT", nullable = false)
 	private char forfait;
 
+	public Integer getAnno() {
+		return anno;
+	}
+
+	public String getDescrizione() {
+		return descrizione;
+	}
+
+	public Struttura getStruttura() {
+		return struttura;
+	}
+
 	public char getForfait() {
 		return forfait;
+	}
+
+	public Integer getId() {
+		return id;
 	}
 
 	@JoinColumn(name = "ID_STRUTTURA", referencedColumnName = "ID")

@@ -40,6 +40,10 @@ public class PaiMicroProblematica implements Serializable {
 	@ManyToOne(optional = false)
 	private PaiMacroProblematica paiMacroProblematica;
 
+	public ParametriIndata getIpMicroProblematica() {
+		return ipMicroProblematica;
+	}
+
 	public PaiMicroProblematica() {
 	}
 

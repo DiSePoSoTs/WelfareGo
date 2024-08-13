@@ -62,6 +62,14 @@ public class PaiInterventoCivObb implements Serializable {
 		this.paiInterventoCivObbPK = paiInterventoCivObbPK;
 	}
 
+	public void setPaiInterventoCivObbPK(PaiInterventoCivObbPK paiInterventoCivObbPK) {
+		this.paiInterventoCivObbPK = paiInterventoCivObbPK;
+	}
+
+	public PaiInterventoCivObbPK getPaiInterventoCivObbPK() {
+		return paiInterventoCivObbPK;
+	}
+
 	public PaiInterventoCivObb(PaiInterventoCivObbPK paiInterventoCivObbPK, BigDecimal impCo) {
 		this.paiInterventoCivObbPK = paiInterventoCivObbPK;
 		this.impCo = impCo;

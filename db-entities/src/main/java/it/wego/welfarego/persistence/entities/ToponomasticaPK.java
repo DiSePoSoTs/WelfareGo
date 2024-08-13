@@ -48,6 +48,22 @@ public class ToponomasticaPK implements Serializable {
 		this.codVia = codVia;
 	}
 
+	public String getCodStato() {
+		return codStato;
+	}
+
+	public String getCodProv() {
+		return codProv;
+	}
+
+	public String getCodCom() {
+		return codCom;
+	}
+
+	public String getCodVia() {
+		return codVia;
+	}
+
 	@Override
 	public int hashCode() {
 		int hash = 0;

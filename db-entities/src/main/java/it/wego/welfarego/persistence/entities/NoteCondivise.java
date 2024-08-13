@@ -60,6 +60,26 @@ public class NoteCondivise implements Serializable {
 		return codUte;
 	}
 
+	public void setAnagrafeSoc(AnagrafeSoc anagrafeSoc) {
+		this.anagrafeSoc = anagrafeSoc;
+	}
+
+	public void setCodUte(Utenti codUte) {
+		this.codUte = codUte;
+	}
+
+	public void setDtInserimento(Date dtInserimento) {
+		this.dtInserimento = dtInserimento;
+	}
+
+	public void setTitolo(String titolo) {
+		this.titolo = titolo;
+	}
+
+	public void setEsteso(String esteso) {
+		this.esteso = esteso;
+	}
+
 	public AnagrafeSoc getAnagrafeSoc() {
 		return anagrafeSoc;
 	}

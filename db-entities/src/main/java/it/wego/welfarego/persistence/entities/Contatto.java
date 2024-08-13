@@ -63,6 +63,46 @@ public class Contatto implements Serializable {
 		this.tsCont = tsCont;
 	}
 
+	public Date getTsCont() {
+		return tsCont;
+	}
+
+	public void setTsCont(Date tsCont) {
+		this.tsCont = tsCont;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+
+	public Utenti getCodUte() {
+		return codUte;
+	}
+
+	public void setCodUte(Utenti codUte) {
+		this.codUte = codUte;
+	}
+
+	public ParametriIndata getIdParamMotiv() {
+		return idParamMotiv;
+	}
+
+	public void setIdParamMotiv(ParametriIndata idParamMotiv) {
+		this.idParamMotiv = idParamMotiv;
+	}
+
+	public AnagrafeSoc getCodAna() {
+		return codAna;
+	}
+
+	public void setCodAna(AnagrafeSoc codAna) {
+		this.codAna = codAna;
+	}
+
 	@Override
 	public int hashCode() {
 		int hash = 0;

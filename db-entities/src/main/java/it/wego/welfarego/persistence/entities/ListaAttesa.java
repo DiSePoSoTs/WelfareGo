@@ -51,6 +51,58 @@ public class ListaAttesa implements Serializable {
 	@Column(name = "COD_LISTA_ATT", nullable = false)
 	private Integer codListaAtt;
 
+	public char getFlgTipint() {
+		return flgTipint;
+	}
+
+	public char getFlgCog() {
+		return flgCog;
+	}
+
+	public char getFlgNom() {
+		return flgNom;
+	}
+
+	public char getFlgCodFisc() {
+		return flgCodFisc;
+	}
+
+	public char getFlgIsee() {
+		return flgIsee;
+	}
+
+	public char getFlgDtNasc() {
+		return flgDtNasc;
+	}
+
+	public char getFlgDtDom() {
+		return flgDtDom;
+	}
+
+	public char getFlgBina() {
+		return flgBina;
+	}
+
+	public char getFlgAs() {
+		return flgAs;
+	}
+
+	public char getFlgUot() {
+		return flgUot;
+	}
+
+	public char getFlgDistSan() {
+		return flgDistSan;
+	}
+
+	public char getFlgRef() {
+		return flgRef;
+	}
+
+	public char getFlgNumFigli() {
+		return flgNumFigli;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "DES_LISTA_ATT", nullable = false, length = 765)
 	private String desListaAtt;

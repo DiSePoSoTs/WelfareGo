@@ -202,6 +202,10 @@ public class Parametri implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	public Integer getIdParam() {
+		return idParam;
+	}
+
 	@Id
 	@Basic(optional = false)
 	@GeneratedValue(generator = "parametriSequence")

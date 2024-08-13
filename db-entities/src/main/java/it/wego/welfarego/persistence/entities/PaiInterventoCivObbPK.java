@@ -38,6 +38,38 @@ public class PaiInterventoCivObbPK implements Serializable {
 	@Column(name = "COD_ANA_CO", nullable = false)
 	private Integer codAnaCo;
 
+	public void setCodPai(Integer codPai) {
+		this.codPai = codPai;
+	}
+
+	public void setCodTipint(String codTipint) {
+		this.codTipint = codTipint;
+	}
+
+	public void setCntTipint(Integer cntTipint) {
+		this.cntTipint = cntTipint;
+	}
+
+	public void setCodAnaCo(Integer codAnaCo) {
+		this.codAnaCo = codAnaCo;
+	}
+
+	public Integer getCodPai() {
+		return codPai;
+	}
+
+	public String getCodTipint() {
+		return codTipint;
+	}
+
+	public Integer getCntTipint() {
+		return cntTipint;
+	}
+
+	public Integer getCodAnaCo() {
+		return codAnaCo;
+	}
+
 	public PaiInterventoCivObbPK() {
 	}
 

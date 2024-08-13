@@ -23,6 +23,46 @@ public class PaiMacroProblematica implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	public ParametriIndata getIpMacroProblematica() {
+		return ipMacroProblematica;
+	}
+
+	public ParametriIndata getIpRilevanza() {
+		return ipRilevanza;
+	}
+
+	public ParametriIndata getIpFronteggiamento() {
+		return ipFronteggiamento;
+	}
+
+	public ParametriIndata getIpObiettivoPrevalente() {
+		return ipObiettivoPrevalente;
+	}
+
+	public PaiMacroProblematicaPK getPaiMacroProblematicaPK() {
+		return paiMacroProblematicaPK;
+	}
+
+	public void setIpRilevanza(ParametriIndata ipRilevanza) {
+		this.ipRilevanza = ipRilevanza;
+	}
+
+	public void setIpFronteggiamento(ParametriIndata ipFronteggiamento) {
+		this.ipFronteggiamento = ipFronteggiamento;
+	}
+
+	public void setIpObiettivoPrevalente(ParametriIndata ipObiettivoPrevalente) {
+		this.ipObiettivoPrevalente = ipObiettivoPrevalente;
+	}
+
+	public void setDettaglioNote(String dettaglioNote) {
+		this.dettaglioNote = dettaglioNote;
+	}
+
+	public String getDettaglioNote() {
+		return dettaglioNote;
+	}
+
 	@EmbeddedId
 	protected PaiMacroProblematicaPK paiMacroProblematicaPK = new PaiMacroProblematicaPK();
 

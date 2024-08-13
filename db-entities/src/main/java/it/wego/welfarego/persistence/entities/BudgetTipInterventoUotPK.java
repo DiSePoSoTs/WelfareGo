@@ -38,6 +38,10 @@ public class BudgetTipInterventoUotPK implements Serializable {
 		return codTipint;
 	}
 
+	public String getCodImpe() {
+		return codImpe;
+	}
+
 	public short getCodAnno() {
 		return codAnno;
 	}

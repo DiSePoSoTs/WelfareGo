@@ -45,6 +45,30 @@ import lombok.Setter;
 		@NamedQuery(name = "PaiDocumento.findByDtProt", query = "SELECT p FROM PaiDocumento p WHERE p.dtProt = :dtProt") })
 public class PaiDocumento implements Serializable {
 
+	public String getBlobDoc() {
+		return blobDoc;
+	}
+
+	public String getNomeFile() {
+		return nomeFile;
+	}
+
+	public String getTipoDetermina() {
+		return tipoDetermina;
+	}
+
+	public String getNumProt() {
+		return numProt;
+	}
+
+	public Date getDtProt() {
+		return dtProt;
+	}
+
+	public Utenti getCodUteAut() {
+		return codUteAut;
+	}
+
 	private static final long serialVersionUID = 1L;
 
 	@Id

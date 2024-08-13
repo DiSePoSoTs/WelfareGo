@@ -40,6 +40,18 @@ public class Indisponibilita implements Serializable {
 	@Column(name = "ID_IND", nullable = false)
 	private Integer idInd;
 
+	public Integer getIdInd() {
+		return idInd;
+	}
+
+	public Date getTsFineApp() {
+		return tsFineApp;
+	}
+
+	public int getCodAs() {
+		return codAs;
+	}
+
 	@Basic(optional = false)
 	@Column(name = "TS_FINE_APP", nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)

@@ -44,6 +44,26 @@ public class Stato implements Serializable {
 	@Column(name = "DES_STATO", nullable = false, length = 765)
 	private String desStato;
 
+	public String getCodGruppo() {
+		return codGruppo;
+	}
+
+	public String getCodCatast() {
+		return codCatast;
+	}
+
+	public String getCodIstat() {
+		return codIstat;
+	}
+
+	public Integer getCodiceCittadinanzaInsiel() {
+		return codiceCittadinanzaInsiel;
+	}
+
+	public List<Provincia> getProvinciaList() {
+		return provinciaList;
+	}
+
 	public String getDesStato() {
 		return desStato;
 	}

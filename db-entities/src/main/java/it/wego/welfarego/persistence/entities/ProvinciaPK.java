@@ -31,6 +31,10 @@ public class ProvinciaPK implements Serializable {
 	@Column(name = "COD_PROV", nullable = false, length = 10)
 	private String codProv;
 
+	public String getCodProv() {
+		return codProv;
+	}
+
 	public ProvinciaPK() {
 	}
 
