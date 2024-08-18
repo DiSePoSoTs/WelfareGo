@@ -30,10 +30,14 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
+
+import org.apache.commons.pool2.BaseObjectPool;
 import org.apache.commons.pool2.BasePooledObjectFactory;
 import org.apache.commons.pool2.ObjectPool;
 import org.apache.commons.pool2.PooledObject;
 import org.apache.commons.pool2.impl.DefaultPooledObject;
+import org.apache.commons.pool2.impl.GenericObjectPool;
+import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import org.apache.commons.pool2.impl.SoftReferenceObjectPool;
 import org.apache.xml.security.Init;
 import org.apache.xml.security.c14n.Canonicalizer;
@@ -56,7 +60,7 @@ public class XmlUtils {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	private final static Logger slogger = LoggerFactory.getLogger(XmlUtils.class);
 	private static final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-	
+
 	static {
 		try {
 			documentBuilderFactory.setNamespaceAware(true);
@@ -67,32 +71,95 @@ public class XmlUtils {
 			slogger.error("error initializing xmlUtils", ex);
 		}
 	}
-	
+
 	private static final XPathFactory xPathFactory = XPathFactory.newInstance();
 	private static final TransformerFactory transformerFactory = TransformerFactory.newInstance();
 	private final XPath xPath = xPathFactory.newXPath();
-	private final Supplier<DocumentBuilder> documentBuilderSupplier=Suppliers.memoize(new Supplier<DocumentBuilder>(){public DocumentBuilder get(){try{return documentBuilderFactory.newDocumentBuilder();}catch(ParserConfigurationException ex){throw new RuntimeException(ex);}}});
+	private final Supplier<DocumentBuilder> documentBuilderSupplier = Suppliers
+			.memoize(new Supplier<DocumentBuilder>() {
+				public DocumentBuilder get() {
+					try {
+						return documentBuilderFactory.newDocumentBuilder();
+					} catch (ParserConfigurationException ex) {
+						throw new RuntimeException(ex);
+					}
+				}
+			});
 
-	private final Supplier<Transformer> transformerSupplier=Suppliers.memoize(new Supplier<Transformer>(){public Transformer get(){try{Transformer transformer=transformerFactory.newTransformer();transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION,configuration.includeHeader?"no":"yes");transformer.setOutputProperty(OutputKeys.INDENT,"yes");transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount","4");transformer.setOutputProperty(OutputKeys.ENCODING,"UTF-8");return transformer;}catch(TransformerConfigurationException ex){throw new RuntimeException(ex);}}});
+	private final Supplier<Transformer> transformerSupplier = Suppliers.memoize(new Supplier<Transformer>() {
+		public Transformer get() {
+			try {
+				Transformer transformer = transformerFactory.newTransformer();
+				transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION,
+						configuration.includeHeader ? "no" : "yes");
+				transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+				transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+				transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+				return transformer;
+			} catch (TransformerConfigurationException ex) {
+				throw new RuntimeException(ex);
+			}
+		}
+	});
 
-	private final Supplier<Canonicalizer> canonicalizerSupplier=Suppliers.memoize(new Supplier<Canonicalizer>(){public Canonicalizer get(){try{return Canonicalizer.getInstance(Canonicalizer.ALGO_ID_C14N_OMIT_COMMENTS);}catch(InvalidCanonicalizerException ex){throw new RuntimeException(ex);}}});
+	private final Supplier<Canonicalizer> canonicalizerSupplier = Suppliers.memoize(new Supplier<Canonicalizer>() {
+		public Canonicalizer get() {
+			try {
+				return Canonicalizer.getInstance(Canonicalizer.ALGO_ID_C14N_OMIT_COMMENTS);
+			} catch (InvalidCanonicalizerException ex) {
+				throw new RuntimeException(ex);
+			}
+		}
+	});
 
-	private final LoadingCache<String, XPathExpression> xpathExpressions=CacheBuilder.newBuilder().concurrencyLevel(1).build(new CacheLoader<String,XPathExpression>(){@Override public XPathExpression load(String xpath)throws Exception{return xPath.compile(xpath);}});
+	private final LoadingCache<String, XPathExpression> xpathExpressions = CacheBuilder.newBuilder().concurrencyLevel(1)
+			.build(new CacheLoader<String, XPathExpression>() {
+				@Override
+				public XPathExpression load(String xpath) throws Exception {
+					return xPath.compile(xpath);
+				}
+			});
 
-	private final static LoadingCache<Class<?>[], JAXBContext> jaxbContexts=CacheBuilder.newBuilder().concurrencyLevel(1).build(new CacheLoader<Class<?>[],JAXBContext>(){@Override public JAXBContext load(Class<?>[]key)throws Exception{slogger.debug("preparing context for classes {}",key);return JAXBContext.newInstance(key);}});
+	private final static LoadingCache<Class<?>[], JAXBContext> jaxbContexts = CacheBuilder.newBuilder()
+			.concurrencyLevel(1).build(new CacheLoader<Class<?>[], JAXBContext>() {
+				@Override
+				public JAXBContext load(Class<?>[] key) throws Exception {
+					slogger.debug("preparing context for classes {}", key);
+					return JAXBContext.newInstance(key);
+				}
+			});
 
 	private final ValidationEventHandler jaxbValidationEventHandlerLogger = new ValidationEventHandler() {
 		public boolean handleEvent(ValidationEvent event) {
-			logger.debug("jaxb event : {}",event.toString());return true;}};
+			logger.debug("jaxb event : {}", event.toString());
+			return true;
+		}
+	};
 
-	private final LoadingCache<Class<?>[], Marshaller> jaxbMarshallers=CacheBuilder.newBuilder().concurrencyLevel(1).build(new CacheLoader<Class<?>[],Marshaller>(){@Override public Marshaller load(Class<?>[]key)throws Exception{Marshaller marshaller=jaxbContexts.get(key).createMarshaller();marshaller.setEventHandler(jaxbValidationEventHandlerLogger);marshaller.setProperty(Marshaller.JAXB_FRAGMENT,configuration.includeHeader?Boolean.FALSE:Boolean.TRUE);// skip
-																																																																																																																		// xml
-																																																																																																																		// header
-	marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);return marshaller;}});
+	private final LoadingCache<Class<?>[], Marshaller> jaxbMarshallers = CacheBuilder.newBuilder().concurrencyLevel(1)
+			.build(new CacheLoader<Class<?>[], Marshaller>() {
+				@Override
+				public Marshaller load(Class<?>[] key) throws Exception {
+					Marshaller marshaller = jaxbContexts.get(key).createMarshaller();
+					marshaller.setEventHandler(jaxbValidationEventHandlerLogger);
+					marshaller.setProperty(Marshaller.JAXB_FRAGMENT,
+							configuration.includeHeader ? Boolean.FALSE : Boolean.TRUE);// skip
+																						// xml
+																						// header
+					marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+					return marshaller;
+				}
+			});
 
-	private final LoadingCache<Class<?>[], Unmarshaller> jaxbUnmarshallers=CacheBuilder.newBuilder().concurrencyLevel(1).build(new CacheLoader<Class<?>[],Unmarshaller>(){@Override public Unmarshaller load(Class<?>[]key)throws Exception{Unmarshaller unmarshaller=jaxbContexts.get(key).createUnmarshaller();unmarshaller.setEventHandler(jaxbValidationEventHandlerLogger);return unmarshaller;}});
-
-
+	private final LoadingCache<Class<?>[], Unmarshaller> jaxbUnmarshallers = CacheBuilder.newBuilder()
+			.concurrencyLevel(1).build(new CacheLoader<Class<?>[], Unmarshaller>() {
+				@Override
+				public Unmarshaller load(Class<?>[] key) throws Exception {
+					Unmarshaller unmarshaller = jaxbContexts.get(key).createUnmarshaller();
+					unmarshaller.setEventHandler(jaxbValidationEventHandlerLogger);
+					return unmarshaller;
+				}
+			});
 
 	private final XmlUtilsConfiguration configuration;
 
@@ -121,10 +188,10 @@ public class XmlUtils {
 
 	private final static LoadingCache<XmlUtilsConfiguration, ObjectPool> instancesPoolMap = CacheBuilder.newBuilder()
 			.build(new CacheLoader<XmlUtilsConfiguration, ObjectPool>() {
-				
+
 				@Override
-				public ObjectPool<XmlUtils> load(final XmlUtilsConfiguration xmlUtilsFactory) throws Exception {
-					ObjectPool<XmlUtils> objectPool = (ObjectPool<XmlUtils>) new BasePooledObjectFactory<XmlUtils>() {
+				public ObjectPool load(final XmlUtilsConfiguration xmlUtilsFactory) throws Exception {
+					ObjectPool objectPool = new GenericObjectPool<XmlUtils>(new BasePooledObjectFactory<XmlUtils>() {
 						@Override
 						public XmlUtils create() throws Exception {
 							return new XmlUtils(xmlUtilsFactory);
@@ -134,11 +201,11 @@ public class XmlUtils {
 						public PooledObject<XmlUtils> wrap(XmlUtils obj) {
 							return new DefaultPooledObject<XmlUtils>(obj);
 						}
-					};
+					});
 					return objectPool;
 				}
 			});
-	
+
 	private static XmlUtils getInstance(final XmlUtilsConfiguration configuration) {
 		try {
 			return (XmlUtils) instancesPoolMap.get(configuration).borrowObject();
@@ -181,7 +248,7 @@ public class XmlUtils {
 
 	/**
 	 *
-	 * @param <V>
+	 * @param          <V>
 	 * @param clazz
 	 * @param xpath
 	 * @param document
@@ -206,7 +273,7 @@ public class XmlUtils {
 	/**
 	 * note: lazy trasformation
 	 *
-	 * @param <V>
+	 * @param          <V>
 	 * @param clazz
 	 * @param xpath
 	 * @param document
@@ -237,7 +304,7 @@ public class XmlUtils {
 	/**
 	 * marshall the object to xml, appending it to the supplied node
 	 *
-	 * @param <V>
+	 * @param        <V>
 	 * @param object
 	 * @param node
 	 * @throws ExecutionException
@@ -251,7 +318,7 @@ public class XmlUtils {
 
 	/**
 	 *
-	 * @param <V>
+	 * @param        <V>
 	 * @param object
 	 * @return
 	 * @throws ExecutionException
@@ -433,7 +500,11 @@ public class XmlUtils {
 		}
 	}
 
-	private static final Function<Node, String> getNodeTextContentFunction=new Function<Node,String>(){public String apply(Node input){return input.getTextContent();}};
+	private static final Function<Node, String> getNodeTextContentFunction = new Function<Node, String>() {
+		public String apply(Node input) {
+			return input.getTextContent();
+		}
+	};
 
 	public final static class XmlUtilsConfiguration implements Cloneable {
 
@@ -482,4 +553,5 @@ public class XmlUtils {
 			return true;
 		}
 	}
+
 }

@@ -15,15 +15,29 @@
 	</parent>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<skipTests>true</skipTests>
-		<maven.compiler.target>11</maven.compiler.target>
-		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>8</maven.compiler.target>
+		<maven.compiler.source>8</maven.compiler.source>
 	</properties>
 
 	<build>
 		<finalName>CartellaSociale</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 
 	<dependencies>
@@ -77,7 +91,6 @@
 		<dependency>
 			<groupId>it.wego.intalio</groupId>
 			<artifactId>intalio-manager</artifactId>
-			<version>2.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>it.wego.utils</groupId>
@@ -113,10 +126,6 @@
 					<groupId>ch.qos.logback</groupId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>it.wego.intalio</groupId>
-			<artifactId>intalio-manager</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>it.wego.welfarego</groupId>
