@@ -6,8 +6,9 @@
 	version="2.1">
 
 
-	<persistence-unit name="welfaregoPU" transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="welfaregoPU">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<jta-data-source>java:comp/env/jdbc/welfarego</jta-data-source>
 
 		<mapping-file>META-INF/jpql/query_interventi.xml</mapping-file>
 		<mapping-file>META-INF/jpql/budget_query.xml</mapping-file>

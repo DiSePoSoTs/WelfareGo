@@ -53,10 +53,10 @@
 			<groupId>com.liferay.portal</groupId>
 			<artifactId>util-taglib</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.liferay.portal</groupId>
-			<artifactId>util-java</artifactId>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.liferay.portal</groupId> -->
+<!-- 			<artifactId>util-java</artifactId> -->
+<!-- 		</dependency> -->
 		<dependency>
 			<groupId>javax.portlet</groupId>
 			<artifactId>portlet-api</artifactId>

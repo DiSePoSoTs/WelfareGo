@@ -357,9 +357,6 @@
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
-    
-    
-    
     <resource-ref>
 		<description>Welfarego Datasource</description>
 		<res-ref-name>jdbc/welfarego</res-ref-name>

@@ -79,8 +79,13 @@
 		<dependency>
 			<groupId>com.liferay.portal</groupId>
 			<artifactId>portal-service</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>dom</artifactId>
+					<groupId>org.w3c</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
-
 		<dependency>
 			<groupId>net.sf.jasperreports</groupId>
 			<artifactId>jasperreports</artifactId>
