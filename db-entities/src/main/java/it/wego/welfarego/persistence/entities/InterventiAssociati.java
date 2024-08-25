@@ -16,8 +16,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import java.io.Serializable;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * @author fabio Bonaccorso Classe che mappa la tabella degli interventi
@@ -25,8 +23,6 @@ import lombok.Setter;
  *         stesso tipo)
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "INTERVENTI_ASSOCIATI")
 @NamedQueries({ @NamedQuery(name = "InterventiAssociati.findAll", query = "SELECT i FROM InterventiAssociati i"),
 		@NamedQuery(name = "InterventiAssociati.findById", query = "SELECT i from InterventiAssociati i WHERE i.id=:id") })

@@ -8,16 +8,13 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import lombok.Setter;
-import lombok.Getter;
+
 
 /**
  *
  * @author Fabio Bonaccorso
  */
 @Embeddable
-@Getter
-@Setter
 public class RicevutaCassaPK implements Serializable {
 
 	private static final long serialVersionUID = 1L;

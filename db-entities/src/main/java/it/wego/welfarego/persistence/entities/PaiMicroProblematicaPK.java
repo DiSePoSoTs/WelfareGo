@@ -8,16 +8,13 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  *
  * @author aleph
  */
 @Embeddable
-@Getter
-@Setter
 public class PaiMicroProblematicaPK implements Serializable {
 
 	private static final long serialVersionUID = 1L;

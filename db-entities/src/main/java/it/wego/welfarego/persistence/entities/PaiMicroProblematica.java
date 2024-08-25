@@ -6,8 +6,7 @@ package it.wego.welfarego.persistence.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  *
@@ -15,8 +14,6 @@ import lombok.Setter;
  */
 @Entity
 @Table(name = "PAI_MICRO_PROBLEMATICHE")
-@Getter
-@Setter
 public class PaiMicroProblematica implements Serializable {
 
 	private static final long serialVersionUID = 1L;

@@ -20,16 +20,13 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "PAI_INTERVENTO_MESE")
 @NamedQueries({ @NamedQuery(name = "PaiInterventoMese.findAll", query = "SELECT p FROM PaiInterventoMese p"),
 		@NamedQuery(name = "PaiInterventoMese.findByCodPai", query = "SELECT p FROM PaiInterventoMese p WHERE p.paiInterventoMesePK.codPai = :codPai"),

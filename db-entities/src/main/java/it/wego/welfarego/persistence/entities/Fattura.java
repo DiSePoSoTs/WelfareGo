@@ -37,16 +37,13 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "FATTURA")
 @NamedQueries({ @NamedQuery(name = "Fattura.findAll", query = "SELECT f FROM Fattura f"),
 		@NamedQuery(name = "Fattura.findByAnno", query = "SELECT f FROM Fattura f WHERE f.anno = :anno"),

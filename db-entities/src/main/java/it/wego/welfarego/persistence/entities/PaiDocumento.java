@@ -23,16 +23,13 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "PAI_DOCUMENTO", uniqueConstraints = {
 		@UniqueConstraint(columnNames = { "COD_TIPDOC", "VER", "COD_PAI", "COD_TIPINT", "CNT_TIPINT" }) })
 @NamedQueries({ @NamedQuery(name = "PaiDocumento.findAll", query = "SELECT p FROM PaiDocumento p"),

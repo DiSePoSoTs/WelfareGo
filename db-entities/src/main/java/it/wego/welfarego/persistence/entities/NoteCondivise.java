@@ -19,16 +19,13 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  * @author Fabio Bonaccorso
  *
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "NOTE_CONDIVISE")
 @NamedQueries({ @NamedQuery(name = "NoteCondivise.findAll", query = "SELECT n FROM NoteCondivise n"),
 		@NamedQuery(name = "NoteCondivise.findByCodAna", query = "SELECT n FROM NoteCondivise n WHERE n.anagrafeSoc.codAna = :codAna")

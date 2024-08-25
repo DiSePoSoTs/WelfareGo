@@ -30,8 +30,7 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import org.eclipse.persistence.annotations.JoinFetch;
 import org.eclipse.persistence.annotations.JoinFetchType;
-import lombok.Getter;
-import lombok.Setter;
+
 
 
 /**
@@ -39,8 +38,6 @@ import lombok.Setter;
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "PARAMETRI", uniqueConstraints = { @UniqueConstraint(columnNames = { "TIP_PARAM", "COD_PARAM" }) })
 @NamedQueries({ @NamedQuery(name = "Parametri.findAll", query = "SELECT p FROM Parametri p"),
 		@NamedQuery(name = "Parametri.findByIdParam", query = "SELECT p FROM Parametri p WHERE p.idParam = :idParam"),

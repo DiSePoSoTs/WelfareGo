@@ -17,16 +17,13 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import org.eclipse.persistence.annotations.JoinFetch;
 import org.eclipse.persistence.annotations.JoinFetchType;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "MAP_DATI_SPEC_TIPINT")
 @NamedQueries({ @NamedQuery(name = "MapDatiSpecTipint.findAll", query = "SELECT m FROM MapDatiSpecTipint m"),
 		@NamedQuery(name = "MapDatiSpecTipint.findByCodTipint", query = "SELECT m FROM MapDatiSpecTipint m WHERE m.mapDatiSpecTipintPK.codTipint = :codTipint"),

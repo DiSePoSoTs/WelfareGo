@@ -15,12 +15,9 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import lombok.Setter;
-import lombok.Getter;
+
 
 @Entity
-@Getter
-@Setter
 @Table(name = "STRUTTURA")
 @NamedQueries({ @NamedQuery(name = "Struttura.findAll", query = "SELECT s FROM Struttura s"),
 		@NamedQuery(name = "Struttura.findById", query = "SELECT s from Struttura s WHERE s.id=:id"),

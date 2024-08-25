@@ -16,8 +16,6 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * @author fabio Bonaccorso classe che mappa la tabella per i token del
@@ -25,8 +23,6 @@ import lombok.Setter;
  *
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "WS_TOKEN")
 public class WSToken implements Serializable {
 

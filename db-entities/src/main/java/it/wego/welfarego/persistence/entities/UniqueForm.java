@@ -15,16 +15,13 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "UNIQUE_FORM")
 @NamedQueries({ @NamedQuery(name = "UniqueForm.findAll", query = "SELECT u FROM UniqueForm u"),
 		@NamedQuery(name = "UniqueForm.findByCodForm", query = "SELECT u FROM UniqueForm u WHERE u.codForm = :codForm"),

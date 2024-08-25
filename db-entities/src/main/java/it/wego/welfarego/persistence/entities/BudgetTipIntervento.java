@@ -10,16 +10,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import javax.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "BUDGET_TIP_INTERVENTO", uniqueConstraints = { @UniqueConstraint(columnNames = { "COD_IMPE" }) })
 @NamedQueries({ @NamedQuery(name = "BudgetTipIntervento.findAll", query = "SELECT b FROM BudgetTipIntervento b"),
 		@NamedQuery(name = "BudgetTipIntervento.findByCodTipint", query = "SELECT b FROM BudgetTipIntervento b WHERE b.budgetTipInterventoPK.codTipint = :codTipint"),

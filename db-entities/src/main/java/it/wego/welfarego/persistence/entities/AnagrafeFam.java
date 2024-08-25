@@ -4,8 +4,7 @@
  */
 package it.wego.welfarego.persistence.entities;
 
-import lombok.Getter;
-import lombok.Setter;
+
 import com.google.common.base.Preconditions;
 import java.io.Serializable;
 import javax.persistence.EmbeddedId;
@@ -21,8 +20,6 @@ import javax.persistence.Table;
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "ANAGRAFE_FAM")
 @NamedQueries({ @NamedQuery(name = "AnagrafeFam.findAll", query = "SELECT a FROM AnagrafeFam a"),
 		@NamedQuery(name = "AnagrafeFam.findByCodAna", query = "SELECT a FROM AnagrafeFam a WHERE a.anagrafeFamPK.codAna = :codAna"),

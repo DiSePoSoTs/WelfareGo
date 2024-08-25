@@ -19,16 +19,13 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "LOG_MESSAGGI")
 @NamedQueries({ @NamedQuery(name = "LogMessaggi.findAll", query = "SELECT l FROM LogMessaggi l"),
 		@NamedQuery(name = "LogMessaggi.findByTsErr", query = "SELECT l FROM LogMessaggi l WHERE l.tsErr = :tsErr"),

@@ -20,16 +20,12 @@ import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  *
  * @author aleph
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "LUOGO")
 public class Luogo implements Serializable, Cloneable {
 

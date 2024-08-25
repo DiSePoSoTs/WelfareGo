@@ -16,16 +16,13 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import lombok.Setter;
-import lombok.Getter;
+
 
 /**
  *
  * @author DOTCOM s.r.l.
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "TARIFFA")
 @NamedQueries({
 		@NamedQuery(name = "Tariffa.findByStruttura", query = "SELECT t FROM Tariffa t WHERE t.struttura.id=:id") })

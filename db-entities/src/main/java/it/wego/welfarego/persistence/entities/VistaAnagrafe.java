@@ -13,16 +13,12 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "D00.GDA@GDA.ITS")
 public class VistaAnagrafe implements Serializable {
 

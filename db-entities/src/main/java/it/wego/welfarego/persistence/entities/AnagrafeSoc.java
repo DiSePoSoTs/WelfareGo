@@ -28,16 +28,12 @@ import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import org.eclipse.persistence.annotations.JoinFetch;
 import org.eclipse.persistence.annotations.JoinFetchType;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "ANAGRAFE_SOC", uniqueConstraints = { @UniqueConstraint(columnNames = { "PART_IVA" }),
 		@UniqueConstraint(columnNames = { "COD_FISC" }) })
 @NamedQueries({ @NamedQuery(name = "AnagrafeSoc.findAll", query = "SELECT a FROM AnagrafeSoc a"),

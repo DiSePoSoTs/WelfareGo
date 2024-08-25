@@ -18,16 +18,13 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  * @author Fabio Bonaccorso Classe che serve a mappare i log della cassa .
  *
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "LOG_CASSA")
 @XmlRootElement
 @NamedQueries({ @NamedQuery(name = "LogCassa.findAll", query = "SELECT l FROM LogCassa l"),

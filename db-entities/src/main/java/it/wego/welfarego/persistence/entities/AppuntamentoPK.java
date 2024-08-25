@@ -11,16 +11,13 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  *
  * @author giuseppe
  */
 @Embeddable
-@Getter
-@Setter
 public class AppuntamentoPK implements Serializable {
 
 	private static final long serialVersionUID = 1L;

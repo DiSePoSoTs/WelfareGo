@@ -24,16 +24,13 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "MANDATO_DETTAGLIO")
 @NamedQueries({ @NamedQuery(name = "MandatoDettaglio.findAll", query = "SELECT m FROM MandatoDettaglio m"),
 		@NamedQuery(name = "MandatoDettaglio.findByNumeroMandato", query = "SELECT m FROM MandatoDettaglio m WHERE m.numeroMandato = :numeroMandato"),

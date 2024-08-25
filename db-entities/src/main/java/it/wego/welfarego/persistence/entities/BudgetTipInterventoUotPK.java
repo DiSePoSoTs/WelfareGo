@@ -8,16 +8,12 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  *
  * @author giuseppe
  */
 @Embeddable
-@Getter
-@Setter
 public class BudgetTipInterventoUotPK implements Serializable {
 
 	private static final long serialVersionUID = 1L;

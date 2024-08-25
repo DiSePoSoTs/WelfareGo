@@ -22,16 +22,13 @@ import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
-import lombok.Setter;
-import lombok.Getter;
+
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "TIPOLOGIA_INTERVENTO")
 @NamedQueries({ @NamedQuery(name = "TipologiaIntervento.findAll", query = "SELECT t FROM TipologiaIntervento t"),
 		@NamedQuery(name = "TipologiaIntervento.findByCodTipint", query = "SELECT t FROM TipologiaIntervento t WHERE t.codTipint = :codTipint"),

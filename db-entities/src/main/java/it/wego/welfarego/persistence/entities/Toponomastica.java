@@ -8,19 +8,14 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 import javax.persistence.*;
-
 import com.google.common.base.Strings;
 
-import lombok.Setter;
-import lombok.Getter;
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "TOPONOMASTICA")
 @NamedQueries({ @NamedQuery(name = "Toponomastica.findAll", query = "SELECT t FROM Toponomastica t"),
 		@NamedQuery(name = "Toponomastica.findByCodStato", query = "SELECT t FROM Toponomastica t WHERE t.toponomasticaPK.codStato = :codStato"),

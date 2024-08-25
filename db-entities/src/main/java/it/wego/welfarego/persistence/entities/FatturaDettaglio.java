@@ -27,16 +27,13 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "FATTURA_DETTAGLIO")
 @NamedQueries({ @NamedQuery(name = "FatturaDettaglio.findAll", query = "SELECT f FROM FatturaDettaglio f"),
 		@NamedQuery(name = "FatturaDettaglio.findByAnnoEff", query = "SELECT f FROM FatturaDettaglio f WHERE f.annoEff = :annoEff"),

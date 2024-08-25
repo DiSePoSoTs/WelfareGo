@@ -14,16 +14,13 @@ import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "PAI_INTERVENTO")
 @NamedQueries({ @NamedQuery(name = "PaiIntervento.findAll", query = "SELECT p FROM PaiIntervento p"),
 		@NamedQuery(name = "PaiIntervento.findByCodPaiInterventiComune", query = "SELECT p FROM PaiIntervento p WHERE p.paiInterventoPK.codPai = :codPai AND p.associazione.id=1"),

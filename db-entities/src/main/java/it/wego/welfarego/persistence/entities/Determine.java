@@ -20,16 +20,13 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "DETERMINE")
 @NamedQueries({ @NamedQuery(name = "Determine.findAll", query = "SELECT d FROM Determine d"),
 		@NamedQuery(name = "Determine.findByIdDetermina", query = "SELECT d FROM Determine d WHERE d.idDetermina = :idDetermina"),

@@ -66,8 +66,6 @@ public class ParametriSerializer extends PersistenceAdapter {
 
     public String serializeParametriJavascriptArray(String tipParam) {
         return gson.toJson(Lists.transform(new ParametriIndataDao(getEntityManager()).findByTipParam(tipParam), PARAMETRI_INDATA_TO_GSON_FUNCTION));
-
-
     }
 
     public String serializeUtentiJavascriptArray(String tipoUtente) {

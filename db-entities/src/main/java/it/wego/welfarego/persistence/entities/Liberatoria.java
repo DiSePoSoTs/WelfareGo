@@ -18,8 +18,6 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import lombok.Getter;
-import lombok.Setter;
 
 
 /**
@@ -29,8 +27,6 @@ import lombok.Setter;
  */
 @Entity
 @Table(name = "LIBERATORIA")
-@Getter
-@Setter
 public class Liberatoria implements Serializable {
 
 	private static final long serialVersionUID = 1L;

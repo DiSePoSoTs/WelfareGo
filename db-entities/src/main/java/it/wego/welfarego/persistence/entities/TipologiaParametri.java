@@ -17,16 +17,12 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import lombok.Setter;
-import lombok.Getter;
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "TIPOLOGIA_PARAMETRI")
 @NamedQueries({ @NamedQuery(name = "TipologiaParametri.findAll", query = "SELECT t FROM TipologiaParametri t"),
 		@NamedQuery(name = "TipologiaParametri.findByTipParam", query = "SELECT t FROM TipologiaParametri t WHERE t.tipParam = :tipParam"),

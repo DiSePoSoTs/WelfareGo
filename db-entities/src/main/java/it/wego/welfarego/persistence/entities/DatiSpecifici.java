@@ -16,16 +16,13 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "DATI_SPECIFICI")
 @NamedQueries({ @NamedQuery(name = "DatiSpecifici.findAll", query = "SELECT d FROM DatiSpecifici d"),
 		@NamedQuery(name = "DatiSpecifici.findByCodCampo", query = "SELECT d FROM DatiSpecifici d WHERE d.codCampo = :codCampo"),

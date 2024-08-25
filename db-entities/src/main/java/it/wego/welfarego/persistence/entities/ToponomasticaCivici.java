@@ -15,16 +15,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "TOPONOMASTICA_CIVICI")
 @NamedQueries({ @NamedQuery(name = "ToponomasticaCivici.findAll", query = "SELECT t FROM ToponomasticaCivici t"),
 		@NamedQuery(name = "ToponomasticaCivici.findByCodStato", query = "SELECT t FROM ToponomasticaCivici t WHERE t.toponomasticaCiviciPK.codStato = :codStato"),

@@ -22,16 +22,13 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "PARAMETRI_INDATA")
 @NamedQueries({ @NamedQuery(name = "ParametriIndata.findAll", query = "SELECT p FROM ParametriIndata p"),
 		@NamedQuery(name = "ParametriIndata.findByIdParamIndata", query = "SELECT p FROM ParametriIndata p WHERE p.idParamIndata = :idParamIndata"),

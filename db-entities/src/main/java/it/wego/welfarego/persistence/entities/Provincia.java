@@ -10,16 +10,13 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 import javax.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "PROVINCIA")
 @NamedQueries({ @NamedQuery(name = "Provincia.findAll", query = "SELECT p FROM Provincia p"),
 		@NamedQuery(name = "Provincia.findByCodStato", query = "SELECT p FROM Provincia p WHERE p.provinciaPK.codStato = :codStato"),

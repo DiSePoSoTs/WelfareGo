@@ -11,16 +11,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  *
  * @author DOTCOM s.r.l.
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "ENTE")
 public class Ente implements Serializable {
 

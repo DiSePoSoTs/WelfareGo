@@ -16,16 +16,13 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  * @author fabio Bonaccorso Classe che serve
  *
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "RICEVUTA_CASSA")
 @NamedQueries({ @NamedQuery(name = "RicevutaCassa.findAll", query = "SELECT r FROM RicevutaCassa r"),
 		@NamedQuery(name = "RicevutaCassa.findByDataEmissione", query = "SELECT r FROM RicevutaCassa r WHERE r.dataEmissione = :dataEmissione")

@@ -20,16 +20,12 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  *
  * @author piergiorgio
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "CODA_CSR")
 @XmlRootElement
 @NamedQueries({ @NamedQuery(name = "CodaCsr.findAll", query = "SELECT c FROM CodaCsr c"),

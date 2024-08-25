@@ -17,16 +17,13 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import org.apache.commons.codec.binary.Base64;
-import lombok.Setter;
-import lombok.Getter;
+
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "TEMPLATE")
 @NamedQueries({ @NamedQuery(name = "Template.findAll", query = "SELECT t FROM Template t"),
 		@NamedQuery(name = "Template.findByCodTmpl", query = "SELECT t FROM Template t WHERE t.codTmpl = :codTmpl"),

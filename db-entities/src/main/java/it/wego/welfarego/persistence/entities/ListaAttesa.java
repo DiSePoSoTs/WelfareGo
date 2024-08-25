@@ -15,16 +15,12 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "LISTA_ATTESA")
 @NamedQueries({ @NamedQuery(name = "ListaAttesa.findAll", query = "SELECT l FROM ListaAttesa l"),
 		@NamedQuery(name = "ListaAttesa.findByCodListaAtt", query = "SELECT l FROM ListaAttesa l WHERE l.codListaAtt = :codListaAtt"),

@@ -35,16 +35,13 @@ import javax.persistence.TemporalType;
 
 import java.util.Set;
 import it.wego.welfarego.persistence.entities.Parametri;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "PAI")
 @NamedQueries({ @NamedQuery(name = "Pai.findAll", query = "SELECT p FROM Pai p"),
 		@NamedQuery(name = "Pai.findByCodPai", query = "SELECT p FROM Pai p WHERE p.codPai = :codPai"),

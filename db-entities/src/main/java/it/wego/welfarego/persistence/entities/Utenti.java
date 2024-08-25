@@ -20,16 +20,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "UTENTI", uniqueConstraints = { @UniqueConstraint(columnNames = { "COD_FISC" }) })
 @NamedQueries({ @NamedQuery(name = "Utenti.findAll", query = "SELECT u FROM Utenti u"),
 		@NamedQuery(name = "Utenti.findByCodUte", query = "SELECT u FROM Utenti u WHERE u.codUte = :codUte"),

@@ -8,8 +8,7 @@ import com.google.common.collect.Lists;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  *
@@ -17,8 +16,6 @@ import lombok.Setter;
  */
 @Entity
 @Table(name = "PAI_MACRO_PROBLEMATICHE")
-@Getter
-@Setter
 public class PaiMacroProblematica implements Serializable {
 
 	private static final long serialVersionUID = 1L;

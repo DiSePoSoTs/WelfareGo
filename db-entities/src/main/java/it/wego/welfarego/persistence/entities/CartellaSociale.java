@@ -21,16 +21,13 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  *
  * @author giuseppe
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "CARTELLA_SOCIALE")
 @NamedQueries({ @NamedQuery(name = "CartellaSociale.findAll", query = "SELECT c FROM CartellaSociale c"),
 		@NamedQuery(name = "CartellaSociale.findByCodAna", query = "SELECT c FROM CartellaSociale c WHERE c.codAna = :codAna"),

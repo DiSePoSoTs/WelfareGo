@@ -14,16 +14,12 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import java.io.Serializable;
 
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * @author Fabio Bonaccorso
  *
  */
 @Entity
-@Getter
-@Setter
 @Table(name = "ASSOCIAZIONE")
 @NamedQueries({ @NamedQuery(name = "Associazione.findAll", query = "SELECT a FROM Associazione a"),
 		@NamedQuery(name = "Associazione.findById", query = "SELECT a from Associazione a WHERE a.id=:id") })
