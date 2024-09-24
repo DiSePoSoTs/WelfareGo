@@ -54,11 +54,42 @@
 					</execution>
 				</executions>
 			</plugin>
-
+			<plugin>
+				<groupId>com.sun.xml.ws</groupId>
+				<artifactId>jaxws-maven-plugin</artifactId>
+				<version>4.0.2</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>wsimport</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<wsdlUrls>
+						<wsdlUrl>https://sociale.regione.fvg.it/WS_PRJ/services/Cartella?wsdl</wsdlUrl>
+					</wsdlUrls>
+					<wsdlDirectory>${project.basedir}/src/main/resources/</wsdlDirectory>
+					<packageName>it.trieste.comune.cartellasocialews.beans</packageName>
+					<sourceDestDir>${project.build.sourceDirectory}/</sourceDestDir>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>com.sun.xml.ws</groupId>
+						<artifactId>jaxws-tools</artifactId>
+						<version>3.0.0-M2</version>
+					</dependency>
+				</dependencies>
+			</plugin>
 		</plugins>
 	</build>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.sun.xml.ws</groupId>
+			<artifactId>jaxws-rt</artifactId>
+			<version>3.0.0</version>
+		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>

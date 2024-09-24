@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://tipigenerali.cartellasociale.sanita.insiel.it"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           targetNamespace="http://tipigenerali.cartellasociale.sanita.insiel.it">
+	<xs:simpleType name="AlphaNum3Type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="3"/>
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DataType">
+		<xs:restriction base="xs:date"/>
+	</xs:simpleType>
+	<xs:simpleType name="DataOraType">
+		<xs:restriction base="xs:dateTime"/>
+	</xs:simpleType>
+	<xs:complexType name="ToponimoType">
+		<xs:sequence>
+			<xs:element name="stato"
+			            type="StatoType"/>
+			<xs:element name="comune"
+			            nillable="true"
+			            type="ComuneType"/>
+			<xs:element name="indirizzo"
+			            nillable="true"
+			            type="xs:string"/>
+			<xs:element name="numeroCivico"
+			            type="xs:string"/>
+			<xs:element name="cap"
+			            type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RilevanzaObiettiviType">
+		<xs:sequence>
+			<xs:element name="rilevanza"
+			            type="xs:string"/>
+			<xs:element name="fronteggiamento"
+			            nillable="true"
+			            type="xs:string"/>
+			<xs:element name="obiettivoPrevalente"
+			            nillable="true"
+			            type="xs:string"/>
+			<xs:element name="dettaglio"
+			            type="NoteType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DettaglioDomiciliareType">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+			            name="qtaMensili"
+			            type="xs:int"/>
+			<xs:element minOccurs="0"
+			            name="obiettivi"
+			            nillable="true"
+			            type="xs:string"/>
+			<xs:element minOccurs="0"
+			            name="erogatore"
+			            nillable="true"
+			            type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="IndirizzoType">
+		<xs:sequence>
+			<xs:element name="toponimo"
+			            type="ToponimoType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NascitaType">
+		<xs:sequence>
+			<xs:element name="data"
+			            type="DataType"/>
+			<xs:element name="stato"
+			            type="StatoType"/>
+			<xs:element name="comune"
+			            type="ComuneType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AnagraficaBaseType">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+			            name="codiceNucleoFamiliare"
+			            type="xs:long"/>
+			<xs:element minOccurs="0"
+			            name="codiceAscot"
+			            type="xs:long"/>
+			<xs:element name="nome">
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="cognome">
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0"
+			            name="codiceFiscale"
+			            type="CodiceFiscaleType"/>
+			<xs:element name="sesso"
+			            type="SessoType"/>
+			<xs:element name="cittadinanza1"
+			            type="xs:long"/>
+			<xs:element minOccurs="0"
+			            name="cittadinanza2"
+			            type="xs:long"/>
+			<xs:element name="nascita"
+			            type="NascitaType"/>
+			<xs:element minOccurs="0"
+			            name="modalitaPagamento"
+			            type="xs:string"/>
+			<xs:element minOccurs="0"
+			            name="iban"
+			            type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="IseeType">
+		<xs:sequence>
+			<xs:element name="tipologiaIsee"
+			            type="xs:string"/>
+			<xs:element name="valore"
+			            type="xs:decimal"/>
+			<xs:element name="dataScadenza"
+			            type="DataType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="StatoType">
+		<xs:sequence>
+			<xs:element name="codiceCatastale"
+			            type="xs:string"/>
+			<xs:element name="codiceIstat"
+			            type="xs:string"/>
+			<xs:element name="descrizione"
+			            type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComuneType">
+		<xs:sequence>
+			<xs:element name="codiceCatastale"
+			            type="xs:string"/>
+			<xs:element name="codiceIstat"
+			            type="xs:string"/>
+			<xs:element name="descrizione"
+			            type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="SessoType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="F"/>
+			<xs:enumeration value="M"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CodiceFiscaleType">
+		<xs:restriction base="xs:string">
+			<xs:length value="16"/>
+			<xs:pattern value="[A-Z]{6}[0-9LMNPQRSTUV]{2}[A-Z][0-9LMNPQRSTUV]{2}[A-Z][0-9LMNPQRSTUV]{3}[A-Z]"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CodiceOperatoreType">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="SiNoType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="S"/>
+			<xs:enumeration value="N"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NoteType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="2000"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Descr256Type">
+		<xs:annotation>
+			<xs:documentation>descrizione di 256 caratteri max</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="256"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="SubDettaglioIntType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>Codice del Sub DettaglioIntervento, valido solo per alcune tipologie di dettaglio</xs:documentation>
+			</xs:annotation>
+			<xs:element name="codiceSubDettaglio"
+			            minOccurs="1"
+			            maxOccurs="unbounded"
+			            type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
