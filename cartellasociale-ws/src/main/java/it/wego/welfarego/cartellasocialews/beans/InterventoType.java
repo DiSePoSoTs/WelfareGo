@@ -2,149 +2,149 @@
 package it.wego.welfarego.cartellasocialews.beans;
 
 import java.math.BigDecimal;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElementRef;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per interventoType complex type.
+ * &lt;p&gt;Classe Java per interventoType complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
- * <pre>
- * &lt;complexType name="interventoType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="dataApertura" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DataType"/>
- *         &lt;element name="dataChiusura" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DataType" minOccurs="0"/>
- *         &lt;element name="tipologiaIntervento" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="dettaglio" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="durataPrevista" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="note" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}NoteType" minOccurs="0"/>
- *         &lt;element name="specificazione" minOccurs="0">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;choice>
- *                   &lt;element name="economico">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;choice>
- *                             &lt;element name="fap">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence>
- *                                       &lt;element name="tipologiaInterventoFap" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="dettaglioTipoIntervento" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="punteggioKatz" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="demenzaCertificata" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/>
- *                                       &lt;element name="disabilitaSensoriale" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/>
- *                                       &lt;element name="assegnoMensAutonomAPA" minOccurs="0">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
- *                                             &lt;fractionDigits value="2"/>
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/element>
- *                                       &lt;element name="contributoMensAiutoFam" minOccurs="0">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
- *                                             &lt;fractionDigits value="2"/>
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/element>
- *                                       &lt;element name="sostegnoMensVitaIndip" minOccurs="0">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
- *                                             &lt;fractionDigits value="2"/>
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/element>
- *                                       &lt;element name="sostegnoMensProgSaluteMentale" minOccurs="0">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
- *                                             &lt;fractionDigits value="2"/>
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/element>
- *                                       &lt;element name="isee" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IseeType" minOccurs="0"/>
- *                                       &lt;element name="dataUVD" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DataType"/>
- *                                       &lt;element name="durataMesiUVD" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                                       &lt;element name="nOreContratto" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *                                       &lt;element name="contestualePresenzaAddetti" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="assegnoAccompagnamento" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/>
- *                                       &lt;element name="motivoChiusura" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="fondoSolidarieta">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence>
- *                                       &lt;element name="isee" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IseeType" minOccurs="0"/>
- *                                       &lt;element name="totaleErogato">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
- *                                             &lt;fractionDigits value="2"/>
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/element>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                           &lt;/choice>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                   &lt;element name="domiciliare">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;choice>
- *                             &lt;element name="dettaglio" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DettaglioDomiciliareType"/>
- *                             &lt;element name="sad" type="{http://cartellasociale.sanita.insiel.it}SADType"/>
- *                           &lt;/choice>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                   &lt;element name="residenziale">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;sequence>
- *                             &lt;element name="struttura" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="codice_famiglia" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                           &lt;/sequence>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/choice>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="interventoType"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name="dataApertura" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DataType"/&amp;gt;
+ *         &amp;lt;element name="dataChiusura" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DataType" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="tipologiaIntervento" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+ *         &amp;lt;element name="dettaglio" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+ *         &amp;lt;element name="durataPrevista" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
+ *         &amp;lt;element name="note" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}NoteType" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="specificazione" minOccurs="0"&amp;gt;
+ *           &amp;lt;complexType&amp;gt;
+ *             &amp;lt;complexContent&amp;gt;
+ *               &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *                 &amp;lt;choice&amp;gt;
+ *                   &amp;lt;element name="economico"&amp;gt;
+ *                     &amp;lt;complexType&amp;gt;
+ *                       &amp;lt;complexContent&amp;gt;
+ *                         &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *                           &amp;lt;choice&amp;gt;
+ *                             &amp;lt;element name="fap"&amp;gt;
+ *                               &amp;lt;complexType&amp;gt;
+ *                                 &amp;lt;complexContent&amp;gt;
+ *                                   &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *                                     &amp;lt;sequence&amp;gt;
+ *                                       &amp;lt;element name="tipologiaInterventoFap" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+ *                                       &amp;lt;element name="dettaglioTipoIntervento" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *                                       &amp;lt;element name="punteggioKatz" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *                                       &amp;lt;element name="demenzaCertificata" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/&amp;gt;
+ *                                       &amp;lt;element name="disabilitaSensoriale" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/&amp;gt;
+ *                                       &amp;lt;element name="assegnoMensAutonomAPA" minOccurs="0"&amp;gt;
+ *                                         &amp;lt;simpleType&amp;gt;
+ *                                           &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&amp;gt;
+ *                                             &amp;lt;fractionDigits value="2"/&amp;gt;
+ *                                           &amp;lt;/restriction&amp;gt;
+ *                                         &amp;lt;/simpleType&amp;gt;
+ *                                       &amp;lt;/element&amp;gt;
+ *                                       &amp;lt;element name="contributoMensAiutoFam" minOccurs="0"&amp;gt;
+ *                                         &amp;lt;simpleType&amp;gt;
+ *                                           &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&amp;gt;
+ *                                             &amp;lt;fractionDigits value="2"/&amp;gt;
+ *                                           &amp;lt;/restriction&amp;gt;
+ *                                         &amp;lt;/simpleType&amp;gt;
+ *                                       &amp;lt;/element&amp;gt;
+ *                                       &amp;lt;element name="sostegnoMensVitaIndip" minOccurs="0"&amp;gt;
+ *                                         &amp;lt;simpleType&amp;gt;
+ *                                           &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&amp;gt;
+ *                                             &amp;lt;fractionDigits value="2"/&amp;gt;
+ *                                           &amp;lt;/restriction&amp;gt;
+ *                                         &amp;lt;/simpleType&amp;gt;
+ *                                       &amp;lt;/element&amp;gt;
+ *                                       &amp;lt;element name="sostegnoMensProgSaluteMentale" minOccurs="0"&amp;gt;
+ *                                         &amp;lt;simpleType&amp;gt;
+ *                                           &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&amp;gt;
+ *                                             &amp;lt;fractionDigits value="2"/&amp;gt;
+ *                                           &amp;lt;/restriction&amp;gt;
+ *                                         &amp;lt;/simpleType&amp;gt;
+ *                                       &amp;lt;/element&amp;gt;
+ *                                       &amp;lt;element name="isee" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IseeType" minOccurs="0"/&amp;gt;
+ *                                       &amp;lt;element name="dataUVD" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DataType"/&amp;gt;
+ *                                       &amp;lt;element name="durataMesiUVD" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
+ *                                       &amp;lt;element name="nOreContratto" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&amp;gt;
+ *                                       &amp;lt;element name="contestualePresenzaAddetti" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *                                       &amp;lt;element name="assegnoAccompagnamento" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/&amp;gt;
+ *                                       &amp;lt;element name="motivoChiusura" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *                                     &amp;lt;/sequence&amp;gt;
+ *                                   &amp;lt;/restriction&amp;gt;
+ *                                 &amp;lt;/complexContent&amp;gt;
+ *                               &amp;lt;/complexType&amp;gt;
+ *                             &amp;lt;/element&amp;gt;
+ *                             &amp;lt;element name="fondoSolidarieta"&amp;gt;
+ *                               &amp;lt;complexType&amp;gt;
+ *                                 &amp;lt;complexContent&amp;gt;
+ *                                   &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *                                     &amp;lt;sequence&amp;gt;
+ *                                       &amp;lt;element name="isee" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IseeType" minOccurs="0"/&amp;gt;
+ *                                       &amp;lt;element name="totaleErogato"&amp;gt;
+ *                                         &amp;lt;simpleType&amp;gt;
+ *                                           &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&amp;gt;
+ *                                             &amp;lt;fractionDigits value="2"/&amp;gt;
+ *                                           &amp;lt;/restriction&amp;gt;
+ *                                         &amp;lt;/simpleType&amp;gt;
+ *                                       &amp;lt;/element&amp;gt;
+ *                                     &amp;lt;/sequence&amp;gt;
+ *                                   &amp;lt;/restriction&amp;gt;
+ *                                 &amp;lt;/complexContent&amp;gt;
+ *                               &amp;lt;/complexType&amp;gt;
+ *                             &amp;lt;/element&amp;gt;
+ *                           &amp;lt;/choice&amp;gt;
+ *                         &amp;lt;/restriction&amp;gt;
+ *                       &amp;lt;/complexContent&amp;gt;
+ *                     &amp;lt;/complexType&amp;gt;
+ *                   &amp;lt;/element&amp;gt;
+ *                   &amp;lt;element name="domiciliare"&amp;gt;
+ *                     &amp;lt;complexType&amp;gt;
+ *                       &amp;lt;complexContent&amp;gt;
+ *                         &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *                           &amp;lt;choice&amp;gt;
+ *                             &amp;lt;element name="dettaglio" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DettaglioDomiciliareType"/&amp;gt;
+ *                             &amp;lt;element name="sad" type="{http://cartellasociale.sanita.insiel.it}SADType"/&amp;gt;
+ *                           &amp;lt;/choice&amp;gt;
+ *                         &amp;lt;/restriction&amp;gt;
+ *                       &amp;lt;/complexContent&amp;gt;
+ *                     &amp;lt;/complexType&amp;gt;
+ *                   &amp;lt;/element&amp;gt;
+ *                   &amp;lt;element name="residenziale"&amp;gt;
+ *                     &amp;lt;complexType&amp;gt;
+ *                       &amp;lt;complexContent&amp;gt;
+ *                         &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *                           &amp;lt;sequence&amp;gt;
+ *                             &amp;lt;element name="struttura" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+ *                             &amp;lt;element name="codice_famiglia" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+ *                           &amp;lt;/sequence&amp;gt;
+ *                         &amp;lt;/restriction&amp;gt;
+ *                       &amp;lt;/complexContent&amp;gt;
+ *                     &amp;lt;/complexType&amp;gt;
+ *                   &amp;lt;/element&amp;gt;
+ *                 &amp;lt;/choice&amp;gt;
+ *               &amp;lt;/restriction&amp;gt;
+ *             &amp;lt;/complexContent&amp;gt;
+ *           &amp;lt;/complexType&amp;gt;
+ *         &amp;lt;/element&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
@@ -171,7 +171,7 @@ public class InterventoType {
     protected String dettaglio;
     @XmlElement(required = true, type = Integer.class, nillable = true)
     protected Integer durataPrevista;
-    @XmlElementRef(name = "note", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class)
+    @XmlElementRef(name = "note", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
     protected JAXBElement<String> note;
     protected InterventoType.Specificazione specificazione;
 
@@ -345,122 +345,122 @@ public class InterventoType {
 
 
     /**
-     * <p>Classe Java per anonymous complex type.
+     * &lt;p&gt;Classe Java per anonymous complex type.
      * 
-     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+     * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
      * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;choice>
-     *         &lt;element name="economico">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;choice>
-     *                   &lt;element name="fap">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="tipologiaInterventoFap" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="dettaglioTipoIntervento" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="punteggioKatz" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="demenzaCertificata" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/>
-     *                             &lt;element name="disabilitaSensoriale" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/>
-     *                             &lt;element name="assegnoMensAutonomAPA" minOccurs="0">
-     *                               &lt;simpleType>
-     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-     *                                   &lt;fractionDigits value="2"/>
-     *                                 &lt;/restriction>
-     *                               &lt;/simpleType>
-     *                             &lt;/element>
-     *                             &lt;element name="contributoMensAiutoFam" minOccurs="0">
-     *                               &lt;simpleType>
-     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-     *                                   &lt;fractionDigits value="2"/>
-     *                                 &lt;/restriction>
-     *                               &lt;/simpleType>
-     *                             &lt;/element>
-     *                             &lt;element name="sostegnoMensVitaIndip" minOccurs="0">
-     *                               &lt;simpleType>
-     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-     *                                   &lt;fractionDigits value="2"/>
-     *                                 &lt;/restriction>
-     *                               &lt;/simpleType>
-     *                             &lt;/element>
-     *                             &lt;element name="sostegnoMensProgSaluteMentale" minOccurs="0">
-     *                               &lt;simpleType>
-     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-     *                                   &lt;fractionDigits value="2"/>
-     *                                 &lt;/restriction>
-     *                               &lt;/simpleType>
-     *                             &lt;/element>
-     *                             &lt;element name="isee" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IseeType" minOccurs="0"/>
-     *                             &lt;element name="dataUVD" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DataType"/>
-     *                             &lt;element name="durataMesiUVD" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *                             &lt;element name="nOreContratto" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
-     *                             &lt;element name="contestualePresenzaAddetti" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="assegnoAccompagnamento" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/>
-     *                             &lt;element name="motivoChiusura" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="fondoSolidarieta">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="isee" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IseeType" minOccurs="0"/>
-     *                             &lt;element name="totaleErogato">
-     *                               &lt;simpleType>
-     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-     *                                   &lt;fractionDigits value="2"/>
-     *                                 &lt;/restriction>
-     *                               &lt;/simpleType>
-     *                             &lt;/element>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                 &lt;/choice>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *         &lt;element name="domiciliare">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;choice>
-     *                   &lt;element name="dettaglio" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DettaglioDomiciliareType"/>
-     *                   &lt;element name="sad" type="{http://cartellasociale.sanita.insiel.it}SADType"/>
-     *                 &lt;/choice>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *         &lt;element name="residenziale">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence>
-     *                   &lt;element name="struttura" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                   &lt;element name="codice_famiglia" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                 &lt;/sequence>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/choice>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
+     * &lt;pre&gt;
+     * &amp;lt;complexType&amp;gt;
+     *   &amp;lt;complexContent&amp;gt;
+     *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+     *       &amp;lt;choice&amp;gt;
+     *         &amp;lt;element name="economico"&amp;gt;
+     *           &amp;lt;complexType&amp;gt;
+     *             &amp;lt;complexContent&amp;gt;
+     *               &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+     *                 &amp;lt;choice&amp;gt;
+     *                   &amp;lt;element name="fap"&amp;gt;
+     *                     &amp;lt;complexType&amp;gt;
+     *                       &amp;lt;complexContent&amp;gt;
+     *                         &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+     *                           &amp;lt;sequence&amp;gt;
+     *                             &amp;lt;element name="tipologiaInterventoFap" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+     *                             &amp;lt;element name="dettaglioTipoIntervento" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+     *                             &amp;lt;element name="punteggioKatz" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+     *                             &amp;lt;element name="demenzaCertificata" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/&amp;gt;
+     *                             &amp;lt;element name="disabilitaSensoriale" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/&amp;gt;
+     *                             &amp;lt;element name="assegnoMensAutonomAPA" minOccurs="0"&amp;gt;
+     *                               &amp;lt;simpleType&amp;gt;
+     *                                 &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&amp;gt;
+     *                                   &amp;lt;fractionDigits value="2"/&amp;gt;
+     *                                 &amp;lt;/restriction&amp;gt;
+     *                               &amp;lt;/simpleType&amp;gt;
+     *                             &amp;lt;/element&amp;gt;
+     *                             &amp;lt;element name="contributoMensAiutoFam" minOccurs="0"&amp;gt;
+     *                               &amp;lt;simpleType&amp;gt;
+     *                                 &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&amp;gt;
+     *                                   &amp;lt;fractionDigits value="2"/&amp;gt;
+     *                                 &amp;lt;/restriction&amp;gt;
+     *                               &amp;lt;/simpleType&amp;gt;
+     *                             &amp;lt;/element&amp;gt;
+     *                             &amp;lt;element name="sostegnoMensVitaIndip" minOccurs="0"&amp;gt;
+     *                               &amp;lt;simpleType&amp;gt;
+     *                                 &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&amp;gt;
+     *                                   &amp;lt;fractionDigits value="2"/&amp;gt;
+     *                                 &amp;lt;/restriction&amp;gt;
+     *                               &amp;lt;/simpleType&amp;gt;
+     *                             &amp;lt;/element&amp;gt;
+     *                             &amp;lt;element name="sostegnoMensProgSaluteMentale" minOccurs="0"&amp;gt;
+     *                               &amp;lt;simpleType&amp;gt;
+     *                                 &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&amp;gt;
+     *                                   &amp;lt;fractionDigits value="2"/&amp;gt;
+     *                                 &amp;lt;/restriction&amp;gt;
+     *                               &amp;lt;/simpleType&amp;gt;
+     *                             &amp;lt;/element&amp;gt;
+     *                             &amp;lt;element name="isee" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IseeType" minOccurs="0"/&amp;gt;
+     *                             &amp;lt;element name="dataUVD" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DataType"/&amp;gt;
+     *                             &amp;lt;element name="durataMesiUVD" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
+     *                             &amp;lt;element name="nOreContratto" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&amp;gt;
+     *                             &amp;lt;element name="contestualePresenzaAddetti" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+     *                             &amp;lt;element name="assegnoAccompagnamento" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/&amp;gt;
+     *                             &amp;lt;element name="motivoChiusura" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+     *                           &amp;lt;/sequence&amp;gt;
+     *                         &amp;lt;/restriction&amp;gt;
+     *                       &amp;lt;/complexContent&amp;gt;
+     *                     &amp;lt;/complexType&amp;gt;
+     *                   &amp;lt;/element&amp;gt;
+     *                   &amp;lt;element name="fondoSolidarieta"&amp;gt;
+     *                     &amp;lt;complexType&amp;gt;
+     *                       &amp;lt;complexContent&amp;gt;
+     *                         &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+     *                           &amp;lt;sequence&amp;gt;
+     *                             &amp;lt;element name="isee" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IseeType" minOccurs="0"/&amp;gt;
+     *                             &amp;lt;element name="totaleErogato"&amp;gt;
+     *                               &amp;lt;simpleType&amp;gt;
+     *                                 &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&amp;gt;
+     *                                   &amp;lt;fractionDigits value="2"/&amp;gt;
+     *                                 &amp;lt;/restriction&amp;gt;
+     *                               &amp;lt;/simpleType&amp;gt;
+     *                             &amp;lt;/element&amp;gt;
+     *                           &amp;lt;/sequence&amp;gt;
+     *                         &amp;lt;/restriction&amp;gt;
+     *                       &amp;lt;/complexContent&amp;gt;
+     *                     &amp;lt;/complexType&amp;gt;
+     *                   &amp;lt;/element&amp;gt;
+     *                 &amp;lt;/choice&amp;gt;
+     *               &amp;lt;/restriction&amp;gt;
+     *             &amp;lt;/complexContent&amp;gt;
+     *           &amp;lt;/complexType&amp;gt;
+     *         &amp;lt;/element&amp;gt;
+     *         &amp;lt;element name="domiciliare"&amp;gt;
+     *           &amp;lt;complexType&amp;gt;
+     *             &amp;lt;complexContent&amp;gt;
+     *               &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+     *                 &amp;lt;choice&amp;gt;
+     *                   &amp;lt;element name="dettaglio" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DettaglioDomiciliareType"/&amp;gt;
+     *                   &amp;lt;element name="sad" type="{http://cartellasociale.sanita.insiel.it}SADType"/&amp;gt;
+     *                 &amp;lt;/choice&amp;gt;
+     *               &amp;lt;/restriction&amp;gt;
+     *             &amp;lt;/complexContent&amp;gt;
+     *           &amp;lt;/complexType&amp;gt;
+     *         &amp;lt;/element&amp;gt;
+     *         &amp;lt;element name="residenziale"&amp;gt;
+     *           &amp;lt;complexType&amp;gt;
+     *             &amp;lt;complexContent&amp;gt;
+     *               &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+     *                 &amp;lt;sequence&amp;gt;
+     *                   &amp;lt;element name="struttura" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+     *                   &amp;lt;element name="codice_famiglia" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+     *                 &amp;lt;/sequence&amp;gt;
+     *               &amp;lt;/restriction&amp;gt;
+     *             &amp;lt;/complexContent&amp;gt;
+     *           &amp;lt;/complexType&amp;gt;
+     *         &amp;lt;/element&amp;gt;
+     *       &amp;lt;/choice&amp;gt;
+     *     &amp;lt;/restriction&amp;gt;
+     *   &amp;lt;/complexContent&amp;gt;
+     * &amp;lt;/complexType&amp;gt;
+     * &lt;/pre&gt;
      * 
      * 
      */
@@ -550,22 +550,22 @@ public class InterventoType {
 
 
         /**
-         * <p>Classe Java per anonymous complex type.
+         * &lt;p&gt;Classe Java per anonymous complex type.
          * 
-         * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+         * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
          * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;choice>
-         *         &lt;element name="dettaglio" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DettaglioDomiciliareType"/>
-         *         &lt;element name="sad" type="{http://cartellasociale.sanita.insiel.it}SADType"/>
-         *       &lt;/choice>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
+         * &lt;pre&gt;
+         * &amp;lt;complexType&amp;gt;
+         *   &amp;lt;complexContent&amp;gt;
+         *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+         *       &amp;lt;choice&amp;gt;
+         *         &amp;lt;element name="dettaglio" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DettaglioDomiciliareType"/&amp;gt;
+         *         &amp;lt;element name="sad" type="{http://cartellasociale.sanita.insiel.it}SADType"/&amp;gt;
+         *       &amp;lt;/choice&amp;gt;
+         *     &amp;lt;/restriction&amp;gt;
+         *   &amp;lt;/complexContent&amp;gt;
+         * &amp;lt;/complexType&amp;gt;
+         * &lt;/pre&gt;
          * 
          * 
          */
@@ -631,88 +631,88 @@ public class InterventoType {
 
 
         /**
-         * <p>Classe Java per anonymous complex type.
+         * &lt;p&gt;Classe Java per anonymous complex type.
          * 
-         * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+         * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
          * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;choice>
-         *         &lt;element name="fap">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="tipologiaInterventoFap" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="dettaglioTipoIntervento" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="punteggioKatz" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="demenzaCertificata" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/>
-         *                   &lt;element name="disabilitaSensoriale" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/>
-         *                   &lt;element name="assegnoMensAutonomAPA" minOccurs="0">
-         *                     &lt;simpleType>
-         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-         *                         &lt;fractionDigits value="2"/>
-         *                       &lt;/restriction>
-         *                     &lt;/simpleType>
-         *                   &lt;/element>
-         *                   &lt;element name="contributoMensAiutoFam" minOccurs="0">
-         *                     &lt;simpleType>
-         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-         *                         &lt;fractionDigits value="2"/>
-         *                       &lt;/restriction>
-         *                     &lt;/simpleType>
-         *                   &lt;/element>
-         *                   &lt;element name="sostegnoMensVitaIndip" minOccurs="0">
-         *                     &lt;simpleType>
-         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-         *                         &lt;fractionDigits value="2"/>
-         *                       &lt;/restriction>
-         *                     &lt;/simpleType>
-         *                   &lt;/element>
-         *                   &lt;element name="sostegnoMensProgSaluteMentale" minOccurs="0">
-         *                     &lt;simpleType>
-         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-         *                         &lt;fractionDigits value="2"/>
-         *                       &lt;/restriction>
-         *                     &lt;/simpleType>
-         *                   &lt;/element>
-         *                   &lt;element name="isee" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IseeType" minOccurs="0"/>
-         *                   &lt;element name="dataUVD" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DataType"/>
-         *                   &lt;element name="durataMesiUVD" type="{http://www.w3.org/2001/XMLSchema}int"/>
-         *                   &lt;element name="nOreContratto" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
-         *                   &lt;element name="contestualePresenzaAddetti" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="assegnoAccompagnamento" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/>
-         *                   &lt;element name="motivoChiusura" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="fondoSolidarieta">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="isee" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IseeType" minOccurs="0"/>
-         *                   &lt;element name="totaleErogato">
-         *                     &lt;simpleType>
-         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-         *                         &lt;fractionDigits value="2"/>
-         *                       &lt;/restriction>
-         *                     &lt;/simpleType>
-         *                   &lt;/element>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *       &lt;/choice>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
+         * &lt;pre&gt;
+         * &amp;lt;complexType&amp;gt;
+         *   &amp;lt;complexContent&amp;gt;
+         *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+         *       &amp;lt;choice&amp;gt;
+         *         &amp;lt;element name="fap"&amp;gt;
+         *           &amp;lt;complexType&amp;gt;
+         *             &amp;lt;complexContent&amp;gt;
+         *               &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+         *                 &amp;lt;sequence&amp;gt;
+         *                   &amp;lt;element name="tipologiaInterventoFap" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+         *                   &amp;lt;element name="dettaglioTipoIntervento" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+         *                   &amp;lt;element name="punteggioKatz" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+         *                   &amp;lt;element name="demenzaCertificata" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/&amp;gt;
+         *                   &amp;lt;element name="disabilitaSensoriale" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/&amp;gt;
+         *                   &amp;lt;element name="assegnoMensAutonomAPA" minOccurs="0"&amp;gt;
+         *                     &amp;lt;simpleType&amp;gt;
+         *                       &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&amp;gt;
+         *                         &amp;lt;fractionDigits value="2"/&amp;gt;
+         *                       &amp;lt;/restriction&amp;gt;
+         *                     &amp;lt;/simpleType&amp;gt;
+         *                   &amp;lt;/element&amp;gt;
+         *                   &amp;lt;element name="contributoMensAiutoFam" minOccurs="0"&amp;gt;
+         *                     &amp;lt;simpleType&amp;gt;
+         *                       &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&amp;gt;
+         *                         &amp;lt;fractionDigits value="2"/&amp;gt;
+         *                       &amp;lt;/restriction&amp;gt;
+         *                     &amp;lt;/simpleType&amp;gt;
+         *                   &amp;lt;/element&amp;gt;
+         *                   &amp;lt;element name="sostegnoMensVitaIndip" minOccurs="0"&amp;gt;
+         *                     &amp;lt;simpleType&amp;gt;
+         *                       &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&amp;gt;
+         *                         &amp;lt;fractionDigits value="2"/&amp;gt;
+         *                       &amp;lt;/restriction&amp;gt;
+         *                     &amp;lt;/simpleType&amp;gt;
+         *                   &amp;lt;/element&amp;gt;
+         *                   &amp;lt;element name="sostegnoMensProgSaluteMentale" minOccurs="0"&amp;gt;
+         *                     &amp;lt;simpleType&amp;gt;
+         *                       &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&amp;gt;
+         *                         &amp;lt;fractionDigits value="2"/&amp;gt;
+         *                       &amp;lt;/restriction&amp;gt;
+         *                     &amp;lt;/simpleType&amp;gt;
+         *                   &amp;lt;/element&amp;gt;
+         *                   &amp;lt;element name="isee" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IseeType" minOccurs="0"/&amp;gt;
+         *                   &amp;lt;element name="dataUVD" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DataType"/&amp;gt;
+         *                   &amp;lt;element name="durataMesiUVD" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
+         *                   &amp;lt;element name="nOreContratto" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&amp;gt;
+         *                   &amp;lt;element name="contestualePresenzaAddetti" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+         *                   &amp;lt;element name="assegnoAccompagnamento" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/&amp;gt;
+         *                   &amp;lt;element name="motivoChiusura" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+         *                 &amp;lt;/sequence&amp;gt;
+         *               &amp;lt;/restriction&amp;gt;
+         *             &amp;lt;/complexContent&amp;gt;
+         *           &amp;lt;/complexType&amp;gt;
+         *         &amp;lt;/element&amp;gt;
+         *         &amp;lt;element name="fondoSolidarieta"&amp;gt;
+         *           &amp;lt;complexType&amp;gt;
+         *             &amp;lt;complexContent&amp;gt;
+         *               &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+         *                 &amp;lt;sequence&amp;gt;
+         *                   &amp;lt;element name="isee" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IseeType" minOccurs="0"/&amp;gt;
+         *                   &amp;lt;element name="totaleErogato"&amp;gt;
+         *                     &amp;lt;simpleType&amp;gt;
+         *                       &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&amp;gt;
+         *                         &amp;lt;fractionDigits value="2"/&amp;gt;
+         *                       &amp;lt;/restriction&amp;gt;
+         *                     &amp;lt;/simpleType&amp;gt;
+         *                   &amp;lt;/element&amp;gt;
+         *                 &amp;lt;/sequence&amp;gt;
+         *               &amp;lt;/restriction&amp;gt;
+         *             &amp;lt;/complexContent&amp;gt;
+         *           &amp;lt;/complexType&amp;gt;
+         *         &amp;lt;/element&amp;gt;
+         *       &amp;lt;/choice&amp;gt;
+         *     &amp;lt;/restriction&amp;gt;
+         *   &amp;lt;/complexContent&amp;gt;
+         * &amp;lt;/complexType&amp;gt;
+         * &lt;/pre&gt;
          * 
          * 
          */
@@ -776,60 +776,60 @@ public class InterventoType {
 
 
             /**
-             * <p>Classe Java per anonymous complex type.
+             * &lt;p&gt;Classe Java per anonymous complex type.
              * 
-             * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+             * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
              * 
-             * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="tipologiaInterventoFap" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="dettaglioTipoIntervento" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="punteggioKatz" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="demenzaCertificata" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/>
-             *         &lt;element name="disabilitaSensoriale" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/>
-             *         &lt;element name="assegnoMensAutonomAPA" minOccurs="0">
-             *           &lt;simpleType>
-             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-             *               &lt;fractionDigits value="2"/>
-             *             &lt;/restriction>
-             *           &lt;/simpleType>
-             *         &lt;/element>
-             *         &lt;element name="contributoMensAiutoFam" minOccurs="0">
-             *           &lt;simpleType>
-             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-             *               &lt;fractionDigits value="2"/>
-             *             &lt;/restriction>
-             *           &lt;/simpleType>
-             *         &lt;/element>
-             *         &lt;element name="sostegnoMensVitaIndip" minOccurs="0">
-             *           &lt;simpleType>
-             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-             *               &lt;fractionDigits value="2"/>
-             *             &lt;/restriction>
-             *           &lt;/simpleType>
-             *         &lt;/element>
-             *         &lt;element name="sostegnoMensProgSaluteMentale" minOccurs="0">
-             *           &lt;simpleType>
-             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-             *               &lt;fractionDigits value="2"/>
-             *             &lt;/restriction>
-             *           &lt;/simpleType>
-             *         &lt;/element>
-             *         &lt;element name="isee" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IseeType" minOccurs="0"/>
-             *         &lt;element name="dataUVD" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DataType"/>
-             *         &lt;element name="durataMesiUVD" type="{http://www.w3.org/2001/XMLSchema}int"/>
-             *         &lt;element name="nOreContratto" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
-             *         &lt;element name="contestualePresenzaAddetti" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="assegnoAccompagnamento" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/>
-             *         &lt;element name="motivoChiusura" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
-             * </pre>
+             * &lt;pre&gt;
+             * &amp;lt;complexType&amp;gt;
+             *   &amp;lt;complexContent&amp;gt;
+             *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+             *       &amp;lt;sequence&amp;gt;
+             *         &amp;lt;element name="tipologiaInterventoFap" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+             *         &amp;lt;element name="dettaglioTipoIntervento" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+             *         &amp;lt;element name="punteggioKatz" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+             *         &amp;lt;element name="demenzaCertificata" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/&amp;gt;
+             *         &amp;lt;element name="disabilitaSensoriale" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/&amp;gt;
+             *         &amp;lt;element name="assegnoMensAutonomAPA" minOccurs="0"&amp;gt;
+             *           &amp;lt;simpleType&amp;gt;
+             *             &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&amp;gt;
+             *               &amp;lt;fractionDigits value="2"/&amp;gt;
+             *             &amp;lt;/restriction&amp;gt;
+             *           &amp;lt;/simpleType&amp;gt;
+             *         &amp;lt;/element&amp;gt;
+             *         &amp;lt;element name="contributoMensAiutoFam" minOccurs="0"&amp;gt;
+             *           &amp;lt;simpleType&amp;gt;
+             *             &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&amp;gt;
+             *               &amp;lt;fractionDigits value="2"/&amp;gt;
+             *             &amp;lt;/restriction&amp;gt;
+             *           &amp;lt;/simpleType&amp;gt;
+             *         &amp;lt;/element&amp;gt;
+             *         &amp;lt;element name="sostegnoMensVitaIndip" minOccurs="0"&amp;gt;
+             *           &amp;lt;simpleType&amp;gt;
+             *             &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&amp;gt;
+             *               &amp;lt;fractionDigits value="2"/&amp;gt;
+             *             &amp;lt;/restriction&amp;gt;
+             *           &amp;lt;/simpleType&amp;gt;
+             *         &amp;lt;/element&amp;gt;
+             *         &amp;lt;element name="sostegnoMensProgSaluteMentale" minOccurs="0"&amp;gt;
+             *           &amp;lt;simpleType&amp;gt;
+             *             &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&amp;gt;
+             *               &amp;lt;fractionDigits value="2"/&amp;gt;
+             *             &amp;lt;/restriction&amp;gt;
+             *           &amp;lt;/simpleType&amp;gt;
+             *         &amp;lt;/element&amp;gt;
+             *         &amp;lt;element name="isee" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IseeType" minOccurs="0"/&amp;gt;
+             *         &amp;lt;element name="dataUVD" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DataType"/&amp;gt;
+             *         &amp;lt;element name="durataMesiUVD" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
+             *         &amp;lt;element name="nOreContratto" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&amp;gt;
+             *         &amp;lt;element name="contestualePresenzaAddetti" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+             *         &amp;lt;element name="assegnoAccompagnamento" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/&amp;gt;
+             *         &amp;lt;element name="motivoChiusura" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+             *       &amp;lt;/sequence&amp;gt;
+             *     &amp;lt;/restriction&amp;gt;
+             *   &amp;lt;/complexContent&amp;gt;
+             * &amp;lt;/complexType&amp;gt;
+             * &lt;/pre&gt;
              * 
              * 
              */
@@ -1260,28 +1260,28 @@ public class InterventoType {
 
 
             /**
-             * <p>Classe Java per anonymous complex type.
+             * &lt;p&gt;Classe Java per anonymous complex type.
              * 
-             * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+             * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
              * 
-             * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="isee" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IseeType" minOccurs="0"/>
-             *         &lt;element name="totaleErogato">
-             *           &lt;simpleType>
-             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-             *               &lt;fractionDigits value="2"/>
-             *             &lt;/restriction>
-             *           &lt;/simpleType>
-             *         &lt;/element>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
-             * </pre>
+             * &lt;pre&gt;
+             * &amp;lt;complexType&amp;gt;
+             *   &amp;lt;complexContent&amp;gt;
+             *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+             *       &amp;lt;sequence&amp;gt;
+             *         &amp;lt;element name="isee" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IseeType" minOccurs="0"/&amp;gt;
+             *         &amp;lt;element name="totaleErogato"&amp;gt;
+             *           &amp;lt;simpleType&amp;gt;
+             *             &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&amp;gt;
+             *               &amp;lt;fractionDigits value="2"/&amp;gt;
+             *             &amp;lt;/restriction&amp;gt;
+             *           &amp;lt;/simpleType&amp;gt;
+             *         &amp;lt;/element&amp;gt;
+             *       &amp;lt;/sequence&amp;gt;
+             *     &amp;lt;/restriction&amp;gt;
+             *   &amp;lt;/complexContent&amp;gt;
+             * &amp;lt;/complexType&amp;gt;
+             * &lt;/pre&gt;
              * 
              * 
              */
@@ -1350,22 +1350,22 @@ public class InterventoType {
 
 
         /**
-         * <p>Classe Java per anonymous complex type.
+         * &lt;p&gt;Classe Java per anonymous complex type.
          * 
-         * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+         * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
          * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;sequence>
-         *         &lt;element name="struttura" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *         &lt;element name="codice_famiglia" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *       &lt;/sequence>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
+         * &lt;pre&gt;
+         * &amp;lt;complexType&amp;gt;
+         *   &amp;lt;complexContent&amp;gt;
+         *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+         *       &amp;lt;sequence&amp;gt;
+         *         &amp;lt;element name="struttura" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+         *         &amp;lt;element name="codice_famiglia" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+         *       &amp;lt;/sequence&amp;gt;
+         *     &amp;lt;/restriction&amp;gt;
+         *   &amp;lt;/complexContent&amp;gt;
+         * &amp;lt;/complexType&amp;gt;
+         * &lt;/pre&gt;
          * 
          * 
          */

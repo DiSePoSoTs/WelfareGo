@@ -1,17 +1,17 @@
 
 package it.wego.welfarego.cartellasocialews.beans;
 
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlElementDecl;
-import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.namespace.QName;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlElementDecl;
+import jakarta.xml.bind.annotation.XmlRegistry;
 
 
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the it.wego.welfarego.cartellasocialews.beans package. 
- * <p>An ObjectFactory allows you to programatically 
+ * &lt;p&gt;An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -24,32 +24,31 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _DettaglioDomiciliareTypeErogatore_QNAME = new QName("http://tipigenerali.cartellasociale.sanita.insiel.it", "erogatore");
     private final static QName _DettaglioDomiciliareTypeObiettivi_QNAME = new QName("http://tipigenerali.cartellasociale.sanita.insiel.it", "obiettivi");
-    private final static QName _InterventoNewTypeSubDettaglio_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "subDettaglio");
-    private final static QName _InterventoNewTypeNote_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "note");
-    private final static QName _ProfiloTypeDomicilioTelefono_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "telefono");
-    private final static QName _ProfiloTypeDomicilioIdoneitaAbitazione_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "idoneitaAbitazione");
-    private final static QName _ProfiloTypeDomicilioCondizioneAbitativa_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "condizioneAbitativa");
-    private final static QName _ProfiloTypeDatiPersonaliTipoAssegno_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "tipoAssegno");
-    private final static QName _ProfiloTypeDatiPersonaliAttesaAccompagnamento_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "attesaAccompagnamento");
-    private final static QName _ProfiloTypeDatiPersonaliAssegnoAccompagnamento_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "assegnoAccompagnamento");
+    private final static QName _DettaglioDomiciliareTypeErogatore_QNAME = new QName("http://tipigenerali.cartellasociale.sanita.insiel.it", "erogatore");
     private final static QName _SADTypeObiettivi_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "obiettivi");
+    private final static QName _InterventoTypeNote_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "note");
     private final static QName _ProblematicheTypeMacroproblematicaNoteAltro_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "noteAltro");
+    private final static QName _InterventoNewTypeSubDettaglio_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "subDettaglio");
+    private final static QName _ProfiloTypeDomicilioTelefono_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "telefono");
+    private final static QName _ProfiloTypeDomicilioCondizioneAbitativa_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "condizioneAbitativa");
+    private final static QName _ProfiloTypeDomicilioIdoneitaAbitazione_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "idoneitaAbitazione");
+    private final static QName _ProfiloTypeDomicilioStruttura_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "struttura");
+    private final static QName _ProfiloTypeDatiPersonaliAssegnoAccompagnamento_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "assegnoAccompagnamento");
+    private final static QName _ProfiloTypeDatiPersonaliAttesaAccompagnamento_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "attesaAccompagnamento");
+    private final static QName _ProfiloTypeDatiPersonaliNonAutosufficiente_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "nonAutosufficiente");
+    private final static QName _ProfiloTypeDatiPersonaliNonAutosufficienzaTemporanea_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "nonAutosufficienzaTemporanea");
+    private final static QName _ProfiloTypeDatiPersonaliDisabileGravissimo_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "disabileGravissimo");
+    private final static QName _ProfiloTypeDatiPersonaliPatologiaOncologica_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "patologiaOncologica");
+    private final static QName _ProfiloTypeDatiPersonaliFaseTerminale_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "faseTerminale");
+    private final static QName _ProfiloTypeDatiPersonaliTipoAssegno_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "tipoAssegno");
+    private final static QName _ProfiloTypeDatiPersonaliMsna_QNAME = new QName("http://cartellasociale.sanita.insiel.it", "msna");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: it.wego.welfarego.cartellasocialews.beans
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link ProblematicheType }
-     * 
-     */
-    public ProblematicheType createProblematicheType() {
-        return new ProblematicheType();
     }
 
     /**
@@ -74,6 +73,14 @@ public class ObjectFactory {
      */
     public InterventoType.Specificazione.Economico createInterventoTypeSpecificazioneEconomico() {
         return new InterventoType.Specificazione.Economico();
+    }
+
+    /**
+     * Create an instance of {@link ProblematicheType }
+     * 
+     */
+    public ProblematicheType createProblematicheType() {
+        return new ProblematicheType();
     }
 
     /**
@@ -125,27 +132,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link InserimentoCartellaSociale }
+     * Create an instance of {@link AzioniBackOffice }
      * 
      */
-    public InserimentoCartellaSociale createInserimentoCartellaSociale() {
-        return new InserimentoCartellaSociale();
+    public AzioniBackOffice createAzioniBackOffice() {
+        return new AzioniBackOffice();
     }
 
     /**
-     * Create an instance of {@link ProgettoType }
+     * Create an instance of {@link RicevutaAzioniBackOffice }
      * 
      */
-    public ProgettoType createProgettoType() {
-        return new ProgettoType();
-    }
-
-    /**
-     * Create an instance of {@link RicevutaModificaAnagrafica }
-     * 
-     */
-    public RicevutaModificaAnagrafica createRicevutaModificaAnagrafica() {
-        return new RicevutaModificaAnagrafica();
+    public RicevutaAzioniBackOffice createRicevutaAzioniBackOffice() {
+        return new RicevutaAzioniBackOffice();
     }
 
     /**
@@ -173,19 +172,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link NuovaModificaIntervento }
+     * Create an instance of {@link InserimentoCartellaSociale }
      * 
      */
-    public NuovaModificaIntervento createNuovaModificaIntervento() {
-        return new NuovaModificaIntervento();
+    public InserimentoCartellaSociale createInserimentoCartellaSociale() {
+        return new InserimentoCartellaSociale();
     }
 
     /**
-     * Create an instance of {@link RicevutaModificaIntervento }
+     * Create an instance of {@link ProgettoType }
      * 
      */
-    public RicevutaModificaIntervento createRicevutaModificaIntervento() {
-        return new RicevutaModificaIntervento();
+    public ProgettoType createProgettoType() {
+        return new ProgettoType();
     }
 
     /**
@@ -197,134 +196,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RicevutaModificaDiario }
-     * 
-     */
-    public RicevutaModificaDiario createRicevutaModificaDiario() {
-        return new RicevutaModificaDiario();
-    }
-
-    /**
-     * Create an instance of {@link AzioniBackOffice }
-     * 
-     */
-    public AzioniBackOffice createAzioniBackOffice() {
-        return new AzioniBackOffice();
-    }
-
-    /**
-     * Create an instance of {@link RicevutaIntervento }
-     * 
-     */
-    public RicevutaIntervento createRicevutaIntervento() {
-        return new RicevutaIntervento();
-    }
-
-    /**
-     * Create an instance of {@link RicevutaModificaProfilo }
-     * 
-     */
-    public RicevutaModificaProfilo createRicevutaModificaProfilo() {
-        return new RicevutaModificaProfilo();
-    }
-
-    /**
-     * Create an instance of {@link RicevutaChiudiInterventiDaLista }
-     * 
-     */
-    public RicevutaChiudiInterventiDaLista createRicevutaChiudiInterventiDaLista() {
-        return new RicevutaChiudiInterventiDaLista();
-    }
-
-    /**
-     * Create an instance of {@link RicevutaChiudiCartella }
-     * 
-     */
-    public RicevutaChiudiCartella createRicevutaChiudiCartella() {
-        return new RicevutaChiudiCartella();
-    }
-
-    /**
-     * Create an instance of {@link RicevutaAzioniBackOffice }
-     * 
-     */
-    public RicevutaAzioniBackOffice createRicevutaAzioniBackOffice() {
-        return new RicevutaAzioniBackOffice();
-    }
-
-    /**
-     * Create an instance of {@link ChiudiCartella }
-     * 
-     */
-    public ChiudiCartella createChiudiCartella() {
-        return new ChiudiCartella();
-    }
-
-    /**
-     * Create an instance of {@link ModificaAnagrafica }
-     * 
-     */
-    public ModificaAnagrafica createModificaAnagrafica() {
-        return new ModificaAnagrafica();
-    }
-
-    /**
-     * Create an instance of {@link ModificaIntervento }
-     * 
-     */
-    public ModificaIntervento createModificaIntervento() {
-        return new ModificaIntervento();
-    }
-
-    /**
-     * Create an instance of {@link InserimentoPersonaRiferimento }
-     * 
-     */
-    public InserimentoPersonaRiferimento createInserimentoPersonaRiferimento() {
-        return new InserimentoPersonaRiferimento();
-    }
-
-    /**
-     * Create an instance of {@link PersonaRiferimentoType }
-     * 
-     */
-    public PersonaRiferimentoType createPersonaRiferimentoType() {
-        return new PersonaRiferimentoType();
-    }
-
-    /**
-     * Create an instance of {@link ModificaProfilo }
-     * 
-     */
-    public ModificaProfilo createModificaProfilo() {
-        return new ModificaProfilo();
-    }
-
-    /**
-     * Create an instance of {@link InserimentoIntervento }
-     * 
-     */
-    public InserimentoIntervento createInserimentoIntervento() {
-        return new InserimentoIntervento();
-    }
-
-    /**
-     * Create an instance of {@link ModificaPersonaRiferimento }
-     * 
-     */
-    public ModificaPersonaRiferimento createModificaPersonaRiferimento() {
-        return new ModificaPersonaRiferimento();
-    }
-
-    /**
-     * Create an instance of {@link RicevutaPersonaRiferimento }
-     * 
-     */
-    public RicevutaPersonaRiferimento createRicevutaPersonaRiferimento() {
-        return new RicevutaPersonaRiferimento();
-    }
-
-    /**
      * Create an instance of {@link NuovoInserimentoIntervento }
      * 
      */
@@ -333,43 +204,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ModificaProgetto }
+     * Create an instance of {@link RicevutaIntervento }
      * 
      */
-    public ModificaProgetto createModificaProgetto() {
-        return new ModificaProgetto();
-    }
-
-    /**
-     * Create an instance of {@link RicevutaRiattivaCartella }
-     * 
-     */
-    public RicevutaRiattivaCartella createRicevutaRiattivaCartella() {
-        return new RicevutaRiattivaCartella();
-    }
-
-    /**
-     * Create an instance of {@link RicevutaDiario }
-     * 
-     */
-    public RicevutaDiario createRicevutaDiario() {
-        return new RicevutaDiario();
-    }
-
-    /**
-     * Create an instance of {@link RicevutaModificaProgetto }
-     * 
-     */
-    public RicevutaModificaProgetto createRicevutaModificaProgetto() {
-        return new RicevutaModificaProgetto();
-    }
-
-    /**
-     * Create an instance of {@link RiattivaCartella }
-     * 
-     */
-    public RiattivaCartella createRiattivaCartella() {
-        return new RiattivaCartella();
+    public RicevutaIntervento createRicevutaIntervento() {
+        return new RicevutaIntervento();
     }
 
     /**
@@ -389,6 +228,110 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link RicevutaDiario }
+     * 
+     */
+    public RicevutaDiario createRicevutaDiario() {
+        return new RicevutaDiario();
+    }
+
+    /**
+     * Create an instance of {@link InserimentoPersonaRiferimento }
+     * 
+     */
+    public InserimentoPersonaRiferimento createInserimentoPersonaRiferimento() {
+        return new InserimentoPersonaRiferimento();
+    }
+
+    /**
+     * Create an instance of {@link PersonaRiferimentoType }
+     * 
+     */
+    public PersonaRiferimentoType createPersonaRiferimentoType() {
+        return new PersonaRiferimentoType();
+    }
+
+    /**
+     * Create an instance of {@link ModificaAnagrafica }
+     * 
+     */
+    public ModificaAnagrafica createModificaAnagrafica() {
+        return new ModificaAnagrafica();
+    }
+
+    /**
+     * Create an instance of {@link RicevutaModificaAnagrafica }
+     * 
+     */
+    public RicevutaModificaAnagrafica createRicevutaModificaAnagrafica() {
+        return new RicevutaModificaAnagrafica();
+    }
+
+    /**
+     * Create an instance of {@link InserimentoProfilo }
+     * 
+     */
+    public InserimentoProfilo createInserimentoProfilo() {
+        return new InserimentoProfilo();
+    }
+
+    /**
+     * Create an instance of {@link RicevutaInserimentoProfilo }
+     * 
+     */
+    public RicevutaInserimentoProfilo createRicevutaInserimentoProfilo() {
+        return new RicevutaInserimentoProfilo();
+    }
+
+    /**
+     * Create an instance of {@link ModificaProfilo }
+     * 
+     */
+    public ModificaProfilo createModificaProfilo() {
+        return new ModificaProfilo();
+    }
+
+    /**
+     * Create an instance of {@link RicevutaModificaProfilo }
+     * 
+     */
+    public RicevutaModificaProfilo createRicevutaModificaProfilo() {
+        return new RicevutaModificaProfilo();
+    }
+
+    /**
+     * Create an instance of {@link ModificaProgetto }
+     * 
+     */
+    public ModificaProgetto createModificaProgetto() {
+        return new ModificaProgetto();
+    }
+
+    /**
+     * Create an instance of {@link RicevutaModificaProgetto }
+     * 
+     */
+    public RicevutaModificaProgetto createRicevutaModificaProgetto() {
+        return new RicevutaModificaProgetto();
+    }
+
+    /**
+     * Create an instance of {@link NuovaModificaIntervento }
+     * 
+     */
+    public NuovaModificaIntervento createNuovaModificaIntervento() {
+        return new NuovaModificaIntervento();
+    }
+
+    /**
+     * Create an instance of {@link RicevutaModificaIntervento }
+     * 
+     */
+    public RicevutaModificaIntervento createRicevutaModificaIntervento() {
+        return new RicevutaModificaIntervento();
+    }
+
+    /**
      * Create an instance of {@link ModificaDiario }
      * 
      */
@@ -397,35 +340,67 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ListaMicroInterventiSADType }
+     * Create an instance of {@link RicevutaModificaDiario }
      * 
      */
-    public ListaMicroInterventiSADType createListaMicroInterventiSADType() {
-        return new ListaMicroInterventiSADType();
+    public RicevutaModificaDiario createRicevutaModificaDiario() {
+        return new RicevutaModificaDiario();
     }
 
     /**
-     * Create an instance of {@link DettaglioMacrointerventoSADType }
+     * Create an instance of {@link ModificaPersonaRiferimento }
      * 
      */
-    public DettaglioMacrointerventoSADType createDettaglioMacrointerventoSADType() {
-        return new DettaglioMacrointerventoSADType();
+    public ModificaPersonaRiferimento createModificaPersonaRiferimento() {
+        return new ModificaPersonaRiferimento();
     }
 
     /**
-     * Create an instance of {@link SADType }
+     * Create an instance of {@link RicevutaPersonaRiferimento }
      * 
      */
-    public SADType createSADType() {
-        return new SADType();
+    public RicevutaPersonaRiferimento createRicevutaPersonaRiferimento() {
+        return new RicevutaPersonaRiferimento();
     }
 
     /**
-     * Create an instance of {@link DettaglioMicrointerventoSADType }
+     * Create an instance of {@link ChiudiCartella }
      * 
      */
-    public DettaglioMicrointerventoSADType createDettaglioMicrointerventoSADType() {
-        return new DettaglioMicrointerventoSADType();
+    public ChiudiCartella createChiudiCartella() {
+        return new ChiudiCartella();
+    }
+
+    /**
+     * Create an instance of {@link RicevutaChiudiCartella }
+     * 
+     */
+    public RicevutaChiudiCartella createRicevutaChiudiCartella() {
+        return new RicevutaChiudiCartella();
+    }
+
+    /**
+     * Create an instance of {@link RiattivaCartella }
+     * 
+     */
+    public RiattivaCartella createRiattivaCartella() {
+        return new RiattivaCartella();
+    }
+
+    /**
+     * Create an instance of {@link RicevutaRiattivaCartella }
+     * 
+     */
+    public RicevutaRiattivaCartella createRicevutaRiattivaCartella() {
+        return new RicevutaRiattivaCartella();
+    }
+
+    /**
+     * Create an instance of {@link RicevutaChiudiInterventiDaLista }
+     * 
+     */
+    public RicevutaChiudiInterventiDaLista createRicevutaChiudiInterventiDaLista() {
+        return new RicevutaChiudiInterventiDaLista();
     }
 
     /**
@@ -437,19 +412,35 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DettaglioDomiciliareType }
+     * Create an instance of {@link DettaglioMacrointerventoSADType }
      * 
      */
-    public DettaglioDomiciliareType createDettaglioDomiciliareType() {
-        return new DettaglioDomiciliareType();
+    public DettaglioMacrointerventoSADType createDettaglioMacrointerventoSADType() {
+        return new DettaglioMacrointerventoSADType();
     }
 
     /**
-     * Create an instance of {@link RilevanzaObiettiviType }
+     * Create an instance of {@link ListaMicroInterventiSADType }
      * 
      */
-    public RilevanzaObiettiviType createRilevanzaObiettiviType() {
-        return new RilevanzaObiettiviType();
+    public ListaMicroInterventiSADType createListaMicroInterventiSADType() {
+        return new ListaMicroInterventiSADType();
+    }
+
+    /**
+     * Create an instance of {@link DettaglioMicrointerventoSADType }
+     * 
+     */
+    public DettaglioMicrointerventoSADType createDettaglioMicrointerventoSADType() {
+        return new DettaglioMicrointerventoSADType();
+    }
+
+    /**
+     * Create an instance of {@link SADType }
+     * 
+     */
+    public SADType createSADType() {
+        return new SADType();
     }
 
     /**
@@ -461,11 +452,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AnagraficaBaseType }
+     * Create an instance of {@link RilevanzaObiettiviType }
      * 
      */
-    public AnagraficaBaseType createAnagraficaBaseType() {
-        return new AnagraficaBaseType();
+    public RilevanzaObiettiviType createRilevanzaObiettiviType() {
+        return new RilevanzaObiettiviType();
+    }
+
+    /**
+     * Create an instance of {@link DettaglioDomiciliareType }
+     * 
+     */
+    public DettaglioDomiciliareType createDettaglioDomiciliareType() {
+        return new DettaglioDomiciliareType();
     }
 
     /**
@@ -477,11 +476,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ComuneType }
+     * Create an instance of {@link NascitaType }
      * 
      */
-    public ComuneType createComuneType() {
-        return new ComuneType();
+    public NascitaType createNascitaType() {
+        return new NascitaType();
+    }
+
+    /**
+     * Create an instance of {@link AnagraficaBaseType }
+     * 
+     */
+    public AnagraficaBaseType createAnagraficaBaseType() {
+        return new AnagraficaBaseType();
     }
 
     /**
@@ -493,27 +500,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SubDettaglioIntType }
-     * 
-     */
-    public SubDettaglioIntType createSubDettaglioIntType() {
-        return new SubDettaglioIntType();
-    }
-
-    /**
-     * Create an instance of {@link NascitaType }
-     * 
-     */
-    public NascitaType createNascitaType() {
-        return new NascitaType();
-    }
-
-    /**
      * Create an instance of {@link StatoType }
      * 
      */
     public StatoType createStatoType() {
         return new StatoType();
+    }
+
+    /**
+     * Create an instance of {@link ComuneType }
+     * 
+     */
+    public ComuneType createComuneType() {
+        return new ComuneType();
+    }
+
+    /**
+     * Create an instance of {@link SubDettaglioIntType }
+     * 
+     */
+    public SubDettaglioIntType createSubDettaglioIntType() {
+        return new SubDettaglioIntType();
     }
 
     /**
@@ -538,14 +545,6 @@ public class ObjectFactory {
      */
     public Autenticazione createAutenticazione() {
         return new Autenticazione();
-    }
-
-    /**
-     * Create an instance of {@link ProblematicheType.Macroproblematica }
-     * 
-     */
-    public ProblematicheType.Macroproblematica createProblematicheTypeMacroproblematica() {
-        return new ProblematicheType.Macroproblematica();
     }
 
     /**
@@ -578,6 +577,14 @@ public class ObjectFactory {
      */
     public InterventoType.Specificazione.Economico.FondoSolidarieta createInterventoTypeSpecificazioneEconomicoFondoSolidarieta() {
         return new InterventoType.Specificazione.Economico.FondoSolidarieta();
+    }
+
+    /**
+     * Create an instance of {@link ProblematicheType.Macroproblematica }
+     * 
+     */
+    public ProblematicheType.Macroproblematica createProblematicheTypeMacroproblematica() {
+        return new ProblematicheType.Macroproblematica();
     }
 
     /**
@@ -661,17 +668,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
-     */
-    @XmlElementDecl(namespace = "http://tipigenerali.cartellasociale.sanita.insiel.it", name = "erogatore", scope = DettaglioDomiciliareType.class)
-    public JAXBElement<String> createDettaglioDomiciliareTypeErogatore(String value) {
-        return new JAXBElement<String>(_DettaglioDomiciliareTypeErogatore_QNAME, String.class, DettaglioDomiciliareType.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://tipigenerali.cartellasociale.sanita.insiel.it", name = "obiettivi", scope = DettaglioDomiciliareType.class)
     public JAXBElement<String> createDettaglioDomiciliareTypeObiettivi(String value) {
@@ -679,89 +681,25 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SubDettaglioIntType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
-    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "subDettaglio", scope = InterventoNewType.class)
-    public JAXBElement<SubDettaglioIntType> createInterventoNewTypeSubDettaglio(SubDettaglioIntType value) {
-        return new JAXBElement<SubDettaglioIntType>(_InterventoNewTypeSubDettaglio_QNAME, SubDettaglioIntType.class, InterventoNewType.class, value);
+    @XmlElementDecl(namespace = "http://tipigenerali.cartellasociale.sanita.insiel.it", name = "erogatore", scope = DettaglioDomiciliareType.class)
+    public JAXBElement<String> createDettaglioDomiciliareTypeErogatore(String value) {
+        return new JAXBElement<String>(_DettaglioDomiciliareTypeErogatore_QNAME, String.class, DettaglioDomiciliareType.class, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
-     */
-    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "note", scope = InterventoNewType.class)
-    public JAXBElement<String> createInterventoNewTypeNote(String value) {
-        return new JAXBElement<String>(_InterventoNewTypeNote_QNAME, String.class, InterventoNewType.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "telefono", scope = ProfiloType.Domicilio.class)
-    public JAXBElement<String> createProfiloTypeDomicilioTelefono(String value) {
-        return new JAXBElement<String>(_ProfiloTypeDomicilioTelefono_QNAME, String.class, ProfiloType.Domicilio.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "idoneitaAbitazione", scope = ProfiloType.Domicilio.class)
-    public JAXBElement<String> createProfiloTypeDomicilioIdoneitaAbitazione(String value) {
-        return new JAXBElement<String>(_ProfiloTypeDomicilioIdoneitaAbitazione_QNAME, String.class, ProfiloType.Domicilio.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "condizioneAbitativa", scope = ProfiloType.Domicilio.class)
-    public JAXBElement<String> createProfiloTypeDomicilioCondizioneAbitativa(String value) {
-        return new JAXBElement<String>(_ProfiloTypeDomicilioCondizioneAbitativa_QNAME, String.class, ProfiloType.Domicilio.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "tipoAssegno", scope = ProfiloType.DatiPersonali.class)
-    public JAXBElement<String> createProfiloTypeDatiPersonaliTipoAssegno(String value) {
-        return new JAXBElement<String>(_ProfiloTypeDatiPersonaliTipoAssegno_QNAME, String.class, ProfiloType.DatiPersonali.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SiNoType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "attesaAccompagnamento", scope = ProfiloType.DatiPersonali.class)
-    public JAXBElement<SiNoType> createProfiloTypeDatiPersonaliAttesaAccompagnamento(SiNoType value) {
-        return new JAXBElement<SiNoType>(_ProfiloTypeDatiPersonaliAttesaAccompagnamento_QNAME, SiNoType.class, ProfiloType.DatiPersonali.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "note", scope = ProfiloType.DatiPersonali.class)
-    public JAXBElement<String> createProfiloTypeDatiPersonaliNote(String value) {
-        return new JAXBElement<String>(_InterventoNewTypeNote_QNAME, String.class, ProfiloType.DatiPersonali.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SiNoType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "assegnoAccompagnamento", scope = ProfiloType.DatiPersonali.class)
-    public JAXBElement<SiNoType> createProfiloTypeDatiPersonaliAssegnoAccompagnamento(SiNoType value) {
-        return new JAXBElement<SiNoType>(_ProfiloTypeDatiPersonaliAssegnoAccompagnamento_QNAME, SiNoType.class, ProfiloType.DatiPersonali.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "obiettivi", scope = SADType.class)
     public JAXBElement<String> createSADTypeObiettivi(String value) {
@@ -769,8 +707,25 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "note", scope = InterventoType.class)
+    public JAXBElement<String> createInterventoTypeNote(String value) {
+        return new JAXBElement<String>(_InterventoTypeNote_QNAME, String.class, InterventoType.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "noteAltro", scope = ProblematicheType.Macroproblematica.class)
     public JAXBElement<String> createProblematicheTypeMacroproblematicaNoteAltro(String value) {
@@ -778,12 +733,211 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SubDettaglioIntType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SubDettaglioIntType }{@code >}
      */
-    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "note", scope = InterventoType.class)
-    public JAXBElement<String> createInterventoTypeNote(String value) {
-        return new JAXBElement<String>(_InterventoNewTypeNote_QNAME, String.class, InterventoType.class, value);
+    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "subDettaglio", scope = InterventoNewType.class)
+    public JAXBElement<SubDettaglioIntType> createInterventoNewTypeSubDettaglio(SubDettaglioIntType value) {
+        return new JAXBElement<SubDettaglioIntType>(_InterventoNewTypeSubDettaglio_QNAME, SubDettaglioIntType.class, InterventoNewType.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "note", scope = InterventoNewType.class)
+    public JAXBElement<String> createInterventoNewTypeNote(String value) {
+        return new JAXBElement<String>(_InterventoTypeNote_QNAME, String.class, InterventoNewType.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "telefono", scope = ProfiloType.Domicilio.class)
+    public JAXBElement<String> createProfiloTypeDomicilioTelefono(String value) {
+        return new JAXBElement<String>(_ProfiloTypeDomicilioTelefono_QNAME, String.class, ProfiloType.Domicilio.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "condizioneAbitativa", scope = ProfiloType.Domicilio.class)
+    public JAXBElement<String> createProfiloTypeDomicilioCondizioneAbitativa(String value) {
+        return new JAXBElement<String>(_ProfiloTypeDomicilioCondizioneAbitativa_QNAME, String.class, ProfiloType.Domicilio.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "idoneitaAbitazione", scope = ProfiloType.Domicilio.class)
+    public JAXBElement<String> createProfiloTypeDomicilioIdoneitaAbitazione(String value) {
+        return new JAXBElement<String>(_ProfiloTypeDomicilioIdoneitaAbitazione_QNAME, String.class, ProfiloType.Domicilio.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "struttura", scope = ProfiloType.Domicilio.class)
+    public JAXBElement<String> createProfiloTypeDomicilioStruttura(String value) {
+        return new JAXBElement<String>(_ProfiloTypeDomicilioStruttura_QNAME, String.class, ProfiloType.Domicilio.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "assegnoAccompagnamento", scope = ProfiloType.DatiPersonali.class)
+    public JAXBElement<SiNoType> createProfiloTypeDatiPersonaliAssegnoAccompagnamento(SiNoType value) {
+        return new JAXBElement<SiNoType>(_ProfiloTypeDatiPersonaliAssegnoAccompagnamento_QNAME, SiNoType.class, ProfiloType.DatiPersonali.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "attesaAccompagnamento", scope = ProfiloType.DatiPersonali.class)
+    public JAXBElement<SiNoType> createProfiloTypeDatiPersonaliAttesaAccompagnamento(SiNoType value) {
+        return new JAXBElement<SiNoType>(_ProfiloTypeDatiPersonaliAttesaAccompagnamento_QNAME, SiNoType.class, ProfiloType.DatiPersonali.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "nonAutosufficiente", scope = ProfiloType.DatiPersonali.class)
+    public JAXBElement<SiNoType> createProfiloTypeDatiPersonaliNonAutosufficiente(SiNoType value) {
+        return new JAXBElement<SiNoType>(_ProfiloTypeDatiPersonaliNonAutosufficiente_QNAME, SiNoType.class, ProfiloType.DatiPersonali.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "nonAutosufficienzaTemporanea", scope = ProfiloType.DatiPersonali.class)
+    public JAXBElement<SiNoType> createProfiloTypeDatiPersonaliNonAutosufficienzaTemporanea(SiNoType value) {
+        return new JAXBElement<SiNoType>(_ProfiloTypeDatiPersonaliNonAutosufficienzaTemporanea_QNAME, SiNoType.class, ProfiloType.DatiPersonali.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "disabileGravissimo", scope = ProfiloType.DatiPersonali.class)
+    public JAXBElement<String> createProfiloTypeDatiPersonaliDisabileGravissimo(String value) {
+        return new JAXBElement<String>(_ProfiloTypeDatiPersonaliDisabileGravissimo_QNAME, String.class, ProfiloType.DatiPersonali.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "patologiaOncologica", scope = ProfiloType.DatiPersonali.class)
+    public JAXBElement<SiNoType> createProfiloTypeDatiPersonaliPatologiaOncologica(SiNoType value) {
+        return new JAXBElement<SiNoType>(_ProfiloTypeDatiPersonaliPatologiaOncologica_QNAME, SiNoType.class, ProfiloType.DatiPersonali.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "faseTerminale", scope = ProfiloType.DatiPersonali.class)
+    public JAXBElement<SiNoType> createProfiloTypeDatiPersonaliFaseTerminale(SiNoType value) {
+        return new JAXBElement<SiNoType>(_ProfiloTypeDatiPersonaliFaseTerminale_QNAME, SiNoType.class, ProfiloType.DatiPersonali.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "tipoAssegno", scope = ProfiloType.DatiPersonali.class)
+    public JAXBElement<String> createProfiloTypeDatiPersonaliTipoAssegno(String value) {
+        return new JAXBElement<String>(_ProfiloTypeDatiPersonaliTipoAssegno_QNAME, String.class, ProfiloType.DatiPersonali.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "note", scope = ProfiloType.DatiPersonali.class)
+    public JAXBElement<String> createProfiloTypeDatiPersonaliNote(String value) {
+        return new JAXBElement<String>(_InterventoTypeNote_QNAME, String.class, ProfiloType.DatiPersonali.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://cartellasociale.sanita.insiel.it", name = "msna", scope = ProfiloType.DatiPersonali.class)
+    public JAXBElement<SiNoType> createProfiloTypeDatiPersonaliMsna(SiNoType value) {
+        return new JAXBElement<SiNoType>(_ProfiloTypeDatiPersonaliMsna_QNAME, SiNoType.class, ProfiloType.DatiPersonali.class, value);
     }
 
 }

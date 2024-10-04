@@ -1,24 +1,23 @@
 
 package it.wego.welfarego.cartellasocialews.beans;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per AzioneBackOfficeType.
+ * &lt;p&gt;Classe Java per AzioneBackOfficeType.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
- * <p>
- * <pre>
- * &lt;simpleType name="AzioneBackOfficeType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="ChiusuraMassivaCartelle"/>
- *     &lt;enumeration value="AggiornamentoNomenclatura"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
+ * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * &lt;pre&gt;
+ * &amp;lt;simpleType name="AzioneBackOfficeType"&amp;gt;
+ *   &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&amp;gt;
+ *     &amp;lt;enumeration value="ChiusuraMassivaCartelle"/&amp;gt;
+ *     &amp;lt;enumeration value="AggiornamentoNomenclatura"/&amp;gt;
+ *   &amp;lt;/restriction&amp;gt;
+ * &amp;lt;/simpleType&amp;gt;
+ * &lt;/pre&gt;
  * 
  */
 @XmlType(name = "AzioneBackOfficeType")

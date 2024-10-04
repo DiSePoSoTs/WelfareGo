@@ -46,7 +46,7 @@ public class InserimentoIntervento {
 
     protected long idCartella;
     @XmlElement(required = true)
-    protected InterventoType intervento;
+    protected InterventoNewType intervento;
     @XmlElement(required = true)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dataModifica;
@@ -79,7 +79,7 @@ public class InserimentoIntervento {
      *     {@link InterventoType }
      *     
      */
-    public InterventoType getIntervento() {
+    public InterventoNewType getIntervento() {
         return intervento;
     }
 
@@ -91,7 +91,7 @@ public class InserimentoIntervento {
      *     {@link InterventoType }
      *     
      */
-    public void setIntervento(InterventoType value) {
+    public void setIntervento(InterventoNewType value) {
         this.intervento = value;
     }
 

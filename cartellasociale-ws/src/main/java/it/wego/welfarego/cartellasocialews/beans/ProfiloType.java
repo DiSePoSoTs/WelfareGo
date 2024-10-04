@@ -1,103 +1,110 @@
 
 package it.wego.welfarego.cartellasocialews.beans;
 
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElementRef;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per profiloType complex type.
+ * &lt;p&gt;Classe Java per profiloType complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
- * <pre>
- * &lt;complexType name="profiloType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="abilitazione">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="dataPresaInCarico" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DataType"/>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="datiPersonali">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="isee" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IseeType" minOccurs="0"/>
- *                   &lt;element name="certificatoL104" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                   &lt;element name="demenzaCertificata" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/>
- *                   &lt;element name="disabilitaSensoriali" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/>
- *                   &lt;element name="statoInvalidita" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                   &lt;element name="attesaInvalidita" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/>
- *                   &lt;element name="assegnoAccompagnamento" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/>
- *                   &lt;element name="attesaAccompagnamento" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/>
- *                   &lt;element name="provvedimentoGiudiziario" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                   &lt;element name="tipoAssegno" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                   &lt;element name="note" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}NoteType" minOccurs="0"/>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="datiFamiliari">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="statoCivile" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                   &lt;element name="nucleoFamiliare" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                   &lt;element name="numerositaNucleoFam" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="datiProfessionali">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="titoloStudio" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                   &lt;element name="condizioneProfessionale" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="domicilio" minOccurs="0">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="toponimo" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}ToponimoType" minOccurs="0"/>
- *                   &lt;element name="telefono" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                   &lt;element name="condizioneAbitativa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                   &lt;element name="idoneitaAbitazione" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="dataModifica" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DataType"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="profiloType"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name="abilitazione"&amp;gt;
+ *           &amp;lt;complexType&amp;gt;
+ *             &amp;lt;complexContent&amp;gt;
+ *               &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *                 &amp;lt;sequence&amp;gt;
+ *                   &amp;lt;element name="dataPresaInCarico" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DataType"/&amp;gt;
+ *                 &amp;lt;/sequence&amp;gt;
+ *               &amp;lt;/restriction&amp;gt;
+ *             &amp;lt;/complexContent&amp;gt;
+ *           &amp;lt;/complexType&amp;gt;
+ *         &amp;lt;/element&amp;gt;
+ *         &amp;lt;element name="datiPersonali"&amp;gt;
+ *           &amp;lt;complexType&amp;gt;
+ *             &amp;lt;complexContent&amp;gt;
+ *               &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *                 &amp;lt;sequence&amp;gt;
+ *                   &amp;lt;element name="isee" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IseeType" minOccurs="0"/&amp;gt;
+ *                   &amp;lt;element name="certificatoL104" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+ *                   &amp;lt;element name="demenzaCertificata" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/&amp;gt;
+ *                   &amp;lt;element name="disabilitaSensoriali" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/&amp;gt;
+ *                   &amp;lt;element name="statoInvalidita" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *                   &amp;lt;element name="attesaInvalidita" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/&amp;gt;
+ *                   &amp;lt;element name="assegnoAccompagnamento" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/&amp;gt;
+ *                   &amp;lt;element name="attesaAccompagnamento" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/&amp;gt;
+ *                   &amp;lt;element name="nonAutosufficiente" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/&amp;gt;
+ *                   &amp;lt;element name="nonAutosufficienzaTemporanea" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/&amp;gt;
+ *                   &amp;lt;element name="disabileGravissimo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *                   &amp;lt;element name="patologiaOncologica" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/&amp;gt;
+ *                   &amp;lt;element name="faseTerminale" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/&amp;gt;
+ *                   &amp;lt;element name="provvedimentoGiudiziario" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+ *                   &amp;lt;element name="tipoAssegno" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *                   &amp;lt;element name="note" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}NoteType" minOccurs="0"/&amp;gt;
+ *                   &amp;lt;element name="msna" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/&amp;gt;
+ *                 &amp;lt;/sequence&amp;gt;
+ *               &amp;lt;/restriction&amp;gt;
+ *             &amp;lt;/complexContent&amp;gt;
+ *           &amp;lt;/complexType&amp;gt;
+ *         &amp;lt;/element&amp;gt;
+ *         &amp;lt;element name="datiFamiliari"&amp;gt;
+ *           &amp;lt;complexType&amp;gt;
+ *             &amp;lt;complexContent&amp;gt;
+ *               &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *                 &amp;lt;sequence&amp;gt;
+ *                   &amp;lt;element name="statoCivile" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+ *                   &amp;lt;element name="nucleoFamiliare" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+ *                   &amp;lt;element name="numerositaNucleoFam" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
+ *                 &amp;lt;/sequence&amp;gt;
+ *               &amp;lt;/restriction&amp;gt;
+ *             &amp;lt;/complexContent&amp;gt;
+ *           &amp;lt;/complexType&amp;gt;
+ *         &amp;lt;/element&amp;gt;
+ *         &amp;lt;element name="datiProfessionali"&amp;gt;
+ *           &amp;lt;complexType&amp;gt;
+ *             &amp;lt;complexContent&amp;gt;
+ *               &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *                 &amp;lt;sequence&amp;gt;
+ *                   &amp;lt;element name="titoloStudio" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+ *                   &amp;lt;element name="condizioneProfessionale" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+ *                 &amp;lt;/sequence&amp;gt;
+ *               &amp;lt;/restriction&amp;gt;
+ *             &amp;lt;/complexContent&amp;gt;
+ *           &amp;lt;/complexType&amp;gt;
+ *         &amp;lt;/element&amp;gt;
+ *         &amp;lt;element name="domicilio" minOccurs="0"&amp;gt;
+ *           &amp;lt;complexType&amp;gt;
+ *             &amp;lt;complexContent&amp;gt;
+ *               &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *                 &amp;lt;sequence&amp;gt;
+ *                   &amp;lt;element name="toponimo" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}ToponimoType" minOccurs="0"/&amp;gt;
+ *                   &amp;lt;element name="telefono" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *                   &amp;lt;element name="condizioneAbitativa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *                   &amp;lt;element name="idoneitaAbitazione" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *                   &amp;lt;element name="struttura" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *                 &amp;lt;/sequence&amp;gt;
+ *               &amp;lt;/restriction&amp;gt;
+ *             &amp;lt;/complexContent&amp;gt;
+ *           &amp;lt;/complexType&amp;gt;
+ *         &amp;lt;/element&amp;gt;
+ *         &amp;lt;element name="dataModifica" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DataType"/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
@@ -271,21 +278,21 @@ public class ProfiloType {
 
 
     /**
-     * <p>Classe Java per anonymous complex type.
+     * &lt;p&gt;Classe Java per anonymous complex type.
      * 
-     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+     * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
      * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="dataPresaInCarico" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DataType"/>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
+     * &lt;pre&gt;
+     * &amp;lt;complexType&amp;gt;
+     *   &amp;lt;complexContent&amp;gt;
+     *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+     *       &amp;lt;sequence&amp;gt;
+     *         &amp;lt;element name="dataPresaInCarico" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DataType"/&amp;gt;
+     *       &amp;lt;/sequence&amp;gt;
+     *     &amp;lt;/restriction&amp;gt;
+     *   &amp;lt;/complexContent&amp;gt;
+     * &amp;lt;/complexType&amp;gt;
+     * &lt;/pre&gt;
      * 
      * 
      */
@@ -327,23 +334,23 @@ public class ProfiloType {
 
 
     /**
-     * <p>Classe Java per anonymous complex type.
+     * &lt;p&gt;Classe Java per anonymous complex type.
      * 
-     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+     * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
      * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="statoCivile" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *         &lt;element name="nucleoFamiliare" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *         &lt;element name="numerositaNucleoFam" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
+     * &lt;pre&gt;
+     * &amp;lt;complexType&amp;gt;
+     *   &amp;lt;complexContent&amp;gt;
+     *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+     *       &amp;lt;sequence&amp;gt;
+     *         &amp;lt;element name="statoCivile" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+     *         &amp;lt;element name="nucleoFamiliare" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+     *         &amp;lt;element name="numerositaNucleoFam" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
+     *       &amp;lt;/sequence&amp;gt;
+     *     &amp;lt;/restriction&amp;gt;
+     *   &amp;lt;/complexContent&amp;gt;
+     * &amp;lt;/complexType&amp;gt;
+     * &lt;/pre&gt;
      * 
      * 
      */
@@ -429,31 +436,37 @@ public class ProfiloType {
 
 
     /**
-     * <p>Classe Java per anonymous complex type.
+     * &lt;p&gt;Classe Java per anonymous complex type.
      * 
-     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+     * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
      * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="isee" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IseeType" minOccurs="0"/>
-     *         &lt;element name="certificatoL104" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *         &lt;element name="demenzaCertificata" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/>
-     *         &lt;element name="disabilitaSensoriali" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/>
-     *         &lt;element name="statoInvalidita" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *         &lt;element name="attesaInvalidita" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/>
-     *         &lt;element name="assegnoAccompagnamento" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/>
-     *         &lt;element name="attesaAccompagnamento" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/>
-     *         &lt;element name="provvedimentoGiudiziario" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *         &lt;element name="tipoAssegno" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *         &lt;element name="note" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}NoteType" minOccurs="0"/>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
+     * &lt;pre&gt;
+     * &amp;lt;complexType&amp;gt;
+     *   &amp;lt;complexContent&amp;gt;
+     *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+     *       &amp;lt;sequence&amp;gt;
+     *         &amp;lt;element name="isee" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IseeType" minOccurs="0"/&amp;gt;
+     *         &amp;lt;element name="certificatoL104" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+     *         &amp;lt;element name="demenzaCertificata" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/&amp;gt;
+     *         &amp;lt;element name="disabilitaSensoriali" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/&amp;gt;
+     *         &amp;lt;element name="statoInvalidita" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+     *         &amp;lt;element name="attesaInvalidita" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/&amp;gt;
+     *         &amp;lt;element name="assegnoAccompagnamento" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/&amp;gt;
+     *         &amp;lt;element name="attesaAccompagnamento" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/&amp;gt;
+     *         &amp;lt;element name="nonAutosufficiente" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/&amp;gt;
+     *         &amp;lt;element name="nonAutosufficienzaTemporanea" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/&amp;gt;
+     *         &amp;lt;element name="disabileGravissimo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+     *         &amp;lt;element name="patologiaOncologica" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/&amp;gt;
+     *         &amp;lt;element name="faseTerminale" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/&amp;gt;
+     *         &amp;lt;element name="provvedimentoGiudiziario" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+     *         &amp;lt;element name="tipoAssegno" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+     *         &amp;lt;element name="note" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}NoteType" minOccurs="0"/&amp;gt;
+     *         &amp;lt;element name="msna" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType" minOccurs="0"/&amp;gt;
+     *       &amp;lt;/sequence&amp;gt;
+     *     &amp;lt;/restriction&amp;gt;
+     *   &amp;lt;/complexContent&amp;gt;
+     * &amp;lt;/complexType&amp;gt;
+     * &lt;/pre&gt;
      * 
      * 
      */
@@ -467,9 +480,15 @@ public class ProfiloType {
         "attesaInvalidita",
         "assegnoAccompagnamento",
         "attesaAccompagnamento",
+        "nonAutosufficiente",
+        "nonAutosufficienzaTemporanea",
+        "disabileGravissimo",
+        "patologiaOncologica",
+        "faseTerminale",
         "provvedimentoGiudiziario",
         "tipoAssegno",
-        "note"
+        "note",
+        "msna"
     })
     public static class DatiPersonali {
 
@@ -483,16 +502,28 @@ public class ProfiloType {
         protected String statoInvalidita;
         @XmlSchemaType(name = "string")
         protected SiNoType attesaInvalidita;
-        @XmlElementRef(name = "assegnoAccompagnamento", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class)
+        @XmlElementRef(name = "assegnoAccompagnamento", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
         protected JAXBElement<SiNoType> assegnoAccompagnamento;
-        @XmlElementRef(name = "attesaAccompagnamento", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class)
+        @XmlElementRef(name = "attesaAccompagnamento", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
         protected JAXBElement<SiNoType> attesaAccompagnamento;
+        @XmlElementRef(name = "nonAutosufficiente", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
+        protected JAXBElement<SiNoType> nonAutosufficiente;
+        @XmlElementRef(name = "nonAutosufficienzaTemporanea", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
+        protected JAXBElement<SiNoType> nonAutosufficienzaTemporanea;
+        @XmlElementRef(name = "disabileGravissimo", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
+        protected JAXBElement<String> disabileGravissimo;
+        @XmlElementRef(name = "patologiaOncologica", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
+        protected JAXBElement<SiNoType> patologiaOncologica;
+        @XmlElementRef(name = "faseTerminale", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
+        protected JAXBElement<SiNoType> faseTerminale;
         @XmlElement(required = true, nillable = true)
         protected String provvedimentoGiudiziario;
-        @XmlElementRef(name = "tipoAssegno", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class)
+        @XmlElementRef(name = "tipoAssegno", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
         protected JAXBElement<String> tipoAssegno;
-        @XmlElementRef(name = "note", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class)
+        @XmlElementRef(name = "note", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
         protected JAXBElement<String> note;
+        @XmlElementRef(name = "msna", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
+        protected JAXBElement<SiNoType> msna;
 
         /**
          * Recupera il valore della proprietà isee.
@@ -687,6 +718,126 @@ public class ProfiloType {
         }
 
         /**
+         * Recupera il valore della proprietà nonAutosufficiente.
+         * 
+         * @return
+         *     possible object is
+         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     
+         */
+        public JAXBElement<SiNoType> getNonAutosufficiente() {
+            return nonAutosufficiente;
+        }
+
+        /**
+         * Imposta il valore della proprietà nonAutosufficiente.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     
+         */
+        public void setNonAutosufficiente(JAXBElement<SiNoType> value) {
+            this.nonAutosufficiente = value;
+        }
+
+        /**
+         * Recupera il valore della proprietà nonAutosufficienzaTemporanea.
+         * 
+         * @return
+         *     possible object is
+         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     
+         */
+        public JAXBElement<SiNoType> getNonAutosufficienzaTemporanea() {
+            return nonAutosufficienzaTemporanea;
+        }
+
+        /**
+         * Imposta il valore della proprietà nonAutosufficienzaTemporanea.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     
+         */
+        public void setNonAutosufficienzaTemporanea(JAXBElement<SiNoType> value) {
+            this.nonAutosufficienzaTemporanea = value;
+        }
+
+        /**
+         * Recupera il valore della proprietà disabileGravissimo.
+         * 
+         * @return
+         *     possible object is
+         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     
+         */
+        public JAXBElement<String> getDisabileGravissimo() {
+            return disabileGravissimo;
+        }
+
+        /**
+         * Imposta il valore della proprietà disabileGravissimo.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     
+         */
+        public void setDisabileGravissimo(JAXBElement<String> value) {
+            this.disabileGravissimo = value;
+        }
+
+        /**
+         * Recupera il valore della proprietà patologiaOncologica.
+         * 
+         * @return
+         *     possible object is
+         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     
+         */
+        public JAXBElement<SiNoType> getPatologiaOncologica() {
+            return patologiaOncologica;
+        }
+
+        /**
+         * Imposta il valore della proprietà patologiaOncologica.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     
+         */
+        public void setPatologiaOncologica(JAXBElement<SiNoType> value) {
+            this.patologiaOncologica = value;
+        }
+
+        /**
+         * Recupera il valore della proprietà faseTerminale.
+         * 
+         * @return
+         *     possible object is
+         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     
+         */
+        public JAXBElement<SiNoType> getFaseTerminale() {
+            return faseTerminale;
+        }
+
+        /**
+         * Imposta il valore della proprietà faseTerminale.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     
+         */
+        public void setFaseTerminale(JAXBElement<SiNoType> value) {
+            this.faseTerminale = value;
+        }
+
+        /**
          * Recupera il valore della proprietà provvedimentoGiudiziario.
          * 
          * @return
@@ -758,26 +909,50 @@ public class ProfiloType {
             this.note = value;
         }
 
+        /**
+         * Recupera il valore della proprietà msna.
+         * 
+         * @return
+         *     possible object is
+         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     
+         */
+        public JAXBElement<SiNoType> getMsna() {
+            return msna;
+        }
+
+        /**
+         * Imposta il valore della proprietà msna.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     
+         */
+        public void setMsna(JAXBElement<SiNoType> value) {
+            this.msna = value;
+        }
+
     }
 
 
     /**
-     * <p>Classe Java per anonymous complex type.
+     * &lt;p&gt;Classe Java per anonymous complex type.
      * 
-     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+     * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
      * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="titoloStudio" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *         &lt;element name="condizioneProfessionale" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
+     * &lt;pre&gt;
+     * &amp;lt;complexType&amp;gt;
+     *   &amp;lt;complexContent&amp;gt;
+     *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+     *       &amp;lt;sequence&amp;gt;
+     *         &amp;lt;element name="titoloStudio" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+     *         &amp;lt;element name="condizioneProfessionale" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+     *       &amp;lt;/sequence&amp;gt;
+     *     &amp;lt;/restriction&amp;gt;
+     *   &amp;lt;/complexContent&amp;gt;
+     * &amp;lt;/complexType&amp;gt;
+     * &lt;/pre&gt;
      * 
      * 
      */
@@ -845,24 +1020,25 @@ public class ProfiloType {
 
 
     /**
-     * <p>Classe Java per anonymous complex type.
+     * &lt;p&gt;Classe Java per anonymous complex type.
      * 
-     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+     * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
      * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="toponimo" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}ToponimoType" minOccurs="0"/>
-     *         &lt;element name="telefono" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *         &lt;element name="condizioneAbitativa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *         &lt;element name="idoneitaAbitazione" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
+     * &lt;pre&gt;
+     * &amp;lt;complexType&amp;gt;
+     *   &amp;lt;complexContent&amp;gt;
+     *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+     *       &amp;lt;sequence&amp;gt;
+     *         &amp;lt;element name="toponimo" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}ToponimoType" minOccurs="0"/&amp;gt;
+     *         &amp;lt;element name="telefono" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+     *         &amp;lt;element name="condizioneAbitativa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+     *         &amp;lt;element name="idoneitaAbitazione" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+     *         &amp;lt;element name="struttura" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+     *       &amp;lt;/sequence&amp;gt;
+     *     &amp;lt;/restriction&amp;gt;
+     *   &amp;lt;/complexContent&amp;gt;
+     * &amp;lt;/complexType&amp;gt;
+     * &lt;/pre&gt;
      * 
      * 
      */
@@ -871,17 +1047,20 @@ public class ProfiloType {
         "toponimo",
         "telefono",
         "condizioneAbitativa",
-        "idoneitaAbitazione"
+        "idoneitaAbitazione",
+        "struttura"
     })
     public static class Domicilio {
 
         protected ToponimoType toponimo;
-        @XmlElementRef(name = "telefono", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class)
+        @XmlElementRef(name = "telefono", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
         protected JAXBElement<String> telefono;
-        @XmlElementRef(name = "condizioneAbitativa", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class)
+        @XmlElementRef(name = "condizioneAbitativa", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
         protected JAXBElement<String> condizioneAbitativa;
-        @XmlElementRef(name = "idoneitaAbitazione", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class)
+        @XmlElementRef(name = "idoneitaAbitazione", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
         protected JAXBElement<String> idoneitaAbitazione;
+        @XmlElementRef(name = "struttura", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
+        protected JAXBElement<String> struttura;
 
         /**
          * Recupera il valore della proprietà toponimo.
@@ -977,6 +1156,30 @@ public class ProfiloType {
          */
         public void setIdoneitaAbitazione(JAXBElement<String> value) {
             this.idoneitaAbitazione = value;
+        }
+
+        /**
+         * Recupera il valore della proprietà struttura.
+         * 
+         * @return
+         *     possible object is
+         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     
+         */
+        public JAXBElement<String> getStruttura() {
+            return struttura;
+        }
+
+        /**
+         * Imposta il valore della proprietà struttura.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     
+         */
+        public void setStruttura(JAXBElement<String> value) {
+            this.struttura = value;
         }
 
     }

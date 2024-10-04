@@ -1,57 +1,57 @@
 
 package it.wego.welfarego.cartellasocialews.beans;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per anagraficaType complex type.
+ * &lt;p&gt;Classe Java per anagraficaType complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
- * <pre>
- * &lt;complexType name="anagraficaType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="datiComuni">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="anagraficaBase" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}AnagraficaBaseType"/>
- *                   &lt;element name="residenza">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;sequence>
- *                             &lt;element name="indirizzoResidenza" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IndirizzoType"/>
- *                             &lt;element name="tipologiaResidenza" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="decorrenzaResidenza" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
- *                           &lt;/sequence>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="comuneCartella" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="identificativo_sottostruttura_ssc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="operatoreRiferimento" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="dataModifica" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DataType"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="anagraficaType"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name="datiComuni"&amp;gt;
+ *           &amp;lt;complexType&amp;gt;
+ *             &amp;lt;complexContent&amp;gt;
+ *               &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *                 &amp;lt;sequence&amp;gt;
+ *                   &amp;lt;element name="anagraficaBase" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}AnagraficaBaseType"/&amp;gt;
+ *                   &amp;lt;element name="residenza"&amp;gt;
+ *                     &amp;lt;complexType&amp;gt;
+ *                       &amp;lt;complexContent&amp;gt;
+ *                         &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *                           &amp;lt;sequence&amp;gt;
+ *                             &amp;lt;element name="indirizzoResidenza" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IndirizzoType"/&amp;gt;
+ *                             &amp;lt;element name="tipologiaResidenza" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+ *                             &amp;lt;element name="decorrenzaResidenza" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/&amp;gt;
+ *                           &amp;lt;/sequence&amp;gt;
+ *                         &amp;lt;/restriction&amp;gt;
+ *                       &amp;lt;/complexContent&amp;gt;
+ *                     &amp;lt;/complexType&amp;gt;
+ *                   &amp;lt;/element&amp;gt;
+ *                 &amp;lt;/sequence&amp;gt;
+ *               &amp;lt;/restriction&amp;gt;
+ *             &amp;lt;/complexContent&amp;gt;
+ *           &amp;lt;/complexType&amp;gt;
+ *         &amp;lt;/element&amp;gt;
+ *         &amp;lt;element name="comuneCartella" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+ *         &amp;lt;element name="identificativo_sottostruttura_ssc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="operatoreRiferimento" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+ *         &amp;lt;element name="dataModifica" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DataType"/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
@@ -199,34 +199,34 @@ public class AnagraficaType {
 
 
     /**
-     * <p>Classe Java per anonymous complex type.
+     * &lt;p&gt;Classe Java per anonymous complex type.
      * 
-     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+     * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
      * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="anagraficaBase" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}AnagraficaBaseType"/>
-     *         &lt;element name="residenza">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence>
-     *                   &lt;element name="indirizzoResidenza" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IndirizzoType"/>
-     *                   &lt;element name="tipologiaResidenza" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                   &lt;element name="decorrenzaResidenza" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
-     *                 &lt;/sequence>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
+     * &lt;pre&gt;
+     * &amp;lt;complexType&amp;gt;
+     *   &amp;lt;complexContent&amp;gt;
+     *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+     *       &amp;lt;sequence&amp;gt;
+     *         &amp;lt;element name="anagraficaBase" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}AnagraficaBaseType"/&amp;gt;
+     *         &amp;lt;element name="residenza"&amp;gt;
+     *           &amp;lt;complexType&amp;gt;
+     *             &amp;lt;complexContent&amp;gt;
+     *               &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+     *                 &amp;lt;sequence&amp;gt;
+     *                   &amp;lt;element name="indirizzoResidenza" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IndirizzoType"/&amp;gt;
+     *                   &amp;lt;element name="tipologiaResidenza" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+     *                   &amp;lt;element name="decorrenzaResidenza" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/&amp;gt;
+     *                 &amp;lt;/sequence&amp;gt;
+     *               &amp;lt;/restriction&amp;gt;
+     *             &amp;lt;/complexContent&amp;gt;
+     *           &amp;lt;/complexType&amp;gt;
+     *         &amp;lt;/element&amp;gt;
+     *       &amp;lt;/sequence&amp;gt;
+     *     &amp;lt;/restriction&amp;gt;
+     *   &amp;lt;/complexContent&amp;gt;
+     * &amp;lt;/complexType&amp;gt;
+     * &lt;/pre&gt;
      * 
      * 
      */
@@ -292,23 +292,23 @@ public class AnagraficaType {
 
 
         /**
-         * <p>Classe Java per anonymous complex type.
+         * &lt;p&gt;Classe Java per anonymous complex type.
          * 
-         * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+         * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
          * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;sequence>
-         *         &lt;element name="indirizzoResidenza" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IndirizzoType"/>
-         *         &lt;element name="tipologiaResidenza" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *         &lt;element name="decorrenzaResidenza" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
-         *       &lt;/sequence>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
+         * &lt;pre&gt;
+         * &amp;lt;complexType&amp;gt;
+         *   &amp;lt;complexContent&amp;gt;
+         *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+         *       &amp;lt;sequence&amp;gt;
+         *         &amp;lt;element name="indirizzoResidenza" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IndirizzoType"/&amp;gt;
+         *         &amp;lt;element name="tipologiaResidenza" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+         *         &amp;lt;element name="decorrenzaResidenza" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/&amp;gt;
+         *       &amp;lt;/sequence&amp;gt;
+         *     &amp;lt;/restriction&amp;gt;
+         *   &amp;lt;/complexContent&amp;gt;
+         * &amp;lt;/complexType&amp;gt;
+         * &lt;/pre&gt;
          * 
          * 
          */

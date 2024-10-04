@@ -1,34 +1,36 @@
 
 package it.wego.welfarego.cartellasocialews.beans;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per personaRiferimentoType complex type.
+ * &lt;p&gt;Classe Java per personaRiferimentoType complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
- * <pre>
- * &lt;complexType name="personaRiferimentoType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="datiBase" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}AnagraficaBaseType"/>
- *         &lt;element name="residenza" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IndirizzoType"/>
- *         &lt;element name="telefono" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="tipoRelazione" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="appartenenzaNucleoFam" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/>
- *         &lt;element name="note" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}NoteType" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="personaRiferimentoType"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name="datiBase" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}AnagraficaBaseType"/&amp;gt;
+ *         &amp;lt;element name="residenza" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}IndirizzoType"/&amp;gt;
+ *         &amp;lt;element name="telefono" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="tipoRelazione" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+ *         &amp;lt;element name="appartenenzaNucleoFam" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SiNoType"/&amp;gt;
+ *         &amp;lt;element name="note" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}NoteType" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="modalitaPagamentoQuietanzante" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="ibanQuietanzante" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
@@ -39,7 +41,9 @@ import javax.xml.bind.annotation.XmlType;
     "telefono",
     "tipoRelazione",
     "appartenenzaNucleoFam",
-    "note"
+    "note",
+    "modalitaPagamentoQuietanzante",
+    "ibanQuietanzante"
 })
 public class PersonaRiferimentoType {
 
@@ -54,6 +58,8 @@ public class PersonaRiferimentoType {
     @XmlSchemaType(name = "string")
     protected SiNoType appartenenzaNucleoFam;
     protected String note;
+    protected String modalitaPagamentoQuietanzante;
+    protected String ibanQuietanzante;
 
     /**
      * Recupera il valore della proprietà datiBase.
@@ -197,6 +203,54 @@ public class PersonaRiferimentoType {
      */
     public void setNote(String value) {
         this.note = value;
+    }
+
+    /**
+     * Recupera il valore della proprietà modalitaPagamentoQuietanzante.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getModalitaPagamentoQuietanzante() {
+        return modalitaPagamentoQuietanzante;
+    }
+
+    /**
+     * Imposta il valore della proprietà modalitaPagamentoQuietanzante.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setModalitaPagamentoQuietanzante(String value) {
+        this.modalitaPagamentoQuietanzante = value;
+    }
+
+    /**
+     * Recupera il valore della proprietà ibanQuietanzante.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getIbanQuietanzante() {
+        return ibanQuietanzante;
+    }
+
+    /**
+     * Imposta il valore della proprietà ibanQuietanzante.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setIbanQuietanzante(String value) {
+        this.ibanQuietanzante = value;
     }
 
 }

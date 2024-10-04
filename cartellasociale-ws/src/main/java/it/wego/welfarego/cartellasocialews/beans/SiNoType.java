@@ -1,23 +1,22 @@
 
 package it.wego.welfarego.cartellasocialews.beans;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per SiNoType.
+ * &lt;p&gt;Classe Java per SiNoType.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
- * <p>
- * <pre>
- * &lt;simpleType name="SiNoType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="S"/>
- *     &lt;enumeration value="N"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
+ * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * &lt;pre&gt;
+ * &amp;lt;simpleType name="SiNoType"&amp;gt;
+ *   &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&amp;gt;
+ *     &amp;lt;enumeration value="S"/&amp;gt;
+ *     &amp;lt;enumeration value="N"/&amp;gt;
+ *   &amp;lt;/restriction&amp;gt;
+ * &amp;lt;/simpleType&amp;gt;
+ * &lt;/pre&gt;
  * 
  */
 @XmlType(name = "SiNoType", namespace = "http://tipigenerali.cartellasociale.sanita.insiel.it")

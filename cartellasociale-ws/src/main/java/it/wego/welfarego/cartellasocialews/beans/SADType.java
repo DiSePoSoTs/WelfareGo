@@ -3,31 +3,31 @@ package it.wego.welfarego.cartellasocialews.beans;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElementRef;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per SADType complex type.
+ * &lt;p&gt;Classe Java per SADType complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
- * <pre>
- * &lt;complexType name="SADType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="obiettivi" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="macrointerventoSad" type="{http://cartellasociale.sanita.insiel.it}DettaglioMacrointerventoSADType" maxOccurs="unbounded"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="SADType"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name="obiettivi" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="macrointerventoSad" type="{http://cartellasociale.sanita.insiel.it}DettaglioMacrointerventoSADType" maxOccurs="unbounded"/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
@@ -38,7 +38,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class SADType {
 
-    @XmlElementRef(name = "obiettivi", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class)
+    @XmlElementRef(name = "obiettivi", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
     protected JAXBElement<String> obiettivi;
     @XmlElement(required = true)
     protected List<DettaglioMacrointerventoSADType> macrointerventoSad;
@@ -70,20 +70,20 @@ public class SADType {
     /**
      * Gets the value of the macrointerventoSad property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the macrointerventoSad property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the macrointerventoSad property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getMacrointerventoSad().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link DettaglioMacrointerventoSADType }
      * 

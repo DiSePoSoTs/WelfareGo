@@ -60,6 +60,11 @@
 			<artifactId>javax.xml.bind</artifactId>
 			<version>3.0-Preview-b47b</version>
 		</dependency>
+		<dependency>
+			<groupId>jakarta.xml.ws</groupId>
+			<artifactId>jakarta.xml.ws-api</artifactId>
+			<version>4.0.2</version>
+		</dependency>
 	</dependencies>
 	<licenses>
 		<license>

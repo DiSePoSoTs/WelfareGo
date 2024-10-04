@@ -1,63 +1,70 @@
 
 package it.wego.welfarego.cartellasocialews.beans;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per AnagraficaBaseType complex type.
+ * &lt;p&gt;Classe Java per AnagraficaBaseType complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
- * <pre>
- * &lt;complexType name="AnagraficaBaseType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="codiceNucleoFamiliare" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="nome">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="cognome">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="codiceFiscale" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}CodiceFiscaleType" minOccurs="0"/>
- *         &lt;element name="sesso" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SessoType"/>
- *         &lt;element name="cittadinanza1" type="{http://www.w3.org/2001/XMLSchema}long"/>
- *         &lt;element name="cittadinanza2" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="nascita" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}NascitaType"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="AnagraficaBaseType"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name="codiceNucleoFamiliare" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="codiceAscot" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="nome"&amp;gt;
+ *           &amp;lt;simpleType&amp;gt;
+ *             &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&amp;gt;
+ *             &amp;lt;/restriction&amp;gt;
+ *           &amp;lt;/simpleType&amp;gt;
+ *         &amp;lt;/element&amp;gt;
+ *         &amp;lt;element name="cognome"&amp;gt;
+ *           &amp;lt;simpleType&amp;gt;
+ *             &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&amp;gt;
+ *             &amp;lt;/restriction&amp;gt;
+ *           &amp;lt;/simpleType&amp;gt;
+ *         &amp;lt;/element&amp;gt;
+ *         &amp;lt;element name="codiceFiscale" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}CodiceFiscaleType" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="sesso" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}SessoType"/&amp;gt;
+ *         &amp;lt;element name="cittadinanza1" type="{http://www.w3.org/2001/XMLSchema}long"/&amp;gt;
+ *         &amp;lt;element name="cittadinanza2" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="nascita" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}NascitaType"/&amp;gt;
+ *         &amp;lt;element name="modalitaPagamento" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="iban" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AnagraficaBaseType", namespace = "http://tipigenerali.cartellasociale.sanita.insiel.it", propOrder = {
     "codiceNucleoFamiliare",
+    "codiceAscot",
     "nome",
     "cognome",
     "codiceFiscale",
     "sesso",
     "cittadinanza1",
     "cittadinanza2",
-    "nascita"
+    "nascita",
+    "modalitaPagamento",
+    "iban"
 })
 public class AnagraficaBaseType {
 
     protected Long codiceNucleoFamiliare;
+    protected Long codiceAscot;
     @XmlElement(required = true)
     protected String nome;
     @XmlElement(required = true)
@@ -70,6 +77,8 @@ public class AnagraficaBaseType {
     protected Long cittadinanza2;
     @XmlElement(required = true)
     protected NascitaType nascita;
+    protected String modalitaPagamento;
+    protected String iban;
 
     /**
      * Recupera il valore della proprietà codiceNucleoFamiliare.
@@ -93,6 +102,30 @@ public class AnagraficaBaseType {
      */
     public void setCodiceNucleoFamiliare(Long value) {
         this.codiceNucleoFamiliare = value;
+    }
+
+    /**
+     * Recupera il valore della proprietà codiceAscot.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Long }
+     *     
+     */
+    public Long getCodiceAscot() {
+        return codiceAscot;
+    }
+
+    /**
+     * Imposta il valore della proprietà codiceAscot.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Long }
+     *     
+     */
+    public void setCodiceAscot(Long value) {
+        this.codiceAscot = value;
     }
 
     /**
@@ -253,6 +286,54 @@ public class AnagraficaBaseType {
      */
     public void setNascita(NascitaType value) {
         this.nascita = value;
+    }
+
+    /**
+     * Recupera il valore della proprietà modalitaPagamento.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getModalitaPagamento() {
+        return modalitaPagamento;
+    }
+
+    /**
+     * Imposta il valore della proprietà modalitaPagamento.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setModalitaPagamento(String value) {
+        this.modalitaPagamento = value;
+    }
+
+    /**
+     * Recupera il valore della proprietà iban.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getIban() {
+        return iban;
+    }
+
+    /**
+     * Imposta il valore della proprietà iban.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setIban(String value) {
+        this.iban = value;
     }
 
 }

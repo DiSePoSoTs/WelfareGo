@@ -13,6 +13,7 @@ import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import java.io.Serializable;
@@ -69,6 +70,7 @@ public class InterventiAssociati implements Serializable {
 		this.interventoFiglio = interventoFiglio;
 	}
 
+	@OneToOne
 	@JoinColumns({ @JoinColumn(name = "COD_PAI1", referencedColumnName = "COD_PAI", nullable = false),
 			@JoinColumn(name = "COD_TIPINT1", referencedColumnName = "COD_TIPINT", nullable = false),
 			@JoinColumn(name = "CNT_TIPINT1", referencedColumnName = "CNT_TIPINT", nullable = false) })

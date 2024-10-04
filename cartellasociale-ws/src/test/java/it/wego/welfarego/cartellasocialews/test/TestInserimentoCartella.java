@@ -14,7 +14,6 @@ import org.junit.Test;
  *
  * @author aleph
  */
-@Ignore
 public class TestInserimentoCartella extends AbstractTest {
 
     @Test

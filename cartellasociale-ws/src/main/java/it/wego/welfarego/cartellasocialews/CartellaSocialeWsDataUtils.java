@@ -21,14 +21,14 @@ import it.wego.welfarego.cartellasocialews.beans.DettaglioMacrointerventoSADType
 import it.wego.welfarego.cartellasocialews.beans.DettaglioMicrointerventoSADType;
 import it.wego.welfarego.cartellasocialews.beans.IndirizzoType;
 import it.wego.welfarego.cartellasocialews.beans.InserimentoCartellaSociale;
-import it.wego.welfarego.cartellasocialews.beans.InserimentoIntervento;
-import it.wego.welfarego.cartellasocialews.beans.InterventoType;
-import it.wego.welfarego.cartellasocialews.beans.InterventoType.Specificazione;
-import it.wego.welfarego.cartellasocialews.beans.InterventoType.Specificazione.Domiciliare;
-import it.wego.welfarego.cartellasocialews.beans.InterventoType.Specificazione.Economico;
-import it.wego.welfarego.cartellasocialews.beans.InterventoType.Specificazione.Economico.Fap;
-import it.wego.welfarego.cartellasocialews.beans.InterventoType.Specificazione.Economico.FondoSolidarieta;
-import it.wego.welfarego.cartellasocialews.beans.InterventoType.Specificazione.Residenziale;
+import it.wego.welfarego.cartellasocialews.beans.NuovoInserimentoIntervento;
+import it.wego.welfarego.cartellasocialews.beans.InterventoNewType;
+import it.wego.welfarego.cartellasocialews.beans.InterventoNewType.SpecificazioneNew;
+import it.wego.welfarego.cartellasocialews.beans.InterventoNewType.SpecificazioneNew.Domiciliare;
+import it.wego.welfarego.cartellasocialews.beans.InterventoNewType.SpecificazioneNew.EconomicoNew;
+import it.wego.welfarego.cartellasocialews.beans.InterventoNewType.SpecificazioneNew.EconomicoNew.FapNew;
+import it.wego.welfarego.cartellasocialews.beans.InterventoNewType.SpecificazioneNew.EconomicoNew.FondoSolidarieta;
+import it.wego.welfarego.cartellasocialews.beans.InterventoNewType.SpecificazioneNew.Residenziale;
 import it.wego.welfarego.cartellasocialews.beans.IseeType;
 import it.wego.welfarego.cartellasocialews.beans.ListaMicroInterventiSADType;
 import it.wego.welfarego.cartellasocialews.beans.MicroProblematicaType;
@@ -37,6 +37,7 @@ import it.wego.welfarego.cartellasocialews.beans.ModificaIntervento;
 import it.wego.welfarego.cartellasocialews.beans.ModificaProfilo;
 import it.wego.welfarego.cartellasocialews.beans.ModificaProgetto;
 import it.wego.welfarego.cartellasocialews.beans.NascitaType;
+import it.wego.welfarego.cartellasocialews.beans.NuovaModificaIntervento;
 import it.wego.welfarego.cartellasocialews.beans.ProblematicheType;
 import it.wego.welfarego.cartellasocialews.beans.ProblematicheType.Macroproblematica;
 import it.wego.welfarego.cartellasocialews.beans.ProfiloType;
@@ -80,7 +81,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import javax.annotation.Nullable;
-import javax.xml.bind.JAXBElement;
+import jakarta.xml.bind.JAXBElement;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -345,7 +346,8 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
             residenza.setTipologiaResidenza(RESIDENZA_DEFAULT);
         } else {
       
-        residenza.setTipologiaResidenza(parametriMapping.getProperty(anagrafeSoc.getIdParamTipologiaResidenza().getIdParamIndata().toString()));
+        //residenza.setTipologiaResidenza(parametriMapping.getProperty(anagrafeSoc.getIdParamTipologiaResidenza().getIdParamIndata().toString()));
+        residenza.setTipologiaResidenza(anagrafeSoc.getIdParamTipologiaResidenza().getDesParam());
         Preconditions.checkNotNull(residenza.getTipologiaResidenza(), "tipologia residenza null");
         }
         return residenza;
@@ -700,43 +702,61 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
         }
     };
 
-    private Fap createFap() {
-        Fap fap = new Economico.Fap();
+    private FapNew createFap() {
+        FapNew fap = new FapNew();
 
+        fap.setAbitareInclusivo(null);
+        fap.setContestualePresenzaAddetti(EMPTY_STRING);
+        fap.setDataDecorrenza(null);
+        fap.setDataSegnalazione(null);
+        fap.setDataUVM(null);
+        fap.setDurataMesiUVM(0);
+        fap.setEtaDataUVM(0);
+        fap.setImportoMensile(new BigDecimal(0.0d));
+        fap.setIndennitaAccompagnamento(null);
+        fap.setIsee(null);
+        fap.setListaAttesa(null);
+        fap.setMotivoChiusura(EMPTY_STRING);
+        fap.setNOreContratto(0);
+        fap.setPunteggioCDRs(new BigDecimal(0.0d));
+        fap.setPunteggioGeFi(0);
+        fap.setPunteggioHansen(0);
+        fap.setPunteggioKatz(0);
+        fap.setPunteggioListaAttesa(0);
         fap.setTipologiaInterventoFap(codTipintToTipintFapMapping.get(paiIntervento.getTipologiaIntervento().getCodTipint()));
-        fap.setDettaglioTipoIntervento(paiIntervento.getDsDettaglioTipoIntervento());
-        fap.setDemenzaCertificata(MoreObjects.firstNonNull(dsBoolCharToSiNoType.apply(paiIntervento.getDsDemenza()),SiNoType.N));
-        fap.setDisabilitaSensoriale(MoreObjects.firstNonNull(dsBoolCharToSiNoType.apply(paiIntervento.getDsDisabilitaSensoriale()),SiNoType.N));
-        fap.setAssegnoAccompagnamento(MoreObjects.firstNonNull(dsBoolCharToSiNoType.apply(paiIntervento.getPai().getAnagrafeSoc().getFlgAccomp()), SiNoType.N));
-        fap.setDataUVD(getXmlDate(MoreObjects.firstNonNull(paiIntervento.getDsDataUVD(), paiIntervento.getDtAvvio())));
-        fap.setDurataMesiUVD(paiIntervento.getDsDurataUVD()!=null? paiIntervento.getDsDurataUVD().intValue():0);
-        fap.setPunteggioKatz(paiIntervento.getDsPunteggioScalaKatz() == null ? null : paiIntervento.getDsPunteggioScalaKatz());
+
+        //        fap.setDemenzaCertificata(MoreObjects.firstNonNull(dsBoolCharToSiNoType.apply(paiIntervento.getDsDemenza()),SiNoType.N));
+//        fap.setDisabilitaSensoriale(MoreObjects.firstNonNull(dsBoolCharToSiNoType.apply(paiIntervento.getDsDisabilitaSensoriale()),SiNoType.N));
+//        fap.setAssegnoAccompagnamento(MoreObjects.firstNonNull(dsBoolCharToSiNoType.apply(paiIntervento.getPai().getAnagrafeSoc().getFlgAccomp()), SiNoType.N));
+//        fap.setDataUVD(getXmlDate(MoreObjects.firstNonNull(paiIntervento.getDsDataUVD(), paiIntervento.getDtAvvio())));
+//        fap.setDurataMesiUVD(paiIntervento.getDsDurataUVD()!=null? paiIntervento.getDsDurataUVD().intValue():0);
+//        fap.setPunteggioKatz(paiIntervento.getDsPunteggioScalaKatz() == null ? null : paiIntervento.getDsPunteggioScalaKatz());
         
         if(paiIntervento.getStatoInt()=='C'){
         	fap.setMotivoChiusura(paiIntervento.getNoteChius());
         }
         
         if (paiIntervento.getTipologiaIntervento().isFapSvi()) {
-            fap.setSostegnoMensVitaIndip(MoreObjects.firstNonNull(paiIntervento.getQuantita(),BigDecimal.ZERO));
-            fap.setPunteggioKatz(paiIntervento.getDsPunteggioScalaKatz() == null ? null : paiIntervento.getDsPunteggioScalaKatz());
+            //fap.setSostegnoMensVitaIndip(MoreObjects.firstNonNull(paiIntervento.getQuantita(),BigDecimal.ZERO));
+            //fap.setPunteggioKatz(paiIntervento.getDsPunteggioScalaKatz() == null ? null : paiIntervento.getDsPunteggioScalaKatz());
         }
 
         if (paiIntervento.getTipologiaIntervento().isFapApa()) {
-            fap.setAssegnoMensAutonomAPA(MoreObjects.firstNonNull(paiIntervento.getQuantita(),BigDecimal.ZERO));
+            //fap.setAssegnoMensAutonomAPA(MoreObjects.firstNonNull(paiIntervento.getQuantita(),BigDecimal.ZERO));
             fap.setIsee(createIseeType());
             fap.setNOreContratto(paiIntervento.getDsOreSettBadante() == null ? null : paiIntervento.getDsOreSettBadante().intValue());
             fap.setContestualePresenzaAddetti(Strings.isNullOrEmpty(paiIntervento.getDsPresenzaPiuAddetti()) ? PRESENZA_PIU_ADDETTI_DEFAULT : paiIntervento.getDsPresenzaPiuAddetti()); //TODO
         }
 
         if (paiIntervento.getTipologiaIntervento().isFapCaf()) {
-            fap.setContributoMensAiutoFam(MoreObjects.firstNonNull(paiIntervento.getQuantita(),BigDecimal.ZERO));
+            //fap.setContributoMensAiutoFam(MoreObjects.firstNonNull(paiIntervento.getQuantita(),BigDecimal.ZERO));
             fap.setIsee(createIseeType());
             fap.setNOreContratto(paiIntervento.getDsOreSettBadante() == null ? null : paiIntervento.getDsOreSettBadante().intValue());
             fap.setContestualePresenzaAddetti(Strings.isNullOrEmpty(paiIntervento.getDsPresenzaPiuAddetti()) ? PRESENZA_PIU_ADDETTI_DEFAULT : paiIntervento.getDsPresenzaPiuAddetti());
         }
         
         if (paiIntervento.getTipologiaIntervento().isFapDomiciliarita()) {
-            fap.setContributoMensAiutoFam(MoreObjects.firstNonNull(paiIntervento.getQuantita(),BigDecimal.ZERO));
+            //fap.setContributoMensAiutoFam(MoreObjects.firstNonNull(paiIntervento.getQuantita(),BigDecimal.ZERO));
             fap.setIsee(createIseeType());
         }
         
@@ -750,14 +770,13 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 				fap.setMotivoChiusura("5");
 			}
         }
-        
-        fap.setSostegnoMensProgSaluteMentale(null);
+
 
         return fap;
     }
 
     private FondoSolidarieta createFondoSolidarieta() {
-        FondoSolidarieta fondoSolidarieta = new Economico.FondoSolidarieta();
+        FondoSolidarieta fondoSolidarieta = new EconomicoNew.FondoSolidarieta();
         fondoSolidarieta.setIsee(createIseeType());
         BigDecimal totaleErogato = new PaiInterventoMeseDao(getEntityManager()).sumBdgtConsPaiIntervento(paiIntervento);
         if(totaleErogato!=null && totaleErogato.compareTo(BigDecimal.ZERO)>0){
@@ -769,10 +788,10 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
         return fondoSolidarieta;
     }
 
-    private Economico createInterventoEconomicoDettaglio() {
-        Economico economico = new Specificazione.Economico();
+    private EconomicoNew createInterventoEconomicoDettaglio() {
+    	EconomicoNew economico = new SpecificazioneNew.EconomicoNew();
         if (paiIntervento.getTipologiaIntervento().isFap()) {
-            economico.setFap(createFap());
+            economico.setFapNew(createFap());
         }
         if (paiIntervento.getTipologiaIntervento().isFondoSolidarieta()) {
             economico.setFondoSolidarieta(createFondoSolidarieta());
@@ -912,13 +931,13 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
         return residenziale;
     }
 
-    private Specificazione createSpecificazione() {
-        Specificazione specificazione = new InterventoType.Specificazione();
+    private SpecificazioneNew createSpecificazione() {
+        SpecificazioneNew specificazione = new InterventoNewType.SpecificazioneNew();
         String codClasseTipint = paiIntervento.getTipologiaIntervento().getIdParamClasseTipint().getIdParam().getCodParam();
         if (Objects.equal(codClasseTipint, Parametri.CLASSE_TIPOLOGIA_INTERVENTO_ECONOMICI)) { //economico
-            specificazione.setEconomico(createInterventoEconomicoDettaglio());
+            specificazione.setEconomicoNew(createInterventoEconomicoDettaglio());
         } else {
-            specificazione.setEconomico(null);
+            specificazione.setEconomicoNew(null);
         }
         if (Objects.equal(codClasseTipint, Parametri.CLASSE_TIPOLOGIA_INTERVENTO_DOMICILIARI)) { //domiciliare
             specificazione.setDomiciliare(createInterventoDomiciliareDettaglio());
@@ -933,16 +952,16 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
         return specificazione;
     }
 
-    public InterventoType createInterventoType() {
+    public InterventoNewType createInterventoType() {
         Preconditions.checkNotNull(paiIntervento, "paiIntervento must be not null");
-        InterventoType interventoType = new InterventoType();
+        InterventoNewType interventoType = new InterventoNewType();
         Preconditions.checkNotNull(paiIntervento.getDtApe(), "la data apertura intervento non puo' essere null");
         interventoType.setDataApertura(getXmlDate(paiIntervento.getDtAvvio()));
         interventoType.setDataChiusura(paiIntervento.getDtChius() == null ? null : getXmlDate(paiIntervento.getDtChius()));
         interventoType.setTipologiaIntervento(getMacroTipintCsrNew());
         interventoType.setDettaglio(getMicroTipintCsrNew());
         Preconditions.checkArgument(!Strings.isNullOrEmpty(interventoType.getTipologiaIntervento()) && !Strings.isNullOrEmpty(interventoType.getDettaglio()), "tipologia o dettaglio tipologia intervento csr mancanti!");
-        interventoType.setSpecificazione(createSpecificazione());
+        interventoType.setSpecificazioneNew(createSpecificazione());
         interventoType.setDurataPrevista(getDurataMesi());
         if (String.valueOf(paiIntervento.getStatoInt()).equals("C")) {
             interventoType.setNote(new JAXBElement<String>(new QName(String.class.getSimpleName()), String.class, paiIntervento.getNoteChius())); //uniche note che ho . . 
@@ -952,9 +971,9 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
         return interventoType;
     }
 
-    public InserimentoIntervento createInserimentoInterventoRequest() {
+    public NuovoInserimentoIntervento createInserimentoInterventoRequest() {
         Preconditions.checkNotNull(paiIntervento, "paiIntervento must be not null");
-        InserimentoIntervento inserimentoIntervento = new InserimentoIntervento();
+        NuovoInserimentoIntervento inserimentoIntervento = new NuovoInserimentoIntervento();
         inserimentoIntervento.setVersione(VERSIONE);
         inserimentoIntervento.setIntervento(createInterventoType());
         inserimentoIntervento.setCodice(getCodiceOperatore());
@@ -963,9 +982,9 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
         return inserimentoIntervento;
     }
 
-    public ModificaIntervento createModificaInterventoRequest() {
+    public NuovaModificaIntervento createModificaInterventoRequest() {
         Preconditions.checkNotNull(paiIntervento, "paiIntervento must be not null");
-        ModificaIntervento modificaIntervento = new ModificaIntervento();
+        NuovaModificaIntervento modificaIntervento = new NuovaModificaIntervento();
         modificaIntervento.setVersione(VERSIONE);
         modificaIntervento.setDataModifica(getXmlDate(new Date()));
         modificaIntervento.setCodice(requireCodiceOperatore());

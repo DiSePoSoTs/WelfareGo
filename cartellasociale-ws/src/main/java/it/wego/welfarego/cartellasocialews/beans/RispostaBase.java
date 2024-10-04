@@ -3,31 +3,31 @@ package it.wego.welfarego.cartellasocialews.beans;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSeeAlso;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per RispostaBase complex type.
+ * &lt;p&gt;Classe Java per RispostaBase complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
- * <pre>
- * &lt;complexType name="RispostaBase">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="esito" type="{http://framework.cartellasociale.sanita.insiel.it}Esito"/>
- *         &lt;element name="errori" type="{http://framework.cartellasociale.sanita.insiel.it}Messaggio" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="avvisi" type="{http://framework.cartellasociale.sanita.insiel.it}Messaggio" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="RispostaBase"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name="esito" type="{http://framework.cartellasociale.sanita.insiel.it}Esito"/&amp;gt;
+ *         &amp;lt;element name="errori" type="{http://framework.cartellasociale.sanita.insiel.it}Messaggio" maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="avvisi" type="{http://framework.cartellasociale.sanita.insiel.it}Messaggio" maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
@@ -38,19 +38,20 @@ import javax.xml.bind.annotation.XmlType;
     "avvisi"
 })
 @XmlSeeAlso({
-    RicevutaModificaProgetto.class,
-    RicevutaDiario.class,
-    RicevutaRiattivaCartella.class,
-    RicevutaPersonaRiferimento.class,
-    RicevutaAzioniBackOffice.class,
-    RicevutaChiudiCartella.class,
     RicevutaChiudiInterventiDaLista.class,
-    RicevutaModificaProfilo.class,
-    RicevutaIntervento.class,
+    RicevutaRiattivaCartella.class,
+    RicevutaChiudiCartella.class,
+    RicevutaPersonaRiferimento.class,
     RicevutaModificaDiario.class,
-    RicevutaCartella.class,
     RicevutaModificaIntervento.class,
-    RicevutaModificaAnagrafica.class
+    RicevutaModificaProgetto.class,
+    RicevutaModificaProfilo.class,
+    RicevutaInserimentoProfilo.class,
+    RicevutaModificaAnagrafica.class,
+    RicevutaDiario.class,
+    RicevutaIntervento.class,
+    RicevutaCartella.class,
+    RicevutaAzioniBackOffice.class
 })
 public class RispostaBase {
 
@@ -86,20 +87,20 @@ public class RispostaBase {
     /**
      * Gets the value of the errori property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the errori property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the errori property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getErrori().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link Messaggio }
      * 
@@ -115,20 +116,20 @@ public class RispostaBase {
     /**
      * Gets the value of the avvisi property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the avvisi property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the avvisi property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getAvvisi().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link Messaggio }
      * 

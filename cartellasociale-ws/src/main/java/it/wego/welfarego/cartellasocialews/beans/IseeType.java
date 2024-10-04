@@ -2,46 +2,74 @@
 package it.wego.welfarego.cartellasocialews.beans;
 
 import java.math.BigDecimal;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per IseeType complex type.
+ * &lt;p&gt;Classe Java per IseeType complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * &lt;p&gt;Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
- * <pre>
- * &lt;complexType name="IseeType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="valore" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *         &lt;element name="dataScadenza" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DataType"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="IseeType"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name="tipologiaIsee" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+ *         &amp;lt;element name="valore" type="{http://www.w3.org/2001/XMLSchema}decimal"/&amp;gt;
+ *         &amp;lt;element name="dataScadenza" type="{http://tipigenerali.cartellasociale.sanita.insiel.it}DataType"/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "IseeType", namespace = "http://tipigenerali.cartellasociale.sanita.insiel.it", propOrder = {
+    "tipologiaIsee",
     "valore",
     "dataScadenza"
 })
 public class IseeType {
 
     @XmlElement(required = true)
+    protected String tipologiaIsee;
+    @XmlElement(required = true)
     protected BigDecimal valore;
     @XmlElement(required = true)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dataScadenza;
+
+    /**
+     * Recupera il valore della proprietà tipologiaIsee.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getTipologiaIsee() {
+        return tipologiaIsee;
+    }
+
+    /**
+     * Imposta il valore della proprietà tipologiaIsee.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setTipologiaIsee(String value) {
+        this.tipologiaIsee = value;
+    }
 
     /**
      * Recupera il valore della proprietà valore.

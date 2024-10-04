@@ -18,6 +18,7 @@ import it.wego.welfarego.persistence.entities.Pai;
 import it.wego.welfarego.persistence.entities.PaiIntervento;
 
 import java.io.DataInputStream;
+import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigInteger;
@@ -28,6 +29,7 @@ import java.net.CookiePolicy;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.PasswordAuthentication;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.sql.Timestamp;
 import java.util.Map;
@@ -44,6 +46,8 @@ import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.X509Certificate;
 import javax.persistence.EntityManager;
+import javax.xml.ws.WebServiceFeature;
+
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -275,8 +279,7 @@ public class CartellaSocialeWsClient {
 		if (!isEnabled()) {
 			return null;
 		}
-		RicevutaCartella ricevutaCartella = getCartellaService()
-				.inserimentoCartella(dataUtils.createInserimentoCartellaSocialeRequest());
+		RicevutaCartella ricevutaCartella = getCartellaService().inserimentoCartella(dataUtils.createInserimentoCartellaSocialeRequest());
 		Messaggio messaggio = checkResponse(ricevutaCartella, INSERIMENTO_CARTELLA);
 		if (messaggio != null && messaggio.getCodice().equals(CARTELLA_GIAPRESENTE)) {
 			// aggiorno il codice cartella ed effettuo la modifica cartella
@@ -293,8 +296,7 @@ public class CartellaSocialeWsClient {
 			modificaProgetto();
 		} else {
 			Preconditions.checkNotNull(ricevutaCartella.getIdCartella(), "nessun id cartella restituito");
-			logger.debug("id cartella csr = {} for anagrafeSoc = {}", ricevutaCartella.getIdCartella(),
-					dataUtils.getAnagrafeSoc());
+			logger.debug("id cartella csr = {} for anagrafeSoc = {}", ricevutaCartella.getIdCartella(),	dataUtils.getAnagrafeSoc());
 			dataUtils.initTransaction();
 			dataUtils.getAnagrafeSoc().setIdCsr(ricevutaCartella.getIdCartella().toString());
 			dataUtils.commitTransaction();
@@ -333,7 +335,8 @@ public class CartellaSocialeWsClient {
 		if (!isEnabled()) {
 			return null;
 		}
-		RicevutaModificaProfilo ricevutaModificaProfilo = getCartellaService().modificaProfilo(dataUtils.createModificaProfiloRequest());
+		RicevutaModificaProfilo ricevutaModificaProfilo = getCartellaService()
+				.modificaProfilo(dataUtils.createModificaProfiloRequest());
 		checkResponse(ricevutaModificaProfilo, MODIFICA_PROFILO);
 		return ricevutaModificaProfilo;
 	}
@@ -377,7 +380,7 @@ public class CartellaSocialeWsClient {
 			return null;
 		}
 		RicevutaIntervento ricevutaIntervento = getCartellaService()
-				.inserimentoIntervento(dataUtils.createInserimentoInterventoRequest());
+				.nuovoInserimentoIntervento(dataUtils.createInserimentoInterventoRequest());
 		Messaggio messaggio = checkResponse(ricevutaIntervento, INSERIMENTO_INTERVENTO);
 		if (messaggio != null && messaggio.getDescrizione().matches(CARTELLA_CHIUSA)) {
 			riattivaCartellaSociale();
@@ -405,7 +408,7 @@ public class CartellaSocialeWsClient {
 			return null;
 		}
 		RicevutaModificaIntervento ricevutaModificaIntervento = getCartellaService()
-				.modificaIntervento(dataUtils.createModificaInterventoRequest());
+				.nuovaModificaIntervento(dataUtils.createModificaInterventoRequest());
 		Messaggio messaggio = checkResponse(ricevutaModificaIntervento, MODIFICA_INTERVENTO);
 		if (messaggio != null && messaggio.getDescrizione().matches(CARTELLA_CHIUSA)) {
 			riattivaCartellaSociale();
@@ -549,19 +552,37 @@ public class CartellaSocialeWsClient {
 		}
 	}
 
+	public Boolean testSOAPConnection() throws URISyntaxException, MalformedURLException {
+		java.net.URI serviceURL = new java.net.URI(getServiceUrl());
+		Cartella_Service service = new Cartella_Service(serviceURL.toURL());
+		URL wsdlurl = service.getWSDLDocumentLocation();
+		logger.info("WSDL URL {}",  wsdlurl.toString());
+		
+		Cartella c = service.getCartellaSOAP();
+		return true;
+	}
+	
 	public String testConnection() throws MalformedURLException, IOException {
 
 		logger.debug("testConnection");
-		HttpURLConnection connection = (HttpURLConnection) new URL(getServiceUrl().replaceFirst("/*$", "") + "?wsdl")
-				.openConnection();
+		HttpURLConnection connection = (HttpURLConnection) new URL(getServiceUrl().replaceFirst("/*$", "") + "?wsdl").openConnection();
 		connection.connect();
 		DataInputStream dis = new DataInputStream(connection.getInputStream());
 
 		String inputLine;
 
-		while ((inputLine = dis.readUTF()) != null) {
-			System.out.println(inputLine);
+		while (dis.available() > 0) {
+			try {
+				inputLine = dis.readUTF();
+			} catch (EOFException eofe) {
+				System.out.println("End of file reached");
+				break;
+			} catch (IOException ioe) {
+				ioe.printStackTrace();
+			}
+
 		}
+
 		dis.close();
 
 		String response = IOUtils.toString(connection.getInputStream(), "UTF-8");
@@ -571,8 +592,6 @@ public class CartellaSocialeWsClient {
 		logger.debug("response code {}, response message {}", responseCode, response);
 		return response;
 	}
-
-
 
 	public static String dumpPkIntervento(PaiIntervento item) {
 		Gson gson = new Gson();

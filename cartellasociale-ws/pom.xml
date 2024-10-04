@@ -49,7 +49,8 @@
 						</goals>
 						<configuration>
 							<classifier>spring-boot</classifier>
-							<mainClass>it.wego.welfarego.cartellasocialews.CartellasocialeWsMain</mainClass>
+							<mainClass>
+								it.wego.welfarego.cartellasocialews.CartellasocialeWsMain</mainClass>
 						</configuration>
 					</execution>
 				</executions>
@@ -67,11 +68,12 @@
 				</executions>
 				<configuration>
 					<wsdlUrls>
-						<wsdlUrl>https://sociale.regione.fvg.it/WS_PRJ/services/Cartella?wsdl</wsdlUrl>
+						<wsdlUrl>http://172.25.205.82:8080/WS_PRJ/services/Cartella?wsdl</wsdlUrl>
 					</wsdlUrls>
 					<wsdlDirectory>${project.basedir}/src/main/resources/</wsdlDirectory>
-					<packageName>it.trieste.comune.cartellasocialews.beans</packageName>
+					<packageName>it.wego.welfarego.cartellasocialews.beans</packageName>
 					<sourceDestDir>${project.build.sourceDirectory}/</sourceDestDir>
+					<extension>true</extension>
 				</configuration>
 				<dependencies>
 					<dependency>
@@ -130,6 +132,14 @@
 			<artifactId>javax.jws</artifactId>
 			<version>3.1.1</version>
 		</dependency>
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc</artifactId>
+			<version>8</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}\lib\ojdbc8.jar</systemPath>
+		</dependency>
+
 	</dependencies>
 
 </project>
