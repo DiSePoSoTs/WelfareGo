@@ -17,7 +17,8 @@ import jakarta.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "Cartella", targetNamespace = "http://insiel.it/sanita/cartellasociale/cartellaws/", wsdlLocation = "file:/C:/Users/GOBBOG/git/WelfareGo/cartellasociale-ws/src/main/resources/CartellaSociale.wsdl")
+
+@WebServiceClient(name = "Cartella", targetNamespace = "http://insiel.it/sanita/cartellasociale/cartellaws/", wsdlLocation = "https://sociale.regione.fvg.it/WS_PRJ/services/Cartella?wsdl")
 public class Cartella_Service
     extends Service
 {
@@ -30,7 +31,7 @@ public class Cartella_Service
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("file:/C:/Users/GOBBOG/git/WelfareGo/cartellasociale-ws/src/main/resources/CartellaSociale.wsdl");
+            url = new URL("https://sociale.regione.fvg.it/WS_PRJ/services/Cartella?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

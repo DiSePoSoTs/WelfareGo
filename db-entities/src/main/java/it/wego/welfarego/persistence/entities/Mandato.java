@@ -13,6 +13,7 @@ import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -68,10 +69,6 @@ public class Mandato implements Serializable {
 	@Column(name = "ANNO_DECR", nullable = false)
 	private int annoDecr;
 
-	public void setMandatoDettaglioList(List<MandatoDettaglio> mandatoDettaglioList) {
-		this.mandatoDettaglioList = mandatoDettaglioList;
-	}
-
 	@Basic(optional = false)
 	@Column(name = "CAPITOLO_DECR", nullable = false)
 	private int capitoloDecr;
@@ -93,6 +90,89 @@ public class Mandato implements Serializable {
 	@Column(name = "NOME_BENEFICIARIO", nullable = false, length = 765)
 	private String nomeBeneficiario;
 
+	@Basic(optional = false)
+	@Column(name = "CF_BENEFICIARIO", nullable = false, length = 16)
+	private String cfBeneficiario;
+
+	@Basic(optional = false)
+	@Column(name = "INDIRIZZO", nullable = false, length = 765)
+	private String indirizzo;
+
+	@Basic(optional = false)
+	@Column(name = "GRUPPO", nullable = false, length = 100)
+	private String gruppo;
+
+	@Basic(optional = false)
+	@Column(name = "MESE_RIF", nullable = false)
+	private int meseRif;
+
+	@Column(name = "PERIODO_DAL")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date periodoDal;
+
+	@Column(name = "PERIODO_AL")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date periodoAl;
+
+	@Basic(optional = false)
+	@Column(name = "CF_DELEGANTE", nullable = false, length = 16)
+	private String cfDelegante;
+
+	@Column(name = "COGNOME_DELEGANTE", length = 765)
+	private String cognomeDelegante;
+
+	@Column(name = "NOME_DELEGANTE", length = 765)
+	private String nomeDelegante;
+
+	@Column(name = "MODALITA_EROGAZIONE", length = 765)
+	private String modalitaErogazione;
+
+	@Column(name = "IBAN", length = 30)
+	private String iban;
+
+	@Basic(optional = false)
+	@Column(name = "IMPORTO", nullable = false, precision = 9, scale = 4)
+	private BigDecimal importo;
+
+	@Column(name = "TIMBRO")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date timbro;
+
+	@Id
+	@GeneratedValue(generator = "mandatoSequence")
+	@SequenceGenerator(name = "mandatoSequence", sequenceName = "WG_SEQ", allocationSize = 50)
+	@Basic(optional = false)
+	@Column(name = "ID_MAN", nullable = false)
+	private Integer idMan;
+
+	@Column(name = "NOTE", length = 3000)
+	private String note;
+
+	@JoinColumn(name = "ID_PARAM_FASCIA", referencedColumnName = "ID_PARAM_INDATA", nullable = false)
+	@ManyToOne(optional = false)
+	private ParametriIndata idParamFascia;
+
+	@JoinColumn(name = "ID_PARAM_STATO", referencedColumnName = "ID_PARAM_INDATA", nullable = false)
+	@ManyToOne(optional = false)
+	private ParametriIndata idParamStato;
+
+	@JoinColumns({ @JoinColumn(name = "COD_PAI", referencedColumnName = "COD_PAI", nullable = false),
+			@JoinColumn(name = "COD_TIPINT", referencedColumnName = "COD_TIPINT", nullable = false),
+			@JoinColumn(name = "CNT_TIPINT", referencedColumnName = "CNT_TIPINT", nullable = false) })
+	@ManyToOne(optional = false)
+	private PaiIntervento paiIntervento;
+
+	@JoinColumn(name = "COD_ANA_DELEGANTE", referencedColumnName = "COD_ANA")
+	@ManyToOne
+	private AnagrafeSoc codAnaDelegante;
+
+	@JoinColumn(name = "COD_ANA_BENEFICIARIO", referencedColumnName = "COD_ANA", nullable = false)
+	@ManyToOne
+	private AnagrafeSoc codAnaBeneficiario;
+
+	@OneToMany(mappedBy = "idMan")
+	private List<MandatoDettaglio> mandatoDettaglioList;
+
 	public String getCognomeBeneficiario() {
 		return cognomeBeneficiario;
 	}
@@ -109,18 +189,6 @@ public class Mandato implements Serializable {
 		return nomeDelegante;
 	}
 
-	@Basic(optional = false)
-	@Column(name = "CF_BENEFICIARIO", nullable = false, length = 16)
-	private String cfBeneficiario;
-
-	@Basic(optional = false)
-	@Column(name = "INDIRIZZO", nullable = false, length = 765)
-	private String indirizzo;
-
-	@Basic(optional = false)
-	@Column(name = "GRUPPO", nullable = false, length = 100)
-	private String gruppo;
-
 	public void setPeriodoDal(Date periodoDal) {
 		this.periodoDal = periodoDal;
 	}
@@ -129,9 +197,9 @@ public class Mandato implements Serializable {
 		this.codAnaDelegante = codAnaDelegante;
 	}
 
-	@Basic(optional = false)
-	@Column(name = "MESE_RIF", nullable = false)
-	private int meseRif;
+	public void setMandatoDettaglioList(List<MandatoDettaglio> mandatoDettaglioList) {
+		this.mandatoDettaglioList = mandatoDettaglioList;
+	}
 
 	public void setNumDecr(int numDecr) {
 		this.numDecr = numDecr;
@@ -197,18 +265,6 @@ public class Mandato implements Serializable {
 		this.codAnaBeneficiario = codAnaBeneficiario;
 	}
 
-	@Column(name = "PERIODO_DAL")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date periodoDal;
-
-	@Column(name = "PERIODO_AL")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date periodoAl;
-
-	@Basic(optional = false)
-	@Column(name = "CF_DELEGANTE", nullable = false, length = 16)
-	private String cfDelegante;
-
 	public void setCfDelegante(String cfDelegante) {
 		this.cfDelegante = cfDelegante;
 	}
@@ -233,29 +289,13 @@ public class Mandato implements Serializable {
 		this.note = note;
 	}
 
-	@Column(name = "COGNOME_DELEGANTE", length = 765)
-	private String cognomeDelegante;
-
-	@Column(name = "NOME_DELEGANTE", length = 765)
-	private String nomeDelegante;
-
 	public void setNomeDelegante(String nomeDelegante) {
 		this.nomeDelegante = nomeDelegante;
 	}
 
-	@Column(name = "MODALITA_EROGAZIONE", length = 765)
-	private String modalitaErogazione;
-
 	public String getModalitaErogazione() {
 		return modalitaErogazione;
 	}
-
-	@Column(name = "IBAN", length = 30)
-	private String iban;
-
-	@Basic(optional = false)
-	@Column(name = "IMPORTO", nullable = false, precision = 9, scale = 4)
-	private BigDecimal importo;
 
 	public int getAnnoDecr() {
 		return annoDecr;
@@ -344,45 +384,6 @@ public class Mandato implements Serializable {
 	public List<MandatoDettaglio> getMandatoDettaglioList() {
 		return mandatoDettaglioList;
 	}
-
-	@Column(name = "TIMBRO")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date timbro;
-
-	@Id
-	@GeneratedValue(generator = "mandatoSequence")
-	@SequenceGenerator(name = "mandatoSequence", sequenceName = "WG_SEQ", allocationSize = 50)
-	@Basic(optional = false)
-	@Column(name = "ID_MAN", nullable = false)
-	private Integer idMan;
-
-	@Column(name = "NOTE", length = 3000)
-	private String note;
-
-	@JoinColumn(name = "ID_PARAM_FASCIA", referencedColumnName = "ID_PARAM_INDATA", nullable = false)
-	@ManyToOne(optional = false)
-	private ParametriIndata idParamFascia;
-
-	@JoinColumn(name = "ID_PARAM_STATO", referencedColumnName = "ID_PARAM_INDATA", nullable = false)
-	@ManyToOne(optional = false)
-	private ParametriIndata idParamStato;
-
-	@JoinColumns({ @JoinColumn(name = "COD_PAI", referencedColumnName = "COD_PAI", nullable = false),
-			@JoinColumn(name = "COD_TIPINT", referencedColumnName = "COD_TIPINT", nullable = false),
-			@JoinColumn(name = "CNT_TIPINT", referencedColumnName = "CNT_TIPINT", nullable = false) })
-	@ManyToOne(optional = false)
-	private PaiIntervento paiIntervento;
-
-	@JoinColumn(name = "COD_ANA_DELEGANTE", referencedColumnName = "COD_ANA")
-	@ManyToOne
-	private AnagrafeSoc codAnaDelegante;
-
-	@JoinColumn(name = "COD_ANA_BENEFICIARIO", referencedColumnName = "COD_ANA", nullable = false)
-	@ManyToOne(optional = false)
-	private AnagrafeSoc codAnaBeneficiario;
-
-	@OneToMany(mappedBy = "idMan")
-	private List<MandatoDettaglio> mandatoDettaglioList;
 
 	public Mandato() {
 	}

@@ -5,9 +5,8 @@
              http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 	version="2.1">
 
-	<persistence-unit name="welfaregoPU"
-		transaction-type="RESOURCE_LOCAL">
-		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+	<persistence-unit name="welfaregoPU">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 		<mapping-file>META-INF/jpql/query_interventi.xml</mapping-file>
 		<mapping-file>META-INF/jpql/budget_query.xml</mapping-file>
@@ -92,10 +91,14 @@
 		<class>it.wego.welfarego.persistence.entities.WSToken</class>
 		<shared-cache-mode>NONE</shared-cache-mode>
 		<properties>
-			<property name="eclipselink.logging.logger"	value="it.trieste.comune.ssc.utils.eclipselink.logger.Log4jLogger" />
-			<property name="eclipselink.logging.level" value="INFO" />
-			<property name="eclipselink.logging.parameters" value="false" />
-			<property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.oracle.OraclePlatform" />
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/socialgo?serverTimezone=UTC"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="admin"/>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.format_sql" value="true"/>
+			<property name="hibernate.hbm2ddl.auto" value="create"/>
 		</properties>
 	</persistence-unit>
 </persistence>
