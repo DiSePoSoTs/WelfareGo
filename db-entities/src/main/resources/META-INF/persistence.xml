@@ -8,10 +8,6 @@
 	<persistence-unit name="welfaregoPU">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-		<mapping-file>META-INF/jpql/query_interventi.xml</mapping-file>
-		<mapping-file>META-INF/jpql/budget_query.xml</mapping-file>
-		<mapping-file>META-INF/jpql/fatturazione_elettronica.xml</mapping-file>
-
 		<class>it.wego.welfarego.persistence.entities.AnagrafeFam</class>
 		<class>it.wego.welfarego.persistence.entities.AnagrafeFamPK</class>
 		<class>it.wego.welfarego.persistence.entities.AnagrafeSoc</class>
@@ -91,14 +87,13 @@
 		<class>it.wego.welfarego.persistence.entities.WSToken</class>
 		<shared-cache-mode>NONE</shared-cache-mode>
 		<properties>
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/socialgo?serverTimezone=UTC"/>
-			<property name="javax.persistence.jdbc.user" value="root"/>
-			<property name="javax.persistence.jdbc.password" value="admin"/>
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
-			<property name="hibernate.show_sql" value="true"/>
-			<property name="hibernate.format_sql" value="true"/>
-			<property name="hibernate.hbm2ddl.auto" value="create"/>
+			<property name="javax.persistence.jdbc.url"	value="jdbc:oracle:thin:@//172.16.1.80:1522/WEGO" />
+			<property name="javax.persistence.jdbc.user" value="socialgo" />
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
+			<property name="javax.persistence.jdbc.password" value="socialgo" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
 		</properties>
 	</persistence-unit>
 </persistence>
