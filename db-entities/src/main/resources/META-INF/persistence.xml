@@ -90,7 +90,7 @@
 			<property name="javax.persistence.jdbc.url"	value="jdbc:oracle:thin:@//172.16.1.80:1522/WEGO" />
 			<property name="javax.persistence.jdbc.user" value="socialgo" />
 			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
-			<property name="javax.persistence.jdbc.password" value="socialgo" />
+			<property name="javax.persistence.jdbc.password" value="" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
 			<property name="hibernate.hbm2ddl.auto" value="create" />
