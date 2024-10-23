@@ -317,8 +317,8 @@ public class UniqueTasklist implements Serializable {
 
 	@JoinColumns({
 			@JoinColumn(name = "COD_PAI", referencedColumnName = "COD_PAI", nullable = false, insertable = false, updatable = false),
-			@JoinColumn(name = "COD_TIPINT", referencedColumnName = "COD_TIPINT"),
-			@JoinColumn(name = "CNT_TIPINT", referencedColumnName = "CNT_TIPINT") })
+			@JoinColumn(name = "COD_TIPINT", referencedColumnName = "COD_TIPINT", nullable = false, insertable = false, updatable = false),
+			@JoinColumn(name = "CNT_TIPINT", referencedColumnName = "CNT_TIPINT", nullable = false, insertable = false, updatable = false) })
 	@ManyToOne(optional = false)
 	private PaiIntervento paiIntervento;
 

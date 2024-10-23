@@ -92,8 +92,7 @@ public class ReportUtils {
 
 			File reportFile = new File(templatePath);
 			if (!reportFile.exists())
-				throw new JRRuntimeException(
-						"File WebappReport.jasper not found. The report design must be compiled first.");
+				throw new JRRuntimeException("File WebappReport.jasper not found. The report design must be compiled first.");
 
 			reportInputStream = new FileInputStream(templatePath);
 			reportOutputStream = new ByteArrayOutputStream();

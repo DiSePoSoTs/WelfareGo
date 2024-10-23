@@ -38,7 +38,7 @@ public class Luogo implements Serializable, Cloneable {
 	@Column(name = "COD_LUOGO", nullable = false)
 	private Long codLuogo;
 
-	@JoinColumn(name = "COD_STATO", referencedColumnName = "COD_STATO")
+	@JoinColumn(name = "COD_STATO", referencedColumnName = "COD_STATO", insertable = false, updatable = false)
 	@ManyToOne
 	private Stato stato;
 
@@ -48,7 +48,7 @@ public class Luogo implements Serializable, Cloneable {
 
 	@JoinColumns({
 			@JoinColumn(name = "COD_STATO", referencedColumnName = "COD_STATO", insertable = false, updatable = false),
-			@JoinColumn(name = "COD_PROV", referencedColumnName = "COD_PROV") })
+			@JoinColumn(name = "COD_PROV", referencedColumnName = "COD_PROV", insertable = false, updatable = false) })
 	@ManyToOne
 	private Provincia provincia;
 
@@ -63,7 +63,7 @@ public class Luogo implements Serializable, Cloneable {
 	@JoinColumns({
 			@JoinColumn(name = "COD_STATO", referencedColumnName = "COD_STATO", insertable = false, updatable = false),
 			@JoinColumn(name = "COD_PROV", referencedColumnName = "COD_PROV", insertable = false, updatable = false),
-			@JoinColumn(name = "COD_COM", referencedColumnName = "COD_COM") })
+			@JoinColumn(name = "COD_COM", referencedColumnName = "COD_COM", insertable = false, updatable = false) })
 	@ManyToOne
 	private Comune comune;
 
@@ -75,7 +75,7 @@ public class Luogo implements Serializable, Cloneable {
 			@JoinColumn(name = "COD_STATO", referencedColumnName = "COD_STATO", insertable = false, updatable = false),
 			@JoinColumn(name = "COD_PROV", referencedColumnName = "COD_PROV", insertable = false, updatable = false),
 			@JoinColumn(name = "COD_COM", referencedColumnName = "COD_COM", insertable = false, updatable = false),
-			@JoinColumn(name = "COD_VIA", referencedColumnName = "COD_VIA") })
+			@JoinColumn(name = "COD_VIA", referencedColumnName = "COD_VIA", insertable = false, updatable = false) })
 	@ManyToOne
 	private Toponomastica via;
 
@@ -88,7 +88,7 @@ public class Luogo implements Serializable, Cloneable {
 			@JoinColumn(name = "COD_PROV", referencedColumnName = "COD_PROV", insertable = false, updatable = false),
 			@JoinColumn(name = "COD_COM", referencedColumnName = "COD_COM", insertable = false, updatable = false),
 			@JoinColumn(name = "COD_VIA", referencedColumnName = "COD_VIA", insertable = false, updatable = false),
-			@JoinColumn(name = "COD_CIV", referencedColumnName = "COD_CIV") })
+			@JoinColumn(name = "COD_CIV", referencedColumnName = "COD_CIV",insertable = false, updatable = false) })
 	@ManyToOne()
 	private ToponomasticaCivici civico;
 

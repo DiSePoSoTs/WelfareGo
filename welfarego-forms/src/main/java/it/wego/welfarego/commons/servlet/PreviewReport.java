@@ -54,104 +54,96 @@ public class PreviewReport extends AbstractReportServlet {
 			if (parameters.get("parameters") == null) {
 				throw new Exception("Parametri insufficienti per generare il report");
 			}
-			PreviewReportBean data = JSonUtils.getGson().fromJson(parameters.get("parameters"), PreviewReportBean.class);
-			Map parametersMap = new HashMap();
+			PreviewReportBean data = JSonUtils.getGson().fromJson(parameters.get("parameters"),	PreviewReportBean.class);
+			Map<String,Object> parametersMap = new HashMap<String, Object>();
 
 			String nomeReport = "", nomeFile = "";
 			byte[] compiledReport = null;
 			em = Connection.getEntityManager();
 			if (data.getTipoReport().toUpperCase().equals("DETERMINE")) {
-				
-		           List<PaiIntervento> interventi = new ArrayList<PaiIntervento>(data.getEventi().size());
-				   List<String> paiInterventoPKnewList = new ArrayList<String>(data.getEventi().size());
-				   PersistenceAdapter persistenceAdapter = PersistenceAdapterFactory.getPersistenceAdapter();
-			       EntityManager entityManager = persistenceAdapter.getEntityManager();
-                   PaiInterventoMeseDao pmdao = new PaiInterventoMeseDao(entityManager);
-                 
-                   PaiInterventoDao pdao = new PaiInterventoDao(entityManager);
-                 
-                     
-                   Map<PaiIntervento,Object> interventiDurata= new HashMap<PaiIntervento,Object>();
-                   Map<PaiIntervento , BigDecimal> budgetCosto = new HashMap<PaiIntervento,BigDecimal>();
-            	if(!Strings.isNullOrEmpty(data.getProroghe())){
-            		  
-                    for (String idEvento : data.getEventi()) {
-                        PaiEvento evento = Connection.getEntityManager().find(PaiEvento.class, Integer.valueOf(idEvento));
-                        PaiInterventoPK paiInterventoPK = evento.getPaiIntervento().getPaiInterventoPK();
-                     
-                        interventi.add(evento.getPaiIntervento());
-                    }
-            	
-            		//caso di anteprima di proroghe....
-            		//prendo il numero dei mesi proroga o il dal al .
-            		Integer numeroMesiProroga = Strings.isNullOrEmpty(data.getMesi())==false&&data.getMesi()!="0"?Integer.valueOf(Strings.emptyToNull(data.getMesi())):null;
-                   	Date al = null;
-                
-                   	if(Strings.emptyToNull(data.getAl())!=null){
-                   		
-                   		DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-                   		al = format.parse(data.getAl());
-                   	}
-                   	//scorro la lista degli interventi .
-              		
-                   	for(PaiIntervento vecchio : interventi ){
-                   	   interventiDurata.put(vecchio, vecchio.getDtFine()!=null?vecchio.getDtFine():vecchio.getDurMesi());
-                   		if(al!=null){
-                   			DateTime dataFineOriginale= new DateTime(vecchio.getDtFine());
-                   			DateTime dataFineNuova = new DateTime(al);
-                   			//attenzione faccio questa cosa per evitare che se si fà l'anteprima di un intervento che ha la data fine originale prima della data fine nuova la data fine originale venga sovrascritta 
-                   			if(dataFineNuova.isBefore(dataFineOriginale)){
-                   			vecchio.setDtFine(al);
-                   			}
-                   		}
-                   		else {
-                   			vecchio.setDurMesi(numeroMesiProroga);
-                   		}
-                   		pdao.update(vecchio);
+
+				List<PaiIntervento> interventi = new ArrayList<PaiIntervento>(data.getEventi().size());
+				PersistenceAdapter persistenceAdapter = PersistenceAdapterFactory.getPersistenceAdapter();
+				EntityManager entityManager = persistenceAdapter.getEntityManager();
+				PaiInterventoMeseDao pmdao = new PaiInterventoMeseDao(entityManager);
+
+				PaiInterventoDao pdao = new PaiInterventoDao(entityManager);
+
+				Map<PaiIntervento, Object> interventiDurata = new HashMap<PaiIntervento, Object>();
+				Map<PaiIntervento, BigDecimal> budgetCosto = new HashMap<PaiIntervento, BigDecimal>();
+				if (!Strings.isNullOrEmpty(data.getProroghe())) {
+
+					for (String idEvento : data.getEventi()) {
+						PaiEvento evento = Connection.getEntityManager().find(PaiEvento.class, Integer.valueOf(idEvento));
+						interventi.add(evento.getPaiIntervento());
+					}
+
+					// caso di anteprima di proroghe....
+					// prendo il numero dei mesi proroga o il dal al .
+					Integer numeroMesiProroga = Strings.isNullOrEmpty(data.getMesi()) == false && data.getMesi() != "0"
+							? Integer.valueOf(Strings.emptyToNull(data.getMesi()))
+							: null;
+					Date al = null;
+
+					if (Strings.emptyToNull(data.getAl()) != null) {
+
+						DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+						al = format.parse(data.getAl());
+					}
+					// scorro la lista degli interventi .
+
+					for (PaiIntervento vecchio : interventi) {
+						interventiDurata.put(vecchio, vecchio.getDtFine() != null ? vecchio.getDtFine() : vecchio.getDurMesi());
+						if (al != null) {
+							DateTime dataFineOriginale = new DateTime(vecchio.getDtFine());
+							DateTime dataFineNuova = new DateTime(al);
+							// attenzione faccio questa cosa per evitare che se si fà l'anteprima di un
+							// intervento che ha la data fine originale prima della data fine nuova la data
+							// fine originale venga sovrascritta
+							if (dataFineNuova.isBefore(dataFineOriginale)) {
+								vecchio.setDtFine(al);
+							}
+						} else {
+							vecchio.setDurMesi(numeroMesiProroga);
+						}
+						pdao.update(vecchio);
 
 						BigDecimal costo = calcolaCostoInterventoService.calcolaBdgPrevEur(new InterventoDto(vecchio, numeroMesiProroga));
 
-                   		for(PaiInterventoMese proposta : vecchio.getPaiInterventoMeseList()){
-                   			if(proposta.getBdgPrevEur().compareTo(BigDecimal.ZERO)==1){
-                   		       budgetCosto.put(vecchio,proposta.getBdgPrevEur());
-                   				proposta.setBdgPrevEur(costo);
-                   				pmdao.update(proposta);
-                   			}
-                   		}
-                   		                   			
-                   		}
-                   		
-                   	}//fine duplicazione interventi 
-                   	// 
-                  
-                  PaiEvento primoEvento = em.find(PaiEvento.class, Integer.valueOf(data.getEventi().get(0)));
+						for (PaiInterventoMese proposta : vecchio.getPaiInterventoMeseList()) {
+							if (proposta.getBdgPrevEur().compareTo(BigDecimal.ZERO) == 1) {
+								budgetCosto.put(vecchio, proposta.getBdgPrevEur());
+								proposta.setBdgPrevEur(costo);
+								pmdao.update(proposta);
+							}
+						}
+					}
+				} // fine duplicazione interventi
+
+				PaiEvento primoEvento = em.find(PaiEvento.class, Integer.valueOf(data.getEventi().get(0)));
 				nomeReport = ReportUtils.getNomeFileReportDetermine(primoEvento.getPaiIntervento());
 
 				nomeFile = nomeReport.replaceFirst("jasper$", "ods");
 				parametersMap.put("tipo_intervento", data.getTipIntervento());
-				parametersMap.put("lista_eventi",data.getEventi());
+				parametersMap.put("lista_eventi", data.getEventi());
 				compiledReport = ReportUtils.executeDetermineReport(nomeReport, ReportUtils.XLS, parametersMap);
 
-				
-				for(PaiIntervento i : interventi){
+				for (PaiIntervento i : interventi) {
 					Object durata = interventiDurata.get(i);
-					if(durata.getClass().equals(Date.class)){
-						i.setDtFine((Date)durata);
-					}
-					else {
-						i.setDurMesi((Integer)durata);
+					if (durata.getClass().equals(Date.class)) {
+						i.setDtFine((Date) durata);
+					} else {
+						i.setDurMesi((Integer) durata);
 					}
 					pdao.update(i);
-					for(PaiInterventoMese m : i.getPaiInterventoMeseList()){
-						if(m.getBdgPrevEur().compareTo(BigDecimal.ZERO)==1){
+					for (PaiInterventoMese m : i.getPaiInterventoMeseList()) {
+						if (m.getBdgPrevEur().compareTo(BigDecimal.ZERO) == 1) {
 							BigDecimal costo = budgetCosto.get(i);
 							m.setBdgPrevEur(costo);
 							pmdao.update(m);
 						}
 					}
-					
 				}
-				
 			}
 			if (data.getTipoReport().toUpperCase().equals("LISTE_ATTESA")) {
 				nomeReport = "report_liste_attesa_" + data.getTipIntervento() + ".jasper";
@@ -180,9 +172,7 @@ public class PreviewReport extends AbstractReportServlet {
 	}
 
 	@Override
-	public void doPost(HttpServletRequest request,
-			  HttpServletResponse response)
-			  throws IOException, ServletException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		doGet(request, response);
 	}
 }

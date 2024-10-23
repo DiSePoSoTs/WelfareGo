@@ -185,8 +185,8 @@ public class PaiDocumento implements Serializable {
 
 	@JoinColumns({
 			@JoinColumn(name = "COD_PAI", referencedColumnName = "COD_PAI", updatable = false, insertable = false),
-			@JoinColumn(name = "COD_TIPINT", referencedColumnName = "COD_TIPINT"),
-			@JoinColumn(name = "CNT_TIPINT", referencedColumnName = "CNT_TIPINT") })
+			@JoinColumn(name = "COD_TIPINT", referencedColumnName = "COD_TIPINT", updatable = false, insertable = false),
+			@JoinColumn(name = "CNT_TIPINT", referencedColumnName = "CNT_TIPINT", updatable = false, insertable = false) })
 	@ManyToOne
 	private PaiIntervento paiIntervento;
 
