@@ -679,11 +679,11 @@ public class PaiIntervento implements Serializable, Cloneable {
 	@Column(name = "TESTO_AUTORIZZAZIONE")
 	private String testoAutorizzazione;
 
-	@Column(name = "data_Creazione_Record")
+	@Column(name = "DATA_CREAZIONE_RECORD")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataCreazioneRecord;
 
-	@Column(name = "utente_Creazione_Record")
+	@Column(name = "UTENTE_CREAZIONE_RECORD")
 	private String utenteCreazioneRecord;
 
 	public PaiIntervento() {

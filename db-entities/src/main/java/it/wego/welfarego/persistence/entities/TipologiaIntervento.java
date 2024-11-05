@@ -510,11 +510,11 @@ public class TipologiaIntervento implements Serializable {
 	/**
 	 * tip param 'cs'
 	 */
-	@JoinColumn(name = "ID_PARAM_SRV", referencedColumnName = "ID_PARAM_INDATA", nullable = false)
-	@ManyToOne(optional = false)
+	@JoinColumn(name = "ID_PARAM_SRV", referencedColumnName = "ID_PARAM_INDATA")
+	@ManyToOne
 	private ParametriIndata idParamSrv;
 
-	@JoinColumn(name = "ID_PARAM_UNI_MIS", referencedColumnName = "ID_PARAM_INDATA")
+	@JoinColumn(name = "ID_PARAM_UNI_MIS", referencedColumnName = "ID_PARAM_INDATA", nullable = false)
 	@ManyToOne
 	private ParametriIndata idParamUniMis;
 
@@ -527,7 +527,7 @@ public class TipologiaIntervento implements Serializable {
 	 * tip param 'ci'
 	 */
 	@JoinColumn(name = "ID_PARAM_CLASSE_TIPINT", referencedColumnName = "ID_PARAM_INDATA", nullable = false)
-	@ManyToOne(optional = false)
+	@ManyToOne
 	private ParametriIndata idParamClasseTipint;
 
 	public ParametriIndata getIdParamClasseTipint() {
@@ -551,8 +551,8 @@ public class TipologiaIntervento implements Serializable {
 	}
 
 
-	@JoinColumn(name = "COD_TMPL_CHIUS", referencedColumnName = "COD_TMPL", nullable = false)
-	@ManyToOne(optional = false)
+	@JoinColumn(name = "COD_TMPL_CHIUS", referencedColumnName = "COD_TMPL")
+	@ManyToOne
 	private Template codTmplChius;
 
 	public Template getCodTmplChius() {
@@ -560,32 +560,32 @@ public class TipologiaIntervento implements Serializable {
 	}
 
 
-	@JoinColumn(name = "COD_TMPL_VAR", referencedColumnName = "COD_TMPL", nullable = false)
-	@ManyToOne(optional = false)
+	@JoinColumn(name = "COD_TMPL_VAR", referencedColumnName = "COD_TMPL")
+	@ManyToOne
 	private Template codTmplVar;
 
-	@JoinColumn(name = "COD_TMPL_ESE", referencedColumnName = "COD_TMPL", nullable = false)
-	@ManyToOne(optional = false)
+	@JoinColumn(name = "COD_TMPL_ESE", referencedColumnName = "COD_TMPL")
+	@ManyToOne
 	private Template codTmplEse;
 
-	@JoinColumn(name = "COD_TMPL_ESE_MUL", referencedColumnName = "COD_TMPL", nullable = false)
-	@ManyToOne(optional = false)
+	@JoinColumn(name = "COD_TMPL_ESE_MUL", referencedColumnName = "COD_TMPL")
+	@ManyToOne
 	private Template codTmplEseMul;
 
-	@JoinColumn(name = "COD_TMPL_VAR_MUL", referencedColumnName = "COD_TMPL", nullable = false)
-	@ManyToOne(optional = false)
+	@JoinColumn(name = "COD_TMPL_VAR_MUL", referencedColumnName = "COD_TMPL")
+	@ManyToOne
 	private Template codTmplVarMul;
 
-	@JoinColumn(name = "COD_TMPL_CHIUS_MUL", referencedColumnName = "COD_TMPL", nullable = false)
-	@ManyToOne(optional = false)
+	@JoinColumn(name = "COD_TMPL_CHIUS_MUL", referencedColumnName = "COD_TMPL")
+	@ManyToOne
 	private Template codTmplChiusMul;
 
 	@JoinColumn(name = "COD_TMPL_RICEVUTA", referencedColumnName = "COD_TMPL")
-	@ManyToOne(optional = false)
+	@ManyToOne
 	private Template codTmplRicevuta;
 
 	@JoinColumn(name = "COD_TMPL_COMLIQ", referencedColumnName = "COD_TMPL")
-	@ManyToOne(optional = false)
+	@ManyToOne
 	private Template codTmplComliq;
 
 	public Template getCodTmplComliq() {
@@ -631,7 +631,7 @@ public class TipologiaIntervento implements Serializable {
 	private char flgDocumentoDiAutorizzazione = 'N';
 
 	@JoinColumn(name = "COD_TMPL_DOC_AUTORIZZAZIONE", referencedColumnName = "COD_TMPL")
-	@ManyToOne(optional = false)
+	@ManyToOne
 	private Template tmplDocumentoDiAutorizzazione;
 
 	public TipologiaIntervento() {

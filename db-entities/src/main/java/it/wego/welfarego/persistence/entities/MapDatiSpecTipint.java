@@ -15,8 +15,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import org.eclipse.persistence.annotations.JoinFetch;
-import org.eclipse.persistence.annotations.JoinFetchType;
 
 
 /**
@@ -75,7 +73,6 @@ public class MapDatiSpecTipint implements Serializable {
 
 	@JoinColumn(name = "COD_CAMPO", referencedColumnName = "COD_CAMPO", nullable = false, insertable = false, updatable = false)
 	@ManyToOne(optional = false)
-	@JoinFetch(value = JoinFetchType.INNER)
 	private DatiSpecifici datiSpecifici;
 
 	public short getColCampo() {

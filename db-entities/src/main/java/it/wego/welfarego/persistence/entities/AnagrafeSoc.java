@@ -9,8 +9,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
-import org.eclipse.persistence.annotations.JoinFetch;
-import org.eclipse.persistence.annotations.JoinFetchType;
+
 
 /**
  *
@@ -832,7 +831,7 @@ public class AnagrafeSoc implements Serializable {
 
 	@JoinColumn(name = "COD_LUOGO_NASC", referencedColumnName = "COD_LUOGO", nullable = false)
 	@ManyToOne(cascade = { CascadeType.ALL })
-	@JoinFetch(value = JoinFetchType.INNER)
+	//@JoinFetch(value = JoinFetchType.INNER)
 	private Luogo luogoNascita = new Luogo();
 
 	public Luogo getLuogoDomicilio() {
@@ -845,7 +844,6 @@ public class AnagrafeSoc implements Serializable {
 
 	@JoinColumn(name = "COD_LUOGO_DOM", referencedColumnName = "COD_LUOGO", nullable = false)
 	@ManyToOne(cascade = { CascadeType.ALL })
-	@JoinFetch(value = JoinFetchType.INNER)
 	private Luogo luogoDomicilio = new Luogo();
 
 	public Luogo getLuogoResidenza() {
@@ -854,7 +852,6 @@ public class AnagrafeSoc implements Serializable {
 
 	@JoinColumn(name = "COD_LUOGO_RES", referencedColumnName = "COD_LUOGO", nullable = false)
 	@ManyToOne(cascade = { CascadeType.ALL })
-	@JoinFetch(value = JoinFetchType.INNER)
 	private Luogo luogoResidenza = new Luogo();
 
 	@Column(name = "CSR_ID", length = 255)
@@ -864,7 +861,7 @@ public class AnagrafeSoc implements Serializable {
 	@ManyToOne
 	private Utenti codUteEducatore;
 
-	@Column(name = "diario", columnDefinition = "CLOB")
+	@Column(name = "DIARIO")
 	@Lob
 	private String diario;
 

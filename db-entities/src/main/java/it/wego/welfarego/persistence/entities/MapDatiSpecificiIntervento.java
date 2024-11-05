@@ -16,8 +16,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import org.eclipse.persistence.annotations.JoinFetch;
-import org.eclipse.persistence.annotations.JoinFetchType;
+
 
 /**
  *
@@ -38,21 +37,25 @@ public class MapDatiSpecificiIntervento  implements Serializable {
     private static final long serialVersionUID = 1L;
     @EmbeddedId
     protected MapDatiSpecificiInterventoPK mapDatiSpecificiInterventoPK = new MapDatiSpecificiInterventoPK();
+    
     @Column(name = "COD_VAL_CAMPO", length = 20)
     private String codValCampo;
+    
     @Basic(optional = false)
     @Column(name = "VAL_CAMPO", nullable = false, length = 4000)
     private String valCampo = " ";
+    
     @JoinColumns({
         @JoinColumn(name = "COD_PAI", referencedColumnName = "COD_PAI", nullable = false, insertable = false, updatable = false),
         @JoinColumn(name = "COD_TIPINT", referencedColumnName = "COD_TIPINT", nullable = false, insertable = false, updatable = false),
         @JoinColumn(name = "CNT_TIPINT", referencedColumnName = "CNT_TIPINT", nullable = false, insertable = false, updatable = false)})
     @ManyToOne(optional = false)
     private PaiIntervento paiIntervento;
+    
     @JoinColumn(name = "COD_CAMPO", referencedColumnName = "COD_CAMPO", nullable = false, insertable = false, updatable = false)
     @ManyToOne(optional = false)
-    @JoinFetch(value = JoinFetchType.INNER)
     private DatiSpecifici datiSpecifici;
+    
     // required for stupid query on pagamenti
     @Column(name = "COD_CAMPO", nullable = false, insertable = false, updatable = false)
     private String codCampo;

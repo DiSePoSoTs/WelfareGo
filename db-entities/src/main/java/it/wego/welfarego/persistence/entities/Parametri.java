@@ -28,8 +28,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
-import org.eclipse.persistence.annotations.JoinFetch;
-import org.eclipse.persistence.annotations.JoinFetchType;
 
 
 
@@ -242,7 +240,7 @@ public class Parametri implements Serializable {
 	@Column(name = "FLG_ATTIVO", nullable = false)
 	private char flgAttivo;
 
-	@JoinFetch(value = JoinFetchType.INNER)
+	//@JoinFetch(value = JoinFetchType.INNER)
 	@JoinColumn(name = "TIP_PARAM", referencedColumnName = "TIP_PARAM", nullable = false)
 	@ManyToOne(optional = false)
 	private TipologiaParametri tipParam;
@@ -251,7 +249,7 @@ public class Parametri implements Serializable {
 		return tipParam;
 	}
 
-	@JoinFetch(value = JoinFetchType.OUTER)
+	//@JoinFetch(value = JoinFetchType.OUTER)
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idParam")
 	private List<ParametriIndata> parametriIndataList;
 

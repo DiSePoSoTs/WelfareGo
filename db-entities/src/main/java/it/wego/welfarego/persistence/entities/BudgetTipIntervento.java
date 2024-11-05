@@ -21,7 +21,6 @@ import javax.persistence.*;
 @NamedQueries({ @NamedQuery(name = "BudgetTipIntervento.findAll", query = "SELECT b FROM BudgetTipIntervento b"),
 		@NamedQuery(name = "BudgetTipIntervento.findByCodTipint", query = "SELECT b FROM BudgetTipIntervento b WHERE b.budgetTipInterventoPK.codTipint = :codTipint"),
 		@NamedQuery(name = "BudgetTipIntervento.findBy_CodTipInt_And_Cod_Anno", query = "SELECT b FROM BudgetTipIntervento b WHERE b.budgetTipInterventoPK.codTipint = :codTipint and b.budgetTipInterventoPK.codAnno in :anni"),
-
 		@NamedQuery(name = "BudgetTipIntervento.findByCodAnno", query = "SELECT b FROM BudgetTipIntervento b WHERE b.budgetTipInterventoPK.codAnno = :codAnno"),
 		@NamedQuery(name = "BudgetTipIntervento.findByCodImpe", query = "SELECT b FROM BudgetTipIntervento b WHERE b.budgetTipInterventoPK.codImpe = :codImpe"),
 		@NamedQuery(name = "BudgetTipIntervento.findByCodConto", query = "SELECT b FROM BudgetTipIntervento b WHERE b.codConto = :codConto"),
