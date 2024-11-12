@@ -483,14 +483,14 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 		DatiPersonali datiPersonali = new ProfiloType.DatiPersonali();
 
 		datiPersonali.setCertificatoL104(pai.getIdParamCertificatoL104() == null ? IP_CERTIFICATO_L104_DEFAULT
-				: parametriMapping.getProperty(pai.getIdParamCertificatoL104().getIdParamIndata().toString()));
+				: pai.getIdParamCertificatoL104().getIdParam().getCodParam());
 		datiPersonali.setDemenzaCertificata(
 				SiNoType.valueOf(MoreObjects.firstNonNull(pai.getFlgDemenza(), SiNoType.N).toString()));
 		datiPersonali.setStatoInvalidita(anagrafeSoc.getPercInvCiv() == null ? ""
 				: parametriMapping.getProperty(anagrafeSoc.getPercInvCiv().toString()));
 		datiPersonali.setProvvedimentoGiudiziario(pai.getIdParamProvvedimentoGiudiziario() == null
 				? IP_PROVVEDIMENTO_GIUDIZIARIO_DEFAULT
-				: Integer.valueOf(pai.getIdParamProvvedimentoGiudiziario().getIdParam().getCodParam()).toString());
+				: pai.getIdParamProvvedimentoGiudiziario().getIdParam().getCodParam());
 		datiPersonali.setIsee(createIseeType());
 		datiPersonali.setNote(anagrafeSoc.getNote());
 		return datiPersonali;
