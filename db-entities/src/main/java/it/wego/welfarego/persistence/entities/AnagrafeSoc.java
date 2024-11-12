@@ -16,8 +16,7 @@ import javax.persistence.*;
  * @author giuseppe
  */
 @Entity
-@Table(name = "ANAGRAFE_SOC", uniqueConstraints = { @UniqueConstraint(columnNames = { "PART_IVA" }),
-		@UniqueConstraint(columnNames = { "COD_FISC" }) })
+@Table(name = "ANAGRAFE_SOC", uniqueConstraints = { @UniqueConstraint(columnNames = { "COD_FISC" }) })
 @NamedQueries({ @NamedQuery(name = "AnagrafeSoc.findAll", query = "SELECT a FROM AnagrafeSoc a"),
 		@NamedQuery(name = "AnagrafeSoc.findByCodAna", query = "SELECT a FROM AnagrafeSoc a WHERE a.codAna = :codAna"),
 		@NamedQuery(name = "AnagrafeSoc.findByFlgPersFg", query = "SELECT a FROM AnagrafeSoc a WHERE a.flgPersFg = :flgPersFg"),
@@ -61,6 +60,254 @@ public class AnagrafeSoc implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	@Column(name = "ATTIVITA_PRINCIPALE", length = 3000)
+	private String attivitaLavoroStudio;
+
+	@Id
+	@Basic(optional = false)
+	@GeneratedValue(generator = "anagrafeSocSequence")
+	@SequenceGenerator(name = "anagrafeSocSequence", sequenceName = "WG_SEQ", allocationSize = 50)
+	@Column(name = "COD_ANA", nullable = false)
+	private Integer codAna;
+
+	@Column(name = "COD_ANA_CIVILIA", length = 10)
+	private String codAnaCivilia;
+
+	@Column(name = "COD_ANA_COM", length = 10)
+	private String codAnaCom;
+
+	@Column(name = "COD_ANA_FAM_COM", length = 10)
+	private String codAnaFamCom;
+
+	@Column(name = "COD_FISC", length = 16)
+	private String codFisc;
+
+	@Column(name = "COGNOME", length = 765)
+	private String cognome;
+
+	@Column(name = "DT_RIC_ASS_ACC")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date dataRichiestaAssegnoAccompagnamento;
+
+	@Column(name = "DT_UPDATE_REDDITO")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date dataUpdateReddito;
+
+	@Column(name = "DT_NASC")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date dtNasc;
+
+	@Column(name = "EMAIL", length = 200)
+	private String email;
+
+	@Column(name = "FLG_ACCOMP")
+	private String flgAccomp;
+
+	@Basic(optional = false)
+	@Column(name = "FLG_EMAIL", nullable = false)
+	private char flgEmail;
+
+	@Basic(optional = false)
+	@Column(name = "FLG_PERS_FG", length = 1, nullable = false)
+	private String flgPersFg = PERSONA_FISICA_F;
+
+	@Column(name = "FLG_SEX")
+	private String flgSex;
+
+	@Basic(optional = false)
+	@Column(name = "FLG_SMS", nullable = false)
+	private char flgSms;
+
+	@Column(name = "MEDICO_BASE", length = 300)
+	private String medicoBase;
+
+	@Column(name = "NOME", length = 765)
+	private String nome;
+
+	@Column(name = "NOTE", length = 3000)
+	private String note;
+
+	@Column(name = "NUM_CELL", length = 60)
+	private String numCell;
+
+	@Column(name = "NUM_TEL", length = 20)
+	private String numTel;
+
+	@Column(name = "PART_IVA", length = 11)
+	private String partIva;
+
+	@Column(name = "PERC_INV_CIV")
+	private Short percInvCiv;
+
+	@Column(name = "PRESSO", length = 40)
+	private String presso;
+
+	@Column(name = "RAG_SOC", length = 765)
+	private String ragSoc;
+
+	@Column(name = "REDDITO")
+	private BigDecimal reddito;
+
+	@Column(name = "REDD_MENS", precision = 9, scale = 2)
+	private BigDecimal reddMens;
+
+	@Column(name = "FLG_RIC_ASS_ACC")
+	private Character richiestaAssegnoAccompagnamento;
+
+	@Column(name = "SOTTOZONA", length = 2)
+	private String sottozona;
+
+	@Column(name = "ZONA", length = 1)
+	private String zona;
+
+	@Column(name = "COD_ASS", length = 2)
+	private String codAss;
+
+	@Column(name = "DIST_SAN", length = 1)
+	private String distSan;
+
+	@Column(name = "ENTE_GESTORE", length = 20)
+	private String enteGestore;
+
+	@Column(name = "IBAN_PAGAM", length = 30)
+	private String ibanPagam;
+
+	@Column(name = "COGNOME_CONIUGE", length = 765)
+	private String cognomeConiuge;
+
+	@Column(name = "DT_MORTE")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date dtMorte;
+
+	@Column(name = "DT_AGG_AB")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date dtAggAb;
+
+	@Column(name = "DATA_AGG_BATCH")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date dataAggBatch;
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "codAna")
+	private List<Fattura> fatturaList;
+
+	@OneToMany(mappedBy = "codAnaDelegante")
+	private List<Mandato> mandatoList;
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "codAnaBeneficiario")
+	private List<Mandato> mandatoList1;
+
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "anagrafeSoc")
+	private CartellaSociale cartellaSociale;
+
+	@OneToMany(mappedBy = "codAna")
+	private List<PaiCdg> paiCdgList;
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "codAna")
+	private List<LogAnagrafe> logAnagrafeList;
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "anagrafeSoc")
+	private List<PaiInterventoCivObb> paiInterventoCivObbList;
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "anagrafeSoc")
+	private List<PaiInterventoAnagrafica> paiInterventoAnagraficaList;
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "anagrafeSocSource")
+	private List<AnagrafeFam> anagrafeFamListAsSource;
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "anagrafeSocTarget")
+	private List<AnagrafeFam> anagrafeFamListAsTarget;
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "codAna")
+	private List<Contatto> contattoList;
+
+	@JoinColumn(name = "ID_PARAM_STATO_FIS", referencedColumnName = "ID_PARAM_INDATA")
+	@ManyToOne
+	private ParametriIndata idParamStatoFis;
+
+	@JoinColumn(name = "ID_PARAM_TIPOLOGIA_RESIDENZA", referencedColumnName = "ID_PARAM_INDATA")
+	@ManyToOne
+	private ParametriIndata idParamTipologiaResidenza; // tipParam : tr
+
+	@JoinColumn(name = "COD_SEGN_DA", referencedColumnName = "ID_PARAM_INDATA")
+	@ManyToOne
+	private ParametriIndata codSegnDa;
+
+	@JoinColumn(name = "COD_STATO_CITT", referencedColumnName = "COD_STATO")
+	@ManyToOne
+	private Stato codStatoCitt;
+
+	@JoinColumn(name = "COND_FAM", referencedColumnName = "ID_PARAM_INDATA")
+	@ManyToOne
+	private ParametriIndata condFam;
+
+	@JoinColumn(name = "COD_STATO_NAZ", referencedColumnName = "ID_PARAM_INDATA")
+	@ManyToOne
+	private ParametriIndata codStatoNaz;
+
+	@JoinColumn(name = "COD_UTE_EDUCATORE", referencedColumnName = "COD_UTE")
+	@ManyToOne
+	private Utenti codUteEducatore;
+
+	@Column(name = "CREATION_DATE")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date creationDate;
+
+	@JoinColumn(name = "CREATION_USER", referencedColumnName = "COD_UTE")
+	@ManyToOne
+	private Utenti creationUser;
+
+	@Column(name = "DATA_ULTIMA_RETTIFICA")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date dataUltimaRettifica;
+
+	@Column(name = "DIARIO")
+	@Lob
+	private String diario;
+
+	@Column(name = "CSR_ID", length = 255)
+	private String idCsr;
+
+	@JoinColumn(name = "ID_PARAM_COND_PROF", referencedColumnName = "ID_PARAM_INDATA")
+	@ManyToOne
+	private ParametriIndata idParamCondProf;
+
+	@JoinColumn(name = "ID_PARAM_MOD_PAGAM", referencedColumnName = "ID_PARAM_INDATA")
+	@ManyToOne
+	private ParametriIndata idParamModPagam;
+
+	@JoinColumn(name = "ID_PARAM_POS_ANA", referencedColumnName = "ID_PARAM_INDATA")
+	@ManyToOne
+	private ParametriIndata idParamPosAna;
+
+	@JoinColumn(name = "ID_PARAM_REDD", referencedColumnName = "ID_PARAM_INDATA")
+	@ManyToOne
+	private ParametriIndata idParamRedd;
+
+	@JoinColumn(name = "ID_PARAM_STATO_CIV", referencedColumnName = "ID_PARAM_INDATA")
+	@ManyToOne
+	private ParametriIndata idParamStatoCiv;
+
+	@JoinColumn(name = "ID_PARAM_TIP_ALL", referencedColumnName = "ID_PARAM_INDATA")
+	@ManyToOne
+	private ParametriIndata idParamTipAll;
+
+	@JoinColumn(name = "ID_PARAM_TIT", referencedColumnName = "ID_PARAM_INDATA")
+	@ManyToOne
+	private ParametriIndata idParamTit;
+
+	@JoinColumn(name = "COD_LUOGO_DOM", referencedColumnName = "COD_LUOGO", nullable = false)
+	@ManyToOne(cascade = { CascadeType.ALL })
+	private Luogo luogoDomicilio = new Luogo();
+
+	@JoinColumn(name = "COD_LUOGO_NASC", referencedColumnName = "COD_LUOGO", nullable = false)
+	@ManyToOne(cascade = { CascadeType.ALL })
+	//@JoinFetch(value = JoinFetchType.INNER)
+	private Luogo luogoNascita = new Luogo();
+
+	@JoinColumn(name = "COD_LUOGO_RES", referencedColumnName = "COD_LUOGO", nullable = false)
+	@ManyToOne(cascade = { CascadeType.ALL })
+	private Luogo luogoResidenza = new Luogo();
+
 	public Integer getCodAna() {
 		return codAna;
 	}
@@ -76,13 +323,6 @@ public class AnagrafeSoc implements Serializable {
 	public BigDecimal getReddMens() {
 		return reddMens;
 	}
-
-	@Id
-	@Basic(optional = false)
-	@GeneratedValue(generator = "anagrafeSocSequence")
-	@SequenceGenerator(name = "anagrafeSocSequence", sequenceName = "WG_SEQ", allocationSize = 50)
-	@Column(name = "COD_ANA", nullable = false)
-	private Integer codAna;
 
 	public Date getDataUpdateReddito() {
 		return dataUpdateReddito;
@@ -156,8 +396,8 @@ public class AnagrafeSoc implements Serializable {
 		return diario;
 	}
 
-	public Date getDataUltimaRetifica() {
-		return dataUltimaRetifica;
+	public Date getDataUltimaRettifica() {
+		return dataUltimaRettifica;
 	}
 
 	public String getEnteGestore() {
@@ -283,10 +523,6 @@ public class AnagrafeSoc implements Serializable {
 	public Stato getCodStatoCitt() {
 		return codStatoCitt;
 	}
-
-	@Basic(optional = false)
-	@Column(name = "FLG_PERS_FG", length = 1, nullable = false)
-	private String flgPersFg = PERSONA_FISICA_F;
 
 	public String getFlgPersFg() {
 		return flgPersFg;
@@ -576,18 +812,17 @@ public class AnagrafeSoc implements Serializable {
 		this.creationDate = creationDate;
 	}
 
-	public void setDataUltimaRetifica(Date dataUltimaRetifica) {
-		this.dataUltimaRetifica = dataUltimaRetifica;
+	public void setDataUltimaRettifica(Date dataUltimaRettifica) {
+		this.dataUltimaRettifica = dataUltimaRettifica;
 	}
 
-	@Column(name = "NOME", length = 765)
-	private String nome;
+	public String getRagSoc() {
+		return ragSoc;
+	}
 
-	@Column(name = "COGNOME", length = 765)
-	private String cognome;
-
-	@Column(name = "COD_FISC", length = 16)
-	private String codFisc;
+	public String getCodAnaFamCom() {
+		return codAnaFamCom;
+	}
 
 	public String getCodFisc() {
 		return codFisc;
@@ -597,164 +832,25 @@ public class AnagrafeSoc implements Serializable {
 		return partIva;
 	}
 
-	@Column(name = "PART_IVA", length = 11)
-	private String partIva;
-
-	@Column(name = "RAG_SOC", length = 765)
-	private String ragSoc;
-
-	public String getRagSoc() {
-		return ragSoc;
-	}
-
-	@Column(name = "COD_ANA_COM", length = 10)
-	private String codAnaCom;
-
-	@Column(name = "COD_ANA_FAM_COM", length = 10)
-	private String codAnaFamCom;
-
-	public String getCodAnaFamCom() {
-		return codAnaFamCom;
-	}
-
-	@Column(name = "COD_ANA_CIVILIA", length = 10)
-	private String codAnaCivilia;
-
 	public Date getDtNasc() {
 		return dtNasc;
 	}
-
-	@Column(name = "DT_NASC")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date dtNasc;
-
-	@Column(name = "DT_RIC_ASS_ACC")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date dataRichiestaAssegnoAccompagnamento;
-
-	@Column(name = "FLG_RIC_ASS_ACC")
-	private Character richiestaAssegnoAccompagnamento;
-
-	@Column(name = "DT_UPDATE_REDDITO")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date dataUpdateReddito;
-
-	@Column(name = "REDDITO")
-	private BigDecimal reddito;
-
-	@Column(name = "FLG_SEX")
-	private String flgSex;
-
-	@Column(name = "NUM_TEL", length = 20)
-	private String numTel;
-
-	@Column(name = "NUM_CELL", length = 60)
-	private String numCell;
-
-	@Basic(optional = false)
-	@Column(name = "FLG_SMS", nullable = false)
-	private char flgSms;
-
-	@Column(name = "EMAIL", length = 200)
-	private String email;
-
-	@Basic(optional = false)
-	@Column(name = "FLG_EMAIL", nullable = false)
-	private char flgEmail;
-
-	@Column(name = "NOTE", length = 3000)
-	private String note;
-
-	@Column(name = "ATTIVITA_PRINCIPALE", length = 3000)
-	private String attivitaLavoroStudio;
-
-	@Column(name = "ZONA", length = 1)
-	private String zona;
-
-	@Column(name = "SOTTOZONA", length = 2)
-	private String sottozona;
-
-	@Column(name = "COD_ASS", length = 2)
-	private String codAss;
-
-	@Column(name = "DIST_SAN", length = 1)
-	private String distSan;
-
-	@Column(name = "ENTE_GESTORE", length = 20)
-	private String enteGestore;
-
-	@Column(name = "MEDICO_BASE", length = 300)
-	private String medicoBase;
-
-	@Column(name = "PRESSO", length = 40)
-	private String presso;
 
 	public String getPresso() {
 		return presso;
 	}
 
-	@Column(name = "IBAN_PAGAM", length = 30)
-	private String ibanPagam;
-
 	public String getIbanPagam() {
 		return ibanPagam;
 	}
-
-	@Column(name = "REDD_MENS", precision = 9, scale = 2)
-	private BigDecimal reddMens;
-
-	@Column(name = "FLG_ACCOMP")
-	private String flgAccomp;
-
-	@Column(name = "COGNOME_CONIUGE", length = 765)
-	private String cognomeConiuge;
-
-	@Column(name = "DT_MORTE")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date dtMorte;
-
-	@Column(name = "PERC_INV_CIV")
-	private Short percInvCiv;
 
 	public String getNumCell() {
 		return numCell;
 	}
 
-	@Column(name = "DT_AGG_AB")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date dtAggAb;
-
-	@Column(name = "DATA_AGG_BATCH")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date dataAggBatch;
-
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "codAna")
-	private List<Fattura> fatturaList;
-
-	@OneToMany(mappedBy = "codAnaDelegante")
-	private List<Mandato> mandatoList;
-
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "codAnaBeneficiario")
-	private List<Mandato> mandatoList1;
-
 	public CartellaSociale getCartellaSociale() {
 		return cartellaSociale;
 	}
-
-	@OneToOne(cascade = CascadeType.ALL, mappedBy = "anagrafeSoc")
-	private CartellaSociale cartellaSociale;
-
-	@OneToMany(mappedBy = "codAna")
-	private List<PaiCdg> paiCdgList;
-
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "codAna")
-	private List<LogAnagrafe> logAnagrafeList;
-
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "anagrafeSoc")
-	private List<PaiInterventoCivObb> paiInterventoCivObbList;
-
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "anagrafeSoc")
-	private List<PaiInterventoAnagrafica> paiInterventoAnagraficaList;
 
 	public List<AnagrafeFam> getAnagrafeFamListAsSource() {
 		return anagrafeFamListAsSource;
@@ -764,75 +860,9 @@ public class AnagrafeSoc implements Serializable {
 		return anagrafeFamListAsTarget;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "anagrafeSocSource")
-	private List<AnagrafeFam> anagrafeFamListAsSource;
-
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "anagrafeSocTarget")
-	private List<AnagrafeFam> anagrafeFamListAsTarget;
-
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "codAna")
-	private List<Contatto> contattoList;
-
-	@JoinColumn(name = "ID_PARAM_STATO_FIS", referencedColumnName = "ID_PARAM_INDATA")
-	@ManyToOne
-	private ParametriIndata idParamStatoFis;
-
-	@JoinColumn(name = "ID_PARAM_TIPOLOGIA_RESIDENZA", referencedColumnName = "ID_PARAM_INDATA")
-	@ManyToOne
-	private ParametriIndata idParamTipologiaResidenza; // tipParam : tr
-
-	@JoinColumn(name = "COD_SEGN_DA", referencedColumnName = "ID_PARAM_INDATA")
-	@ManyToOne
-	private ParametriIndata codSegnDa;
-
-	@JoinColumn(name = "COND_FAM", referencedColumnName = "ID_PARAM_INDATA")
-	@ManyToOne
-	private ParametriIndata condFam;
-
-	@JoinColumn(name = "COD_STATO_NAZ", referencedColumnName = "ID_PARAM_INDATA")
-	@ManyToOne
-	private ParametriIndata codStatoNaz;
-
-	@JoinColumn(name = "ID_PARAM_REDD", referencedColumnName = "ID_PARAM_INDATA")
-	@ManyToOne
-	private ParametriIndata idParamRedd;
-
-	@JoinColumn(name = "ID_PARAM_COND_PROF", referencedColumnName = "ID_PARAM_INDATA")
-	@ManyToOne
-	private ParametriIndata idParamCondProf;
-
-	@JoinColumn(name = "ID_PARAM_STATO_CIV", referencedColumnName = "ID_PARAM_INDATA")
-	@ManyToOne
-	private ParametriIndata idParamStatoCiv;
-
-	@JoinColumn(name = "ID_PARAM_MOD_PAGAM", referencedColumnName = "ID_PARAM_INDATA")
-	@ManyToOne
-	private ParametriIndata idParamModPagam;
-
-	@JoinColumn(name = "ID_PARAM_TIP_ALL", referencedColumnName = "ID_PARAM_INDATA")
-	@ManyToOne
-	private ParametriIndata idParamTipAll;
-
-	@JoinColumn(name = "ID_PARAM_POS_ANA", referencedColumnName = "ID_PARAM_INDATA")
-	@ManyToOne
-	private ParametriIndata idParamPosAna;
-
-	@JoinColumn(name = "ID_PARAM_TIT", referencedColumnName = "ID_PARAM_INDATA")
-	@ManyToOne
-	private ParametriIndata idParamTit;
-
 	public void setCodStatoCitt(Stato codStatoCitt) {
 		this.codStatoCitt = codStatoCitt;
 	}
-
-	@JoinColumn(name = "COD_STATO_CITT", referencedColumnName = "COD_STATO")
-	@ManyToOne
-	private Stato codStatoCitt;
-
-	@JoinColumn(name = "COD_LUOGO_NASC", referencedColumnName = "COD_LUOGO", nullable = false)
-	@ManyToOne(cascade = { CascadeType.ALL })
-	//@JoinFetch(value = JoinFetchType.INNER)
-	private Luogo luogoNascita = new Luogo();
 
 	public Luogo getLuogoDomicilio() {
 		return luogoDomicilio;
@@ -842,40 +872,9 @@ public class AnagrafeSoc implements Serializable {
 		return luogoNascita;
 	}
 
-	@JoinColumn(name = "COD_LUOGO_DOM", referencedColumnName = "COD_LUOGO", nullable = false)
-	@ManyToOne(cascade = { CascadeType.ALL })
-	private Luogo luogoDomicilio = new Luogo();
-
 	public Luogo getLuogoResidenza() {
 		return luogoResidenza;
 	}
-
-	@JoinColumn(name = "COD_LUOGO_RES", referencedColumnName = "COD_LUOGO", nullable = false)
-	@ManyToOne(cascade = { CascadeType.ALL })
-	private Luogo luogoResidenza = new Luogo();
-
-	@Column(name = "CSR_ID", length = 255)
-	private String idCsr;
-
-	@JoinColumn(name = "COD_UTE_EDUCATORE", referencedColumnName = "COD_UTE")
-	@ManyToOne
-	private Utenti codUteEducatore;
-
-	@Column(name = "DIARIO")
-	@Lob
-	private String diario;
-
-	@JoinColumn(name = "CREATION_USER", referencedColumnName = "COD_UTE")
-	@ManyToOne
-	private Utenti creationUser;
-
-	@Column(name = "CREATION_DATE")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date creationDate;
-
-	@Column(name = "DATA_ULTIMA_RETIFICA")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date dataUltimaRetifica;
 
 	public AnagrafeSoc() {
 	}

@@ -7,93 +7,16 @@
 
 	<persistence-unit name="welfaregoPU">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-
-		<class>it.wego.welfarego.persistence.entities.AnagrafeFam</class>
-		<class>it.wego.welfarego.persistence.entities.AnagrafeFamPK</class>
-		<class>it.wego.welfarego.persistence.entities.AnagrafeSoc</class>
-		<class>it.wego.welfarego.persistence.entities.Appuntamento</class>
-		<class>it.wego.welfarego.persistence.entities.AppuntamentoPK</class>
-		<class>it.wego.welfarego.persistence.entities.Associazione</class>
-		<class>it.wego.welfarego.persistence.entities.BudgetTipIntervento</class>
-		<class>it.wego.welfarego.persistence.entities.BudgetTipInterventoPK</class>
-		<class>it.wego.welfarego.persistence.entities.BudgetTipInterventoUot</class>
-		<class>it.wego.welfarego.persistence.entities.BudgetTipInterventoUotPK</class>
-		<class>it.wego.welfarego.persistence.entities.CartellaSociale</class>
-		<class>it.wego.welfarego.persistence.entities.CodaCsr</class>
-		<class>it.wego.welfarego.persistence.entities.Comune</class>
-		<class>it.wego.welfarego.persistence.entities.ComunePK</class>
-		<class>it.wego.welfarego.persistence.entities.Configuration</class>
-		<class>it.wego.welfarego.persistence.entities.Contatto</class>
-		<class>it.wego.welfarego.persistence.entities.DatiSpecifici</class>
-		<class>it.wego.welfarego.persistence.entities.Determine</class>
-		<class>it.wego.welfarego.persistence.entities.Ente</class>
-		<class>it.wego.welfarego.persistence.entities.Fattura</class>
-		<class>it.wego.welfarego.persistence.entities.FatturaDettaglio</class>
-		<class>it.wego.welfarego.persistence.entities.Indisponibilita</class>
-		<class>it.wego.welfarego.persistence.entities.IndisponibilitaPK</class>
-		<class>it.wego.welfarego.persistence.entities.InterventiAssociati</class>
-		<class>it.wego.welfarego.persistence.entities.Liberatoria</class>
-		<class>it.wego.welfarego.persistence.entities.Liquidazione</class>
-		<class>it.wego.welfarego.persistence.entities.ListaAttesa</class>
-		<class>it.wego.welfarego.persistence.entities.LogAnagrafe</class>
-		<class>it.wego.welfarego.persistence.entities.LogCassa</class>
-		<class>it.wego.welfarego.persistence.entities.LogMessaggi</class>
-		<class>it.wego.welfarego.persistence.entities.Luogo</class>
-		<class>it.wego.welfarego.persistence.entities.Mandato</class>
-		<class>it.wego.welfarego.persistence.entities.MandatoDettaglio</class>
-		<class>it.wego.welfarego.persistence.entities.MapDatiSpecTipint</class>
-		<class>it.wego.welfarego.persistence.entities.MapDatiSpecTipintPK</class>
-		<class>it.wego.welfarego.persistence.entities.MapDatiSpecificiIntervento</class>
-		<class>it.wego.welfarego.persistence.entities.MapDatiSpecificiInterventoPK</class>
-		<class>it.wego.welfarego.persistence.entities.NoteCondivise</class>
-		<class>it.wego.welfarego.persistence.entities.Pai</class>
-		<class>it.wego.welfarego.persistence.entities.PaiCdg</class>
-		<class>it.wego.welfarego.persistence.entities.PaiCdgPK</class>
-		<class>it.wego.welfarego.persistence.entities.PaiDocumento</class>
-		<class>it.wego.welfarego.persistence.entities.PaiEvento</class>
-		<class>it.wego.welfarego.persistence.entities.PaiIntervento</class>
-		<class>it.wego.welfarego.persistence.entities.PaiInterventoAnagrafica</class>
-		<class>it.wego.welfarego.persistence.entities.PaiInterventoAnagraficaPK</class>
-		<class>it.wego.welfarego.persistence.entities.PaiInterventoCivObb</class>
-		<class>it.wego.welfarego.persistence.entities.PaiInterventoCivObbPK</class>
-		<class>it.wego.welfarego.persistence.entities.PaiInterventoMese</class>
-		<class>it.wego.welfarego.persistence.entities.PaiInterventoMesePK</class>
-		<class>it.wego.welfarego.persistence.entities.PaiInterventoPK</class>
-		<class>it.wego.welfarego.persistence.entities.PaiMacroProblematica</class>
-		<class>it.wego.welfarego.persistence.entities.PaiMacroProblematicaPK</class>
-		<class>it.wego.welfarego.persistence.entities.PaiMicroProblematica</class>
-		<class>it.wego.welfarego.persistence.entities.PaiMicroProblematicaPK</class>
-		<class>it.wego.welfarego.persistence.entities.Parametri</class>
-		<class>it.wego.welfarego.persistence.entities.ParametriIndata</class>
-		<class>it.wego.welfarego.persistence.entities.Provincia</class>
-		<class>it.wego.welfarego.persistence.entities.ProvinciaPK</class>
-		<class>it.wego.welfarego.persistence.entities.RicevutaCassa</class>
-		<class>it.wego.welfarego.persistence.entities.RicevutaCassaPK</class>
-		<class>it.wego.welfarego.persistence.entities.Stato</class>
-		<class>it.wego.welfarego.persistence.entities.Struttura</class>
-		<class>it.wego.welfarego.persistence.entities.Tariffa</class>
-		<class>it.wego.welfarego.persistence.entities.Template</class>
-		<class>it.wego.welfarego.persistence.entities.TipologiaIntervento</class>
-		<class>it.wego.welfarego.persistence.entities.TipologiaParametri</class>
-		<class>it.wego.welfarego.persistence.entities.Toponomastica</class>
-		<class>it.wego.welfarego.persistence.entities.ToponomasticaCivici</class>
-		<class>it.wego.welfarego.persistence.entities.ToponomasticaCiviciPK</class>
-		<class>it.wego.welfarego.persistence.entities.ToponomasticaPK</class>
-		<class>it.wego.welfarego.persistence.entities.UniqueForm</class>
-		<class>it.wego.welfarego.persistence.entities.UniqueTasklist</class>
-		<class>it.wego.welfarego.persistence.entities.UotIndirizzo</class>
-		<class>it.wego.welfarego.persistence.entities.Utenti</class>
-		<class>it.wego.welfarego.persistence.entities.VistaAnagrafe</class>
-		<class>it.wego.welfarego.persistence.entities.WSToken</class>
-		<shared-cache-mode>NONE</shared-cache-mode>
 		<properties>
-			<property name="javax.persistence.jdbc.url"	value="jdbc:oracle:thin:@//172.16.1.80:1522/WEGO" />
-			<property name="javax.persistence.jdbc.user" value="socialgo" />
-			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
-			<property name="javax.persistence.jdbc.password" value="" />
-			<property name="hibernate.show_sql" value="true" />
-			<property name="hibernate.format_sql" value="true" />
-			<property name="hibernate.hbm2ddl.auto" value="create" />
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/socialgo?serverTimezone=UTC"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="admin"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_identifier_rollback" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="none"/>
 		</properties>
 	</persistence-unit>
 </persistence>

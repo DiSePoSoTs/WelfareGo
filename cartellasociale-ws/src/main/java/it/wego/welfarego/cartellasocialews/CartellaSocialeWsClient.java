@@ -7,15 +7,18 @@ import com.google.common.collect.Maps;
 import com.google.gson.Gson;
 import it.trieste.comune.ssc.json.JsonBuilder;
 import it.wego.utils.xml.WsUtils;
+import it.wego.utils.xml.XmlUtils;
+import it.wego.welfarego.persistence.entities.AnagrafeSoc;
+import it.wego.welfarego.persistence.entities.CodaCsr;
+import it.wego.welfarego.persistence.entities.Pai;
+import it.wego.welfarego.persistence.entities.PaiIntervento;
+import jakarta.xml.bind.JAXBException;
 import it.wego.welfarego.cartellasocialews.beans.*;
 import it.wego.welfarego.persistence.dao.CodaCsrDao;
 import it.wego.welfarego.persistence.dao.ConfigurationDao;
 import it.wego.welfarego.persistence.dao.PaiDao;
 import it.wego.welfarego.persistence.dao.PaiInterventoDao;
-import it.wego.welfarego.persistence.entities.AnagrafeSoc;
-import it.wego.welfarego.persistence.entities.CodaCsr;
-import it.wego.welfarego.persistence.entities.Pai;
-import it.wego.welfarego.persistence.entities.PaiIntervento;
+
 
 import java.io.DataInputStream;
 import java.io.EOFException;
@@ -34,6 +37,8 @@ import java.net.URL;
 import java.sql.Timestamp;
 import java.util.Map;
 import java.util.Properties;
+import java.util.concurrent.ExecutionException;
+
 import javax.annotation.Nullable;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
@@ -46,7 +51,7 @@ import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.X509Certificate;
 import javax.persistence.EntityManager;
-import javax.xml.ws.WebServiceFeature;
+import javax.xml.xpath.XPathExpressionException;
 
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
@@ -205,10 +210,8 @@ public class CartellaSocialeWsClient {
 	}
 
 	public CartellaSocialeWsClient withPaiIntervento(String codPai, String codTipint, String cntTipint) {
-		PaiIntervento paiIntervento = new PaiInterventoDao(dataUtils.getEntityManager())
-				.findByKey(Integer.parseInt(codPai), codTipint, cntTipint);
-		Preconditions.checkNotNull(paiIntervento, "paiIntervento not found for cod = '%s:%s:%s'", codPai, codTipint,
-				cntTipint);
+		PaiIntervento paiIntervento = new PaiInterventoDao(dataUtils.getEntityManager()).findByKey(Integer.parseInt(codPai), codTipint, cntTipint);
+		Preconditions.checkNotNull(paiIntervento, "paiIntervento not found for cod = '%s:%s:%s'", codPai, codTipint, cntTipint);
 		return this.withPaiIntervento(paiIntervento);
 	}
 
@@ -219,8 +222,7 @@ public class CartellaSocialeWsClient {
 
 	public CartellaSocialeWsClient loadConfigFromDatabase() {
 		logger.debug("loading config from db");
-		return this.withParameters(new ConfigurationDao(dataUtils.getEntityManager())
-				.getConfigWithPrefix("it.wego.welfarego.cartellasocialews.CartellaSocialeWsClient."));
+		return this.withParameters(new ConfigurationDao(dataUtils.getEntityManager()).getConfigWithPrefix("it.wego.welfarego.cartellasocialews.CartellaSocialeWsClient."));
 	}
 
 	private boolean isEnabled() {
@@ -237,8 +239,7 @@ public class CartellaSocialeWsClient {
 	}
 
 	public @Nullable String getServiceUrl() {
-		return Strings
-				.emptyToNull(config.get("it.wego.welfarego.cartellasocialews.CartellaSocialeWsClient.endpointUrl"));
+		return Strings.emptyToNull(config.get("it.wego.welfarego.cartellasocialews.CartellaSocialeWsClient.endpointUrl"));
 	}
 
 	public CartellaSocialeWsDataUtils getDataUtils() {
@@ -279,7 +280,21 @@ public class CartellaSocialeWsClient {
 		if (!isEnabled()) {
 			return null;
 		}
-		RicevutaCartella ricevutaCartella = getCartellaService().inserimentoCartella(dataUtils.createInserimentoCartellaSocialeRequest());
+		InserimentoCartellaSociale richiesta = dataUtils.createInserimentoCartellaSocialeRequest();
+		XmlUtils xmlUtils = XmlUtils.getInstance();
+		try {
+			logger.info("richiesta = \n{}", xmlUtils.marshallJaxbObjectToIndentedString(richiesta));
+		} catch (XPathExpressionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JAXBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		RicevutaCartella ricevutaCartella = getCartellaService().inserimentoCartella(richiesta);
 		Messaggio messaggio = checkResponse(ricevutaCartella, INSERIMENTO_CARTELLA);
 		if (messaggio != null && messaggio.getCodice().equals(CARTELLA_GIAPRESENTE)) {
 			// aggiorno il codice cartella ed effettuo la modifica cartella

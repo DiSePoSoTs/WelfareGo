@@ -3,11 +3,9 @@ package it.wego.welfarego.cartellasocialews.beans;
 
 import java.math.BigDecimal;
 import javax.xml.datatype.XMLGregorianCalendar;
-import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlElementRef;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 
@@ -171,8 +169,8 @@ public class InterventoType {
     protected String dettaglio;
     @XmlElement(required = true, type = Integer.class, nillable = true)
     protected Integer durataPrevista;
-    @XmlElementRef(name = "note", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> note;
+    @XmlElement(nillable = true)
+    protected String note;
     protected InterventoType.Specificazione specificazione;
 
     /**
@@ -300,10 +298,10 @@ public class InterventoType {
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public JAXBElement<String> getNote() {
+    public String getNote() {
         return note;
     }
 
@@ -312,10 +310,10 @@ public class InterventoType {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public void setNote(JAXBElement<String> value) {
+    public void setNote(String value) {
         this.note = value;
     }
 

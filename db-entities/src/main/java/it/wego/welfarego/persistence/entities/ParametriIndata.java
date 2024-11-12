@@ -55,39 +55,69 @@ public class ParametriIndata implements Serializable {
 	@Column(name = "ID_PARAM_INDATA", nullable = false)
 	private Integer idParamIndata;
 
-	public Integer getIdParamIndata() {
-		return idParamIndata;
-	}
-
 	@Basic(optional = false)
 	@Column(name = "DT_INI_VAL", nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtIniVal;
 
-	public Date getDateParam() {
-		return dateParam;
-	}
-
 	@JoinColumn(name = "ID_PARAM", referencedColumnName = "ID_PARAM", nullable = false)
 	@ManyToOne(optional = false)
 	private Parametri idParam;
-
-	public Parametri getIdParam() {
-		return idParam;
-	}
 
 	// data params
 	@Basic(optional = false)
 	@Column(name = "DES_PARAM", nullable = false, length = 765)
 	private String desParam;
 
-	public String getDesParam() {
-		return desParam;
-	}
-
 	@Column(name = "DATE_PARAM")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dateParam;
+
+	@Column(name = "DECIMAL_PARAM", precision = 16, scale = 6)
+	private BigDecimal decimalParam;
+
+	@Column(name = "TXT1_PARAM", length = 90)
+	private String txt1Param;
+
+	@Column(name = "TXT2_PARAM", length = 90)
+	private String txt2Param;
+
+	@Column(name = "TXT3_PARAM", length = 90)
+	private String txt3Param;
+
+	@Column(name = "TXT4_PARAM", length = 90)
+	private String txt4Param;
+
+	@Column(name = "TXT5_PARAM", length = 90)
+	private String txt5Param;
+
+	@Column(name = "TXT6_PARAM", length = 90)
+	private String txt6Param;
+
+	@Column(name = "TXT7_PARAM", length = 90)
+	private String txt7Param;
+
+	@Column(name = "TXT8_PARAM", length = 90)
+	private String txt8Param;
+
+	@Column(name = "PIATTAFORMA", length = 15)
+	private String piattaforma;
+
+	public Integer getIdParamIndata() {
+		return idParamIndata;
+	}
+
+	public Date getDateParam() {
+		return dateParam;
+	}
+
+	public Parametri getIdParam() {
+		return idParam;
+	}
+
+	public String getDesParam() {
+		return desParam;
+	}
 
 	public BigDecimal getDecimalParam() {
 		return decimalParam;
@@ -137,43 +167,13 @@ public class ParametriIndata implements Serializable {
 		return txt4Param;
 	}
 
-	@Column(name = "DECIMAL_PARAM", precision = 16, scale = 6)
-	private BigDecimal decimalParam;
-
 	public Date getDtIniVal() {
 		return dtIniVal;
 	}
 
-	@Column(name = "TXT1_PARAM", length = 90)
-	private String txt1Param;
-
 	public String getTxt1Param() {
 		return txt1Param;
 	}
-
-	@Column(name = "TXT2_PARAM", length = 90)
-	private String txt2Param;
-
-	@Column(name = "TXT3_PARAM", length = 90)
-	private String txt3Param;
-
-	@Column(name = "TXT4_PARAM", length = 90)
-	private String txt4Param;
-
-	@Column(name = "TXT5_PARAM", length = 90)
-	private String txt5Param;
-
-	@Column(name = "TXT6_PARAM", length = 90)
-	private String txt6Param;
-
-	@Column(name = "TXT7_PARAM", length = 90)
-	private String txt7Param;
-
-	@Column(name = "TXT8_PARAM", length = 90)
-	private String txt8Param;
-
-	@Column(name = "piattaforma", length = 15)
-	private String piattaforma;
 
 	public ParametriIndata() {
 	}

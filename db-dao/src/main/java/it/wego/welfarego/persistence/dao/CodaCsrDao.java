@@ -6,7 +6,6 @@ package it.wego.welfarego.persistence.dao;
 
 import it.wego.persistence.PersistenceAdapter;
 import it.wego.welfarego.persistence.entities.CodaCsr;
-import it.wego.welfarego.persistence.entities.Pai;
 
 import java.util.Date;
 import java.util.List;

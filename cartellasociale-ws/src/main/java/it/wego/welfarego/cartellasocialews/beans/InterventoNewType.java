@@ -3,11 +3,9 @@ package it.wego.welfarego.cartellasocialews.beans;
 
 import java.math.BigDecimal;
 import javax.xml.datatype.XMLGregorianCalendar;
-import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlElementRef;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 
@@ -170,12 +168,12 @@ public class InterventoNewType {
     protected String tipologiaIntervento;
     @XmlElement(required = true, nillable = true)
     protected String dettaglio;
-    @XmlElementRef(name = "subDettaglio", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
-    protected JAXBElement<SubDettaglioIntType> subDettaglio;
+    @XmlElement(nillable = true)
+    protected SubDettaglioIntType subDettaglio;
     @XmlElement(required = true, type = Integer.class, nillable = true)
     protected Integer durataPrevista;
-    @XmlElementRef(name = "note", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> note;
+    @XmlElement(nillable = true)
+    protected String note;
     protected BigDecimal importoTotaleErogato;
     protected InterventoNewType.SpecificazioneNew specificazioneNew;
 
@@ -280,10 +278,10 @@ public class InterventoNewType {
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link SubDettaglioIntType }{@code >}
+     *     {@link SubDettaglioIntType }
      *     
      */
-    public JAXBElement<SubDettaglioIntType> getSubDettaglio() {
+    public SubDettaglioIntType getSubDettaglio() {
         return subDettaglio;
     }
 
@@ -292,10 +290,10 @@ public class InterventoNewType {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link SubDettaglioIntType }{@code >}
+     *     {@link SubDettaglioIntType }
      *     
      */
-    public void setSubDettaglio(JAXBElement<SubDettaglioIntType> value) {
+    public void setSubDettaglio(SubDettaglioIntType value) {
         this.subDettaglio = value;
     }
 
@@ -328,10 +326,10 @@ public class InterventoNewType {
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public JAXBElement<String> getNote() {
+    public String getNote() {
         return note;
     }
 
@@ -340,10 +338,10 @@ public class InterventoNewType {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public void setNote(JAXBElement<String> value) {
+    public void setNote(String value) {
         this.note = value;
     }
 

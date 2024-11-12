@@ -43,13 +43,47 @@ public class DatiSpecifici implements Serializable {
 	@Column(name = "COD_CAMPO", nullable = false, length = 20)
 	private String codCampo;
 
-	public String getCodCampo() {
-		return codCampo;
-	}
-
 	@Basic(optional = false)
 	@Column(name = "DES_CAMPO", nullable = false, length = 60)
 	private String desCampo;
+
+	@Basic(optional = false)
+	@Column(name = "FLG_OBB", nullable = false)
+	private char flgObb;
+	@Basic(optional = false)
+	@Column(name = "TIPO_CAMPO", nullable = false)
+	private char tipoCampo;
+	@Lob
+	@Column(name = "VAL_AMM")
+	private String valAmm;
+	@Basic(optional = false)
+	@Column(name = "FLG_EDIT", nullable = false)
+	private char flgEdit;
+	@Basic(optional = false)
+	@Column(name = "FLG_VIS", nullable = false)
+	private char flgVis;
+	@Column(name = "VAL_DEF", length = 60)
+	private String valDef;
+	@Column(name = "REG_EXPR", length = 255)
+	private String regExpr;
+	@Column(name = "COD_CAMPO_CSR", length = 60)
+	private String codCampoCsr;
+	@Column(name = "MSG_ERRORE", length = 255)
+	private String msgErrore;
+	@Basic(optional = false)
+	@Column(name = "LUNGHEZZA", nullable = false)
+	private short lunghezza;
+
+	@Column(name = "DECIMALI")
+	private Short decimali;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "datiSpecifici")
+	private List<MapDatiSpecTipint> mapDatiSpecTipintList;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "datiSpecifici")
+	private List<MapDatiSpecificiIntervento> mapDatiSpecificiInterventoList;
+
+	public String getCodCampo() {
+		return codCampo;
+	}
 
 	public char getFlgObb() {
 		return flgObb;
@@ -147,45 +181,9 @@ public class DatiSpecifici implements Serializable {
 		return mapDatiSpecificiInterventoList;
 	}
 
-	@Basic(optional = false)
-	@Column(name = "FLG_OBB", nullable = false)
-	private char flgObb;
-
-	@Basic(optional = false)
-	@Column(name = "TIPO_CAMPO", nullable = false)
-	private char tipoCampo;
-
-	@Lob
-	@Column(name = "VAL_AMM")
-	private String valAmm;
-
-	@Basic(optional = false)
-	@Column(name = "FLG_EDIT", nullable = false)
-	private char flgEdit;
-
 	public String getCodCampoCsr() {
 		return codCampoCsr;
 	}
-
-	@Basic(optional = false)
-	@Column(name = "FLG_VIS", nullable = false)
-	private char flgVis;
-
-	@Column(name = "VAL_DEF", length = 60)
-	private String valDef;
-
-	@Column(name = "REG_EXPR", length = 255)
-	private String regExpr;
-
-	@Column(name = "COD_CAMPO_CSR", length = 60)
-	private String codCampoCsr;
-
-	@Column(name = "MSG_ERRORE", length = 255)
-	private String msgErrore;
-
-	@Basic(optional = false)
-	@Column(name = "LUNGHEZZA", nullable = false)
-	private short lunghezza;
 
 	public String getDesCampo() {
 		return desCampo;
@@ -194,15 +192,6 @@ public class DatiSpecifici implements Serializable {
 	public Short getDecimali() {
 		return decimali;
 	}
-
-	@Column(name = "DECIMALI")
-	private Short decimali;
-
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "datiSpecifici")
-	private List<MapDatiSpecTipint> mapDatiSpecTipintList;
-
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "datiSpecifici")
-	private List<MapDatiSpecificiIntervento> mapDatiSpecificiInterventoList;
 
 	public DatiSpecifici() {
 	}

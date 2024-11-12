@@ -76,6 +76,17 @@ public class Stato implements Serializable {
 
 	@Column(name = "COD_CITT_INSIEL")
 	private Integer codiceCittadinanzaInsiel;
+	
+	@Column(name = "COD_ISO_3166_1")
+	private String codiceISO3166;
+
+	public String getCodiceISO3166() {
+		return codiceISO3166;
+	}
+
+	public void setCodiceISO3166(String codiceISO3166) {
+		this.codiceISO3166 = codiceISO3166;
+	}
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "stato")
 	private List<Provincia> provinciaList;

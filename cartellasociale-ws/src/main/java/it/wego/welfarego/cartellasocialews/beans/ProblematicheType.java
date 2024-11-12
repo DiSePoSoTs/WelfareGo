@@ -3,11 +3,9 @@ package it.wego.welfarego.cartellasocialews.beans;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlElementRef;
 import jakarta.xml.bind.annotation.XmlType;
 
 
@@ -117,8 +115,8 @@ public class ProblematicheType {
         protected String tipologiaMacroproblematica;
         @XmlElement(required = true)
         protected List<MicroProblematicaType> microproblematica;
-        @XmlElementRef(name = "noteAltro", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
-        protected JAXBElement<String> noteAltro;
+        @XmlElement(nillable = true)
+        protected String noteAltro;
         @XmlElement(required = true, nillable = true)
         protected RilevanzaObiettiviType rilevanzaObiettivi;
 
@@ -180,10 +178,10 @@ public class ProblematicheType {
          * 
          * @return
          *     possible object is
-         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     {@link String }
          *     
          */
-        public JAXBElement<String> getNoteAltro() {
+        public String getNoteAltro() {
             return noteAltro;
         }
 
@@ -192,10 +190,10 @@ public class ProblematicheType {
          * 
          * @param value
          *     allowed object is
-         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     {@link String }
          *     
          */
-        public void setNoteAltro(JAXBElement<String> value) {
+        public void setNoteAltro(String value) {
             this.noteAltro = value;
         }
 

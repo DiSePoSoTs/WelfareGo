@@ -2,11 +2,9 @@
 package it.wego.welfarego.cartellasocialews.beans;
 
 import javax.xml.datatype.XMLGregorianCalendar;
-import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlElementRef;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 
@@ -502,28 +500,35 @@ public class ProfiloType {
         protected String statoInvalidita;
         @XmlSchemaType(name = "string")
         protected SiNoType attesaInvalidita;
-        @XmlElementRef(name = "assegnoAccompagnamento", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
-        protected JAXBElement<SiNoType> assegnoAccompagnamento;
-        @XmlElementRef(name = "attesaAccompagnamento", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
-        protected JAXBElement<SiNoType> attesaAccompagnamento;
-        @XmlElementRef(name = "nonAutosufficiente", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
-        protected JAXBElement<SiNoType> nonAutosufficiente;
-        @XmlElementRef(name = "nonAutosufficienzaTemporanea", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
-        protected JAXBElement<SiNoType> nonAutosufficienzaTemporanea;
-        @XmlElementRef(name = "disabileGravissimo", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
-        protected JAXBElement<String> disabileGravissimo;
-        @XmlElementRef(name = "patologiaOncologica", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
-        protected JAXBElement<SiNoType> patologiaOncologica;
-        @XmlElementRef(name = "faseTerminale", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
-        protected JAXBElement<SiNoType> faseTerminale;
+        @XmlElement(nillable = true)
+        @XmlSchemaType(name = "string")
+        protected SiNoType assegnoAccompagnamento;
+        @XmlElement(nillable = true)
+        @XmlSchemaType(name = "string")
+        protected SiNoType attesaAccompagnamento;
+        @XmlElement(nillable = true)
+        @XmlSchemaType(name = "string")
+        protected SiNoType nonAutosufficiente;
+        @XmlElement(nillable = true)
+        @XmlSchemaType(name = "string")
+        protected SiNoType nonAutosufficienzaTemporanea;
+        @XmlElement(nillable = true)
+        protected String disabileGravissimo;
+        @XmlElement(nillable = true)
+        @XmlSchemaType(name = "string")
+        protected SiNoType patologiaOncologica;
+        @XmlElement(nillable = true)
+        @XmlSchemaType(name = "string")
+        protected SiNoType faseTerminale;
         @XmlElement(required = true, nillable = true)
         protected String provvedimentoGiudiziario;
-        @XmlElementRef(name = "tipoAssegno", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
-        protected JAXBElement<String> tipoAssegno;
-        @XmlElementRef(name = "note", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
-        protected JAXBElement<String> note;
-        @XmlElementRef(name = "msna", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
-        protected JAXBElement<SiNoType> msna;
+        @XmlElement(nillable = true)
+        protected String tipoAssegno;
+        @XmlElement(nillable = true)
+        protected String note;
+        @XmlElement(nillable = true)
+        @XmlSchemaType(name = "string")
+        protected SiNoType msna;
 
         /**
          * Recupera il valore della proprietà isee.
@@ -674,10 +679,10 @@ public class ProfiloType {
          * 
          * @return
          *     possible object is
-         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     {@link SiNoType }
          *     
          */
-        public JAXBElement<SiNoType> getAssegnoAccompagnamento() {
+        public SiNoType getAssegnoAccompagnamento() {
             return assegnoAccompagnamento;
         }
 
@@ -686,10 +691,10 @@ public class ProfiloType {
          * 
          * @param value
          *     allowed object is
-         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     {@link SiNoType }
          *     
          */
-        public void setAssegnoAccompagnamento(JAXBElement<SiNoType> value) {
+        public void setAssegnoAccompagnamento(SiNoType value) {
             this.assegnoAccompagnamento = value;
         }
 
@@ -698,10 +703,10 @@ public class ProfiloType {
          * 
          * @return
          *     possible object is
-         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     {@link SiNoType }
          *     
          */
-        public JAXBElement<SiNoType> getAttesaAccompagnamento() {
+        public SiNoType getAttesaAccompagnamento() {
             return attesaAccompagnamento;
         }
 
@@ -710,10 +715,10 @@ public class ProfiloType {
          * 
          * @param value
          *     allowed object is
-         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     {@link SiNoType }
          *     
          */
-        public void setAttesaAccompagnamento(JAXBElement<SiNoType> value) {
+        public void setAttesaAccompagnamento(SiNoType value) {
             this.attesaAccompagnamento = value;
         }
 
@@ -722,10 +727,10 @@ public class ProfiloType {
          * 
          * @return
          *     possible object is
-         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     {@link SiNoType }
          *     
          */
-        public JAXBElement<SiNoType> getNonAutosufficiente() {
+        public SiNoType getNonAutosufficiente() {
             return nonAutosufficiente;
         }
 
@@ -734,10 +739,10 @@ public class ProfiloType {
          * 
          * @param value
          *     allowed object is
-         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     {@link SiNoType }
          *     
          */
-        public void setNonAutosufficiente(JAXBElement<SiNoType> value) {
+        public void setNonAutosufficiente(SiNoType value) {
             this.nonAutosufficiente = value;
         }
 
@@ -746,10 +751,10 @@ public class ProfiloType {
          * 
          * @return
          *     possible object is
-         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     {@link SiNoType }
          *     
          */
-        public JAXBElement<SiNoType> getNonAutosufficienzaTemporanea() {
+        public SiNoType getNonAutosufficienzaTemporanea() {
             return nonAutosufficienzaTemporanea;
         }
 
@@ -758,10 +763,10 @@ public class ProfiloType {
          * 
          * @param value
          *     allowed object is
-         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     {@link SiNoType }
          *     
          */
-        public void setNonAutosufficienzaTemporanea(JAXBElement<SiNoType> value) {
+        public void setNonAutosufficienzaTemporanea(SiNoType value) {
             this.nonAutosufficienzaTemporanea = value;
         }
 
@@ -770,10 +775,10 @@ public class ProfiloType {
          * 
          * @return
          *     possible object is
-         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     {@link String }
          *     
          */
-        public JAXBElement<String> getDisabileGravissimo() {
+        public String getDisabileGravissimo() {
             return disabileGravissimo;
         }
 
@@ -782,10 +787,10 @@ public class ProfiloType {
          * 
          * @param value
          *     allowed object is
-         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     {@link String }
          *     
          */
-        public void setDisabileGravissimo(JAXBElement<String> value) {
+        public void setDisabileGravissimo(String value) {
             this.disabileGravissimo = value;
         }
 
@@ -794,10 +799,10 @@ public class ProfiloType {
          * 
          * @return
          *     possible object is
-         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     {@link SiNoType }
          *     
          */
-        public JAXBElement<SiNoType> getPatologiaOncologica() {
+        public SiNoType getPatologiaOncologica() {
             return patologiaOncologica;
         }
 
@@ -806,10 +811,10 @@ public class ProfiloType {
          * 
          * @param value
          *     allowed object is
-         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     {@link SiNoType }
          *     
          */
-        public void setPatologiaOncologica(JAXBElement<SiNoType> value) {
+        public void setPatologiaOncologica(SiNoType value) {
             this.patologiaOncologica = value;
         }
 
@@ -818,10 +823,10 @@ public class ProfiloType {
          * 
          * @return
          *     possible object is
-         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     {@link SiNoType }
          *     
          */
-        public JAXBElement<SiNoType> getFaseTerminale() {
+        public SiNoType getFaseTerminale() {
             return faseTerminale;
         }
 
@@ -830,10 +835,10 @@ public class ProfiloType {
          * 
          * @param value
          *     allowed object is
-         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     {@link SiNoType }
          *     
          */
-        public void setFaseTerminale(JAXBElement<SiNoType> value) {
+        public void setFaseTerminale(SiNoType value) {
             this.faseTerminale = value;
         }
 
@@ -866,10 +871,10 @@ public class ProfiloType {
          * 
          * @return
          *     possible object is
-         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     {@link String }
          *     
          */
-        public JAXBElement<String> getTipoAssegno() {
+        public String getTipoAssegno() {
             return tipoAssegno;
         }
 
@@ -878,10 +883,10 @@ public class ProfiloType {
          * 
          * @param value
          *     allowed object is
-         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     {@link String }
          *     
          */
-        public void setTipoAssegno(JAXBElement<String> value) {
+        public void setTipoAssegno(String value) {
             this.tipoAssegno = value;
         }
 
@@ -890,10 +895,10 @@ public class ProfiloType {
          * 
          * @return
          *     possible object is
-         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     {@link String }
          *     
          */
-        public JAXBElement<String> getNote() {
+        public String getNote() {
             return note;
         }
 
@@ -902,10 +907,10 @@ public class ProfiloType {
          * 
          * @param value
          *     allowed object is
-         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     {@link String }
          *     
          */
-        public void setNote(JAXBElement<String> value) {
+        public void setNote(String value) {
             this.note = value;
         }
 
@@ -914,10 +919,10 @@ public class ProfiloType {
          * 
          * @return
          *     possible object is
-         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     {@link SiNoType }
          *     
          */
-        public JAXBElement<SiNoType> getMsna() {
+        public SiNoType getMsna() {
             return msna;
         }
 
@@ -926,10 +931,10 @@ public class ProfiloType {
          * 
          * @param value
          *     allowed object is
-         *     {@link JAXBElement }{@code <}{@link SiNoType }{@code >}
+         *     {@link SiNoType }
          *     
          */
-        public void setMsna(JAXBElement<SiNoType> value) {
+        public void setMsna(SiNoType value) {
             this.msna = value;
         }
 
@@ -1053,14 +1058,14 @@ public class ProfiloType {
     public static class Domicilio {
 
         protected ToponimoType toponimo;
-        @XmlElementRef(name = "telefono", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
-        protected JAXBElement<String> telefono;
-        @XmlElementRef(name = "condizioneAbitativa", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
-        protected JAXBElement<String> condizioneAbitativa;
-        @XmlElementRef(name = "idoneitaAbitazione", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
-        protected JAXBElement<String> idoneitaAbitazione;
-        @XmlElementRef(name = "struttura", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
-        protected JAXBElement<String> struttura;
+        @XmlElement(nillable = true)
+        protected String telefono;
+        @XmlElement(nillable = true)
+        protected String condizioneAbitativa;
+        @XmlElement(nillable = true)
+        protected String idoneitaAbitazione;
+        @XmlElement(nillable = true)
+        protected String struttura;
 
         /**
          * Recupera il valore della proprietà toponimo.
@@ -1091,10 +1096,10 @@ public class ProfiloType {
          * 
          * @return
          *     possible object is
-         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     {@link String }
          *     
          */
-        public JAXBElement<String> getTelefono() {
+        public String getTelefono() {
             return telefono;
         }
 
@@ -1103,10 +1108,10 @@ public class ProfiloType {
          * 
          * @param value
          *     allowed object is
-         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     {@link String }
          *     
          */
-        public void setTelefono(JAXBElement<String> value) {
+        public void setTelefono(String value) {
             this.telefono = value;
         }
 
@@ -1115,10 +1120,10 @@ public class ProfiloType {
          * 
          * @return
          *     possible object is
-         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     {@link String }
          *     
          */
-        public JAXBElement<String> getCondizioneAbitativa() {
+        public String getCondizioneAbitativa() {
             return condizioneAbitativa;
         }
 
@@ -1127,10 +1132,10 @@ public class ProfiloType {
          * 
          * @param value
          *     allowed object is
-         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     {@link String }
          *     
          */
-        public void setCondizioneAbitativa(JAXBElement<String> value) {
+        public void setCondizioneAbitativa(String value) {
             this.condizioneAbitativa = value;
         }
 
@@ -1139,10 +1144,10 @@ public class ProfiloType {
          * 
          * @return
          *     possible object is
-         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     {@link String }
          *     
          */
-        public JAXBElement<String> getIdoneitaAbitazione() {
+        public String getIdoneitaAbitazione() {
             return idoneitaAbitazione;
         }
 
@@ -1151,10 +1156,10 @@ public class ProfiloType {
          * 
          * @param value
          *     allowed object is
-         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     {@link String }
          *     
          */
-        public void setIdoneitaAbitazione(JAXBElement<String> value) {
+        public void setIdoneitaAbitazione(String value) {
             this.idoneitaAbitazione = value;
         }
 
@@ -1163,10 +1168,10 @@ public class ProfiloType {
          * 
          * @return
          *     possible object is
-         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     {@link String }
          *     
          */
-        public JAXBElement<String> getStruttura() {
+        public String getStruttura() {
             return struttura;
         }
 
@@ -1175,10 +1180,10 @@ public class ProfiloType {
          * 
          * @param value
          *     allowed object is
-         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     {@link String }
          *     
          */
-        public void setStruttura(JAXBElement<String> value) {
+        public void setStruttura(String value) {
             this.struttura = value;
         }
 

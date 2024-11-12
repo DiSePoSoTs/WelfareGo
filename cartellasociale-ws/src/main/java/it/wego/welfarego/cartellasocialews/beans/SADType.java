@@ -3,11 +3,9 @@ package it.wego.welfarego.cartellasocialews.beans;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlElementRef;
 import jakarta.xml.bind.annotation.XmlType;
 
 
@@ -38,8 +36,8 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class SADType {
 
-    @XmlElementRef(name = "obiettivi", namespace = "http://cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> obiettivi;
+    @XmlElement(nillable = true)
+    protected String obiettivi;
     @XmlElement(required = true)
     protected List<DettaglioMacrointerventoSADType> macrointerventoSad;
 
@@ -48,10 +46,10 @@ public class SADType {
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public JAXBElement<String> getObiettivi() {
+    public String getObiettivi() {
         return obiettivi;
     }
 
@@ -60,10 +58,10 @@ public class SADType {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public void setObiettivi(JAXBElement<String> value) {
+    public void setObiettivi(String value) {
         this.obiettivi = value;
     }
 

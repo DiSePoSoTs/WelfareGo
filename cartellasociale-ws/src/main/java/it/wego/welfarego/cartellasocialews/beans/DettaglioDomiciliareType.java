@@ -1,10 +1,9 @@
 
 package it.wego.welfarego.cartellasocialews.beans;
 
-import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElementRef;
+import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
 
 
@@ -38,10 +37,10 @@ import jakarta.xml.bind.annotation.XmlType;
 public class DettaglioDomiciliareType {
 
     protected Integer qtaMensili;
-    @XmlElementRef(name = "obiettivi", namespace = "http://tipigenerali.cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> obiettivi;
-    @XmlElementRef(name = "erogatore", namespace = "http://tipigenerali.cartellasociale.sanita.insiel.it", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> erogatore;
+    @XmlElement(nillable = true)
+    protected String obiettivi;
+    @XmlElement(nillable = true)
+    protected String erogatore;
 
     /**
      * Recupera il valore della proprietà qtaMensili.
@@ -72,10 +71,10 @@ public class DettaglioDomiciliareType {
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public JAXBElement<String> getObiettivi() {
+    public String getObiettivi() {
         return obiettivi;
     }
 
@@ -84,10 +83,10 @@ public class DettaglioDomiciliareType {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public void setObiettivi(JAXBElement<String> value) {
+    public void setObiettivi(String value) {
         this.obiettivi = value;
     }
 
@@ -96,10 +95,10 @@ public class DettaglioDomiciliareType {
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public JAXBElement<String> getErogatore() {
+    public String getErogatore() {
         return erogatore;
     }
 
@@ -108,10 +107,10 @@ public class DettaglioDomiciliareType {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public void setErogatore(JAXBElement<String> value) {
+    public void setErogatore(String value) {
         this.erogatore = value;
     }
 
