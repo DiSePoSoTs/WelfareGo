@@ -13,7 +13,6 @@ import org.junit.Test;
  *
  * @author aleph
  */
-@Ignore
 public class TestChiusuraCartella extends AbstractTest {
 
     @Test

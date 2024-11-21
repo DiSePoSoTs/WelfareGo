@@ -52,6 +52,7 @@ import it.wego.welfarego.cartellasocialews.beans.SADType;
 import it.wego.welfarego.cartellasocialews.beans.SessoType;
 import it.wego.welfarego.cartellasocialews.beans.SiNoType;
 import it.wego.welfarego.cartellasocialews.beans.StatoType;
+import it.wego.welfarego.cartellasocialews.beans.SubDettaglioIntType;
 import it.wego.welfarego.cartellasocialews.beans.ToponimoType;
 import it.wego.welfarego.persistence.dao.PaiDao;
 import it.wego.welfarego.persistence.dao.PaiInterventoDao;
@@ -96,7 +97,7 @@ import org.joda.time.Months;
  */
 public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 
-	private static final String EMPTY_STRING = "", SINGLE_X = "X", DOUBLE_X = "XX", VERSIONE = "?",
+	private static final String EMPTY_STRING = "", DOUBLE_X = "XX", VERSIONE = "?",
 			DEFAULT_CIVICO = "1", DEFAULT_INDIRIZZO = "PIAZZA DELL'UNITA'D'ITALIA", IP_CERTIFICATO_L104_DEFAULT = "38",
 			IP_PROVVEDIMENTO_GIUDIZIARIO_DEFAULT = "19", MOTIVAZIONE_CHIUSURA_CARTELLA_DEFAULT = "60",
 			FRONTEGGIAMENTO_DEFAULT = "1", RILEVANZA_DEFAULT = "4", OBBIETTIVO_PREVALENTE_DEFAULT = "2",
@@ -247,6 +248,10 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 
 	private String getMacroTipintCsrNew() {
 		return paiIntervento.getTipologiaIntervento().getCodTipintCsr();
+	}
+	
+	private SubDettaglioIntType getSubDettaglio() {
+		return new SubDettaglioIntType();
 	}
 
 	public String requireCodiceOperatore() {
@@ -656,7 +661,6 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 		chiudiCartella.setData(getXmlDate(new Date()));
 		chiudiCartella.setCodiceOperatore(requireCodiceOperatore());
 		chiudiCartella.setIdCartella(requireIdCartella());
-		// TODO
 		chiudiCartella.setMotivo(MOTIVAZIONE_CHIUSURA_CARTELLA_DEFAULT);
 		chiudiCartella.setNote(EMPTY_STRING);
 		return chiudiCartella;
@@ -817,13 +821,16 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 	}
 
 	private EconomicoNew createInterventoEconomicoDettaglio() {
-		EconomicoNew economico = new SpecificazioneNew.EconomicoNew();
+		EconomicoNew economico = new EconomicoNew();
+		
 		if (paiIntervento.getTipologiaIntervento().isFap()) {
 			economico.setFapNew(createFap());
 		}
+		
 		if (paiIntervento.getTipologiaIntervento().isFondoSolidarieta()) {
 			economico.setFondoSolidarieta(createFondoSolidarieta());
 		}
+		
 		return economico;
 	}
 
@@ -968,19 +975,21 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 	}
 
 	private SpecificazioneNew createSpecificazione() {
-		SpecificazioneNew specificazione = new InterventoNewType.SpecificazioneNew();
-		String codClasseTipint = paiIntervento.getTipologiaIntervento().getIdParamClasseTipint().getIdParam()
-				.getCodParam();
+		SpecificazioneNew specificazione = new SpecificazioneNew();
+		String codClasseTipint = paiIntervento.getTipologiaIntervento().getIdParamClasseTipint().getIdParam().getCodParam();
+		
 		if (Objects.equal(codClasseTipint, Parametri.CLASSE_TIPOLOGIA_INTERVENTO_ECONOMICI)) { // economico
 			specificazione.setEconomicoNew(createInterventoEconomicoDettaglio());
 		} else {
 			specificazione.setEconomicoNew(null);
 		}
+		
 		if (Objects.equal(codClasseTipint, Parametri.CLASSE_TIPOLOGIA_INTERVENTO_DOMICILIARI)) { // domiciliare
 			specificazione.setDomiciliare(createInterventoDomiciliareDettaglio());
 		} else {
 			specificazione.setDomiciliare(null);
 		}
+		
 		if (Objects.equal(codClasseTipint, Parametri.CLASSE_TIPOLOGIA_INTERVENTO_RESIDENZIALI)
 				|| Objects.equal(codClasseTipint, Parametri.CLASSE_TIPOLOGIA_INTERVENTO_SEMI_RESIDENZIALI)) { // residenziale
 																												// e
@@ -998,10 +1007,10 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 		InterventoNewType interventoType = new InterventoNewType();
 		Preconditions.checkNotNull(paiIntervento.getDtApe(), "la data apertura intervento non puo' essere null");
 		interventoType.setDataApertura(getXmlDate(paiIntervento.getDtAvvio()));
-		interventoType
-				.setDataChiusura(paiIntervento.getDtChius() == null ? null : getXmlDate(paiIntervento.getDtChius()));
+		interventoType.setDataChiusura(paiIntervento.getDtChius() == null ? null : getXmlDate(paiIntervento.getDtChius()));
 		interventoType.setTipologiaIntervento(getMacroTipintCsrNew());
 		interventoType.setDettaglio(getMicroTipintCsrNew());
+		interventoType.setSubDettaglio(getSubDettaglio()); 
 		Preconditions.checkArgument(
 				!Strings.isNullOrEmpty(interventoType.getTipologiaIntervento())
 						&& !Strings.isNullOrEmpty(interventoType.getDettaglio()),

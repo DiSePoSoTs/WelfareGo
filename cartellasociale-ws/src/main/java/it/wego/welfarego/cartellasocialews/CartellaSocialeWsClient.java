@@ -1,25 +1,5 @@
 package it.wego.welfarego.cartellasocialews;
 
-import com.google.common.base.Objects;
-import com.google.common.base.Preconditions;
-import com.google.common.base.Strings;
-import com.google.common.collect.Maps;
-import com.google.gson.Gson;
-import it.trieste.comune.ssc.json.JsonBuilder;
-import it.wego.utils.xml.WsUtils;
-import it.wego.utils.xml.XmlUtils;
-import it.wego.welfarego.persistence.entities.AnagrafeSoc;
-import it.wego.welfarego.persistence.entities.CodaCsr;
-import it.wego.welfarego.persistence.entities.Pai;
-import it.wego.welfarego.persistence.entities.PaiIntervento;
-import jakarta.xml.bind.JAXBException;
-import it.wego.welfarego.cartellasocialews.beans.*;
-import it.wego.welfarego.persistence.dao.CodaCsrDao;
-import it.wego.welfarego.persistence.dao.ConfigurationDao;
-import it.wego.welfarego.persistence.dao.PaiDao;
-import it.wego.welfarego.persistence.dao.PaiInterventoDao;
-
-
 import java.io.DataInputStream;
 import java.io.EOFException;
 import java.io.IOException;
@@ -52,10 +32,39 @@ import java.security.NoSuchAlgorithmException;
 import java.security.cert.X509Certificate;
 import javax.persistence.EntityManager;
 import javax.xml.xpath.XPathExpressionException;
-
+import it.wego.utils.xml.XmlUtils;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.google.common.base.Objects;
+import com.google.common.base.Preconditions;
+import com.google.common.base.Strings;
+import com.google.common.collect.Maps;
+import com.google.gson.Gson;
+import it.trieste.comune.ssc.json.JsonBuilder;
+import it.wego.utils.xml.WsUtils;
+
+import jakarta.xml.bind.JAXBException;
+
+import it.wego.welfarego.cartellasocialews.beans.*;
+import it.wego.welfarego.persistence.entities.AnagrafeSoc;
+import it.wego.welfarego.persistence.entities.CodaCsr;
+
+
+import it.wego.welfarego.persistence.dao.CodaCsrDao;
+import it.wego.welfarego.persistence.dao.ConfigurationDao;
+import it.wego.welfarego.persistence.entities.Pai;
+
+import it.wego.welfarego.persistence.entities.PaiIntervento;
+import it.wego.welfarego.persistence.dao.PaiInterventoDao;
+
+import it.wego.welfarego.persistence.dao.PaiDao;
+
+
+
+
+
 
 /**
  * client per il webservice CSR idealmente, tutte le chiamate da welfarego per
@@ -335,8 +344,25 @@ public class CartellaSocialeWsClient {
 		if (!isEnabled()) {
 			return null;
 		}
-		RicevutaModificaAnagrafica ricevutaModificaAnagrafica = getCartellaService()
-				.modificaAnagrafica(dataUtils.createModificaAnagraficaRequest());
+		
+		ModificaAnagrafica richiesta = dataUtils.createModificaAnagraficaRequest();
+		
+		XmlUtils xmlUtils = XmlUtils.getInstance();
+		try {
+			logger.info("richiesta = \n{}", xmlUtils.marshallJaxbObjectToIndentedString(richiesta));
+		} catch (XPathExpressionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JAXBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		RicevutaModificaAnagrafica ricevutaModificaAnagrafica = getCartellaService().modificaAnagrafica(richiesta);
 		Messaggio messaggio = checkResponse(ricevutaModificaAnagrafica, MODIFICA_CARTELLA);
 		if (messaggio != null && messaggio.getDescrizione().matches(CARTELLA_CHIUSA)) {
 			riattivaCartellaSociale();
@@ -372,8 +398,22 @@ public class CartellaSocialeWsClient {
 		if (!isEnabled()) {
 			return null;
 		}
-		RicevutaChiudiCartella ricevutaChiudiCartella = getCartellaService()
-				.chiudiCartella(dataUtils.createChiudiCartellaRequest());
+		ChiudiCartella richiesta = dataUtils.createChiudiCartellaRequest();
+		XmlUtils xmlUtils = XmlUtils.getInstance();
+		try {
+			logger.info("richiesta = \n{}", xmlUtils.marshallJaxbObjectToIndentedString(richiesta));
+		} catch (XPathExpressionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JAXBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		RicevutaChiudiCartella ricevutaChiudiCartella = getCartellaService().chiudiCartella(richiesta);
 		checkResponse(ricevutaChiudiCartella, CHIUDI_CARTELLA);
 		return ricevutaChiudiCartella;
 	}
@@ -383,8 +423,24 @@ public class CartellaSocialeWsClient {
 		if (!isEnabled()) {
 			return null;
 		}
-		RicevutaRiattivaCartella ricevutaRiattivaCartella = getCartellaService()
-				.riattivaCartella(dataUtils.createRiattivaCartellaRequest());
+		
+		RiattivaCartella richiesta = dataUtils.createRiattivaCartellaRequest();
+		
+		XmlUtils xmlUtils = XmlUtils.getInstance();
+		try {
+			logger.info("richiesta = \n{}", xmlUtils.marshallJaxbObjectToIndentedString(richiesta));
+		} catch (XPathExpressionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JAXBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		RicevutaRiattivaCartella ricevutaRiattivaCartella = getCartellaService().riattivaCartella(richiesta);
 		checkResponse(ricevutaRiattivaCartella, RIATTIVA_CARTELLA);
 		return ricevutaRiattivaCartella;
 	}
@@ -394,8 +450,23 @@ public class CartellaSocialeWsClient {
 		if (!isEnabled()) {
 			return null;
 		}
-		RicevutaIntervento ricevutaIntervento = getCartellaService()
-				.nuovoInserimentoIntervento(dataUtils.createInserimentoInterventoRequest());
+		
+		NuovoInserimentoIntervento richiesta = dataUtils.createInserimentoInterventoRequest();
+				
+		XmlUtils xmlUtils = XmlUtils.getInstance();
+		try {
+			logger.info("richiesta = \n{}", xmlUtils.marshallJaxbObjectToIndentedString(richiesta));
+		} catch (XPathExpressionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JAXBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		RicevutaIntervento ricevutaIntervento = getCartellaService().nuovoInserimentoIntervento(richiesta);
 		Messaggio messaggio = checkResponse(ricevutaIntervento, INSERIMENTO_INTERVENTO);
 		if (messaggio != null && messaggio.getDescrizione().matches(CARTELLA_CHIUSA)) {
 			riattivaCartellaSociale();
@@ -408,8 +479,7 @@ public class CartellaSocialeWsClient {
 			modificaIntervento();
 		} else {
 			Preconditions.checkNotNull(ricevutaIntervento.getIdIntervento(), "nessun id intervento restituito");
-			logger.debug("id intervento csr = {} for intervento = {}", ricevutaIntervento.getIdIntervento(),
-					dataUtils.getPaiIntervento());
+			logger.debug("id intervento csr = {} for intervento = {}", ricevutaIntervento.getIdIntervento(), dataUtils.getPaiIntervento());
 			dataUtils.initTransaction();
 			dataUtils.getPaiIntervento().setIdCsr(ricevutaIntervento.getIdIntervento().toString());
 			dataUtils.commitTransaction();

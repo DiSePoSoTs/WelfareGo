@@ -646,7 +646,7 @@ public class PaiIntervento implements Serializable, Cloneable {
 	@Column(name = "CSR_ID", length = 255)
 	private String idCsr;
 
-	@Column(name = "MOTIVAZIONE")
+	@Column(name = "MOTIVAZIONE", length = 4000)
 	private String motivazione;
 
 	@Column(name = "DATI_ORIGINALI")

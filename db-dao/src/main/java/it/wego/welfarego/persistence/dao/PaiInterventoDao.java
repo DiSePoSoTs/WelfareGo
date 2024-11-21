@@ -11,7 +11,6 @@ import it.wego.persistence.PersistenceAdapter;
 import it.wego.welfarego.dto.InterventoDto;
 import it.wego.welfarego.persistence.entities.AnagrafeSoc;
 import it.wego.welfarego.persistence.entities.Associazione;
-import it.wego.welfarego.persistence.entities.DatiSpecifici;
 import it.wego.welfarego.persistence.entities.InterventiAssociati;
 import it.wego.welfarego.persistence.entities.ListaAttesa;
 import it.wego.welfarego.persistence.entities.Mandato;
