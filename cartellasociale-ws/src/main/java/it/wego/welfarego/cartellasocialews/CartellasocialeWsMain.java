@@ -82,6 +82,11 @@ public class CartellasocialeWsMain {
 			case TESTCONNECTION:
 				response = cartellaSocialeWsClient.testConnection();
 				break;
+			case RUN_MSNA:
+				Preconditions.checkArgument(args.length == 4, "usage: ... RUN_MSNA <nomefile.csv>");
+				File csvFile = new File(args[3]);
+				StartSyncWS.SincronizzaMSNA(csvFile);
+				break;
 			case RUN:
 				StartSyncWS.Sincronizza(entityManager);
 				break;
@@ -113,6 +118,6 @@ public class CartellasocialeWsMain {
 
 	public static enum Action {
 
-		TEST, TESTDB, UPDATEANAGRAFICA, INSERIMENTOCARTELLASOCIALE, TESTCONNECTION, RUN
+		TEST, TESTDB, UPDATEANAGRAFICA, INSERIMENTOCARTELLASOCIALE, TESTCONNECTION, RUN, RUN_MSNA
 	}
 }

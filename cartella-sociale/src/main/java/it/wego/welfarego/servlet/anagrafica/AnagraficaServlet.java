@@ -308,7 +308,7 @@ public class AnagraficaServlet extends JsonServlet {
 			NoteCondiviseDao noteCondiviseDao = new NoteCondiviseDao(entityManager);
 			noteCondiviseDao.insert(noteCondivise);
 
-			anagrafe.setDataUltimaRetifica(new Date());
+			anagrafe.setDataUltimaRettifica(new Date());
 			anagrafeSocDao.update(anagrafe);
 		}
 
@@ -368,7 +368,7 @@ public class AnagraficaServlet extends JsonServlet {
 		try {
 			utenteNonAssociatoAlComune = !COMUNE_DI_TRIESTE
 					.equalsIgnoreCase(anagrafe.getCreationUser().getAssociazione().getNome());
-			boolean dataUltimaRetificaIsNull = anagrafe.getDataUltimaRetifica() == null;
+			boolean dataUltimaRetificaIsNull = anagrafe.getDataUltimaRettifica() == null;
 
 			getLogger().debug("utenteNonAssociatoAlComune: " + utenteNonAssociatoAlComune
 					+ ", dataUltimaRetificaIsNull:" + dataUltimaRetificaIsNull);

@@ -1,22 +1,14 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package it.wego.welfarego.cartellasocialews.test;
+
+import org.junit.Test;
 
 import it.trieste.comune.ssc.json.JsonBuilder;
 import it.wego.welfarego.cartellasocialews.beans.RicevutaCartella;
 
-import org.junit.Test;
-
-/**
- *
- * @author aleph
- */
-public class TestInserimentoCartella extends AbstractTest {
+public class TestInserimentoCartellaMSNA extends AbstractTest {
 
     @Test
-    public void testInserimentoCartella() throws Throwable {
+    public void testInserimentoCartellaMSNA() throws Throwable {
         logger.info("testing inserimentoCartellaSociale");
         try {
             RicevutaCartella ricevutaCartella = cartellaSocialeWsClient.inserimentoCartellaSociale();
@@ -25,5 +17,7 @@ public class TestInserimentoCartella extends AbstractTest {
             logger.error("got error : ", t);
             throw t;
         }
+    	
     }
+	
 }

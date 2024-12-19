@@ -70,7 +70,7 @@ public class AnagraficaServletITest {
         String codiceAnagraficoWellfarGo = cod_ana + "";
         String codiceFiscale = "DMTSNT80A56L424F";
         AnagrafeSoc anagrafeSoc = anagrafeSocDao.findByCodFisc(codiceFiscale);
-        assertTrue(anagrafeSoc.getDataUltimaRetifica() == null);
+        assertTrue(anagrafeSoc.getDataUltimaRettifica() == null);
 
         //when dopo il verifica si accetta la sovrascrittura dei dati
         anagraficaServlet.actionSincronizzaDaAnagrafeSoc(codiceAnagraficoWellfarGo,codiceFiscale,codiceAnagraficoComune,entityManager, vistaAnagrafeDao, connectedUser);
@@ -81,7 +81,7 @@ public class AnagraficaServletITest {
         assertTrue(noteCondivise.size() == 1, noteCondivise.size() + "");
 
         anagrafeSoc = anagrafeSocDao.findByCodFisc(codiceFiscale);
-        assertTrue(anagrafeSoc.getDataUltimaRetifica() != null);
+        assertTrue(anagrafeSoc.getDataUltimaRettifica() != null);
     }
 
 }

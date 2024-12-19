@@ -72,7 +72,8 @@
 							http://172.25.205.82:8080/WS_PRJ/services/Cartella?wsdl</wsdlUrl>
 					</wsdlUrls>
 					<wsdlDirectory>${project.basedir}/src/main/resources/</wsdlDirectory>
-					<bindingDirectory>${project.basedir}/src/main/resources/bindings</bindingDirectory>
+					<bindingDirectory>
+						${project.basedir}/src/main/resources/bindings</bindingDirectory>
 					<packageName>it.wego.welfarego.cartellasocialews.beans</packageName>
 					<sourceDestDir>${project.build.sourceDirectory}/</sourceDestDir>
 					<extension>true</extension>
@@ -135,11 +136,9 @@
 			<version>3.1.1</version>
 		</dependency>
 		<dependency>
-			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc</artifactId>
-			<version>8</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}\lib\ojdbc8.jar</systemPath>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>5.9</version>
 		</dependency>
 
 	</dependencies>

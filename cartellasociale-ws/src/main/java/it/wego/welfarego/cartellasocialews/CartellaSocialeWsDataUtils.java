@@ -14,6 +14,8 @@ import it.wego.persistence.PersistenceAdapter;
 import it.wego.utils.cf.CFUtils;
 import it.wego.welfarego.cartellasocialews.beans.AnagraficaBaseType;
 import it.wego.welfarego.cartellasocialews.beans.AnagraficaType;
+import it.wego.welfarego.cartellasocialews.beans.AnagraficaType.DatiComuni;
+import it.wego.welfarego.cartellasocialews.beans.AnagraficaType.DatiComuni.Residenza;
 import it.wego.welfarego.cartellasocialews.beans.ChiudiCartella;
 import it.wego.welfarego.cartellasocialews.beans.ComuneType;
 import it.wego.welfarego.cartellasocialews.beans.DettaglioDomiciliareType;
@@ -72,14 +74,18 @@ import java.lang.String;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import javax.annotation.Nullable;
 import jakarta.xml.bind.JAXBElement;
 import javax.xml.datatype.DatatypeConfigurationException;
@@ -95,17 +101,8 @@ import org.joda.time.Months;
  *
  * @author aleph
  */
-public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
+public class CartellaSocialeWsDataUtils extends CartellaSocialeWSUtilsBase {
 
-	private static final String EMPTY_STRING = "", DOUBLE_X = "XX", VERSIONE = "?",
-			DEFAULT_CIVICO = "1", DEFAULT_INDIRIZZO = "PIAZZA DELL'UNITA'D'ITALIA", IP_CERTIFICATO_L104_DEFAULT = "38",
-			IP_PROVVEDIMENTO_GIUDIZIARIO_DEFAULT = "19", MOTIVAZIONE_CHIUSURA_CARTELLA_DEFAULT = "60",
-			FRONTEGGIAMENTO_DEFAULT = "1", RILEVANZA_DEFAULT = "4", OBBIETTIVO_PREVALENTE_DEFAULT = "2",
-			STATO_CIVILE_DEFAULT = "1", TITOLO_DI_STUDIO_DEFAULT = "11", CONDIZIONE_PROFESSIONALE_DEFAULT = "8",
-			TIPOLOGIA_MACROPROBLEMATICA_DEFAULT = "9", MICRO_PROBLEMATICA_DEFAULT = "64", RESIDENZA_DEFAULT = "35",
-			PRESENZA_PIU_ADDETTI_DEFAULT = "N";
-
-	private static final Integer CITTADINANZA_DEFAULT = 1;
 	private final static Properties parametriMapping = new Properties();
 
 	static {
@@ -116,12 +113,13 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 			throw new RuntimeException(ex);
 		}
 	}
+
 	private final DateFormat dateFormat1 = new SimpleDateFormat("yyyy-MM-dd");
 
 	private Pai pai;
 	private AnagrafeSoc anagrafeSoc;
 	private PaiIntervento paiIntervento;
-	private final CartellaSocialeWsClient wsClient;
+
 	private static final Map<Integer, String> defaultMicroproblematiche;
 	static {
 		Map<Integer, String> aMap = new HashMap<Integer, String>();
@@ -138,27 +136,8 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 		defaultMicroproblematiche = Collections.unmodifiableMap(aMap);
 	}
 
-	private XMLGregorianCalendar getXmlDate(Date date) {
-
-		String dataFormattata = dateFormat1.format(date);
-
-		try {
-			XMLGregorianCalendar date2 = DatatypeFactory.newInstance().newXMLGregorianCalendar(dataFormattata);
-			return date2;
-		} catch (DatatypeConfigurationException e) {
-			throw new RuntimeException(e);
-		}
-
-	}
-
-	protected CartellaSocialeWsDataUtils(CartellaSocialeWsClient cartellaSocialeWsClient) {
-		Preconditions.checkNotNull(cartellaSocialeWsClient);
-		this.wsClient = cartellaSocialeWsClient;
-		try {
-			DatatypeFactory.newInstance();
-		} catch (DatatypeConfigurationException ex) {
-			throw new RuntimeException(ex);
-		}
+	public CartellaSocialeWsDataUtils(CartellaSocialeWsClient cartellaSocialeWsClient) {
+		super(cartellaSocialeWsClient);
 	}
 
 	public void setPai(Pai pai) {
@@ -211,21 +190,6 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 		return anagrafeSoc;
 	}
 
-	public boolean shouldShredSource() {
-		return Boolean.parseBoolean(
-				wsClient.getConfig("it.wego.welfarego.cartellasocialews.CartellaSocialeWsClient.shredSource"));
-	}
-
-	public @Nullable String getCodiceOperatore() {
-		return Strings.emptyToNull(
-				wsClient.getConfig("it.wego.welfarego.cartellasocialews.CartellaSocialeWsClient.codiceOperatore"));
-	}
-
-	public @Nullable String getComuneCartella() {
-		return Strings.emptyToNull(
-				wsClient.getConfig("it.wego.welfarego.cartellasocialews.CartellaSocialeWsClient.comuneCartella"));
-	}
-
 	private @Nullable Integer getDurataMesi() {
 		Preconditions.checkNotNull(paiIntervento);
 		if (paiIntervento.getDtFine() != null) {
@@ -249,21 +213,9 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 	private String getMacroTipintCsrNew() {
 		return paiIntervento.getTipologiaIntervento().getCodTipintCsr();
 	}
-	
+
 	private SubDettaglioIntType getSubDettaglio() {
 		return new SubDettaglioIntType();
-	}
-
-	public String requireCodiceOperatore() {
-		String codiceOperatore = getCodiceOperatore();
-		Preconditions.checkNotNull(codiceOperatore);
-		return codiceOperatore;
-	}
-
-	public String requireComuneCartella() {
-		String comuneCartella = getComuneCartella();
-		Preconditions.checkNotNull(comuneCartella);
-		return comuneCartella;
 	}
 
 	public Long requireIdCartella() {
@@ -278,19 +230,6 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 
 	public String getCurrentDate1() {
 		return dateFormat1.format(new Date());
-	}
-
-	public @Nullable String shredIfNeeded(@Nullable String str) {
-		if (str != null && shouldShredSource() && str.length() >= 2) {
-			String head = str.substring(0, 1), tail = str.substring(str.length() - 1);
-			return head + DigestUtils
-					.sha512Hex(str + "justSomeSalt"
-							+ Strings.nullToEmpty(wsClient.getConfig(
-									"it.wego.welfarego.cartellasocialews.CartellaSocialeWsClient.shredSalt")))
-					.toUpperCase().replaceAll("[^A-Z]*", "").substring(0, 10) + tail;
-		} else {
-			return str;
-		}
 	}
 
 	private StatoType getStatoType(Luogo luogo) {
@@ -325,7 +264,7 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 		toponimoType.setComune(getComuneType(luogo));
 		toponimoType.setCap(MoreObjects.firstNonNull(Strings.emptyToNull(luogo.getCap()), "34100"));
 		toponimoType.setIndirizzo(
-				MoreObjects.firstNonNull(shredIfNeeded(Strings.emptyToNull(luogo.getViaText())), DEFAULT_INDIRIZZO));
+				MoreObjects.firstNonNull(Strings.emptyToNull(luogo.getViaText()), DEFAULT_INDIRIZZO));
 		toponimoType
 				.setNumeroCivico(MoreObjects.firstNonNull(Strings.emptyToNull(luogo.getCivicoText()), DEFAULT_CIVICO));
 		return toponimoType;
@@ -345,8 +284,6 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 			getLogger().debug("tipologiaResidenza not found, using default ('35' = RESIDENZA)");
 			residenza.setTipologiaResidenza(RESIDENZA_DEFAULT);
 		} else {
-
-			// residenza.setTipologiaResidenza(parametriMapping.getProperty(anagrafeSoc.getIdParamTipologiaResidenza().getIdParamIndata().toString()));
 			residenza.setTipologiaResidenza(anagrafeSoc.getIdParamTipologiaResidenza().getIdParam().getCodParam());
 			Preconditions.checkNotNull(residenza.getTipologiaResidenza(), "tipologia residenza null");
 		}
@@ -359,31 +296,21 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 		nascitaType.setData(anagrafeSoc.getDtNasc() == null ? null : getXmlDate(anagrafeSoc.getDtNasc()));
 		nascitaType.setStato(getStatoType(anagrafeSoc.getLuogoNascita()));
 		nascitaType.setComune(getComuneType(anagrafeSoc.getLuogoNascita()));
-
 		return nascitaType;
 	}
 
 	private AnagraficaBaseType createAnagraficaBaseType() {
 		Preconditions.checkNotNull(anagrafeSoc);
 		AnagraficaBaseType anagraficaBase = new AnagraficaBaseType();
-		anagraficaBase.setNome(shredIfNeeded(anagrafeSoc.getNome()));
-		anagraficaBase.setCognome(shredIfNeeded(anagrafeSoc.getCognome()));
+		anagraficaBase.setNome(anagrafeSoc.getNome());
+		anagraficaBase.setCognome(anagrafeSoc.getCognome());
 
 		anagraficaBase.setNascita(createNascitaType());
 
 		Preconditions.checkNotNull(anagrafeSoc.getFlgSex(), "flgSex must not be null");
 		Preconditions.checkArgument(anagrafeSoc.getFlgSex().matches("^[MF]$"), "flgSex must match [MF]");
 		anagraficaBase.setSesso(anagrafeSoc.getFlgSex().equalsIgnoreCase("M") ? SessoType.M : SessoType.F);
-		anagraficaBase
-				.setCodiceFiscale(shouldShredSource()
-						? (CFUtils.buildCf(anagraficaBase.getNome(), anagraficaBase.getCognome(),
-								anagrafeSoc.getDtNasc(),
-								anagrafeSoc.getLuogoNascita().getComune() != null && !Strings
-										.isNullOrEmpty(anagrafeSoc.getLuogoNascita().getComune().getCodCatast())
-												? anagrafeSoc.getLuogoNascita().getComune().getCodCatast()
-												: "Z" + anagraficaBase.getNascita().getStato().getCodiceCatastale(),
-								anagrafeSoc.getFlgSex().equalsIgnoreCase("F")))
-						: (anagrafeSoc.getCodFisc().toUpperCase()));
+		anagraficaBase.setCodiceFiscale(anagrafeSoc.getCodFisc().toUpperCase());
 		if (!Strings.isNullOrEmpty(anagrafeSoc.getCodAnaFamCom())) {
 			anagraficaBase.setCodiceNucleoFamiliare(Long.parseLong(anagrafeSoc.getCodAnaFamCom()));
 		}
@@ -402,7 +329,7 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 		return datiComuni;
 	}
 
-	private AnagraficaType createAnagraficaType() {
+	private AnagraficaType createAnagrafica() {
 		Preconditions.checkNotNull(anagrafeSoc, "anagrafeSoc must be not null");
 		AnagraficaType anagraficaType = new AnagraficaType();
 		anagraficaType.setOperatoreRiferimento(requireCodiceOperatore());
@@ -493,9 +420,9 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 				SiNoType.valueOf(MoreObjects.firstNonNull(pai.getFlgDemenza(), SiNoType.N).toString()));
 		datiPersonali.setStatoInvalidita(anagrafeSoc.getPercInvCiv() == null ? ""
 				: parametriMapping.getProperty(anagrafeSoc.getPercInvCiv().toString()));
-		datiPersonali.setProvvedimentoGiudiziario(pai.getIdParamProvvedimentoGiudiziario() == null
-				? IP_PROVVEDIMENTO_GIUDIZIARIO_DEFAULT
-				: pai.getIdParamProvvedimentoGiudiziario().getIdParam().getCodParam());
+		datiPersonali.setProvvedimentoGiudiziario(
+				pai.getIdParamProvvedimentoGiudiziario() == null ? IP_PROVVEDIMENTO_GIUDIZIARIO_DEFAULT
+						: pai.getIdParamProvvedimentoGiudiziario().getIdParam().getCodParam());
 		datiPersonali.setIsee(createIseeType());
 		datiPersonali.setNote(anagrafeSoc.getNote());
 		return datiPersonali;
@@ -513,7 +440,7 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 		return datiProfessionali;
 	}
 
-	private ProfiloType createProfiloType() {
+	private ProfiloType createProfilo() {
 		ProfiloType profiloType = new ProfiloType();
 		profiloType.setDataModifica(getXmlDate(new Date())); // wathever
 		profiloType.setDomicilio(createDomicilio());
@@ -538,7 +465,7 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 						: parametriMapping.getProperty(
 								paiMacroProblematica.getIpFronteggiamento().getIdParamIndata().toString()));
 		rilevanzaObiettiviType.setObiettivoPrevalente(paiMacroProblematica.getIpObiettivoPrevalente() == null
-				? OBBIETTIVO_PREVALENTE_DEFAULT
+				? OBIETTIVO_PREVALENTE_DEFAULT
 				: paiMacroProblematica.getIpObiettivoPrevalente().getIdParam().getCodParam().replaceFirst("^0*", ""));
 		return rilevanzaObiettiviType;
 	}
@@ -548,7 +475,7 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 		rilevanzaObiettiviType.setRilevanza(RILEVANZA_DEFAULT);
 		rilevanzaObiettiviType.setDettaglio(DOUBLE_X); // must be not null
 		rilevanzaObiettiviType.setFronteggiamento(FRONTEGGIAMENTO_DEFAULT);
-		rilevanzaObiettiviType.setObiettivoPrevalente(OBBIETTIVO_PREVALENTE_DEFAULT);
+		rilevanzaObiettiviType.setObiettivoPrevalente(OBIETTIVO_PREVALENTE_DEFAULT);
 		return rilevanzaObiettiviType;
 	}
 
@@ -605,11 +532,11 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 		microproblematica
 				.setDataInizio(pai.getDtApePai() != null ? getXmlDate(pai.getDtApePai()) : getXmlDate(new Date()));
 		macroproblematica.getMicroproblematica().add(microproblematica);
-		
+
 		return macroproblematica;
 	}
 
-	private ProblematicheType createProblematicheType() {
+	private ProblematicheType createProblematiche() {
 		Preconditions.checkNotNull(pai, "pai must not be null");
 		ProblematicheType problematicheType = new ProblematicheType();
 		if (pai.getPaiMacroProblematicaList().isEmpty()) {
@@ -622,11 +549,10 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 		return problematicheType;
 	}
 
-	private ProgettoType createProgettoType() {
+	private ProgettoType createProgetto() {
 		ProgettoType progettoType = new ProgettoType();
 		progettoType.setDataModifica(getXmlDate(new Date()));
-		progettoType.setProblematiche(createProblematicheType());
-		// TODO
+		progettoType.setProblematiche(createProblematiche());
 		progettoType.setNote("");
 		progettoType.setRisorse("");
 		return progettoType;
@@ -638,7 +564,7 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 		Preconditions.checkNotNull(getCodiceOperatore(), "missing codiceOperatore");
 		Preconditions.checkNotNull(Strings.emptyToNull(anagrafeSoc.getIdCsr()), "missing id csr");
 		ModificaAnagrafica modificaAnagraficaRequest = new ModificaAnagrafica();
-		modificaAnagraficaRequest.setAnagrafica(createAnagraficaType());
+		modificaAnagraficaRequest.setAnagrafica(createAnagrafica());
 		modificaAnagraficaRequest.setIdCartella(requireIdCartella());
 		modificaAnagraficaRequest.setCodice(getCodiceOperatore());
 		modificaAnagraficaRequest.setVersione(VERSIONE);
@@ -648,9 +574,9 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 	public InserimentoCartellaSociale createInserimentoCartellaSocialeRequest() {
 		InserimentoCartellaSociale inserimentoCartellaSociale = new InserimentoCartellaSociale();
 		inserimentoCartellaSociale.setCodice(requireCodiceOperatore());
-		inserimentoCartellaSociale.setAnagrafica(createAnagraficaType());
-		inserimentoCartellaSociale.setProfilo(createProfiloType());
-		inserimentoCartellaSociale.setProgetto(createProgettoType());
+		inserimentoCartellaSociale.setAnagrafica(createAnagrafica());
+		inserimentoCartellaSociale.setProfilo(createProfilo());
+		inserimentoCartellaSociale.setProgetto(createProgetto());
 		inserimentoCartellaSociale.setVersione(VERSIONE);
 		return inserimentoCartellaSociale;
 	}
@@ -679,7 +605,7 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 		modificaProfilo.setVersione(VERSIONE);
 		modificaProfilo.setCodice(requireCodiceOperatore());
 		modificaProfilo.setIdCartella(requireIdCartella());
-		modificaProfilo.setProfilo(createProfiloType());
+		modificaProfilo.setProfilo(createProfilo());
 		return modificaProfilo;
 	}
 
@@ -688,7 +614,7 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 		modificaProgetto.setVersione(VERSIONE);
 		modificaProgetto.setCodice(requireCodiceOperatore());
 		modificaProgetto.setIdCartella(requireIdCartella());
-		modificaProgetto.setProgetto(createProgettoType());
+		modificaProgetto.setProgetto(createProgetto());
 		return modificaProgetto;
 	}
 
@@ -749,12 +675,12 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 		fap.setTipologiaInterventoFap(
 				codTipintToTipintFapMapping.get(paiIntervento.getTipologiaIntervento().getCodTipint()));
 
-		// fap.setDemenzaCertificata(MoreObjects.firstNonNull(dsBoolCharToSiNoType.apply(paiIntervento.getDsDemenza()),SiNoType.N));
-//        fap.setDisabilitaSensoriale(MoreObjects.firstNonNull(dsBoolCharToSiNoType.apply(paiIntervento.getDsDisabilitaSensoriale()),SiNoType.N));
-//        fap.setAssegnoAccompagnamento(MoreObjects.firstNonNull(dsBoolCharToSiNoType.apply(paiIntervento.getPai().getAnagrafeSoc().getFlgAccomp()), SiNoType.N));
-//        fap.setDataUVD(getXmlDate(MoreObjects.firstNonNull(paiIntervento.getDsDataUVD(), paiIntervento.getDtAvvio())));
-//        fap.setDurataMesiUVD(paiIntervento.getDsDurataUVD()!=null? paiIntervento.getDsDurataUVD().intValue():0);
-//        fap.setPunteggioKatz(paiIntervento.getDsPunteggioScalaKatz() == null ? null : paiIntervento.getDsPunteggioScalaKatz());
+//		fap.setDemenzaCertificata(MoreObjects.firstNonNull(dsBoolCharToSiNoType.apply(paiIntervento.getDsDemenza()),SiNoType.N));
+//      fap.setDisabilitaSensoriale(MoreObjects.firstNonNull(dsBoolCharToSiNoType.apply(paiIntervento.getDsDisabilitaSensoriale()),SiNoType.N));
+//      fap.setAssegnoAccompagnamento(MoreObjects.firstNonNull(dsBoolCharToSiNoType.apply(paiIntervento.getPai().getAnagrafeSoc().getFlgAccomp()), SiNoType.N));
+//      fap.setDataUVD(getXmlDate(MoreObjects.firstNonNull(paiIntervento.getDsDataUVD(), paiIntervento.getDtAvvio())));
+//      fap.setDurataMesiUVD(paiIntervento.getDsDurataUVD()!=null? paiIntervento.getDsDurataUVD().intValue():0);
+//      fap.setPunteggioKatz(paiIntervento.getDsPunteggioScalaKatz() == null ? null : paiIntervento.getDsPunteggioScalaKatz());
 
 		if (paiIntervento.getStatoInt() == 'C') {
 			fap.setMotivoChiusura(paiIntervento.getNoteChius());
@@ -822,15 +748,15 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 
 	private EconomicoNew createInterventoEconomicoDettaglio() {
 		EconomicoNew economico = new EconomicoNew();
-		
+
 		if (paiIntervento.getTipologiaIntervento().isFap()) {
 			economico.setFapNew(createFap());
 		}
-		
+
 		if (paiIntervento.getTipologiaIntervento().isFondoSolidarieta()) {
 			economico.setFondoSolidarieta(createFondoSolidarieta());
 		}
-		
+
 		return economico;
 	}
 
@@ -976,20 +902,21 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 
 	private SpecificazioneNew createSpecificazione() {
 		SpecificazioneNew specificazione = new SpecificazioneNew();
-		String codClasseTipint = paiIntervento.getTipologiaIntervento().getIdParamClasseTipint().getIdParam().getCodParam();
-		
+		String codClasseTipint = paiIntervento.getTipologiaIntervento().getIdParamClasseTipint().getIdParam()
+				.getCodParam();
+
 		if (Objects.equal(codClasseTipint, Parametri.CLASSE_TIPOLOGIA_INTERVENTO_ECONOMICI)) { // economico
 			specificazione.setEconomicoNew(createInterventoEconomicoDettaglio());
 		} else {
 			specificazione.setEconomicoNew(null);
 		}
-		
+
 		if (Objects.equal(codClasseTipint, Parametri.CLASSE_TIPOLOGIA_INTERVENTO_DOMICILIARI)) { // domiciliare
 			specificazione.setDomiciliare(createInterventoDomiciliareDettaglio());
 		} else {
 			specificazione.setDomiciliare(null);
 		}
-		
+
 		if (Objects.equal(codClasseTipint, Parametri.CLASSE_TIPOLOGIA_INTERVENTO_RESIDENZIALI)
 				|| Objects.equal(codClasseTipint, Parametri.CLASSE_TIPOLOGIA_INTERVENTO_SEMI_RESIDENZIALI)) { // residenziale
 																												// e
@@ -1007,10 +934,11 @@ public class CartellaSocialeWsDataUtils extends PersistenceAdapter {
 		InterventoNewType interventoType = new InterventoNewType();
 		Preconditions.checkNotNull(paiIntervento.getDtApe(), "la data apertura intervento non puo' essere null");
 		interventoType.setDataApertura(getXmlDate(paiIntervento.getDtAvvio()));
-		interventoType.setDataChiusura(paiIntervento.getDtChius() == null ? null : getXmlDate(paiIntervento.getDtChius()));
+		interventoType
+				.setDataChiusura(paiIntervento.getDtChius() == null ? null : getXmlDate(paiIntervento.getDtChius()));
 		interventoType.setTipologiaIntervento(getMacroTipintCsrNew());
 		interventoType.setDettaglio(getMicroTipintCsrNew());
-		interventoType.setSubDettaglio(getSubDettaglio()); 
+		interventoType.setSubDettaglio(getSubDettaglio());
 		Preconditions.checkArgument(
 				!Strings.isNullOrEmpty(interventoType.getTipologiaIntervento())
 						&& !Strings.isNullOrEmpty(interventoType.getDettaglio()),

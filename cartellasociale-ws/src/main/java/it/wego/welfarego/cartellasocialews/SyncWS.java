@@ -1,5 +1,7 @@
 package it.wego.welfarego.cartellasocialews;
 
+import java.io.File;
+import java.io.FileReader;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Timestamp;
@@ -10,12 +12,19 @@ import javax.persistence.EntityManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.opencsv.CSVParser;
+import com.opencsv.CSVParserBuilder;
+import com.opencsv.CSVReader;
+import com.opencsv.CSVReaderBuilder;
+
 import it.wego.welfarego.persistence.dao.CodaCsrDao;
 import it.wego.welfarego.persistence.entities.CodaCsr;
 
 public class SyncWS {
 
 	private EntityManager em;
+
+	private File fileCsvMSNA;
 
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -27,9 +36,35 @@ public class SyncWS {
 		return new SyncWS();
 	}
 
-	public SyncWS setEntityManager(EntityManager em) {
+	public SyncWS withEntityManager(EntityManager em) {
 		this.em = em;
 		return this;
+	}
+
+	public SyncWS withCsvFileMSNA(File file) {
+		this.fileCsvMSNA = file;
+		return this;
+	}
+
+	public void sincronizzaMSNAWs() {
+
+		CSVParser csvParser = new CSVParserBuilder().withSeparator(';').build();
+		try (CSVReader reader = new CSVReaderBuilder(new FileReader(fileCsvMSNA)).withCSVParser(csvParser) // custom CSV parser
+				.withSkipLines(1) // skip the first line, header info
+				.build()) {
+			List<String[]> r = reader.readAll();
+			r.forEach(x -> {
+					try {
+						CartellaSocialeWsClient.newInstance().inserimentoCartellaSocialeMSNA(x);
+					} catch (KeyManagementException | NoSuchAlgorithmException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+			});
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	public void sincronizzaWS() {
@@ -42,28 +77,36 @@ public class SyncWS {
 			try {
 				switch (csr.getAzione()) {
 				case CodaCsr.SINCRONIZZAZIONE_INSERISCI_CARTELLA:
-					CartellaSocialeWsClient.newInstance().withEntityManager(em).loadConfigFromDatabase().withAnagrafeSoc(csr.getCodAna().toString()).inserimentoCartellaSociale();
+					CartellaSocialeWsClient.newInstance().withEntityManager(em).loadConfigFromDatabase()
+							.withAnagrafeSoc(csr.getCodAna().toString()).inserimentoCartellaSociale();
 					break;
 				case CodaCsr.SINCRONIZZAZIONE_MODIFICA_CARTELLA:
-					CartellaSocialeWsClient.newInstance().withEntityManager(em).loadConfigFromDatabase().withAnagrafeSoc(csr.getCodAna().toString()).modificaCartella();
+					CartellaSocialeWsClient.newInstance().withEntityManager(em).loadConfigFromDatabase()
+							.withAnagrafeSoc(csr.getCodAna().toString()).modificaCartella();
 					break;
 
 				case CodaCsr.SINCRONIZZAZIONE_INSERISCI_INTERVENTO:
-					CartellaSocialeWsClient.newInstance().withEntityManager(em).loadConfigFromDatabase().withPaiIntervento(csr.getCodPai().toString(), csr.getCodTipint(),
-									csr.getCntTipint().toString()).inserimentoIntervento();
+					CartellaSocialeWsClient.newInstance().withEntityManager(em).loadConfigFromDatabase()
+							.withPaiIntervento(csr.getCodPai().toString(), csr.getCodTipint(),
+									csr.getCntTipint().toString())
+							.inserimentoIntervento();
 					break;
 
 				case CodaCsr.SINCRONIZZAZIONE_MODIFICA_INTERVENTO:
-					CartellaSocialeWsClient.newInstance().withEntityManager(em).loadConfigFromDatabase().withPaiIntervento(csr.getCodPai().toString(), csr.getCodTipint(),
-									csr.getCntTipint().toString()).modificaIntervento();
+					CartellaSocialeWsClient.newInstance().withEntityManager(em).loadConfigFromDatabase()
+							.withPaiIntervento(csr.getCodPai().toString(), csr.getCodTipint(),
+									csr.getCntTipint().toString())
+							.modificaIntervento();
 					break;
 
 				case CodaCsr.SINCRONIZZAZIONE_CHIUDI_CARTELLA:
-					CartellaSocialeWsClient.newInstance().withEntityManager(em).loadConfigFromDatabase().withAnagrafeSoc(csr.getCodAna().toString()).chiudiCartellaSociale();
+					CartellaSocialeWsClient.newInstance().withEntityManager(em).loadConfigFromDatabase()
+							.withAnagrafeSoc(csr.getCodAna().toString()).chiudiCartellaSociale();
 					break;
 
 				case CodaCsr.SINCRONIZZAZIONE_RIATTIVA_CARTELLA:
-					CartellaSocialeWsClient.newInstance().withEntityManager(em).loadConfigFromDatabase().withAnagrafeSoc(csr.getCodAna().toString()).riattivaCartellaSociale();
+					CartellaSocialeWsClient.newInstance().withEntityManager(em).loadConfigFromDatabase()
+							.withAnagrafeSoc(csr.getCodAna().toString()).riattivaCartellaSociale();
 					break;
 				default:
 					break;

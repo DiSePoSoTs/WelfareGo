@@ -1,5 +1,7 @@
 package it.wego.welfarego.cartellasocialews;
 
+import java.io.File;
+
 import javax.persistence.EntityManager;
 
 import org.slf4j.Logger;
@@ -16,7 +18,7 @@ public class StartSyncWS {
         logger.info("start sincronizzazione");
         try {
             entityManager = em;
-            SyncWS.newInstance().setEntityManager(entityManager).sincronizzaWS();
+            SyncWS.newInstance().withEntityManager(entityManager).sincronizzaWS();
         } catch (Throwable t) {
             logger.error("got error : ", t);
             throw t;
@@ -30,4 +32,25 @@ public class StartSyncWS {
             entityManager = null;
         }
     }
+    
+    public static void SincronizzaMSNA(File csvFile) {
+    	
+    	logger.info("start sincronizzazione");
+    	if(!csvFile.exists()) {
+    		logger.error("Il file CSV dei MSNA non esiste");
+    		return;
+    	} 
+    	
+    	try {
+            SyncWS.newInstance().withCsvFileMSNA(csvFile).sincronizzaWS();
+        } catch (Throwable t) {
+            logger.error("got error : ", t);
+            throw t;
+        } finally {
+
+        }
+    	
+    	
+    }
+    
 }

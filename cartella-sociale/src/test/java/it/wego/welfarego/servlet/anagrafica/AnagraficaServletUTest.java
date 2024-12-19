@@ -97,22 +97,22 @@ public class AnagraficaServletUTest {
     public  void devoSincronizzareAnagrafeSoc(){
         AnagraficaServlet anagraficaServlet = new AnagraficaServlet();
         AnagrafeSoc anagrafeSoc = new AnagrafeSoc();
-        anagrafeSoc.setDataUltimaRetifica(new Date());
+        anagrafeSoc.setDataUltimaRettifica(new Date());
         anagrafeSoc.setCreationUser(getCreationUserDiCooperativa());
         assertFalse(anagraficaServlet.devoCreareNotaCondivisa(anagrafeSoc));
 
         anagrafeSoc = new AnagrafeSoc();
-        anagrafeSoc.setDataUltimaRetifica(new Date());
+        anagrafeSoc.setDataUltimaRettifica(new Date());
         anagrafeSoc.setCreationUser(getCreationUserComune());
         assertFalse(anagraficaServlet.devoCreareNotaCondivisa(anagrafeSoc));
 
         anagrafeSoc = new AnagrafeSoc();
-        anagrafeSoc.setDataUltimaRetifica(null);
+        anagrafeSoc.setDataUltimaRettifica(null);
         anagrafeSoc.setCreationUser(getCreationUserComune());
         assertFalse(anagraficaServlet.devoCreareNotaCondivisa(anagrafeSoc));
 
         anagrafeSoc = new AnagrafeSoc();
-        anagrafeSoc.setDataUltimaRetifica(null);
+        anagrafeSoc.setDataUltimaRettifica(null);
         anagrafeSoc.setCreationUser(null);
         assertFalse(anagraficaServlet.devoCreareNotaCondivisa(anagrafeSoc));
     }
