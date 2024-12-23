@@ -14,27 +14,31 @@ import it.wego.welfarego.cartellasocialews.beans.AnagraficaType;
 import it.wego.welfarego.cartellasocialews.beans.IndirizzoType;
 import it.wego.welfarego.cartellasocialews.beans.InserimentoCartellaSociale;
 import it.wego.welfarego.cartellasocialews.beans.IseeType;
+import it.wego.welfarego.cartellasocialews.beans.MicroProblematicaType;
 import it.wego.welfarego.cartellasocialews.beans.NascitaType;
 import it.wego.welfarego.cartellasocialews.beans.ProblematicheType;
 import it.wego.welfarego.cartellasocialews.beans.ProfiloType;
 import it.wego.welfarego.cartellasocialews.beans.ProgettoType;
+import it.wego.welfarego.cartellasocialews.beans.RilevanzaObiettiviType;
 import it.wego.welfarego.cartellasocialews.beans.SessoType;
 import it.wego.welfarego.cartellasocialews.beans.SiNoType;
 import it.wego.welfarego.cartellasocialews.beans.StatoType;
 import it.wego.welfarego.cartellasocialews.beans.ToponimoType;
 import it.wego.welfarego.cartellasocialews.beans.AnagraficaType.DatiComuni;
 import it.wego.welfarego.cartellasocialews.beans.AnagraficaType.DatiComuni.Residenza;
+import it.wego.welfarego.cartellasocialews.beans.ProblematicheType.Macroproblematica;
 import it.wego.welfarego.cartellasocialews.beans.ComuneType;
 import it.wego.welfarego.cartellasocialews.beans.ProfiloType.Abilitazione;
 import it.wego.welfarego.cartellasocialews.beans.ProfiloType.DatiFamiliari;
 import it.wego.welfarego.cartellasocialews.beans.ProfiloType.DatiPersonali;
 import it.wego.welfarego.cartellasocialews.beans.ProfiloType.DatiProfessionali;
 import it.wego.welfarego.cartellasocialews.beans.ProfiloType.Domicilio;
+import it.wego.welfarego.persistence.entities.PaiMacroProblematica;
 
 public class CartellaSocialeWsDataUtilsMSNA extends CartellaSocialeWSUtilsBase {
 
 	private String[] rigaMSNA;
-
+	
 	public void setRigaMSNA(String[] rigaMSNA) {
 		this.rigaMSNA = rigaMSNA;
 	}
@@ -43,14 +47,38 @@ public class CartellaSocialeWsDataUtilsMSNA extends CartellaSocialeWSUtilsBase {
 		super(cartellaSocialeWsClient);
 	}
 
+	private static final int CSV_COLONNA_NOME = 0;
+	private static final int CSV_COLONNA_COGNOME = 1;
+	private static final int CSV_COLONNA_SESSO = 2;
+	private static final int CSV_COLONNA_CITTADINANZA = 3;
+	private static final int CSV_COLONNA_CITTADINANZA_COD_INSIEL = 4;
+	private static final int CSV_COLONNA_DATA_NASCITA = 5;
+	private static final int CSV_COLONNA_STATO_NASCITA = 6;
+	private static final int CSV_COLONNA_STATO_NASCITA_COD_CAT = 7;
+	private static final int CSV_COLONNA_STATO_NASCITA_COD_ISTAT = 8;
+	private static final int CSV_COLONNA_DATA_PRESA_IN_CARICO = 12;
+	
+	
 	private static final String RESIDENZA_DEFAULT_MSNA = "36";
 	private static final String STATO_CIVILE_MSNA_DEFAULT = "0";
 	private static final String TIPO_NUCLEO_FAMILIARE_MSNA_DEFAULT = "1";
 	private static final int NUMEROSITA_NUCLEO_FAM_MSNA_DEFAULT = 1;
 	private static final String IP_STATO_INV_MSNA_DEFAULT = "37";
 	private static final String TITOLO_DI_STUDIO_MSNA_DEFAULT = "1";
+	private static final String TIPOLOGIA_ISEE_MSNA_DEFAULT = "1";
+	private static final String IP_PROVVEDIMENTO_GIUDIZIARIO_MSNA_DEFAULT = "17";
+	private static final String DEFAULT_INDIRIZZO_MSNA = "VIA MAZZINI";
+	private static final String DEFAULT_CIVICO_MSNA = "25";
+	private static final String TIPOLOGIA_MACROPROBLEMATICA_MSNA_DEFAULT = "1";
+	private static final String MICRO_PROBLEMATICA_MSNA_DEFAULT = "3";
+	private static final String RILEVANZA_MSNA_DEFAULT = "5";
+	private static final String FRONTEGGIAMENTO_MSNA_DEFAULT = "3";
+	private static final String OBIETTIVO_PREVALENTE_MSNA_DEFAULT = "3";
+	private static final String IDENTIFICATIVO_STRUTTURA_MSNA = "7";
+	private static final String DETTAGLIO_PROBLEMATICA_MSNA_DEFAULT = "INSERIMENTO D'UFFICIO";
+	
 
-	public InserimentoCartellaSociale createInserimentoCartellaSocialeRequest(String[] rigaMSNA) {
+	public InserimentoCartellaSociale createInserimentoCartellaSocialeRequest() {
 		InserimentoCartellaSociale inserimentoCartellaSociale = new InserimentoCartellaSociale();
 		inserimentoCartellaSociale.setCodice(requireCodiceOperatore());
 		inserimentoCartellaSociale.setAnagrafica(createAnagrafica());
@@ -67,8 +95,95 @@ public class CartellaSocialeWsDataUtilsMSNA extends CartellaSocialeWSUtilsBase {
 		anagraficaType.setComuneCartella(requireComuneCartella());
 		anagraficaType.setDataModifica(getXmlDate(new Date()));
 		anagraficaType.setDatiComuni(createDatiComuni());
-		anagraficaType.setIdentificativoSottostrutturaSsc("7");
-		return null;
+		anagraficaType.setIdentificativoSottostrutturaSsc(IDENTIFICATIVO_STRUTTURA_MSNA);
+		return anagraficaType;
+	}
+
+	private DatiComuni createDatiComuni() {
+		Preconditions.checkNotNull(rigaMSNA);
+		AnagraficaType.DatiComuni datiComuni = new AnagraficaType.DatiComuni();
+		datiComuni.setAnagraficaBase(createAnagraficaBase());
+		datiComuni.setResidenza(getResidenza());
+		return datiComuni;
+	}
+
+	private AnagraficaBaseType createAnagraficaBase() {
+		Preconditions.checkNotNull(rigaMSNA);
+		AnagraficaBaseType anagraficaBase = new AnagraficaBaseType();
+		anagraficaBase.setNome(rigaMSNA[CSV_COLONNA_NOME]);
+		anagraficaBase.setCognome(rigaMSNA[CSV_COLONNA_COGNOME]);
+		anagraficaBase.setNascita(createNascita());
+		Preconditions.checkNotNull(rigaMSNA[CSV_COLONNA_SESSO], "Sex must not be null");
+		Preconditions.checkArgument(rigaMSNA[CSV_COLONNA_SESSO].matches("^[MF]$"), "flgSex must match [MF]");
+		anagraficaBase.setSesso(rigaMSNA[CSV_COLONNA_SESSO].equalsIgnoreCase("M") ? SessoType.M : SessoType.F);
+		anagraficaBase.setCittadinanza1(rigaMSNA[CSV_COLONNA_CITTADINANZA] == null ? CITTADINANZA_DEFAULT : Long.parseLong(rigaMSNA[CSV_COLONNA_CITTADINANZA_COD_INSIEL]));
+		return anagraficaBase;
+	}
+
+	private NascitaType createNascita() {
+		Preconditions.checkNotNull(rigaMSNA);
+		NascitaType nascitaType = new NascitaType();
+		nascitaType.setData(getXmlDate(rigaMSNA[CSV_COLONNA_DATA_NASCITA]));
+		nascitaType.setStato(getStatoNascita());
+		nascitaType.setComune(getComuneNascita());
+		return nascitaType;
+	}
+
+	private StatoType getStatoNascita() {
+		StatoType statoType = new StatoType();
+		statoType.setCodiceCatastale(rigaMSNA[CSV_COLONNA_STATO_NASCITA_COD_CAT]);
+		statoType.setCodiceIstat(rigaMSNA[CSV_COLONNA_STATO_NASCITA_COD_ISTAT]);
+		statoType.setDescrizione(rigaMSNA[CSV_COLONNA_STATO_NASCITA]);
+		return statoType;
+	}
+
+	private ComuneType getComuneNascita() {
+		ComuneType comuneType = new ComuneType();
+		comuneType.setDescrizione(rigaMSNA[CSV_COLONNA_STATO_NASCITA]);
+		comuneType.setCodiceCatastale(EMPTY_STRING);
+		comuneType.setCodiceIstat(EMPTY_STRING);
+		return comuneType;
+	}
+
+	private Residenza getResidenza() {
+		AnagraficaType.DatiComuni.Residenza residenza = new AnagraficaType.DatiComuni.Residenza();
+		residenza.setIndirizzoResidenza(getIndirizzoResidenza());
+		residenza.setDecorrenzaResidenza(null);
+		residenza.setTipologiaResidenza(RESIDENZA_DEFAULT_MSNA);
+		Preconditions.checkNotNull(residenza.getTipologiaResidenza(), "tipologia residenza null");
+		return residenza;
+	}
+
+	private IndirizzoType getIndirizzoResidenza() {
+		IndirizzoType indirizzoType = new IndirizzoType();
+		indirizzoType.setToponimo(getToponimoResidenza());
+		return indirizzoType;
+	}
+
+	private ToponimoType getToponimoResidenza() {
+		ToponimoType toponimoType = new ToponimoType();
+		toponimoType.setStato(getStatoResidenza());
+		toponimoType.setComune(getComuneResidenza());
+		toponimoType.setCap(CAP_DEFAULT);
+		toponimoType.setIndirizzo(DEFAULT_INDIRIZZO_MSNA);
+		toponimoType.setNumeroCivico(DEFAULT_CIVICO_MSNA);
+		return toponimoType;
+	}
+
+	private StatoType getStatoResidenza() {
+		StatoType statoType = new StatoType();
+		statoType.setCodiceCatastale(EMPTY_STRING);
+		statoType.setCodiceIstat(STATO_CODICE_ISTAT_DEFAULT);
+		statoType.setDescrizione(STATO_DESCR_DEFAULT);
+		return statoType;
+	}
+
+	private ComuneType getComuneResidenza() {
+		ComuneType comuneType = new ComuneType();
+		comuneType.setDescrizione(COMUNE_DESCR_DEFAULT);
+		comuneType.setCodiceCatastale(COMUNE_COD_CAT_DEFAULT);
+		comuneType.setCodiceIstat(COMUNE_COD_ISTAT_DEFAULT);
+		return comuneType;
 	}
 
 	private ProfiloType createProfilo() {
@@ -82,20 +197,6 @@ public class CartellaSocialeWsDataUtilsMSNA extends CartellaSocialeWSUtilsBase {
 		return profiloType;
 	}
 
-	private ProgettoType createProgetto() {
-		ProgettoType progettoType = new ProgettoType();
-		progettoType.setDataModifica(getXmlDate(new Date()));
-		progettoType.setProblematiche(createProblematiche());
-		progettoType.setNote(EMPTY_STRING);
-		progettoType.setRisorse(EMPTY_STRING);
-		return progettoType;
-	}
-
-	private ProblematicheType createProblematiche() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	private Domicilio createDomicilio() {
 		Domicilio domicilio = new ProfiloType.Domicilio();
 		domicilio.setToponimo(getToponimoDomicilio());
@@ -107,17 +208,9 @@ public class CartellaSocialeWsDataUtilsMSNA extends CartellaSocialeWSUtilsBase {
 		toponimoType.setStato(getStatoDomicilio());
 		toponimoType.setComune(getComuneDomicilio());
 		toponimoType.setCap(CAP_DEFAULT);
-		toponimoType.setIndirizzo(DEFAULT_INDIRIZZO);
-		toponimoType.setNumeroCivico(DEFAULT_CIVICO);
+		toponimoType.setIndirizzo(DEFAULT_INDIRIZZO_MSNA);
+		toponimoType.setNumeroCivico(DEFAULT_CIVICO_MSNA);
 		return toponimoType;
-	}
-
-	private ComuneType getComuneDomicilio() {
-		ComuneType comuneType = new ComuneType();
-		comuneType.setDescrizione(COMUNE_DESCR_DEFAULT);
-		comuneType.setCodiceCatastale(COMUNE_COD_CAT_DEFAULT);
-		comuneType.setCodiceIstat(COMUNE_COD_ISTAT_DEFAULT);
-		return comuneType;
 	}
 
 	private StatoType getStatoDomicilio() {
@@ -128,99 +221,17 @@ public class CartellaSocialeWsDataUtilsMSNA extends CartellaSocialeWSUtilsBase {
 		return statoType;
 	}
 
-	private ToponimoType getToponimoResidenza() {
-		ToponimoType toponimoType = new ToponimoType();
-		toponimoType.setStato(getStatoResidenza());
-		toponimoType.setComune(getComuneResidenza());
-		toponimoType.setCap(EMPTY_STRING);
-		toponimoType.setIndirizzo(EMPTY_STRING);
-		toponimoType.setNumeroCivico(EMPTY_STRING);
-		return toponimoType;
-	}
-
-	private ComuneType getComuneResidenza() {
+	private ComuneType getComuneDomicilio() {
 		ComuneType comuneType = new ComuneType();
-		comuneType.setDescrizione(EMPTY_STRING);
-		comuneType.setCodiceCatastale(EMPTY_STRING);
-		comuneType.setCodiceIstat(EMPTY_STRING);
+		comuneType.setDescrizione(COMUNE_DESCR_DEFAULT);
+		comuneType.setCodiceCatastale(COMUNE_COD_CAT_DEFAULT);
+		comuneType.setCodiceIstat(COMUNE_COD_ISTAT_DEFAULT);
 		return comuneType;
-	}
-
-	private StatoType getStatoResidenza() {
-		StatoType statoType = new StatoType();
-		statoType.setDescrizione(rigaMSNA[5]);
-		statoType.setCodiceCatastale(rigaMSNA[6]);
-		statoType.setCodiceIstat(rigaMSNA[7]);
-		return statoType;
-	}
-
-	private IndirizzoType getIndirizzoResidenza() {
-		IndirizzoType indirizzoType = new IndirizzoType();
-		indirizzoType.setToponimo(getToponimoResidenza());
-		return indirizzoType;
-	}
-
-	private Residenza getResidenza() {
-		AnagraficaType.DatiComuni.Residenza residenza = new AnagraficaType.DatiComuni.Residenza();
-		residenza.setIndirizzoResidenza(getIndirizzoResidenza());
-		residenza.setDecorrenzaResidenza(null);
-		residenza.setTipologiaResidenza(RESIDENZA_DEFAULT_MSNA);
-		Preconditions.checkNotNull(residenza.getTipologiaResidenza(), "tipologia residenza null");
-		return residenza;
-	}
-
-	private NascitaType createNascita() {
-		Preconditions.checkNotNull(rigaMSNA);
-		NascitaType nascitaType = new NascitaType();
-		nascitaType.setData(getXmlDate(rigaMSNA[4]));
-		nascitaType.setStato(getStatoNascita());
-		nascitaType.setComune(getComuneNascita());
-		return nascitaType;
-	}
-
-	private StatoType getStatoNascita() {
-		StatoType statoType = new StatoType();
-		statoType.setCodiceCatastale(rigaMSNA[6]);
-		statoType.setCodiceIstat(rigaMSNA[7]);
-		statoType.setDescrizione(rigaMSNA[5]);
-		return statoType;
-	}
-
-	private ComuneType getComuneNascita() {
-		ComuneType comuneType = new ComuneType();
-		comuneType.setDescrizione(EMPTY_STRING);
-		comuneType.setCodiceCatastale(EMPTY_STRING);
-		comuneType.setCodiceIstat(EMPTY_STRING);
-		return comuneType;
-	}
-
-	private AnagraficaBaseType createAnagraficaBase() {
-		Preconditions.checkNotNull(rigaMSNA);
-		AnagraficaBaseType anagraficaBase = new AnagraficaBaseType();
-		anagraficaBase.setNome(rigaMSNA[0]);
-		anagraficaBase.setCognome(rigaMSNA[1]);
-		anagraficaBase.setNascita(createNascita());
-
-		Preconditions.checkNotNull(rigaMSNA[2], "Sex must not be null");
-		Preconditions.checkArgument(rigaMSNA[2].matches("^[MF]$"), "flgSex must match [MF]");
-		anagraficaBase.setSesso(rigaMSNA[2].equalsIgnoreCase("M") ? SessoType.M : SessoType.F);
-		anagraficaBase.setCittadinanza1(rigaMSNA[3] == null ? CITTADINANZA_DEFAULT : Long.parseLong(rigaMSNA[4]));
-		anagraficaBase.setCittadinanza2(null); // ....
-
-		return anagraficaBase;
-	}
-
-	private DatiComuni createDatiComuni() {
-		Preconditions.checkNotNull(rigaMSNA);
-		AnagraficaType.DatiComuni datiComuni = new AnagraficaType.DatiComuni();
-		datiComuni.setAnagraficaBase(createAnagraficaBase());
-		datiComuni.setResidenza(getResidenza());
-		return datiComuni;
 	}
 
 	private Abilitazione createAbilitazione() {
 		Abilitazione abilitazione = new ProfiloType.Abilitazione();
-		abilitazione.setDataPresaInCarico(getXmlDate(rigaMSNA[19]));
+		abilitazione.setDataPresaInCarico(getXmlDate(rigaMSNA[CSV_COLONNA_DATA_PRESA_IN_CARICO]));
 		return abilitazione;
 	}
 
@@ -234,22 +245,14 @@ public class CartellaSocialeWsDataUtilsMSNA extends CartellaSocialeWSUtilsBase {
 
 	private DatiPersonali createDatiPersonali() {
 		DatiPersonali datiPersonali = new ProfiloType.DatiPersonali();
+		datiPersonali.setMsna(SiNoType.S);
 		datiPersonali.setCertificatoL104(IP_CERTIFICATO_L104_DEFAULT);
 		datiPersonali.setDemenzaCertificata(SiNoType.N);
 		datiPersonali.setStatoInvalidita(IP_STATO_INV_MSNA_DEFAULT);
-		datiPersonali.setProvvedimentoGiudiziario(IP_PROVVEDIMENTO_GIUDIZIARIO_DEFAULT);
+		datiPersonali.setProvvedimentoGiudiziario(IP_PROVVEDIMENTO_GIUDIZIARIO_MSNA_DEFAULT);
 		datiPersonali.setIsee(createIseeType());
 		datiPersonali.setNote(EMPTY_STRING);
 		return datiPersonali;
-	}
-
-	private @Nullable IseeType createIseeType() {
-
-		IseeType iseeType = new IseeType();
-		iseeType.setTipologiaIsee("1");
-		iseeType.setDataScadenza(null);
-		iseeType.setValore(new BigDecimal(0));
-		return iseeType;
 	}
 
 	private DatiProfessionali createDatiProfessionali() {
@@ -259,9 +262,48 @@ public class CartellaSocialeWsDataUtilsMSNA extends CartellaSocialeWSUtilsBase {
 		return datiProfessionali;
 	}
 
-	public void setIdCsr(String string) {
-		// TODO Auto-generated method stub
+	private ProgettoType createProgetto() {
+		ProgettoType progettoType = new ProgettoType();
+		progettoType.setDataModifica(getXmlDate(new Date()));
+		progettoType.setProblematiche(createProblematiche());
+		progettoType.setNote(EMPTY_STRING);
+		progettoType.setRisorse(EMPTY_STRING);
+		return progettoType;
+	}
 
+	private ProblematicheType createProblematiche() {
+		ProblematicheType problematicheType = new ProblematicheType();
+		problematicheType.getMacroproblematica().add(getMacroproblematicaDefault());
+		return problematicheType;
+	}
+
+	private Macroproblematica getMacroproblematicaDefault() {
+		Macroproblematica macroproblematica = new ProblematicheType.Macroproblematica();
+		macroproblematica.setNoteAltro(null);
+		macroproblematica.setTipologiaMacroproblematica(TIPOLOGIA_MACROPROBLEMATICA_MSNA_DEFAULT);
+		macroproblematica.setRilevanzaObiettivi(getRilevanzaObiettiviTypeDefault());
+		MicroProblematicaType microproblematica = new MicroProblematicaType();
+		microproblematica.setTipologiaMicroproblematica(MICRO_PROBLEMATICA_MSNA_DEFAULT);
+		microproblematica.setDataInizio(getXmlDate(rigaMSNA[CSV_COLONNA_DATA_PRESA_IN_CARICO])); //TODO DA CAPIRE
+		macroproblematica.getMicroproblematica().add(microproblematica);
+		return macroproblematica;
+	}
+
+	private RilevanzaObiettiviType getRilevanzaObiettiviTypeDefault() {
+		RilevanzaObiettiviType rilevanzaObiettiviType = new RilevanzaObiettiviType();
+		rilevanzaObiettiviType.setRilevanza(RILEVANZA_MSNA_DEFAULT);
+		rilevanzaObiettiviType.setDettaglio(DETTAGLIO_PROBLEMATICA_MSNA_DEFAULT); 
+		rilevanzaObiettiviType.setFronteggiamento(FRONTEGGIAMENTO_MSNA_DEFAULT);
+		rilevanzaObiettiviType.setObiettivoPrevalente(OBIETTIVO_PREVALENTE_MSNA_DEFAULT);
+		return rilevanzaObiettiviType;
+	}
+
+	private @Nullable IseeType createIseeType() {
+		IseeType iseeType = new IseeType();
+		iseeType.setTipologiaIsee(TIPOLOGIA_ISEE_MSNA_DEFAULT);
+		iseeType.setDataScadenza(getXmlDate(new Date()));
+		iseeType.setValore(new BigDecimal(0));
+		return iseeType;
 	}
 
 }

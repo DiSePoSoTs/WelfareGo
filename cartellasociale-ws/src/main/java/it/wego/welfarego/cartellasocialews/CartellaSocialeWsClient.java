@@ -340,7 +340,8 @@ public class CartellaSocialeWsClient {
 			return null;
 		}
 		
-		InserimentoCartellaSociale richiesta = dataUtilsMSNA.createInserimentoCartellaSocialeRequest(rigaMSNA);
+		dataUtilsMSNA.setRigaMSNA(rigaMSNA);
+		InserimentoCartellaSociale richiesta = dataUtilsMSNA.createInserimentoCartellaSocialeRequest();
 
 		XmlUtils xmlUtils = XmlUtils.getInstance();
 		try {
@@ -369,7 +370,6 @@ public class CartellaSocialeWsClient {
 		} else {
 			Preconditions.checkNotNull(ricevutaCartella.getIdCartella(), "nessun id cartella restituito");
 			logger.debug("id cartella csr = {} for anagrafeSoc = {}", ricevutaCartella.getIdCartella(), dataUtils.getAnagrafeSoc());
-			dataUtilsMSNA.setIdCsr(ricevutaCartella.getIdCartella().toString());
 		}
 		return ricevutaCartella;
 

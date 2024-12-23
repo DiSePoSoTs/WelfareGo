@@ -63,7 +63,8 @@ public class SyncWS {
 			});
 		}
 		catch (Exception e) {
-			// TODO: handle exception
+			String errore = e.getMessage();
+			logger.debug("errore -", errore);
 		}
 	}
 

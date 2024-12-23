@@ -49,8 +49,5 @@ public class StartSyncWS {
         } finally {
 
         }
-    	
-    	
     }
-    
 }
